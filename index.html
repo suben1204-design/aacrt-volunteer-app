@@ -249,6 +249,9 @@
     let isListening = false;
     let recognition = null;
 
+    // Google Apps Script Backend Web App Endpoint for Logging & Live Broadcast
+    const GAS_ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbwfbtyYhEHFLLLSlETnYbIdvsiFcXbRHDk-fG9NkUm_SbAvhscSGAd6-lWXcXjk5wLgBw/exec';
+
     // Hard Conference Sunset Deadline: 2027-04-26 12:00 Taipei Time
     const SUNSET_DEADLINE = new Date('2027-04-26T12:00:00+08:00');
 
@@ -492,7 +495,31 @@
         removeTypingIndicator(typingId);
         const reply = generateLocalBrainAnswer(text);
         appendMessage('ai', reply);
+
+        // Stage 5: Non-blocking asynchronous sync to Google Sheets & Line alert
+        syncLogToBackend(text, reply);
       }, 700);
+    }
+
+    // Asynchronously log inquiry to Google Sheets without delaying the user
+    function syncLogToBackend(query, reply) {
+      if (!GAS_ENDPOINT_URL || GAS_ENDPOINT_URL.includes('PASTE_')) return;
+      try {
+        fetch(GAS_ENDPOINT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            query: query,
+            reply: reply,
+            lang: currentLang,
+            source: 'web_pwa',
+            timestamp: new Date().toISOString()
+          })
+        }).catch(err => console.log('Log sync silent note:', err));
+      } catch (e) {
+        // Silent fail to ensure user experience remains uninterrupted
+      }
     }
 
     function generateLocalBrainAnswer(query) {
@@ -742,9 +769,27 @@
       if (window.speechSynthesis) window.speechSynthesis.cancel();
     }
 
+    // Fetch latest emergency ticker from Google Sheets backend
+    async function fetchLiveTicker() {
+      if (!GAS_ENDPOINT_URL || GAS_ENDPOINT_URL.includes('PASTE_')) return;
+      try {
+        const res = await fetch(GAS_ENDPOINT_URL);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.ticker) {
+            const tickerElem = document.getElementById('ticker-text');
+            if (tickerElem) tickerElem.innerText = data.ticker;
+          }
+        }
+      } catch (e) {
+        // Silent fallback to default ticker text
+      }
+    }
+
     // Init
     checkConferenceSunset();
     loadBrain();
+    fetchLiveTicker();
 
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
