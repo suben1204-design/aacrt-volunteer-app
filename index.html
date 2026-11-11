@@ -449,8 +449,12 @@
         return currentLang === 'en' ? 'From Taoyuan Airport (TPE), take the Airport MRT to Taipei Main Station, then transfer to the Bannan Line (Blue Line) to the final stop "Nangang Exhibition Center Station" (Exit 1 or 2).' :
                '由桃園機場可搭乘機捷至台北車站，轉乘板南線直達終點「南港展覽館站」（1 或 2 號出口步行 3 分鐘）。';
       }
-      // Guardrail redirect
+      // Guardrail redirect with Tier 3 Diplomatic Protocol
       if (brainData && brainData.guardrails) {
+        if (brainData.guardrails.diplomatic_protocol && brainData.guardrails.diplomatic_protocol.tier3_unlisted_or_private_redirect) {
+          const tier3 = brainData.guardrails.diplomatic_protocol.tier3_unlisted_or_private_redirect;
+          return tier3[currentLang] || tier3['en'] || tier3['zh-TW'];
+        }
         return brainData.guardrails[`default_redirect_${currentLang}`] || brainData.guardrails.default_redirect_zh;
       }
       return '抱歉，大會知識庫目前未列出此項目。請前往現場「大會諮詢台」洽詢，我們將竭誠為您服務。';
