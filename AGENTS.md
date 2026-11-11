@@ -15,9 +15,9 @@
 ## 目標與路線圖
 - [x] 階段一：完成 RDQ 需求探索訪談並鎖定 $50 美元預算防護牆（`revisions: 2`）
 - [x] 階段二：完成 L1 本地標準骨架 + L2 GitHub 私有庫 + L3 Obsidian 駕駛艙初始化
-- [ ] 階段三：建置多語言大會大腦資料結構（`知識庫-AI 提煉層/aacrt_brain.json`）與 60% 快捷 FAQ 資料
-- [ ] 階段四：開發雙用官方版前端 Web App（皇家海軍藍×琥珀金風格、四語切換、PWA 離線快取、語音輸入）
-- [ ] 階段五：串接 Google Apps Script 中繼與 Gemini Flash API，完成 Google Sheets 提問記錄與緊急跑馬燈廣播（未知問題導流至大會諮詢台）
+- [x] 階段三：建置多語言大會大腦資料結構（`知識庫-AI 提煉層/aacrt_brain.json`）與 60% 快捷 FAQ 資料
+- [x] 階段四：開發雙用官方版前端 Web App（`index.html`，皇家海軍藍×琥珀金風格、四語切換、PWA 離線快取、語音輸入與大會諮詢台導流）
+- [ ] 階段五：串接 Google Apps Script 中繼與 Gemini Flash API，完成 Google Sheets 提問記錄與緊急跑馬燈廣播
 - [ ] 階段六：提供 $50 美元 Google Cloud/AI Studio 預算配額設定指引，完成實機測試與 GitHub Pages 發佈
 
 ## 資料夾結構
