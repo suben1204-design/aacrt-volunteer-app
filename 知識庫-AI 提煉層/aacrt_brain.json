@@ -1,6 +1,6 @@
 {
-  "version": "2027.04.24-v1.1",
-  "updated_at": "2026-11-11T21:13:00+08:00",
+  "version": "2027.04.24-v1.3",
+  "updated_at": "2026-11-11T22:07:26.887857+08:00",
   "timezone": "Asia/Taipei (GMT+8)",
   "conference": {
     "name_zh": "2027年第26屆亞澳區醫事放射師學術國際會議暨中華民國醫事放射學會第60次年會",
@@ -92,6 +92,64 @@
     "default_redirect_ko": "죄송합니다. 해당 내용은 공식 안내서에 없거나 비공개 개인정보입니다. 7층 로비 또는 1층 '대회 안내 데스크'를 방문해 주시면 감사하겠습니다."
   },
   "faq_categories": [
+    {
+      "id": "academic",
+      "title_zh": "🔬 試片室與海報發表",
+      "title_en": "🔬 Speaker Ready & Posters",
+      "title_ja": "🔬 試写室とポスター発表",
+      "title_ko": "🔬 연자 준비실 및 포스터",
+      "items": [
+        {
+          "q_zh": "講者簡報試片室 (Speaker Ready Room) 在哪裡？何時要繳交 PPT 隨身碟？",
+          "q_en": "Where is the Speaker Ready Room and when should I submit my presentation slides?",
+          "q_ja": "発表データ受付・試写室（Speaker Ready Room）の場所と提出期限は？",
+          "q_ko": "연자 슬라이드 준비실(Speaker Ready Room) 위치와 제출 마감 시간은?",
+          "a_zh": "試片室位於南港 2 館 7 樓 704 室。開放時間為每日 07:30～17:00。\n所有口頭報告講者請務必於「演講開始前至少 2 小時」（若為早晨第一場請於前一日或當日 08:00 前）攜帶 USB 隨身碟至試片室進行影音播放測試與檔案拷貝，現場不接受個人筆電直接切換。",
+          "a_en": "The Speaker Ready Room is located in Room 704 on 7F (Open daily 07:30–17:00).\nAll oral presenters must submit and verify their slides on a USB flash drive at least 2 hours prior to their session (or before 08:00 for the first morning session). Personal laptops cannot be directly hooked up in presentation halls.",
+          "a_ja": "試写室（Speaker Ready Room）は7階704号室にございます（受付時間：毎日07:30〜17:00）。\nすべての口頭発表者は、セッション開始の「少なくとも2時間前」までにUSBメモリをご持参の上、動作確認とデータ登録をお済ませください。個人のノートPC持ち込み投影は原則できません。",
+          "a_ko": "연자 준비실은 7층 704호에 위치해 있습니다 (운영 시간: 매일 07:30~17:00).\n모든 구연 발표자는 세션 시작 최소 2시간 전까지 USB 메모리를 지참하시어 슬라이드 사전 점검 및 등록을 완료해 주시기 바랍니다."
+        },
+        {
+          "q_zh": "論文海報 (Poster Presentation) 的張貼規格、地點與時程為何？",
+          "q_en": "What are the dimensions, location, and schedule for poster presentations?",
+          "q_ja": "ポスター発表の掲示規格・場所・スケジュールは？",
+          "q_ko": "포스터 발표 규격, 장소 및 일정은 어떻게 되나요?",
+          "a_zh": "1. 規格：標準 A0 尺寸直式（寬 84.1 cm × 高 118.9 cm），大會於現場提供專用背膠與圖釘。\n2. 地點：南港 2 館 1 樓海報展示專區（依壁報編號 P-001 ~ P-400 入座張貼）。\n3. 時程：4/24 08:30 前完成張貼；口頭審查交流時段為每日中午 12:30~13:30，請發表者於看板前待命；4/25 16:30 前請自行撤除，逾期將由大會統一清理。",
+          "a_en": "1. Dimensions: Standard A0 vertical format (84.1 cm wide × 118.9 cm high). Mounting materials provided.\n2. Location: 1F Poster Exhibition Area (locate your board by assigned ID P-001 to P-400).\n3. Schedule: Mount before 08:30 on Apr 24. Moderated poster session is daily 12:30–13:30 (authors must stand by their posters). Dismantle before 16:30 on Apr 25.",
+          "a_ja": "1. 規格：A0サイズ縦向き（幅84.1cm × 高さ118.9cm）。留め具は会場に用意されています。\n2. 場所：1階ポスター展示エリア（指定番号 P-001〜P-400 のパネルに掲示）。\n3. 日程：4/24 08:30までに掲示完了。質疑セッションは毎日12:30〜13:30です。4/25 16:30までに撤収をお願いいたします。",
+          "a_ko": "1. 규격: A0 세로형 (가로 84.1cm × 세로 118.9cm). 부착 도구는 현장에서 제공됩니다.\n2. 장소: 1층 포스터 전시장 (배정 번호 P-001~P-400 확인).\n3. 일정: 4/24 08:30까지 부착 완료. 질의응답 세션은 매일 12:30~13:30에 진행됩니다."
+        }
+      ]
+    },
+    {
+      "id": "cme_events",
+      "title_zh": "🎓 學分證明與大會晚宴",
+      "title_en": "🎓 CME Credits & Gala Dinner",
+      "title_ja": "🎓 単位・証明書と懇親会",
+      "title_ko": "🎓 평점·이수증 및 갈라 디너",
+      "items": [
+        {
+          "q_zh": "台灣放射師繼續教育學分如何感應？外國學者出席證明何時領取？",
+          "q_en": "How to register CME credits and obtain the Certificate of Attendance?",
+          "q_ja": "生涯教育単位の登録方法および参加証明書の発行は？",
+          "q_ko": "연수 평점 등록 방법 및 참가 이수증 발급은 어떻게 하나요?",
+          "a_zh": "1. 台灣學分：大會各演講廳門口設有「醫事放射師繼續教育積分」感應機，請依規定於每日上、下午各感應刷卡一次（刷進與刷退）。\n2. 出席證明：外籍學者與學員於完成報到後，可於 4/25 14:00 起至報到櫃台領取紙本證書，或掃描名牌 QR Code 於線上系統下載電子版 (PDF)。",
+          "a_en": "1. CME Credits (Domestic): Card readers are placed outside all halls. Please tap your card in the morning and afternoon daily.\n2. Certificate of Attendance: Available from 14:00 on Apr 25 at the registration desk, or downloadable in PDF by scanning your badge QR code.",
+          "a_ja": "1. 単位登録（台湾）：各会場入口のカードリーダーで午前・午後に受付をお済ませください。\n2. 参加証明書：4/25 14:00以降、総合受付にてお受け取りいただくか、ネームカードのQRコードよりPDFをダウンロード可能です。",
+          "a_ko": "1. 평점 인정: 각 강연장 입구 리더기에 출석 체크를 해주시기 바랍니다.\n2. 참가 확인서: 4/25 14:00부터 등록 데스크에서 수령하시거나 명찰 QR 코드를 통해 PDF로 다운로드하실 수 있습니다."
+        },
+        {
+          "q_zh": "大會晚宴 (Gala Dinner) 的時間、地點與交通接駁為何？",
+          "q_en": "What are the details, venue, and transportation for the Gala Dinner?",
+          "q_ja": "大懇親会（Gala Dinner）の日時・会場・送迎バスについて教えてください。",
+          "q_ko": "갈라 디너(Gala Dinner)의 일시, 장소 및 셔틀버스 안내는?",
+          "a_zh": "大會晚宴訂於 4 月 24 日（六）18:30 舉行。憑註冊名牌中的 Gala Dinner 票券入場。\n大會於南港 2 館 1 樓專用乘車處備有晚宴接駁接駁車（17:30 起每 10 分鐘一班直達晚宴會場）。晚宴提供素食 (Vegetarian) 與清真友善 (Halal-friendly) 專屬餐席，著裝建議為商務休閒 (Smart Casual)。",
+          "a_en": "The Gala Dinner takes place on Saturday, Apr 24 at 18:30. Entry requires the Gala Dinner ticket in your badge.\nFree shuttle buses depart from the 1F TaiNEX 2 shuttle zone every 10 minutes starting at 17:30. Vegetarian and Halal-friendly meals are provided. Dress code: Smart Casual.",
+          "a_ja": "大懇親会は4月24日（土）18:30より開催されます。ネームカード内のディナーチケットをご提示ください。\n17:30より1階シャトル乗り場から会場行きの直通バスが運行されます。ベジタリアン・ハラール対応料理あり。ドレスコード：スマートカジュアル。",
+          "a_ko": "갈라 디너는 4월 24일(토) 18:30에 진행됩니다. 명찰 내 디너 티켓을 지참해 주십시오.\n17:30부터 1층 셔틀 승차장에서 무료 버스가 운행됩니다. 채식 및 할랄식 메뉴가 제공됩니다. 드레스 코드: 스마트 캐주얼."
+        }
+      ]
+    },
     {
       "id": "transport",
       "title_zh": "🚗 交通與抵達指引",

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aacrt-guide-v1.1';
+const CACHE_NAME = 'aacrt-guide-v1.3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
