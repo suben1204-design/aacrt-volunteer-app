@@ -492,9 +492,10 @@
     function generateLocalBrainAnswer(query) {
       const q = query.toLowerCase();
 
-      // Off-Topic / Abuse Protection (Scope Guardrail)
-      const offTopicKeywords = ['寫程式', 'python', 'javascript', '算數學', '微積分', '寫作文', '寫代碼', 'code', 'calculate', 'homework'];
-      if (offTopicKeywords.some(kw => q.includes(kw))) {
+      // Pure Abuse / Malicious Off-Topic Protection (Strictly blocks coding, math homework, stock tips)
+      // All conference-adjacent inquiries (printing, adaptors, sightseeing, hospital visits) are warmly embraced!
+      const pureAbuseKeywords = ['寫程式', 'python程式', 'javascript代碼', '算數學', '微積分', '寫作業', '寫論文代寫', 'write code', 'solve equation', 'homework helper'];
+      if (pureAbuseKeywords.some(kw => q.includes(kw))) {
         return currentLang === 'en' ? 'Apologies, this assistant is exclusively dedicated to the 26th AACRT conference, medical imaging topics, and official visiting guidance. Non-conference topics cannot be processed. Thank you for your understanding!' :
                currentLang === 'ja' ? '申し訳ございません。当AIアシスタントは第26回AACRT国際学会および医用画像、会場案内専用となっております。学会と無関係なご質問には対応いたしかねますのでご了承ください。' :
                currentLang === 'ko' ? '죄송합니다. 본 AI 비서는 제26회 AACRT 학술대회 및 의료영상 관련 안내 전용입니다. 학술대회와 무관한 질문에는 답변을 제공하지 않습니다.' :
