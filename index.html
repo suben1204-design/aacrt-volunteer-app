@@ -243,6 +243,44 @@
     let isListening = false;
     let recognition = null;
 
+    // Hard Conference Sunset Deadline: 2027-04-26 12:00 Taipei Time
+    const SUNSET_DEADLINE = new Date('2027-04-26T12:00:00+08:00');
+
+    function checkConferenceSunset() {
+      const now = new Date();
+      if (now > SUNSET_DEADLINE) {
+        // Hide normal sections and show Sunset Card
+        document.getElementById('faq-section').classList.add('hidden');
+        document.getElementById('ai-section').classList.add('hidden');
+        document.getElementById('emergency-banner').innerHTML = `
+          <div class="w-full text-center py-1 font-bold text-slate-900 bg-amber-400">
+            🎉 2027 AACRT 已圓滿閉幕 (Conference Successfully Concluded)
+          </div>
+        `;
+
+        const main = document.querySelector('main');
+        main.innerHTML = `
+          <div class="bg-white rounded-3xl p-6 border border-slate-200 text-center shadow-lg my-auto mt-6">
+            <div class="w-16 h-16 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-2xl mb-4 shadow-inner">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h2 class="text-lg font-black text-slate-900 mb-1">2027 AACRT 圓滿閉幕</h2>
+            <p class="text-xs text-amber-600 font-bold mb-3">Conference Successfully Concluded</p>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4 whitespace-pre-line">
+              感謝全體各國學者、放射師夥伴與志工團隊的參與！
+              大會即時諮詢服務已於 2027/04/26 12:00 正式停止。
+              論文集、出席證明補發與精彩照片請參閱學會官方網站。
+            </p>
+            <a href="https://www.twsrt.org.tw" target="_blank" class="inline-block bg-gradient-royal text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-md hover:opacity-90 transition-opacity">
+              前往學會官方網站 (Official Website)
+            </a>
+          </div>
+        `;
+        return true;
+      }
+      return false;
+    }
+
     // Load aacrt_brain.json
     async function loadBrain() {
       try {
@@ -410,11 +448,32 @@
       sendMessage();
     }
 
+    // Anti-Spam Rate Limiting
+    let lastSendTime = 0;
+    let userQueryCount = 0;
+    const MAX_QUERIES_PER_SESSION = 20;
+
     // Send Message
     async function sendMessage() {
+      if (checkConferenceSunset()) return;
+
+      const now = Date.now();
+      if (now - lastSendTime < 4000) {
+        alert('請稍候幾秒再送出問題 (Please wait 4 seconds between questions).');
+        return;
+      }
+
+      if (userQueryCount >= MAX_QUERIES_PER_SESSION) {
+        appendMessage('ai', '抱歉，您在此階段的即時諮詢次數已達安全保護上限。如有更多需求，誠摯歡迎您移步至現場「大會諮詢台」洽詢！');
+        return;
+      }
+
       const input = document.getElementById('chat-input');
       const text = input.value.trim();
       if (!text) return;
+
+      lastSendTime = now;
+      userQueryCount++;
 
       appendMessage('user', text);
       input.value = '';
@@ -432,6 +491,16 @@
 
     function generateLocalBrainAnswer(query) {
       const q = query.toLowerCase();
+
+      // Off-Topic / Abuse Protection (Scope Guardrail)
+      const offTopicKeywords = ['寫程式', 'python', 'javascript', '算數學', '微積分', '寫作文', '寫代碼', 'code', 'calculate', 'homework'];
+      if (offTopicKeywords.some(kw => q.includes(kw))) {
+        return currentLang === 'en' ? 'Apologies, this assistant is exclusively dedicated to the 26th AACRT conference, medical imaging topics, and official visiting guidance. Non-conference topics cannot be processed. Thank you for your understanding!' :
+               currentLang === 'ja' ? '申し訳ございません。当AIアシスタントは第26回AACRT国際学会および医用画像、会場案内専用となっております。学会と無関係なご質問には対応いたしかねますのでご了承ください。' :
+               currentLang === 'ko' ? '죄송합니다. 본 AI 비서는 제26회 AACRT 학술대회 및 의료영상 관련 안내 전용입니다. 학술대회와 무관한 질문에는 답변을 제공하지 않습니다.' :
+               '感謝您的使用。本智慧助手為 2027 AACRT 國際年會專用禮賓系統，僅提供本屆大會會議、醫學影像學術與在台指引服務。非大會相關主題暫無法為您處理，謝謝您的理解與配合！';
+      }
+
       // Match Wi-Fi
       if (q.includes('wifi') || q.includes('wi-fi') || q.includes('網路') || q.includes('ワイファイ') || q.includes('와이파이')) {
         return currentLang === 'en' ? 'TaiNEX 2 provides free public Wi-Fi (SSID: TaiNEX-Free). For high-speed conference Wi-Fi, please check your registration packet or ask at the Information Desk.' :
@@ -651,6 +720,7 @@
     }
 
     // Init
+    checkConferenceSunset();
     loadBrain();
 
     // Register Service Worker for PWA
