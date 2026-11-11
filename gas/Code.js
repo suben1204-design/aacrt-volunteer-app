@@ -3,24 +3,24 @@
  * 專案名稱：2027 AACRT 現場問答監控儀表板
  * 功能：
  * 1. 接收前端 Web App 提問紀錄 (POST)，寫入 Google 試算表（非同步、零卡頓）。
- * 2. 即時緊急跑馬燈同步 (GET)，回傳首列緊急廣播文字與當前狀態。
- * 3. 特殊求助關鍵字監控 (Special Assistance Alert)，自動發信或推播給大會幹部。
- * 4. 2027/04/26 12:00 自動落日關閉防護 (Sunset Guardrail)。
+ * 2. 即時動態統計「熱門提問 TOP 榜單」，供前端即時動態抓取展示 (GET)。
+ * 3. 即時緊急跑馬燈同步 (GET)，回傳首列緊急廣播文字與當前狀態。
+ * 4. 特殊求助關鍵字監控 (Special Assistance Alert)，自動發信或推播給大會幹部。
+ * 5. 2027/04/26 12:00 自動落日關閉防護 (Sunset Guardrail)。
  */
 
-// 試算表設定（若綁定試算表，預設開啟當前試算表；亦可指定 SPREADSHEET_ID）
 var SPREADSHEET_ID = ""; // 若未填寫則自動取得主動試算表，或以第一張工作表為準
 var SHEET_LOGS = "即時提問紀錄";
 var SHEET_CONFIG = "大會設定與跑馬燈";
 
-// 幹部通報 Email（預設為大會負責人）
+// 幹部通報 Email
 var LEADER_EMAIL = "suben1204@gmail.com";
 
 // 落日時間點：2027-04-26 12:00:00 (台北時間 GMT+8)
 var SUNSET_TIMESTAMP = new Date("2027-04-26T12:00:00+08:00").getTime();
 
 /**
- * 處理 GET 請求：前端抓取最新緊急跑馬燈與大會設定
+ * 處理 GET 請求：前端抓取最新緊急跑馬燈、大會設定以及「即時熱門提問排行榜」
  */
 function doGet(e) {
   try {
@@ -30,7 +30,8 @@ function doGet(e) {
         status: "sunset",
         message: "2027 AACRT 已圓滿閉幕，感謝您的參與！",
         ticker: "2027 AACRT 亞澳區醫事放射學術年會已圓滿閉幕，感謝全體貴賓與志工夥伴！",
-        allow_query: false
+        allow_query: false,
+        top_queries: []
       });
     }
 
@@ -46,11 +47,15 @@ function doGet(e) {
       if (versionCell) version = versionCell.toString();
     }
 
+    // 動態統計試算表日誌中「最常被問的 TOP 問題」
+    var topQueries = getTopFrequentQueries(ss);
+
     return jsonResponse({
       status: "active",
       ticker: ticker,
       version: version,
       allow_query: true,
+      top_queries: topQueries,
       server_time: new Date().toISOString()
     });
   } catch (err) {
@@ -58,7 +63,8 @@ function doGet(e) {
       status: "error",
       message: err.toString(),
       ticker: "大會現場公告：歡迎蒞臨 2027 AACRT 國際學術年會！",
-      allow_query: true
+      allow_query: true,
+      top_queries: []
     });
   }
 }
@@ -86,10 +92,10 @@ function doPost(e) {
     var query = payload.query || "";
     var reply = payload.reply || "";
     var lang = payload.lang || "zh-TW";
-    var source = payload.source || "web_pwa"; // web_pwa 或 volunteer_badge
+    var source = payload.source || "web_pwa";
     var needHelp = payload.need_help || false;
 
-    // 特殊求助關鍵字自動偵測（醫療急救、外國人走失、外國學者投訴、貴重物品丟失）
+    // 特殊求助關鍵字自動偵測
     var alertKeywords = ["胸痛", "呼吸困難", "昏倒", "急救", "走失", "護照遺失", "偷竊", "緊急", "anaphylaxis", "heart attack", "lost passport", "emergency", "救急", "パスポート紛失"];
     var isEmergency = needHelp;
     if (!isEmergency) {
@@ -116,7 +122,7 @@ function doPost(e) {
 
     logSheet.appendRow([timeStr, source, lang, query, reply.substring(0, 150), alertBadge, status]);
 
-    // 若判定為特殊急迫求助，立刻觸發 Email / Webhook 通知幹部
+    // 特殊急迫求助觸發郵件通知
     if (isEmergency) {
       notifyLeader(timeStr, lang, query, reply);
     }
@@ -136,7 +142,7 @@ function doPost(e) {
 }
 
 /**
- * 幹部推播警報（MailApp 備用推播，零成本、即時到達）
+ * 幹部推播警報
  */
 function notifyLeader(timeStr, lang, query, reply) {
   try {
@@ -157,43 +163,43 @@ function notifyLeader(timeStr, lang, query, reply) {
 }
 
 /**
- * 試算表初始化函式（首次部署或手動執行，自動建構漂亮儀表板結構）
+ * 動態統計試算表日誌中「最常被問的問題 TOP 6」
  */
-function initConferenceSpreadsheet() {
-  var ss = getSpreadsheet();
-  
-  // 1. 初始化設定頁
-  var configSheet = ss.getSheetByName(SHEET_CONFIG);
-  if (!configSheet) {
-    configSheet = ss.insertSheet(SHEET_CONFIG);
-  }
-  configSheet.clear();
-  configSheet.getRange("A1:B3").setValues([
-    ["即時跑馬燈公告 (改此格即全場同步)", "大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。"],
-    ["知識庫版本號 (Version)", "2027.04.24-v1.5"],
-    ["落日關閉時間 (Sunset Time)", "2027-04-26 12:00:00 (GMT+8)"]
-  ]);
-  configSheet.getRange("A1:A3").setBackground("#1e293b").setFontColor("#fbbf24").setFontWeight("bold");
-  configSheet.setColumnWidth(1, 260);
-  configSheet.setColumnWidth(2, 600);
+function getTopFrequentQueries(ss) {
+  try {
+    var logSheet = ss.getSheetByName(SHEET_LOGS);
+    if (!logSheet) return [];
 
-  // 2. 初始化日誌頁
-  var logSheet = ss.getSheetByName(SHEET_LOGS);
-  if (!logSheet) {
-    logSheet = ss.insertSheet(SHEET_LOGS);
-  }
-  logSheet.clear();
-  logSheet.appendRow(["提問時間 (台北時間)", "來源端", "發問語言", "提問內容 (User Query)", "大腦/AI回覆摘要", "特殊求助警示", "處理狀態"]);
-  logSheet.getRange(1, 1, 1, 7).setBackground("#0f172a").setFontColor("#fbbf24").setFontWeight("bold");
-  logSheet.setColumnWidth(1, 160);
-  logSheet.setColumnWidth(2, 100);
-  logSheet.setColumnWidth(3, 90);
-  logSheet.setColumnWidth(4, 300);
-  logSheet.setColumnWidth(5, 300);
-  logSheet.setColumnWidth(6, 120);
-  logSheet.setColumnWidth(7, 120);
+    var lastRow = logSheet.getLastRow();
+    if (lastRow < 2) return [];
 
-  Logger.log("2027 AACRT 試算表儀表板初始化完成！");
+    // 讀取第 4 欄 (D 欄，提問內容)
+    var numRows = Math.min(lastRow - 1, 300); // 取最近 300 筆快速統計
+    var startRow = Math.max(2, lastRow - numRows + 1);
+    var range = logSheet.getRange(startRow, 4, numRows, 1);
+    var values = range.getValues();
+
+    var counts = {};
+    for (var i = 0; i < values.length; i++) {
+      var q = values[i][0];
+      if (q && typeof q === 'string') {
+        var cleanQ = q.trim();
+        if (cleanQ.length > 2) {
+          counts[cleanQ] = (counts[cleanQ] || 0) + 1;
+        }
+      }
+    }
+
+    var sorted = Object.keys(counts).sort(function(a, b) {
+      return counts[b] - counts[a];
+    });
+
+    // 回傳前 6 高頻問題
+    return sorted.slice(0, 6);
+  } catch (e) {
+    Logger.log("Error calculating top queries: " + e.toString());
+    return [];
+  }
 }
 
 /**

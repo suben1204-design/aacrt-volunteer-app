@@ -83,15 +83,15 @@
       </div>
     </div>
 
-    <!-- Mode Tabs: 60% FAQ vs 40% AI Assistant -->
+    <!-- Mode Tabs: 常見 Q&A vs 智慧對談 -->
     <div class="max-w-md mx-auto px-4 flex border-t border-slate-800/60">
       <button id="tab-faq-btn" onclick="switchTab('faq')" class="flex-1 py-2.5 text-xs font-bold border-b-2 border-amber-400 text-amber-400 flex items-center justify-center space-x-1.5 transition-colors">
         <i class="fa-solid fa-book-open"></i>
-        <span id="tab-faq-label">60% 快捷手冊</span>
+        <span id="tab-faq-label">常見 Q&A</span>
       </button>
       <button id="tab-ai-btn" onclick="switchTab('ai')" class="flex-1 py-2.5 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center space-x-1.5 transition-colors">
         <i class="fa-solid fa-sparkles text-amber-400"></i>
-        <span id="tab-ai-label">40% 智慧對談</span>
+        <span id="tab-ai-label">智慧對談</span>
       </button>
     </div>
   </header>
@@ -99,20 +99,15 @@
   <!-- Main Content Container -->
   <main class="max-w-md mx-auto w-full flex-1 p-4 pb-20">
 
-    <!-- TAB 1: 60% Quick FAQ Section -->
+    <!-- TAB 1: 常見 Q&A Section -->
     <section id="faq-section" class="space-y-4">
       <!-- Quick Chips / Categories -->
       <div class="flex space-x-2 overflow-x-auto no-scrollbar py-1">
         <button onclick="filterFaq('all')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white shadow-sm shrink-0" data-cat="all">全部 (All)</button>
-        <button onclick="filterFaq('rules_dining')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="rules_dining">🚬 禁菸法規/過敏</button>
-        <button onclick="filterFaq('academic')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="academic">🔬 試片室/海報</button>
-        <button onclick="filterFaq('cme_events')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="cme_events">🎓 學分/晚宴</button>
-        <button onclick="filterFaq('vip_service')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="vip_service">👑 VIP/雨天/充電</button>
-        <button onclick="filterFaq('medical_emergency')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="medical_emergency">🏥 急診後送</button>
-        <button onclick="filterFaq('awards_tours')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="awards_tours">🏆 論文獎/觀光</button>
-        <button onclick="filterFaq('transport')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="transport">🚗 交通動線</button>
-        <button onclick="filterFaq('venue')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="venue">🏢 會議室/Wi-Fi</button>
-        <button onclick="filterFaq('practical')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="practical">🍜 美食/生活</button>
+        <button onclick="filterFaq('program_sessions')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="program_sessions">📅 會議流程/演講廳</button>
+        <button onclick="filterFaq('speaker_and_poster')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="speaker_and_poster">🔬 試片室/海報</button>
+        <button onclick="filterFaq('dining_and_gala')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="dining_and_gala">🍱 便當午餐/大會晚宴</button>
+        <button onclick="filterFaq('cme_and_emergency')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="cme_and_emergency">🎓 學分/安全禁菸</button>
       </div>
 
       <!-- FAQ Accordion List -->
@@ -136,18 +131,24 @@
       </div>
     </section>
 
-    <!-- TAB 2: 40% AI Assistant Chat Section -->
+    <!-- TAB 2: 智慧對談 (AI Assistant Chat Section) -->
     <section id="ai-section" class="hidden flex-col h-[calc(100vh-190px)]">
       <!-- Quick Prompt Chips -->
       <div class="mb-3">
-        <p id="suggested-prompts-label" class="text-[11px] font-semibold text-slate-400 mb-1.5 uppercase tracking-wider">熱門提問 (Quick Questions)</p>
-        <div class="flex flex-wrap gap-1.5">
-          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">7樓會議室怎麼走？</button>
-          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">電子煙台灣合法嗎？</button>
-          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">花生過敏/無麩質餐</button>
-          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">How to get Wi-Fi?</button>
-          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">桃園機場如何到會場？</button>
-          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">附近哪裡有素食？</button>
+        <div class="flex items-center justify-between mb-1.5">
+          <p id="suggested-prompts-label" class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">熱門提問 (Quick Questions)</p>
+          <span id="live-stat-badge" class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.2 rounded font-medium border border-amber-200">即時大會統計連線中</span>
+        </div>
+        <div id="quick-prompts-container" class="flex flex-wrap gap-1.5">
+          <!-- 8 大精選高頻提問 (2, 3, 8, 9, 10, 12, 21, 23) -->
+          <button onclick="sendQuickPrompt('今日重要大會演講有哪些？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">🌟 今日重要演講</button>
+          <button onclick="sendQuickPrompt('7樓大會堂與各演講廳怎麼走？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">🏢 7樓會議室位置</button>
+          <button onclick="sendQuickPrompt('CT、MRI、AI專題分廳在幾號會議室？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">🔬 各專題分廳主題</button>
+          <button onclick="sendQuickPrompt('演講開始前幾小時必須交出PPT隨身碟？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">💾 簡報繳交期限 (2h前)</button>
+          <button onclick="sendQuickPrompt('演講時可以用我自己的筆電直接投影嗎？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">💻 自備筆電規範</button>
+          <button onclick="sendQuickPrompt('每場報告講幾分鐘？最後會響鈴提示嗎？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">⏱️ 演講計時響鈴</button>
+          <button onclick="sendQuickPrompt('中午午餐便當在幾點、哪裡憑券領取？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">🍱 午餐便當領取</button>
+          <button onclick="sendQuickPrompt('大會晚宴幾點開始？接駁車在哪搭？')" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">🍷 大會晚宴與接駁</button>
         </div>
       </div>
 
@@ -339,8 +340,21 @@
         if (filterCat !== 'all' && cat.id !== filterCat) return;
 
         cat.items.forEach((item, idx) => {
-          const qText = item[`q_${currentLang}`] || item.q_en || item.q_zh;
-          const aText = item[`a_${currentLang}`] || item.a_en || item.a_zh;
+          let qText = '';
+          let aText = '';
+          if (currentLang === 'zh-TW') {
+            qText = item.q_zh || item.q_en;
+            aText = item.a_zh || item.a_en;
+          } else if (currentLang === 'ja') {
+            qText = item.q_ja || item.q_en || item.q_zh;
+            aText = item.a_ja || item.a_en || item.a_zh;
+          } else if (currentLang === 'ko') {
+            qText = item.q_ko || item.q_en || item.q_zh;
+            aText = item.a_ko || item.a_en || item.a_zh;
+          } else {
+            qText = item.q_en || item.q_zh;
+            aText = item.a_en || item.a_zh;
+          }
           const bundleJson = encodeURIComponent(JSON.stringify({
             'zh-TW': item.a_zh,
             'en': item.a_en,
@@ -404,8 +418,8 @@
       const g = brainData ? brainData.guardrails : null;
       const i18n = {
         'zh-TW': {
-          tabFaq: '60% 快捷手冊',
-          tabAi: '40% 智慧對談',
+          tabFaq: '常見 Q&A',
+          tabAi: '智慧對談',
           promptLabel: '熱門提問 (Quick Questions)',
           helpTitle: '找不到您的答案？',
           helpDesc: '請直接前往 1 樓迎賓大廳或 7 樓大廳的<strong class="text-amber-700">「大會諮詢台」</strong>，現場大會志工與秘書處將提供面對面協助。',
@@ -413,8 +427,8 @@
           greeting: '您好！我是 2027 AACRT 大會智慧助手。您可以用<strong>中文、English、日本語、한국어</strong>詢問大會演講廳、交通動線、Wi-Fi 或周邊資訊。未公開細節我也會指引您至「大會諮詢台」！'
         },
         'en': {
-          tabFaq: '60% Quick Guide',
-          tabAi: '40% AI Assistant',
+          tabFaq: 'Frequently Asked Q&A',
+          tabAi: 'AI Assistant',
           promptLabel: 'Quick Questions',
           helpTitle: 'Need further help?',
           helpDesc: 'Please visit the official <strong class="text-amber-700">Information Desk</strong> located at the 7F Foyer or 1F Lobby. Our team is ready to assist you.',
@@ -422,8 +436,8 @@
           greeting: 'Hello! I am the 2027 AACRT Conference AI Assistant. Feel free to ask about session halls, Wi-Fi, transportation, and dining. Unlisted details will be directed to the on-site Information Desk!'
         },
         'ja': {
-          tabFaq: '60% クイックガイド',
-          tabAi: '40% AIアシスタント',
+          tabFaq: 'よくあるご質問 (Q&A)',
+          tabAi: 'AIアシスタント',
           promptLabel: 'よくある質問',
           helpTitle: 'お困りですか？',
           helpDesc: '7階ホワイエまたは1階ロビーの<strong class="text-amber-700">「大会総合案内所」</strong>までお気軽にお越しください。',
@@ -431,8 +445,8 @@
           greeting: 'こんにちは！2027 AACRT 大会AIアシスタントです。会場、交通、Wi-Fiなどお気軽にお尋ねください。未掲載の情報は総合案内所をご案内いたします。'
         },
         'ko': {
-          tabFaq: '60% 퀵 가이드',
-          tabAi: '40% AI 비서',
+          tabFaq: '자주 묻는 질문 (Q&A)',
+          tabAi: 'AI 비서',
           promptLabel: '자주 묻는 질문',
           helpTitle: '도움이 필요하신가요?',
           helpDesc: '7층 로비 또는 1층의 <strong class="text-amber-700">「대회 안내 데스크」</strong>를 방문해 주시면 친절히 안내해 드립니다.',
@@ -769,7 +783,7 @@
       if (window.speechSynthesis) window.speechSynthesis.cancel();
     }
 
-    // Fetch latest emergency ticker from Google Sheets backend
+    // Fetch latest emergency ticker and dynamic top queries from Google Sheets backend
     async function fetchLiveTicker() {
       if (!GAS_ENDPOINT_URL || GAS_ENDPOINT_URL.includes('PASTE_')) return;
       try {
@@ -780,10 +794,36 @@
             const tickerElem = document.getElementById('ticker-text');
             if (tickerElem) tickerElem.innerText = data.ticker;
           }
+
+          // If backend returns dynamic top questions, prepend them dynamically!
+          if (data && data.top_queries && data.top_queries.length > 0) {
+            renderDynamicTopQueries(data.top_queries);
+          }
         }
       } catch (e) {
         // Silent fallback to default ticker text
       }
+    }
+
+    // Render dynamic high-frequency questions queried from Google Sheets
+    function renderDynamicTopQueries(topQueries) {
+      const container = document.getElementById('quick-prompts-container');
+      const badge = document.getElementById('live-stat-badge');
+      if (badge) badge.innerText = '🔥 現場大會熱搜中';
+
+      // Keep user-approved core defaults, but prepend real-time hot questions
+      const currentButtons = Array.from(container.querySelectorAll('button')).map(b => b.innerText);
+      
+      topQueries.forEach(q => {
+        // If question isn't already present as a prompt chip, prepend it!
+        if (!currentButtons.some(bText => bText.includes(q.substring(0, 10)))) {
+          const btn = document.createElement('button');
+          btn.className = 'text-xs bg-amber-50 border border-amber-300 text-amber-900 px-2.5 py-1 rounded-lg hover:bg-amber-100 transition-all shadow-2xs font-semibold flex items-center space-x-1';
+          btn.innerHTML = `<span>🔥 ${q.length > 18 ? q.substring(0, 18) + '...' : q}</span>`;
+          btn.onclick = () => sendQuickPrompt(q);
+          container.insertBefore(btn, container.firstChild);
+        }
+      });
     }
 
     // Init

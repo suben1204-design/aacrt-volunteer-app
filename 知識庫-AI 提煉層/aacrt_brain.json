@@ -1,6 +1,6 @@
 {
-  "version": "2027.04.24-v1.5",
-  "updated_at": "2026-11-11T23:00:00+08:00",
+  "version": "2027.04.24-v1.6",
+  "updated_at": "2026-11-12T00:15:00+08:00",
   "timezone": "Asia/Taipei (GMT+8)",
   "conference": {
     "name_zh": "2027年第26屆亞澳區醫事放射師學術國際會議暨中華民國醫事放射學會第60次年會",
@@ -19,71 +19,6 @@
       "help_desk_location_ko": "1층 로비 및 7층 로비 '대회 안내 데스크'"
     }
   },
-  "radiology_glossary": [
-    {
-      "term_id": "radiologic_technologist",
-      "zh": "醫事放射師",
-      "en": "Radiologic Technologist (RT)",
-      "ja": "診療放射線技師",
-      "ko": "방사선사"
-    },
-    {
-      "term_id": "radiation_protection",
-      "zh": "輻射防護與安全",
-      "en": "Radiation Protection & Safety",
-      "ja": "放射線防護と安全管理",
-      "ko": "방사선 방어 및 안전"
-    },
-    {
-      "term_id": "computed_tomography",
-      "zh": "電腦斷層攝影 (CT)",
-      "en": "Computed Tomography (CT)",
-      "ja": "コンピュータ断層撮影 (CT)",
-      "ko": "컴퓨터단층촬영 (CT)"
-    },
-    {
-      "term_id": "magnetic_resonance_imaging",
-      "zh": "磁振造影 (MRI)",
-      "en": "Magnetic Resonance Imaging (MRI)",
-      "ja": "磁気共鳴画像法 (MRI)",
-      "ko": "자기공명영상 (MRI)"
-    },
-    {
-      "term_id": "interventional_radiology",
-      "zh": "血管攝影與介入性放射學",
-      "en": "Interventional Radiology & Angiography",
-      "ja": "血管造影・IVR",
-      "ko": "혈관조영 및 중재적 방사선학"
-    },
-    {
-      "term_id": "radiation_therapy",
-      "zh": "放射線治療",
-      "en": "Radiation Therapy / Radiotherapy",
-      "ja": "放射線治療",
-      "ko": "방사선치료"
-    },
-    {
-      "term_id": "nuclear_medicine",
-      "zh": "核子醫學造影 (PET/SPECT)",
-      "en": "Nuclear Medicine & Molecular Imaging",
-      "ja": "核医学検査",
-      "ko": "핵의학 영상 검사"
-    },
-    {
-      "term_id": "medical_ultrasound",
-      "zh": "醫用超音波",
-      "en": "Diagnostic Medical Sonography / Ultrasound",
-      "ja": "超音波検査",
-      "ko": "초음파 검사"
-    },
-    {
-      "term_id": "ai_in_imaging",
-      "zh": "醫學影像 AI 與智慧醫療",
-      "en": "AI in Medical Imaging & Smart Healthcare",
-      "ja": "医用画像AIとスマート医療",
-      "ko": "의료영상 인공지능(AI)"
-    }
-  ],
   "guardrails": {
     "privacy_policy_zh": "依 GDPR 與個人資料保護規範，本大腦嚴禁提供講者、座長或貴賓之私人手機、個人 Email 或飯店房號。任何公務聯絡請至大會諮詢台洽詢秘書處。",
     "diplomatic_protocol": {
@@ -102,253 +37,118 @@
   },
   "faq_categories": [
     {
-      "id": "vip_service",
-      "title_zh": "👑 貴賓禮遇與營運支援",
-      "title_en": "👑 VIP & Conference Services",
-      "title_ja": "👑 VIP控室・会場サービス",
-      "title_ko": "👑 VIP 귀빈실 및 운영 지원",
+      "id": "program_sessions",
+      "title_zh": "📅 會議流程與演講廳主題",
+      "title_en": "📅 Program & Session Rooms",
+      "title_ja": "📅 プログラム・セッション会場",
+      "title_ko": "📅 학술 프로그램 및 회의실 안내",
       "items": [
         {
-          "q_zh": "大會貴賓室 (VIP Lounge) 在哪裡？如何入場？",
-          "q_en": "Where is the VIP Lounge located and what are the access guidelines?",
-          "q_ja": "VIP控室（VIP Lounge）の場所と利用方法は？",
-          "q_ko": "VIP 귀빈실(VIP Lounge) 위치와 이용 방법은?",
-          "a_zh": "貴賓室位於南港 2 館 7 樓 705 室（僅限佩戴 VIP / Keynote Speaker 識別證之理事長、主講者及特邀貴賓進入）。\n室內備有專屬咖啡茶點、獨立休息沙發、梳妝整燙設備及高速 Wi-Fi，現場設有專屬接待志工。",
-          "a_en": "The VIP Lounge is located in Room 705 on 7F (Reserved strictly for Keynote Speakers, Society Presidents, and Invited Guests wearing VIP badges).\nComplimentary refreshments, private workspaces, clothing steamers, and dedicated staff are provided.",
-          "a_ja": "VIP控室は7階705号室にございます（VIP・招待講演者バッジをお持ちの方のみ入場可能）。専用の軽食やお飲み物、クローク設備をご用意しております。",
-          "a_ko": "VIP 귀빈실은 7층 705호에 위치해 있습니다 (VIP 및 기조강연자 명찰 소지자 전용). 다과, 휴식 공간 및 전담 안내 직원이 배치되어 있습니다."
+          "q_zh": "大會核心會議室位置、各專題分廳主題與時間如何安排？",
+          "q_en": "Where are the main session halls located and what are their respective themes and schedules?",
+          "q_ja": "メイン講演会場の場所と各専門セッション（CT/MRI/AI等）のテーマ・時間割は？",
+          "q_ko": "주요 회의실 위치와 전문 분과 세션(CT/MRI/AI 등)의 주제 및 일정은 어떻게 되나요?",
+          "a_zh": "【大會會議室與主題配置（7 樓全區）】：\n1. 大會堂 (Plenary Hall)：每日 09:00~10:30 Keynote 主題演講、大會特邀演講與 4/25 16:00 閉幕頒獎典禮。\n2. 701 會議室：電腦斷層 (CT) 尖端造影技術與血管攝影介入放射學 (IVR) 專題。\n3. 702 會議室：磁振造影 (MRI) 臨床前沿與放射線治療 (RT) 品管技術專題。\n4. 703 會議室：醫學影像人工智慧 (AI in Imaging) 與核子醫學造影 (PET/SPECT) 專題。\n5. 704 試片室 (Speaker Ready Room)：每日 07:30~17:00 講者繳交簡報與測試。\n6. 705 貴賓室 (VIP Lounge)：大會特邀講者、座長與理事長專屬休息室。\n所有議程皆按台北時間 (GMT+8) 準時進行，各廳門口均有大螢幕顯示即時進行場次與講者姓名。",
+          "a_en": "【Conference Halls & Thematic Tracks on 7F】:\n1. Plenary Hall: Keynote Addresses (09:00–10:30 daily) and Closing Ceremony (Apr 25, 16:00).\n2. Room 701: Advanced Computed Tomography (CT) & Interventional Radiology (IVR).\n3. Room 702: Magnetic Resonance Imaging (MRI) & Radiation Therapy (RT) Quality Assurance.\n4. Room 703: Artificial Intelligence in Medical Imaging (AI) & Nuclear Medicine.\n5. Room 704 (Speaker Ready Room): Open 07:30–17:00 daily for slide checks.\n6. Room 705 (VIP Lounge): Dedicated lounge for Keynote Speakers and Society Presidents.\nAll sessions follow Taipei Time (GMT+8). Digital screens outside each hall display current speakers and topics.",
+          "a_ja": "【7階 会議室配置と専門分野テーマ】:\n1. プレナリーホール（Plenary Hall）：連日09:00〜10:30 基調講演、および4/25 16:00の閉会式・授賞式。\n2. 701会議室：CT最新技術・血管造影IVRセッション。\n3. 702会議室：MRI臨床応用・放射線治療QA技術セッション。\n4. 703会議室：医用画像AIおよび核医学セッション。\n5. 704号室（試写室）：毎日07:30〜17:00 スライド受付。\n6. 705号室（VIP控室）：招待講演者・座長専用ラウンジ。\n全セッション台北時間（GMT+8）進行です。各会場入口に案内モニターがございます。",
+          "a_ko": "【7층 회의실 및 분과 주제 안내】:\n1. 플레너리 홀 (Plenary Hall): 매일 09:00~10:30 기조강연 및 4/25 16:00 폐회식/시상식.\n2. 701호 회의실: CT 최신 영상 기법 및 중재적 방사선학(IVR) 세션.\n3. 702호 회의실: MRI 임상 최신 지견 및 방사선치료 정도관리 세션.\n4. 703호 회의실: 의료영상 인공지능(AI) 및 핵의학 영상 세션.\n5. 704호 (연자 준비실): 매일 07:30~17:00 슬라이드 사전 점검.\n6. 705호 (VIP 귀賓실): 기조강연자 및 학회장 전용 휴게실.\n모든 일정은 타이베이 시간(GMT+8) 기준입니다."
         },
         {
-          "q_zh": "大會雨天動線指南：下雨時如何免淋雨前往捷運站與南港 1 館？",
-          "q_en": "Rainy Day Guide: How to access the MRT station and TaiNEX 1 without getting wet?",
-          "q_ja": "雨天アクセス：雨に濡れずにMRT駅や第1展示館へ行くには？",
-          "q_ko": "우천 시 안내: 비를 맞지 않고 지하철역이나 제1전시관으로 이동하는 방법은?",
-          "a_zh": "南港 2 館地下 1 樓 (B1) 設有「全封閉全天候地下連通道」：\n1. 往捷運站：循 B1 連通道標示步行 3 分鐘，即可直達捷運南港展覽館站（板南線/文湖線閘門）。\n2. 往南港 1 館：循 B1 連通道直接穿梭至 1 館及地下美食商場。\n大會諮詢台（1F/7F）亦備有「大會愛心傘」可供臨時登記借用。",
-          "a_en": "TaiNEX 2 features a fully enclosed Underground Walkway on Basement 1 (B1):\n1. To MRT: Follow B1 signs for a 3-minute dry walk directly into MRT Nangang Exhibition Center Station (Blue/Brown Lines).\n2. To TaiNEX 1: Direct underground access to Hall 1 and shopping dining areas.\nCourtesy umbrellas are also available for loan at the 1F/7F Information Desks.",
-          "a_ja": "第2展示館の地下1階（B1）に全天候型地下連絡通路がございます。雨天時も濡れることなく、MRT南港展覧館駅改札および第1展示館・地下レストラン街へ徒歩3分で直結しています。案内所にて傘の貸出もございます。",
-          "a_ko": "제2전시관 지하 1층(B1)에 전천후 지하 연결 통로가 있습니다. 비를 맞지 않고 지하철역 개찰구 및 제1전시관 식당가로 도보 3분 만에 이동하실 수 있습니다."
-        },
-        {
-          "q_zh": "南港 2 館哪裡可以租借行動電源？演講廳有充電插座嗎？",
-          "q_en": "Where can I rent a power bank or charge my mobile devices/laptops?",
-          "q_ja": "モバイルバッテリーのレンタルや充電スポットはどこですか？",
-          "q_ko": "보조배터리 대여 장소나 모바일 기기 충전 구역은 어디인가요?",
-          "a_zh": "1. 行動電源租借：南港 2 館 1 樓大廳與 7 樓電梯旁設有 ChargeSPOT 共享行動電源機台（支援 Visa/MasterCard、Apple Pay、LINE Pay 租借）。\n2. 充電吧檯：7 樓休息走廊設有專用充電插座站（台灣電壓 110V 雙平孔）。各演講廳內僅部分靠牆座位備有插座，請優先禮讓發表講者使用。",
-          "a_en": "1. Power Bank Rental: ChargeSPOT stations are available at 1F Lobby and 7F Elevator Lobby (Supports international credit cards & mobile payments).\n2. Charging Stations: Located along the 7F lounge corridor (Standard 110V Type-A plugs). In-hall sockets are reserved primarily for presenters.",
-          "a_ja": "1. モバイルバッテリー：1階ロビーおよび7階エレベーター前に ChargeSPOT レンタル機がございます（各種クレジットカード対応）。\n2. 充電スポット：7階ホワイエに無料充電バーが設置されています（台湾規格110V）。",
-          "a_ko": "1. 보조배터리 대여: 1층 로비 및 7층 엘리베이터 옆에 ChargeSPOT 대여기가 있습니다 (해외 신용카드 결제 가능).\n2. 충전 구역: 7층 휴게 복도에 110V 무료 충전 스테이션이 마련되어 있습니다."
+          "q_zh": "演講時間有何限制？最後幾分鐘會響鈴提示？",
+          "q_en": "What is the speaking time limit? How will time warnings and bell rings be given?",
+          "q_ja": "口頭発表の持ち時間とタイマー（ベル）の合図規則は？",
+          "q_ko": "구연 발표 시간 제한 및 타이머/벨 알림 규정은 어떻게 되나요?",
+          "a_zh": "【演講計時與響鈴規則】：\n1. 口頭論文發表 (Oral Paper)：每篇共 10 分鐘（發表 7 分鐘 ＋ 問答 Q&A 3 分鐘）。\n   - 第 6 分鐘響一短鈴（提醒剩餘 1 分鐘）。\n   - 第 7 分鐘響兩短鈴（演講結束，進入 Q&A 討論）。\n   - 第 10 分鐘響一長鈴（本場結束，座長強制換下一位講者）。\n2. 特邀演講 (Invited / Keynote)：每場 30~45 分鐘，結束前 5 分鐘響一鈴提示，結束時響兩鈴。\n請全體講者務必嚴格掌握時間，以維護大會議程準確性。",
+          "a_en": "【Speaking Time & Bell Timing Rules】:\n1. Oral Paper Presentations: 10 minutes total (7 mins presentation + 3 mins Q&A).\n   - 6th minute: 1 short bell (1 minute remaining).\n   - 7th minute: 2 short bells (Presentation concludes, Q&A begins).\n   - 10th minute: 1 long bell (Session concludes, immediate switch to next speaker).\n2. Keynote / Invited Lectures: 30–45 mins (Warning bell at 5 mins remaining, final bell at end).\nPlease adhere strictly to time limits.",
+          "a_ja": "【発表時間と計時ベル規則】:\n1. 一般口頭発表：1題あたり計10分（発表7分＋質疑応答3分）。\n   - 6分経過時：1鈴（残り1分警告）。\n   - 7分経過時：2鈴（発表終了、質疑応答へ移行）。\n   - 10分経過時：長鈴（セッション終了、次演者へ交代）。\n2. 特別講演・基調講演：30〜45分（終了5分前に1鈴、終了時に2鈴）。時間厳守にご協力ください。",
+          "a_ko": "【발표 시간 및 벨 알림 규정】:\n1. 일반 구연 발표: 총 10분 (발표 7분 + 질의응답 3분).\n   - 6분 경과: 1타 (1분 남음 경고).\n   - 7분 경과: 2타 (발표 종료, 질의응답 시작).\n   - 10분 경과: 장음 1타 (세션 종료, 다음 연자로 교체).\n2. 초청 및 기조강연: 30~45분 (종료 5분 전 1타, 종료 시 2타)."
         }
       ]
     },
     {
-      "id": "medical_emergency",
-      "title_zh": "🏥 緊急醫療與後送院所",
-      "title_en": "🏥 Medical Care & Hospitals",
-      "title_ja": "🏥 救護室と緊急搬送病院",
-      "title_ko": "🏥 응급 의료 및 후송 병원",
-      "items": [
-        {
-          "q_zh": "若有緊急醫療需求，最近具備外語急診的大型醫院在哪裡？",
-          "q_en": "In case of medical emergencies, where are the nearest hospitals with foreign-language ER services?",
-          "q_ja": "緊急時の救護室および近隣の総合病院（救急外来）は？",
-          "q_ko": "응급 의료 상황 발생 시 가장 가까운 응급실 운영 종합병원은 어디인가요?",
-          "a_zh": "1. 會場醫護站：南港 2 館 1 樓設有醫護急救站，駐有護理人員提供血壓測量與初步急救處置。\n2. 鄰近後送醫院（具備 24 小時急診與外語醫療能力）：\n   - 台北市立聯合醫院忠孝院區（車程約 8 分鐘，電話 02-2786-1288）\n   - 汐止國泰綜合醫院（車程約 10 分鐘，電話 02-2648-2121）\n   - 三軍總醫院內湖總院（車程約 12 分鐘，國軍最高醫學中心，電話 02-8792-3311）\n外籍貴賓就醫請攜帶護照與海外旅行保險單（Travel Insurance），以利院方開立正式英文醫療證明與收據。",
-          "a_en": "1. On-site First Aid: Located on 1F (staffed by professional nurses for emergency triage).\n2. Nearest Emergency Referral Hospitals:\n   - Taipei City Hospital Zhongxiao Branch (approx. 8 mins by taxi, +886-2-2786-1288)\n   - Xizhi Cathay General Hospital (approx. 10 mins, +886-2-2648-2121)\n   - Tri-Service General Hospital Neihu Main Branch (approx. 12 mins, Tertiary Medical Center, +886-2-8792-3311)\nOverseas guests should present passports and Travel Insurance certificates for official English medical reports.",
-          "a_ja": "1. 会場救護室：第2展示館1階に看護師常駐の救護室がございます。\n2. 近隣の24時間救急対応総合病院：\n   - 台北市立連合病院 忠孝院区（車で約8分）\n   - 汐止国泰総合病院（車で約10分）\n   - 三軍総医院 内湖本院（車で約12分、高度救命医療センター）\n海外からの受診時はパスポートと海外旅行保険証をご提示ください。",
-          "a_ko": "1. 행사장 의무실: 제2전시관 1층에 전문 간호사가 상주하는 응급처치실이 있습니다.\n2. 인근 응급의료기관:\n   - 타이베이 시립연합병원 중샤오 분원 (택시 8분)\n   - 시즈 국태종합병원 (택시 10분)\n   - 삼군총병원 네이후 본원 (택시 12분, 상급 종합병원)\n해외 참가자는 여권 및 해외여행자보험 증서를 지참해 주십시오."
-        }
-      ]
-    },
-    {
-      "id": "rules_dining",
-      "title_zh": "🚬 菸害法規與過敏飲食",
-      "title_en": "🚬 Smoking Laws & Food Allergies",
-      "title_ja": "🚬 喫煙所・電子タバコ禁止とアレルギー",
-      "title_ko": "🚬 흡연구역·전자담배 금지 및 알레르기 안내",
-      "items": [
-        {
-          "q_zh": "南港展覽館哪裡可以吸菸？台灣對電子煙或加熱菸有何法律規定？",
-          "q_en": "Where is the designated smoking area at TaiNEX? What are Taiwan's strict laws regarding e-cigarettes and heated tobacco?",
-          "q_ja": "指定喫煙所はどこですか？台湾の電子タバコ・加熱式タバコに関する厳しい法令規則について教えてください。",
-          "q_ko": "난강전시관 내 지정 흡연구역은 어디인가요? 대만의 전자담배 및 궐련형 가열담배 관련 법률 규정은 어떠한가요?",
-          "a_zh": "【重要救命級法規提醒】：\n1. 會場與周邊禁菸：南港展覽館 2 館全館室內及騎樓全面禁菸。違規吸菸者，依法將面臨主管機關處 NT$ 2,000 至 10,000 元罰鍰。\n2. 電子煙與加熱菸全面重罰違法：依台灣現行《菸害防制法》，嚴禁攜帶、製造、輸入、販售或於任何公共場合使用「電子煙 (E-cigarettes / Vapes)」及未經核准之「加熱菸 (Heated Tobacco Products)」。違者最高可處 NT$ 10,000 至 50,000 元重罰，海關亦會沒入銷毀。\n3. 指定吸菸區：僅限於南港 2 館指定之「戶外專用吸菸區」（請由 1 樓戶外標示指引前往，遠離出入口與人行道）。",
-          "a_en": "【CRITICAL LEGAL NOTICE】:\n1. Non-Smoking Venue: TaiNEX 2 is strictly smoke-free throughout all indoor spaces and covered walkways. Violators face fines of NT$ 2,000 to 10,000.\n2. E-Cigarettes & Vapes Completely BANNED in Taiwan: Under Taiwan's Tobacco Hazards Prevention Act, it is strictly ILLEGAL to carry, import, sell, or use electronic cigarettes (vapes) or unauthorized heated tobacco products anywhere in Taiwan. Violators are subject to heavy fines ranging from NT$ 10,000 to NT$ 50,000, and items will be confiscated.\n3. Designated Smoking Area: Permitted ONLY at the designated outdoor smoking station outside TaiNEX 2 (follow ground-level outdoor signage away from main pedestrian doors).",
-          "a_ja": "【重要・法令遵守の厳重警告】：\n1. 館内全面禁煙：南港第2展示館の屋内および屋根付き通路（軒下）は全域禁煙です。違反者には台湾法令により NT$ 2,000〜10,000 の過料が科されます。\n2. 電子タバコ・加熱式タバコの完全禁止：台湾の「煙害防制法」に基づき、電子タバコ（Vape）および未承認の加熱式タバコ（アイコス等）の台湾国内への持ち込み・所持・使用は全面違法です。違反した場合、NT$ 10,000〜50,000 の高額罰金が科され、税関没収の対象となります。\n3. 指定喫煙場所：第2展示館1階の「屋外指定喫煙エリア」のみご利用いただけます（案内表示に従ってください）。",
-          "a_ko": "【중요 법률 및 규정 안내】:\n1. 전 구역 금연: 난강 제2전시관 전 실내 구역 및 필로티 보도는 전면 금연구역입니다. 위반 시 NT$ 2,000~10,000의 과태료가 부과됩니다.\n2. 전자담배 및 가열식 담배 전면 불법: 대만 「담배위해방지법」에 따라 모든 액상형 전자담배(Vape) 및 미승인 궐련형 전자담배의 반입, 소지, 사용은 전면 금지되어 있습니다. 적발 시 NT$ 10,000~50,000의 중벌금이 부과됩니다.\n3. 지정 흡연구역: 제2전시관 1층 외부의 '지정 실외 흡연구역'에서만 흡연이 가능합니다."
-        },
-        {
-          "q_zh": "大會有提供花生過敏 (Peanut Allergy) 或無麩質 (Gluten-Free) 友善餐點嗎？如何登記與領取？",
-          "q_en": "Are peanut allergy friendly and gluten-free (GF) meals provided? How can I register and collect my special meal box?",
-          "q_ja": "ピーナッツアレルギーやグルテンフリー（小麦不使用）対応の食事はありますか？受取方法は？",
-          "q_ko": "땅콩 알레르기(Peanut Allergy) 배려식 또는 글루텐 프리(Gluten-Free) 식사가 제공되나요? 신청 및 수령 방법은?",
-          "a_zh": "【醫療級飲食防護指引】：\n1. 便當成分透明標示：大會中午提供之所有學術午餐會便當，均於盒蓋外層張貼清晰之「過敏原資訊標籤」（含花生、堅果、蛋奶、海鮮成分說明）。\n2. 特殊飲食專屬領取（花生過敏／無麩質／嚴格素食／清真）：\n   - 註冊時有備註特殊飲食者，請於每日中午 11:45 起攜帶名牌至「大會諮詢台（7樓或1樓）特殊膳食專用櫃台」出示名牌領取。\n   - 若行前未登記但有急性嚴重食物過敏史者，請於大會報到當日第一時間向大會諮詢台志工告知，以便秘書處緊急調配獨立特餐。\n3. 急救支援：若不慎誤食引發呼吸困難或急性過敏反應（Anaphylaxis），請立即向身旁志工舉手，會場醫護人員將於 60 秒內攜帶急救裝備抵達支援。",
-          "a_en": "【MEDICAL-GRADE DIETARY SAFETY GUIDELINE】:\n1. Clear Allergen Labelling: All conference lunch boxes feature clear allergen summary labels on outer packaging (indicating peanuts, tree nuts, eggs/dairy, and seafood).\n2. Dedicated Collection (Peanut-Free / Gluten-Free / Halal / Vegetarian):\n   - Pre-registered guests with dietary needs can pick up custom meals from 11:45 daily at the Special Meal Counter beside the Information Desk (7F or 1F).\n   - If you did not pre-register but possess severe allergies, please notify the Information Desk upon morning arrival for emergency custom accommodation.\n3. Emergency Protocol: In case of acute anaphylaxis or respiratory distress from accidental ingestion, inform any volunteer immediately; trained on-site medical staff will respond within 60 seconds.",
-          "a_ja": "【アレルギー対応・安心食事ガイド】：\n1. アレルゲン表示：大会で配布されるすべての昼食弁当には、原材料・アレルゲン表記（落花生、ナッツ類、卵・乳、甲殻類）が明記されています。\n2. 特別食の受取（ピーナッツ不使用・グルテンフリー・ハラール・菜食）：事前登録された先生は、毎日11:45以降に「総合案内所・特別食受取カウンター」にてネームカードをご提示の上お受け取りください。未登録で重度のアレルギーをお持ちの場合は到着時に案内所までお申し出ください。\n3. 緊急医療対応：万が一誤食による急性アナフィラキシー症状が生じた場合、直ちに近くのスタッフにお知らせください。医療班が速やかに駆けつけます。",
-          "a_ko": "【의료급 식품 알레르기 안전 가이드】:\n1. 알레르겐 명확 표기: 학술대회에서 제공되는 모든 점심 도시락에는 알레르기 유발 물질(땅콩, 견과류, 유제품, 갑각류 등) 정보가 부착되어 있습니다.\n2. 맞춤 식사 수령(땅콩 무함유, 글루텐 프리, 할랄식, 채식): 사전 등록 시 신청하신 분은 매일 11:45부터 7층/1층 '대회 안내 데스크 특별식 창구'에서 명찰 확인 후 수령하실 수 있습니다.\n3. 응급 처치: 알레르기 반응(아나필락시스) 발생 시 즉시 주변 자원봉사자에게 알려주시면 행사장 상주 의료진이 즉시 출동합니다."
-        }
-      ]
-    },
-    {
-      "id": "awards_tours",
-      "title_zh": "🏆 優秀論文獎與隨行觀光",
-      "title_en": "🏆 Awards & Accompanying Tours",
-      "title_ja": "🏆 論文表彰と台北観光案内",
-      "title_ko": "🏆 학술상 시상 및 관광 추천",
-      "items": [
-        {
-          "q_zh": "最佳論文獎 (Best Oral Paper) 與壁報獎何時公布？閉幕頒獎典禮在幾點？",
-          "q_en": "When will the Best Oral & Poster Awards be announced, and when is the Closing Ceremony?",
-          "q_ja": "最優秀論文賞・ポスター賞の発表と閉会式・授賞式の日程は？",
-          "q_ko": "최우수 구연상 및 포스터상 발표 시기와 폐회식/시상식 일정은?",
-          "a_zh": "1. 得獎公布：各獎項名單將於 4 月 25 日（日）11:30 於 1 樓海報區佈告欄及大會官網/App 即時同步公布。\n2. 閉幕與頒獎典禮：訂於 4 月 25 日（日）16:00 於 7 樓大會堂 (Plenary Hall) 隆重舉行。\n若得獎者因搭機無法親自領獎，可委由共同作者攜帶得獎通知憑證代表上台領獎。",
-          "a_en": "1. Winner Announcement: Published on Apr 25 (Sun) at 11:30 on the 1F Poster Board and Conference App.\n2. Awards & Closing Ceremony: Held on Apr 25 at 16:00 in the 7F Plenary Hall.\nCo-authors may receive certificates on stage on behalf of winners with prior notice.",
-          "a_ja": "1. 受賞発表：4月25日（日）11:30に1階ポスター掲示板および公式アプリにて発表されます。\n2. 表彰・閉会式：4月25日 16:00より7階プレナリーホールにて執り行われます。",
-          "a_ko": "1. 수상자 발표: 4월 25일(일) 11:30 1층 포스터 게시판 및 공식 앱을 통해 공지됩니다.\n2. 폐회식 및 시상식: 4월 25일 16:00 7층 플레너리 홀에서 진행됩니다."
-        },
-        {
-          "q_zh": "外籍隨行家屬 (Accompanying Persons) 捷運直達半日遊景點推薦？",
-          "q_en": "Sightseeing recommendations for accompanying family members via direct MRT?",
-          "q_ja": "同伴者（ご家族）向け：MRT直通の台北半日観光コースは？",
-          "q_ko": "동반 가족을 위한 지하철 직통 반일/일일 관광 추천 코스는?",
-          "a_zh": "由南港展覽館站出發，無需轉乘之經典半日遊路線：\n1. 板南線直達：\n   - 市政府站（台北 101、信義商圈百貨，車程約 15 分鐘）\n   - 龍山寺站（百年艋舺名剎、傳統夜市美食，車程約 25 分鐘）\n2. 文湖線直達：\n   - 動物園站（台北市立動物園、轉乘貓空纜車品茶賞景，車程約 25 分鐘）\n   - 大湖公園站（落羽松與美麗湖景錦帶橋，車程約 8 分鐘）。",
-          "a_en": "Classic direct routes starting from MRT Nangang Exhibition Center Station (No transfers needed):\n1. Blue Line (Bannan):\n   - Taipei City Hall Station (Taipei 101, Luxury Shopping, ~15 mins)\n   - Longshan Temple Station (Historic Temple & Herbal Alley, ~25 mins)\n2. Brown Line (Wenhu):\n   - Taipei Zoo Station (Taipei Zoo & Maokong Gondola Tea Culture, ~25 mins)\n   - Dahu Park Station (Picturesque Moon Bridge & lake park, ~8 mins).",
-          "a_ja": "南港展覧館駅から乗り換えなしでアクセスできる名所案内：\n1. 板南線（青色）：台北市政府駅（台北101・ショッピング街、約15分）、龍山寺駅（歴史的寺院、約25分）\n2. 文湖線（茶色）：動物園駅（台北動物園・猫空ロープウェイ茶芸体験、約25分）。",
-          "a_ko": "난강전시관역에서 환승 없이 갈 수 있는 대표 관광 코스:\n1. 판난선(파란색): 타이베이 시청역 (타이베이 101 쇼핑몰, 15분), 용산사역 (역사 사찰, 25분)\n2. 원후선(갈색): 동물원역 (동물원 및 마오콩 케이블카 차 문화 체험, 25분)."
-        }
-      ]
-    },
-    {
-      "id": "academic",
-      "title_zh": "🔬 試片室與海報發表",
+      "id": "speaker_and_poster",
+      "title_zh": "🔬 講者試片室與海報發表",
       "title_en": "🔬 Speaker Ready & Posters",
       "title_ja": "🔬 試写室とポスター発表",
       "title_ko": "🔬 연자 준비실 및 포스터",
       "items": [
         {
-          "q_zh": "講者簡報試片室 (Speaker Ready Room) 在哪裡？何時要繳交 PPT 隨身碟？",
-          "q_en": "Where is the Speaker Ready Room and when should I submit my presentation slides?",
-          "q_ja": "発表データ受付・試写室（Speaker Ready Room）の場所と提出期限は？",
-          "q_ko": "연자 슬라이드 준비실(Speaker Ready Room) 위치와 제출 마감 시간은?",
-          "a_zh": "試片室位於南港 2 館 7 樓 704 室。開放時間為每日 07:30～17:00。\n所有口頭報告講者請務必於「演講開始前至少 2 小時」（若為早晨第一場請於前一日或當日 08:00 前）攜帶 USB 隨身碟至試片室進行影音播放測試與檔案拷貝，現場不接受個人筆電直接切換。",
-          "a_en": "The Speaker Ready Room is located in Room 704 on 7F (Open daily 07:30–17:00).\nAll oral presenters must submit and verify their slides on a USB flash drive at least 2 hours prior to their session (or before 08:00 for the first morning session). Personal laptops cannot be directly hooked up in presentation halls.",
-          "a_ja": "試写室（Speaker Ready Room）は7階704号室にございます（受付時間：毎日07:30〜17:00）。\nすべての口頭発表者は、セッション開始の「少なくとも2時間前」までにUSBメモリをご持参の上、動作確認とデータ登録をお済ませください。個人のノートPC持ち込み投影は原則できません。",
-          "a_ko": "연자 준비실은 7층 704호에 위치해 있습니다 (운영 시간: 매일 07:30~17:00).\n모든 구연 발표자는 세션 시작 최소 2시간 전까지 USB 메모리를 지참하시어 슬라이드 사전 점검 및 등록을 완료해 주시기 바랍니다."
+          "q_zh": "講者簡報試片室 (Speaker Ready Room) 在哪裡？何時要繳交隨身碟？能用個人筆電嗎？",
+          "q_en": "Where is the Speaker Ready Room? When should I submit my USB slides? Can I use my personal laptop?",
+          "q_ja": "試写室（Speaker Ready Room）の場所と提出期限は？個人のノートPCは使えますか？",
+          "q_ko": "연자 준비실 위치와 제출 마감 시간은 언제인가요? 개인 노트북을 직접 연결해 발표할 수 있나요?",
+          "a_zh": "1. 試片室地點：南港 2 館 7 樓 704 室（開放時間每日 07:30～17:00）。\n2. 繳交時限：所有口頭報告講者請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶 USB 隨身碟完成檔案測試與拷貝。\n3. 個人筆電規範：為確保會議無縫銜接與投影解析度相容，【現場不接受個人筆電直接切換投影】，所有簡報均由試片室統一派送至各演講廳專用控制台。",
+          "a_en": "1. Location: Room 704 on 7F (Open daily 07:30–17:00).\n2. Submission Deadline: At least 2 hours prior to your scheduled session (or before 08:00 for the first morning session) via USB flash drive.\n3. Personal Laptops: To prevent technical glitches and delays, 【personal laptops cannot be connected directly in session halls】. All slides are centrally dispatched from Room 704.",
+          "a_ja": "1. 試写室の場所：7階 704号室（受付時間：毎日07:30〜17:00）。\n2. 提出期限：発表セッションの「少なくとも2時間前」までにUSBメモリで動作確認をお済ませください。\n3. 個人PCの持ち込み：円滑な進行と解像度トラブル防止のため、【個人のノートPC持ち込み投影は原則不可】となります。すべてのデータは704試写室より各会場へ配信されます。",
+          "a_ko": "1. 위치: 7층 704호 (운영 시간 매일 07:30~17:00).\n2. 제출 마감: 세션 시작 최소 2시간 전까지 USB 메모리를 지참하시어 슬라이드 등록을 완료해야 합니다.\n3. 개인 노트북 연결: 시간 지연 및 기술적 오류를 방지하기 위해 【개인 노트북 직접 연결은 불가】하며, 모든 발표 자료는 704호 연자 준비실에서 각 회의실로 중앙 전송됩니다."
         },
         {
-          "q_zh": "論文海報 (Poster Presentation) 的張貼規格、地點與時程為何？",
-          "q_en": "What are the dimensions, location, and schedule for poster presentations?",
-          "q_ja": "ポスター発表の掲示規格・場所・スケジュールは？",
-          "q_ko": "포스터 발표 규격, 장소 및 일정은 어떻게 되나요?",
-          "a_zh": "1. 規格：標準 A0 尺寸直式（寬 84.1 cm × 高 118.9 cm），大會於現場提供專用背膠與圖釘。\n2. 地點：南港 2 館 1 樓海報展示專區（依壁報編號 P-001 ~ P-400 入座張貼）。\n3. 時程：4/24 08:30 前完成張貼；口頭審查交流時段為每日中午 12:30~13:30，請發表者於看板前待命；4/25 16:30 前請自行撤除，逾期將由大會統一清理。",
-          "a_en": "1. Dimensions: Standard A0 vertical format (84.1 cm wide × 118.9 cm high). Mounting materials provided.\n2. Location: 1F Poster Exhibition Area (locate your board by assigned ID P-001 to P-400).\n3. Schedule: Mount before 08:30 on Apr 24. Moderated poster session is daily 12:30–13:30 (authors must stand by their posters). Dismantle before 16:30 on Apr 25.",
-          "a_ja": "1. 規格：A0サイズ縦向き（幅84.1cm × 高さ118.9cm）。留め具は会場に用意されています。\n2. 場所：1階ポスター展示エリア（指定番号 P-001〜P-400 のパネルに掲示）。\n3. 日程：4/24 08:30までに掲示完了。質疑セッションは毎日12:30〜13:30です。4/25 16:30までに撤収をお願いいたします。",
-          "a_ko": "1. 규격: A0 세로형 (가로 84.1cm × 세로 118.9cm). 부착 도구는 현장에서 제공됩니다.\n2. 장소: 1층 포스터 전시장 (배정 번호 P-001~P-400 확인).\n3. 일정: 4/24 08:30까지 부착 완료. 질의응답 세션은 매일 12:30~13:30에 진행됩니다."
+          "q_zh": "壁報 (Poster) 的張貼規格、地點與現場作者交流時間為何？",
+          "q_en": "What are the dimensions, location, and moderated discussion hours for posters?",
+          "q_ja": "ポスター掲示規格・場所および質疑応答（在席義務）時間は？",
+          "q_ko": "포스터 발표 규격, 부착 장소 및 저자 참석 질의응답 시간은 어떻게 되나요?",
+          "a_zh": "1. 規格：標準 A0 尺寸直式（寬 84.1 cm × 高 118.9 cm），大會於現場提供專用背膠與圖釘。\n2. 地點：南港 2 館 1 樓海報展示專區（請依看板編號 P-001 ~ P-400 入座張貼）。\n3. 交流時段：每日中午 12:30~13:30 為審查交流時段，作者請務必佩戴名牌於看板前待命解說；4/25 16:30 前請自行撤收。",
+          "a_en": "1. Dimensions: Standard A0 vertical format (84.1 cm W × 118.9 cm H). Mounting supplies provided.\n2. Location: 1F Poster Area (look for your assigned board ID P-001 to P-400).\n3. Discussion Hours: Daily 12:30–13:30 (presenting authors must stand by their boards). Dismantle by 16:30 on Apr 25.",
+          "a_ja": "1. 規格：A0サイズ縦向き（幅84.1cm × 高さ118.9cm）。留め具完備。\n2. 場所：1階ポスター展示エリア（指定番号 P-001〜P-400 のパネル）。\n3. 質疑セッション：毎日12:30〜13:30（発表者はポスター前で待機してください）。4/25 16:30までに撤収。",
+          "a_ko": "1. 규격: A0 세로형 (가로 84.1cm × 세로 118.9cm). 현장 부착 도구 제공.\n2. 장소: 1층 포스터 전시장 (배정 번호 P-001~P-400).\n3. 질의응답 시간: 매일 12:30~13:30 (저자는 포스터 앞에서 대기). 4/25 16:30까지 철거 완료."
         }
       ]
     },
     {
-      "id": "cme_events",
-      "title_zh": "🎓 學分證明與大會晚宴",
-      "title_en": "🎓 CME Credits & Gala Dinner",
-      "title_ja": "🎓 単位・証明書と懇親会",
-      "title_ko": "🎓 평점·이수증 및 갈라 디너",
+      "id": "dining_and_gala",
+      "title_zh": "🍱 便當午餐與大會晚宴",
+      "title_en": "🍱 Lunch & Gala Dinner",
+      "title_ja": "🍱 昼食弁当と大懇親会",
+      "title_ko": "🍱 점심 도시락 및 갈라 디너",
       "items": [
         {
-          "q_zh": "台灣放射師繼續教育學分如何感應？外國學者出席證明何時領取？",
-          "q_en": "How to register CME credits and obtain the Certificate of Attendance?",
+          "q_zh": "午餐便當在幾點、哪裡憑券領取？特殊飲食（素食/清真/過敏）如何領？",
+          "q_en": "When and where to collect lunch boxes? How to collect vegetarian, halal, or allergy-safe meals?",
+          "q_ja": "昼食弁当の配布時間と受取場所は？特別食（菜食/ハラール/アレルギー）の受取方法は？",
+          "q_ko": "점심 도시락 배부 시간과 장소는 어디인가요? 채식, 할랄식, 알레르기 배려식은 어떻게 수령하나요?",
+          "a_zh": "1. 一般便當發放：每日 11:45 起憑註冊名牌中的「午餐券 (Lunch Coupon)」至 7 樓與 1 樓指定發餐區領取。\n2. 特殊膳食專櫃（素食 Vegetarian / 清真友善 Halal / 花生過敏與無麩質）：請憑識別證直接至 7 樓或 1 樓「大會諮詢台旁特殊膳食櫃台」由專人為您核對發放，便當盒外皆有清楚成分標示。",
+          "a_en": "1. Standard Lunch: Available from 11:45 daily by presenting your badge Lunch Coupon at 1F & 7F distribution stations.\n2. Special Dietary Meals (Vegetarian / Halal-friendly / Peanut-free & Gluten-free): Collect from the Special Meal Counter beside the Information Desk (7F or 1F) with your badge.",
+          "a_ja": "1. 一般弁当：毎日11:45より、ネームカード付属の「昼食引換券」にて1階・7階の配布所でお受け取りください。\n2. 特別食（ベジタリアン/ハラール/アレルギー・グルテンフリー）：7階または1階の「総合案内所・特別食カウンター」にてネームカードをご提示の上お受け取りください。",
+          "a_ko": "1. 일반 도시락: 매일 11:45부터 명찰 내 '점심 식권'을 제시하고 1층 및 7층 배부처에서 수령하십시오.\n2. 특별 식사 (채식/할랄/땅콩 무함유 및 글루텐 프리): 7층 또는 1층 '대회 안내 데스크 특별식 창구'에서 명찰 확인 후 전담 직원을 통해 수령하실 수 있습니다."
+        },
+        {
+          "q_zh": "大會晚宴 (Gala Dinner) 的時間、地點與接駁車在哪搭？",
+          "q_en": "What are the details, schedule, and shuttle bus location for the Gala Dinner?",
+          "q_ja": "大懇親会（Gala Dinner）の日時・会場と送迎シャトルバスの乗り場は？",
+          "q_ko": "갈라 디너(Gala Dinner) 일시, 장소 및 셔틀버스 승차장은 어디인가요?",
+          "a_zh": "1. 時間：4 月 24 日（六）18:30 準時開始（18:00 開放入場，憑名牌中 Gala Dinner 票券入場）。\n2. 晚宴接駁專車：大會於南港 2 館 1 樓專用乘車處備有直達接駁車，17:30 起每 10 分鐘一班發車直達晚宴會場。\n3. 餐點與服裝：現場備有素食與清真友善專席；著裝建議為商務休閒 (Smart Casual)。",
+          "a_en": "1. Time: Saturday, Apr 24 at 18:30 (Doors open at 18:00, admission with Gala Dinner ticket).\n2. Shuttle Buses: Free direct shuttles depart every 10 minutes from 17:30 at the 1F TaiNEX 2 Shuttle Zone.\n3. Dining & Dress: Vegetarian and Halal-friendly meals available. Dress code: Smart Casual.",
+          "a_ja": "1. 日時：4月24日（土）18:30開宴（18:00開場、ディナーチケット必須）。\n2. 送迎バス：17:30より第2展示館1階専用シャトル乗り場より10分間隔で直通運行いたします。\n3. お食事・服装：菜食・ハラール席あり。ドレスコード：スマートカジュアル。",
+          "a_ko": "1. 일시: 4월 24일(토) 18:30 시작 (18:00 입장, 디너 티켓 필수 지참).\n2. 셔틀버스: 17:30부터 1층 셔틀버스 승차장에서 10분 간격으로 무료 직통 버스가 운행됩니다.\n3. 식사 및 복장: 채식 및 할랄식 제공. 드레스 코드: 스마트 캐주얼."
+        }
+      ]
+    },
+    {
+      "id": "cme_and_emergency",
+      "title_zh": "🎓 學分證明與安全法規",
+      "title_en": "🎓 CME, Laws & First Aid",
+      "title_ja": "🎓 単位・法令・救護",
+      "title_ko": "🎓 평점·법령·응급의료",
+      "items": [
+        {
+          "q_zh": "放射師學分如何感應？出席證明 (Certificate of Attendance) 何時領取？",
+          "q_en": "How to register CME credits? When to collect Certificate of Attendance?",
           "q_ja": "生涯教育単位の登録方法および参加証明書の発行は？",
-          "q_ko": "연수 평점 등록 방법 및 참가 이수증 발급은 어떻게 하나요?",
-          "a_zh": "1. 台灣學分：大會各演講廳門口設有「醫事放射師繼續教育積分」感應機，請依規定於每日上、下午各感應刷卡一次（刷進與刷退）。\n2. 出席證明：外籍學者與學員於完成報到後，可於 4/25 14:00 起至報到櫃台領取紙本證書，或掃描名牌 QR Code 於線上系統下載電子版 (PDF)。",
-          "a_en": "1. CME Credits (Domestic): Card readers are placed outside all halls. Please tap your card in the morning and afternoon daily.\n2. Certificate of Attendance: Available from 14:00 on Apr 25 at the registration desk, or downloadable in PDF by scanning your badge QR code.",
-          "a_ja": "1. 単位登録（台湾）：各会場入口のカードリーダーで午前・午後に受付をお済ませください。\n2. 参加証明書：4/25 14:00以降、総合受付にてお受け取りいただくか、ネームカードのQRコードよりPDFをダウンロード可能です。",
-          "a_ko": "1. 평점 인정: 각 강연장 입구 리더기에 출석 체크를 해주시기 바랍니다.\n2. 참가 확인서: 4/25 14:00부터 등록 데스크에서 수령하시거나 명찰 QR 코드를 통해 PDF로 다운로드하실 수 있습니다."
+          "q_ko": "방사선사 연수평점 등록 방법 및 참가 확인서 발급 시기는?",
+          "a_zh": "1. 台灣學分：各演講廳門口設有感應機，請依規定於每日上、下午各感應刷卡一次（刷進與刷退）。\n2. 出席證明：外籍學者與學員於完成報到後，可於 4/25 14:00 起至報到櫃台領取紙本證書，或掃描名牌 QR Code 線上下載 PDF。",
+          "a_en": "1. Domestic CME: Tap card readers outside session halls morning and afternoon daily.\n2. Certificate of Attendance: Available from 14:00 on Apr 25 at the registration desk, or downloadable in PDF by scanning badge QR code.",
+          "a_ja": "1. 台湾生涯教育単位：各会場入口のカードリーダーで午前・午後に受付をお済ませください。\n2. 参加証明書：4/25 14:00以降、総合受付にてお受け取りいただくか、ネームカードのQRコードよりPDFをダウンロード可能です。",
+          "a_ko": "1. 평점 인정: 각 회의실 입구 리더기에 오전/오후 각 1회 태그하십시오.\n2. 참가 확인서: 4/25 14:00부터 등록 데스크 수령 또는 명찰 QR 코드를 통해 PDF 다운로드 가능합니다."
         },
         {
-          "q_zh": "大會晚宴 (Gala Dinner) 的時間、地點與交通接駁為何？",
-          "q_en": "What are the details, venue, and transportation for the Gala Dinner?",
-          "q_ja": "大懇親会（Gala Dinner）の日時・会場・送迎バスについて教えてください。",
-          "q_ko": "갈라 디너(Gala Dinner)의 일시, 장소 및 셔틀버스 안내는?",
-          "a_zh": "大會晚宴訂於 4 月 24 日（六）18:30 舉行。憑註冊名牌中的 Gala Dinner 票券入場。\n大會於南港 2 館 1 樓專用乘車處備有晚宴接駁接駁車（17:30 起每 10 分鐘一班直達晚宴會場）。晚宴提供素食 (Vegetarian) 與清真友善 (Halal-friendly) 專屬餐席，著裝建議為商務休閒 (Smart Casual)。",
-          "a_en": "The Gala Dinner takes place on Saturday, Apr 24 at 18:30. Entry requires the Gala Dinner ticket in your badge.\nFree shuttle buses depart from the 1F TaiNEX 2 shuttle zone every 10 minutes starting at 17:30. Vegetarian and Halal-friendly meals are provided. Dress code: Smart Casual.",
-          "a_ja": "大懇親会は4月24日（土）18:30より開催されます。ネームカード内のディナーチケットをご提示ください。\n17:30より1階シャトル乗り場から会場行きの直通バスが運行されます。ベジタリアン・ハラール対応料理あり。ドレスコード：スマートカジュアル。",
-          "a_ko": "갈라 디너는 4월 24일(토) 18:30에 진행됩니다. 명찰 내 디너 티켓을 지참해 주십시오.\n17:30부터 1층 셔틀 승차장에서 무료 버스가 운행됩니다. 채식 및 할랄식 메뉴가 제공됩니다. 드레스 코드: 스마트 캐주얼."
-        }
-      ]
-    },
-    {
-      "id": "transport",
-      "title_zh": "🚗 交通與抵達指引",
-      "title_en": "🚗 Transportation & Directions",
-      "title_ja": "🚗 交通アクセス案内",
-      "title_ko": "🚗 교통 및 오시는 길",
-      "items": [
-        {
-          "q_zh": "如何從桃園國際機場 (TPE) 到南港展覽館 2 館？",
-          "q_en": "How to get to TaiNEX 2 from Taoyuan International Airport (TPE)?",
-          "q_ja": "桃園国際空港から南港第2展示館へのアクセスは？",
-          "q_ko": "타오위안 국제공항에서 난강 제2전시관으로 가는 방법은?",
-          "a_zh": "1. 搭乘桃園機場捷運至「台北車站」，轉乘台北捷運板南線（藍線）往南港展覽館方向，終點站「南港展覽館站」下車，由 1 號或 2 號出口步行 3 分鐘即達南港 2 館。\n2. 或由機場搭乘計程車直達南港展覽館 2 館，車程約 45~55 分鐘（車資約 NT$ 1,300~1,500）。",
-          "a_en": "Option 1: Take the Taoyuan Airport MRT to Taipei Main Station, transfer to MRT Bannan Line (Blue Line) towards Nangang Exhibition Center (Exit 1 or 2, 3-min walk).\nOption 2: Take an airport taxi directly to TaiNEX 2 (approx. 45-55 mins, fare around NT$ 1,300-1,500).",
-          "a_ja": "1. 桃園空港MRTで台北駅へ行き、MRT板南線（青色）に乗り換えて終点「南港展覧館駅」で下車（1番・2番出口より徒歩3分）。\n2. 空港タクシーで約45〜55分（運賃約NT$ 1,300〜1,500）。",
-          "a_ko": "1. 타오위안 공항철도를 타고 타이베이역으로 이동 후, 지하철 판난선(파란색)으로 환승하여 종점 '난강전시관역' 1번/2번 출구로 나오시면 도보 3분 거리입니다.\n2. 택시 이용 시 약 45~55분 소요 (요금 약 NT$ 1,300~1,500)."
-        },
-        {
-          "q_zh": "如何從台北松山機場 (TSA) 抵達？",
-          "q_en": "How to get here from Taipei Songshan Airport (TSA)?",
-          "q_ja": "台北松山空港からのアクセスは？",
-          "q_ko": "타이베이 쑹산공항에서 오시는 길은?",
-          "a_zh": "搭乘台北捷運文湖線（棕線）直達「南港展覽館站」（約 18 分鐘直達免轉乘），由 1 號或 2 號出口出站。",
-          "a_en": "Take the MRT Wenhu Line (Brown Line) directly to 'Nangang Exhibition Center Station' (approx. 18 mins, direct), then Exit 1 or 2.",
-          "a_ja": "MRT文湖線（茶色）で「南港展覧館駅」まで直通約18分（乗り換えなし）。1番または2番出口からすぐ。",
-          "a_ko": "지하철 원후선(갈색)을 타고 환승 없이 '난강전시관역'까지 직통 약 18분 소요됩니다."
-        }
-      ]
-    },
-    {
-      "id": "venue",
-      "title_zh": "🏢 會場動線與會議室",
-      "title_en": "🏢 Venue & Rooms",
-      "title_ja": "🏢 会場案内と会議室",
-      "title_ko": "🏢 회의실 및 층별 안내",
-      "items": [
-        {
-          "q_zh": "主要的演講廳與發表會議室在幾樓？",
-          "q_en": "Which floors are the main lecture halls and session rooms located?",
-          "q_ja": "メイン講演会場や発表室は何階にありますか？",
-          "q_ko": "주요 강연장 및 발표 회의실은 몇 층에 있나요?",
-          "a_zh": "大會核心會議室主要集中在 7 樓（大會堂 Plenary Hall、會議室 701~703）與 1 樓展覽交流區。各會議時間均以台北時間 (Taipei Time GMT+8) 進行，各演講廳門口皆有中英文標示。",
-          "a_en": "The main sessions are located on 7F (Plenary Hall, Rooms 701-703) and 1F Exhibition & Networking Area. All sessions follow Taipei Time (GMT+8). Bilingual signs and volunteers are available outside each room.",
-          "a_ja": "メイン会場は7階（プレナリーホール、701〜703会議室）および1階展示エリアです。すべての時間は台北時間 (Taipei Time GMT+8) 基準で進行します。",
-          "a_ko": "주요 세션은 7층(플레너리 홀, 701~703호 회의실) 및 1층 전시장에서 열립니다. 모든 일정은 타이베이 시간 (Taipei Time GMT+8) 기준입니다."
-        },
-        {
-          "q_zh": "會場是否有提供免費 Wi-Fi？",
-          "q_en": "Is free Wi-Fi provided at the venue?",
-          "q_ja": "会場に無料Wi-Fiはありますか？",
-          "q_ko": "행사장에 무료 Wi-Fi가 제공되나요?",
-          "a_zh": "南港 2 館全館提供免費公共無線網路（SSID: TaiNEX-Free），免密碼登入確認即可連線；大會專用高速網路 SSID 於報到櫃台手冊公告。",
-          "a_en": "Yes. Free public Wi-Fi is available throughout TaiNEX 2 (SSID: TaiNEX-Free). Dedicated conference network details are provided in your registration kit.",
-          "a_ja": "はい、全館で無料Wi-Fi（SSID: TaiNEX-Free）がご利用いただけます。学会専用Wi-Fiは受付資料をご確認ください。",
-          "a_ko": "네, 전 구역에서 무료 공용 Wi-Fi(SSID: TaiNEX-Free)를 이용하실 수 있습니다."
-        }
-      ]
-    },
-    {
-      "id": "practical",
-      "title_zh": "🍜 生活與實用資訊",
-      "title_en": "🍜 Practical & Dining Info",
-      "title_ja": "🍜 周辺飲食と便利情報",
-      "title_ko": "🍜 식사 및 편의 정보",
-      "items": [
-        {
-          "q_zh": "會場附近有用餐或換匯地點嗎？",
-          "q_en": "Where can I find dining options and currency exchange near TaiNEX 2?",
-          "q_ja": "周辺の飲食施設や両替所はどこにありますか？",
-          "q_ko": "전시장 근처 식당 및 환전소는 어디에 있나요?",
-          "a_zh": "1. 用餐：南港 2 館 B1 有美食街與便利商店；南港 1 館及捷運站地下連通道步行 5 分鐘有數十家餐廳（含素食/清真友善選擇）。\n2. 換匯與提款：展館 1 樓設有多家銀行 ATM（支援海外 Visa/MasterCard 提領新台幣）。",
-          "a_en": "1. Dining: B1 of TaiNEX 2 has a food court and convenience store. A 5-minute walk connects to TaiNEX 1 and shopping mall restaurants (Halal and vegetarian options available).\n2. Currency: International ATMs supporting Visa/MasterCard are located on 1F.",
-          "a_ja": "1. 飲食：第2展示館B1にフードコートとコンビニがあります。徒歩5分圏内に多数のレストランがあります。\n2. 両替・ATM：1階に国際カード対応ATMがございます。",
-          "a_ko": "1. 식사: 제2전시관 지하 1층 푸드코트 및 편의점이 있습니다. 도보 5분 거리 쇼핑몰에 다양한 식당이 있습니다.\n2. 환전/ATM: 1층에 해외 카드 사용 가능한 ATM이 구비되어 있습니다."
+          "q_zh": "南港展覽館哪裡可以吸菸？台灣對電子煙或加熱菸有何法律規定？",
+          "q_en": "Where is the designated smoking area? What are Taiwan's strict laws on vapes and heated tobacco?",
+          "q_ja": "指定喫煙所はどこですか？台湾の電子タバコ・加熱式タバコに関する法令規則は？",
+          "q_ko": "지정 흡연구역은 어디인가요? 대만의 전자담배 및 가열식 담배 법률 규정은 어떠한가요?",
+          "a_zh": "【重要救命級法規】：\n1. 南港 2 館全館室內及騎樓全面禁菸（違者處 NT$ 2,000 至 10,000 元罰鍰）。\n2. 依台灣《菸害防制法》，嚴禁攜帶或使用「電子煙 (Vapes)」與未經核准「加熱菸」，違者重罰 NT$ 10,000 至 50,000 元並沒入！\n3. 吸菸僅限南港 2 館指定之「1 樓戶外專用吸菸區」。",
+          "a_en": "【CRITICAL LEGAL NOTICE】:\n1. Indoor Smoke-Free: TaiNEX 2 is strictly smoke-free indoors (fines NT$ 2,000–10,000).\n2. E-Cigarettes/Vapes BANNED: Under Taiwan law, carrying or using electronic cigarettes or unapproved heated tobacco is strictly ILLEGAL (fines NT$ 10,000–50,000).\n3. Smoking allowed ONLY at designated 1F outdoor smoking stations.",
+          "a_ja": "【重要法令規則】: 館内および軒下は全面禁煙です。台湾法により電子タバコ（Vape）の持ち込み・使用は全面違法（罰金最高NT$ 50,000）。喫煙は1階屋外指定喫煙エリアのみ可能です。",
+          "a_ko": "【중요 법령 안내】: 실내 전면 금연(과태료 NT$ 2,000~10,000). 대만 법률상 모든 전자담배(Vape) 소지 및 사용은 전면 불법(벌금 최대 NT$ 50,000). 흡연은 1층 실외 지정 흡연구역에서만 가능합니다."
         }
       ]
     }
