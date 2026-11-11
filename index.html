@@ -192,15 +192,20 @@
       <p id="guest-modal-text" class="text-xl sm:text-2xl font-bold text-amber-300 leading-relaxed tracking-wide whitespace-pre-line"></p>
     </div>
 
-    <div class="border-t border-slate-800 pt-3 flex items-center justify-between text-xs text-slate-400">
-      <div class="flex items-center space-x-1.5">
+    <div class="border-t border-slate-800 pt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+      <div class="flex items-center space-x-1.5 text-slate-400 text-[11px]">
         <i class="fa-solid fa-hand-pointer text-amber-400"></i>
-        <span>點擊任意處返回 (Tap to close)</span>
+        <span>點擊空白處關閉 (Tap to close)</span>
       </div>
-      <button id="modal-speak-btn" onclick="event.stopPropagation(); speakModalText();" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-3 py-1.5 rounded-lg font-bold text-xs flex items-center space-x-1.5 shadow-sm">
-        <i class="fa-solid fa-volume-high"></i>
-        <span>語音朗讀</span>
-      </button>
+
+      <!-- 3-Language Speech & Text Toggle -->
+      <div class="flex items-center space-x-1.5">
+        <span class="text-[11px] text-slate-400 mr-0.5"><i class="fa-solid fa-volume-high text-amber-400"></i> 發音/語言:</span>
+        <button onclick="event.stopPropagation(); switchModalLang('en')" class="modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="en">🇬🇧 EN</button>
+        <button onclick="event.stopPropagation(); switchModalLang('ja')" class="modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="ja">🇯🇵 日語</button>
+        <button onclick="event.stopPropagation(); switchModalLang('ko')" class="modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="ko">🇰🇷 한국어</button>
+        <button onclick="event.stopPropagation(); switchModalLang('zh-TW')" class="modal-lang-btn px-2 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="zh-TW">🇹🇼 中文</button>
+      </div>
     </div>
   </div>
 
@@ -287,6 +292,12 @@
         cat.items.forEach((item, idx) => {
           const qText = item[`q_${currentLang}`] || item.q_en || item.q_zh;
           const aText = item[`a_${currentLang}`] || item.a_en || item.a_zh;
+          const bundleJson = encodeURIComponent(JSON.stringify({
+            'zh-TW': item.a_zh,
+            'en': item.a_en,
+            'ja': item.a_ja,
+            'ko': item.a_ko
+          }));
 
           const card = document.createElement('div');
           card.className = 'bg-white rounded-xl border border-slate-200/80 shadow-2xs overflow-hidden transition-all';
@@ -298,9 +309,9 @@
             <div class="hidden px-3.5 pb-3 text-xs text-slate-600 border-t border-slate-100 bg-slate-50/50 pt-2.5 whitespace-pre-line leading-relaxed">
               ${aText}
               <div class="mt-2.5 pt-2 border-t border-slate-200/60 flex justify-end">
-                <button onclick="event.stopPropagation(); showToGuest('${aText.replace(/'/g, "\\'").replace(/\n/g, '\\n')}')" class="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-lg text-[11px] font-semibold transition-colors">
+                <button onclick="event.stopPropagation(); showToGuestFromBundle('${bundleJson}')" class="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-lg text-[11px] font-semibold transition-colors">
                   <i class="fa-solid fa-expand text-[10px]"></i>
-                  <span>📱 放大秀給外賓看 (Show to Guest)</span>
+                  <span>📱 放大秀給外賓 (日/韓/英發音)</span>
                 </button>
               </div>
             </div>
@@ -556,27 +567,81 @@
     setInterval(updateTaipeiClock, 1000);
     updateTaipeiClock();
 
-    // Show to Guest Fullscreen
-    let currentModalText = '';
-    function showToGuest(text) {
-      currentModalText = text;
-      document.getElementById('guest-modal-text').innerText = text;
+    // Show to Guest Fullscreen with Multilingual Audio & Text Switch
+    let currentModalBundle = null;
+    let currentModalActiveLang = 'en';
+
+    function showToGuestFromBundle(encodedJson) {
+      try {
+        currentModalBundle = JSON.parse(decodeURIComponent(encodedJson));
+        // Default to English or current language
+        currentModalActiveLang = (currentLang === 'zh-TW') ? 'en' : currentLang;
+        updateModalDisplay();
+        const modal = document.getElementById('show-guest-modal');
+        modal.classList.remove('hidden');
+        // Automatically speak in that foreign language
+        speakCurrentModal();
+      } catch (e) {
+        console.error('Failed to parse bundle', e);
+      }
+    }
+
+    function showToGuest(singleText) {
+      currentModalBundle = {
+        'zh-TW': singleText,
+        'en': singleText,
+        'ja': singleText,
+        'ko': singleText
+      };
+      currentModalActiveLang = currentLang;
+      updateModalDisplay();
       const modal = document.getElementById('show-guest-modal');
       modal.classList.remove('hidden');
+    }
+
+    function switchModalLang(lang) {
+      currentModalActiveLang = lang;
+      updateModalDisplay();
+      speakCurrentModal();
+    }
+
+    function updateModalDisplay() {
+      if (!currentModalBundle) return;
+      const text = currentModalBundle[currentModalActiveLang] || currentModalBundle['en'] || currentModalBundle['zh-TW'];
+      document.getElementById('guest-modal-text').innerText = text;
+
+      // Update button active styles
+      document.querySelectorAll('.modal-lang-btn').forEach(btn => {
+        if (btn.dataset.lang === currentModalActiveLang) {
+          btn.className = 'modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-amber-400 bg-amber-500 text-slate-950 shadow-sm transition-all';
+        } else {
+          btn.className = 'modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all';
+        }
+      });
+    }
+
+    function speakCurrentModal() {
+      if (!window.speechSynthesis || !currentModalBundle) return;
+      window.speechSynthesis.cancel();
+      const text = currentModalBundle[currentModalActiveLang] || currentModalBundle['en'];
+      if (!text) return;
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      const voiceLangs = {
+        'en': 'en-US',
+        'ja': 'ja-JP',
+        'ko': 'ko-KR',
+        'zh-TW': 'zh-TW'
+      };
+      utterance.lang = voiceLangs[currentModalActiveLang] || 'en-US';
+      utterance.rate = 0.95; // slightly slower for maximum clarity
+      window.speechSynthesis.speak(utterance);
     }
 
     function closeShowToGuest() {
       const modal = document.getElementById('show-guest-modal');
       modal.classList.add('hidden');
       if (window.speechSynthesis) window.speechSynthesis.cancel();
-    }
-
-    function speakModalText() {
-      if (!window.speechSynthesis || !currentModalText) return;
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(currentModalText);
-      utterance.lang = currentLang === 'zh-TW' ? 'zh-TW' : currentLang === 'ja' ? 'ja-JP' : currentLang === 'ko' ? 'ko-KR' : 'en-US';
-      window.speechSynthesis.speak(utterance);
     }
 
     // Init
