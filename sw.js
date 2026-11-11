@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aacrt-guide-v1';
+const CACHE_NAME = 'aacrt-guide-v1.1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -27,6 +27,20 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Network first for brain json to always catch latest conference updates, fallback to cache
+  if (event.request.url.includes('aacrt_brain.json')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const cloned = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       return cachedResponse || fetch(event.request).catch(() => {

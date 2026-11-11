@@ -1,9 +1,12 @@
 {
+  "version": "2027.04.24-v1.1",
+  "updated_at": "2026-11-11T21:13:00+08:00",
+  "timezone": "Asia/Taipei (GMT+8)",
   "conference": {
     "name_zh": "2027年第26屆亞澳區醫事放射師學術國際會議暨中華民國醫事放射學會第60次年會",
     "name_en": "The 26th AACRT & TWSRT 60th Annual Meeting",
     "short_name": "2027 AACRT",
-    "dates": "2027-04-24 ~ 2027-04-25",
+    "dates": "2027-04-24 ~ 2027-04-25 (Taipei Time GMT+8)",
     "venue": {
       "name_zh": "台北南港展覽館 2 館 (TaiNEX 2)",
       "name_en": "Taipei Nangang Exhibition Center, Hall 2 (TaiNEX 2)",
@@ -11,14 +14,82 @@
       "address_en": "No. 2, Jingmao 2nd Rd., Nangang District, Taipei City",
       "mrt_station": "MRT Nangang Exhibition Center Station (BL23 / BR24, Exit 1 & 2)",
       "help_desk_location_zh": "7樓大廳與1樓迎賓大廳「大會諮詢台」",
-      "help_desk_location_en": "Main Information Desk at 1F Lobby & 7F Foyer"
+      "help_desk_location_en": "Main Information Desk at 1F Lobby & 7F Foyer",
+      "help_desk_location_ja": "1階ロビーおよび7階ホワイエ「大会総合案内所」",
+      "help_desk_location_ko": "1층 로비 및 7층 로비 '대회 안내 데스크'"
     }
   },
+  "radiology_glossary": [
+    {
+      "term_id": "radiologic_technologist",
+      "zh": "醫事放射師",
+      "en": "Radiologic Technologist (RT)",
+      "ja": "診療放射線技師",
+      "ko": "방사선사"
+    },
+    {
+      "term_id": "radiation_protection",
+      "zh": "輻射防護與安全",
+      "en": "Radiation Protection & Safety",
+      "ja": "放射線防護と安全管理",
+      "ko": "방사선 방어 및 안전"
+    },
+    {
+      "term_id": "computed_tomography",
+      "zh": "電腦斷層攝影 (CT)",
+      "en": "Computed Tomography (CT)",
+      "ja": "コンピュータ断層撮影 (CT)",
+      "ko": "컴퓨터단층촬영 (CT)"
+    },
+    {
+      "term_id": "magnetic_resonance_imaging",
+      "zh": "磁振造影 (MRI)",
+      "en": "Magnetic Resonance Imaging (MRI)",
+      "ja": "磁気共鳴画像法 (MRI)",
+      "ko": "자기공명영상 (MRI)"
+    },
+    {
+      "term_id": "interventional_radiology",
+      "zh": "血管攝影與介入性放射學",
+      "en": "Interventional Radiology & Angiography",
+      "ja": "血管造影・IVR",
+      "ko": "혈관조영 및 중재적 방사선학"
+    },
+    {
+      "term_id": "radiation_therapy",
+      "zh": "放射線治療",
+      "en": "Radiation Oncology / Radiation Therapy",
+      "ja": "放射線治療",
+      "ko": "방사선 치료"
+    },
+    {
+      "term_id": "nuclear_medicine",
+      "zh": "核子醫學",
+      "en": "Nuclear Medicine",
+      "ja": "核医学",
+      "ko": "핵의학"
+    },
+    {
+      "term_id": "ultrasound",
+      "zh": "醫用超音波",
+      "en": "Medical Ultrasound / Sonography",
+      "ja": "超音波検査",
+      "ko": "초음파 검사"
+    },
+    {
+      "term_id": "ai_in_imaging",
+      "zh": "醫學影像 AI 與智慧醫療",
+      "en": "AI in Medical Imaging & Smart Healthcare",
+      "ja": "医用画像AIとスマート医療",
+      "ko": "의료영상 인공지능(AI)"
+    }
+  ],
   "guardrails": {
-    "default_redirect_zh": "抱歉，大會知識庫目前未列出此項目或涉及未授權公開資訊。請前往現場「大會諮詢台」（7樓大廳或1樓大廳）洽詢，大會工作人員與志工將竭誠為您服務。",
-    "default_redirect_en": "Sorry, this specific detail is not available in our public handbook. Please visit the official Information Desk located at the 7F Foyer or 1F Lobby for further on-site assistance.",
-    "default_redirect_ja": "申し訳ございません。この情報は公式ハンドブックに記載されていないか、非公開情報です。7階ホワイエまたは1階ロビーの「大会総合案内所（大會諮詢台）」までお気軽にお問い合わせください。",
-    "default_redirect_ko": "죄송합니다. 해당 내용은 공식 안내서에 없거나 미공개 정보입니다. 7층 로비 또는 1층 '대회 안내 데스크'를 방문해 주시면 친절히 안내해 드리겠습니다."
+    "privacy_policy_zh": "依 GDPR 與個人資料保護規範，本大腦嚴禁提供講者、座長或貴賓之私人手機、個人 Email 或飯店房號。任何公務聯絡請至大會諮詢台洽詢秘書處。",
+    "default_redirect_zh": "抱歉，大會知識庫目前未列出此項目或涉及未授權公開資訊（如學者私人聯絡方式）。請前往現場「大會諮詢台」（7樓大廳或1樓大廳）洽詢，大會工作人員與志工將竭誠為您服務。",
+    "default_redirect_en": "Sorry, this specific detail is not available in our public handbook or involves private contact information. Please visit the official Information Desk located at the 7F Foyer or 1F Lobby for assistance.",
+    "default_redirect_ja": "申し訳ございません。この情報は公式ハンドブックに記載されていないか、個人のプライバシーに関わる非公開情報です。7階ホワイエまたは1階ロビーの「大会総合案内所」までお問い合わせください。",
+    "default_redirect_ko": "죄송합니다. 해당 내용은 공식 안내서에 없거나 비공개 개인정보입니다. 7층 로비 또는 1층 '대회 안내 데스크'를 방문해 주시면 감사하겠습니다."
   },
   "faq_categories": [
     {
@@ -62,10 +133,10 @@
           "q_en": "Which floors are the main lecture halls and session rooms located?",
           "q_ja": "メイン講演会場や発表室は何階にありますか？",
           "q_ko": "주요 강연장 및 발표 회의실은 몇 층에 있나요?",
-          "a_zh": "大會核心會議室主要集中在 7 樓（大會堂 Plenary Hall、會議室 701~703）與 1 樓展覽交流區。各演講廳門口皆有中英文議程標示與志工協助引導。",
-          "a_en": "The main sessions are located on 7F (Plenary Hall, Rooms 701-703) and 1F Exhibition & Networking Area. Room indicators with bilingual signs are placed outside each room.",
-          "a_ja": "メイン会場は7階（プレナリーホール、701〜703会議室）および1階展示エリアです。各部屋の前に案内表示があります。",
-          "a_ko": "주요 세션은 7층(플레너리 홀, 701~703호 회의실) 및 1층 전시장에서 열립니다."
+          "a_zh": "大會核心會議室主要集中在 7 樓（大會堂 Plenary Hall、會議室 701~703）與 1 樓展覽交流區。各會議時間均以台北時間 (Taipei Time GMT+8) 進行，各演講廳門口皆有中英文標示。",
+          "a_en": "The main sessions are located on 7F (Plenary Hall, Rooms 701-703) and 1F Exhibition & Networking Area. All sessions follow Taipei Time (GMT+8). Bilingual signs and volunteers are available outside each room.",
+          "a_ja": "メイン会場は7階（プレナリーホール、701〜703会議室）および1階展示エリアです。すべての時間は台北時間 (Taipei Time GMT+8) 基準で進行します。",
+          "a_ko": "주요 세션은 7층(플레너리 홀, 701~703호 회의실) 및 1층 전시장에서 열립니다. 모든 일정은 타이베이 시간 (Taipei Time GMT+8) 기준입니다."
         },
         {
           "q_zh": "會場是否有提供免費 Wi-Fi？",

@@ -7,11 +7,18 @@
   <!-- PWA Manifest & Theme -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0f172a">
+  <!-- Google Fonts: CJK Universal Fallback (Traditional Chinese, Japanese, Korean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    body {
+      font-family: 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+    }
     .bg-gradient-royal {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     }
@@ -42,7 +49,11 @@
       <span class="bg-slate-900 text-amber-400 px-1.5 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">LIVE</span>
       <span id="ticker-text" class="truncate">大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。</span>
     </div>
-    <span class="text-[10px] opacity-75 shrink-0 ml-2">TaiNEX 2</span>
+    <!-- Live Taipei Time Badge -->
+    <div class="flex items-center space-x-1 shrink-0 ml-2 bg-slate-900/10 px-2 py-0.5 rounded text-[10px] font-mono">
+      <i class="fa-regular fa-clock text-[9px]"></i>
+      <span id="taipei-clock">Taipei --:--</span>
+    </div>
   </div>
 
   <!-- Header & Language Bar -->
@@ -175,6 +186,11 @@
       <div class="flex items-center space-x-1">
         <i class="fa-solid fa-wifi text-emerald-500"></i>
         <span>PWA 離線支援</span>
+      </div>
+      <div class="h-3 w-px bg-slate-200"></div>
+      <div class="flex items-center space-x-1">
+        <i class="fa-solid fa-code-branch text-purple-500"></i>
+        <span id="brain-version-badge">大腦 v1.1</span>
       </div>
       <div class="h-3 w-px bg-slate-200"></div>
       <div class="flex items-center space-x-1">
@@ -486,6 +502,18 @@
         recognition.start();
       }
     }
+
+    // Live Taipei Time Clock
+    function updateTaipeiClock() {
+      const now = new Date();
+      // Format to Asia/Taipei
+      const options = { timeZone: 'Asia/Taipei', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const timeStr = new Intl.DateTimeFormat('en-GB', options).format(now);
+      const clockEl = document.getElementById('taipei-clock');
+      if (clockEl) clockEl.innerText = `Taipei ${timeStr}`;
+    }
+    setInterval(updateTaipeiClock, 1000);
+    updateTaipeiClock();
 
     // Init
     loadBrain();
