@@ -1,6 +1,6 @@
 {
-  "version": "2027.04.24-v1.4",
-  "updated_at": "2026-11-11T22:42:00+08:00",
+  "version": "2027.04.24-v1.5",
+  "updated_at": "2026-11-11T23:00:00+08:00",
   "timezone": "Asia/Taipei (GMT+8)",
   "conference": {
     "name_zh": "2027年第26屆亞澳區醫事放射師學術國際會議暨中華民國醫事放射學會第60次年會",
@@ -58,23 +58,23 @@
     {
       "term_id": "radiation_therapy",
       "zh": "放射線治療",
-      "en": "Radiation Oncology / Radiation Therapy",
+      "en": "Radiation Therapy / Radiotherapy",
       "ja": "放射線治療",
-      "ko": "방사선 치료"
+      "ko": "방사선치료"
     },
     {
       "term_id": "nuclear_medicine",
-      "zh": "核子醫學",
-      "en": "Nuclear Medicine",
-      "ja": "核医学",
-      "ko": "핵의학"
+      "zh": "核子醫學造影 (PET/SPECT)",
+      "en": "Nuclear Medicine & Molecular Imaging",
+      "ja": "核医学検査",
+      "ko": "핵의학 영상 검사"
     },
     {
-      "term_id": "ultrasound",
+      "term_id": "medical_ultrasound",
       "zh": "醫用超音波",
-      "en": "Medical Ultrasound / Sonography",
+      "en": "Diagnostic Medical Sonography / Ultrasound",
       "ja": "超音波検査",
-      "ko": "초音波 검사"
+      "ko": "초음파 검사"
     },
     {
       "term_id": "ai_in_imaging",
@@ -156,6 +156,35 @@
           "a_en": "1. On-site First Aid: Located on 1F (staffed by professional nurses for emergency triage).\n2. Nearest Emergency Referral Hospitals:\n   - Taipei City Hospital Zhongxiao Branch (approx. 8 mins by taxi, +886-2-2786-1288)\n   - Xizhi Cathay General Hospital (approx. 10 mins, +886-2-2648-2121)\n   - Tri-Service General Hospital Neihu Main Branch (approx. 12 mins, Tertiary Medical Center, +886-2-8792-3311)\nOverseas guests should present passports and Travel Insurance certificates for official English medical reports.",
           "a_ja": "1. 会場救護室：第2展示館1階に看護師常駐の救護室がございます。\n2. 近隣の24時間救急対応総合病院：\n   - 台北市立連合病院 忠孝院区（車で約8分）\n   - 汐止国泰総合病院（車で約10分）\n   - 三軍総医院 内湖本院（車で約12分、高度救命医療センター）\n海外からの受診時はパスポートと海外旅行保険証をご提示ください。",
           "a_ko": "1. 행사장 의무실: 제2전시관 1층에 전문 간호사가 상주하는 응급처치실이 있습니다.\n2. 인근 응급의료기관:\n   - 타이베이 시립연합병원 중샤오 분원 (택시 8분)\n   - 시즈 국태종합병원 (택시 10분)\n   - 삼군총병원 네이후 본원 (택시 12분, 상급 종합병원)\n해외 참가자는 여권 및 해외여행자보험 증서를 지참해 주십시오."
+        }
+      ]
+    },
+    {
+      "id": "rules_dining",
+      "title_zh": "🚬 菸害法規與過敏飲食",
+      "title_en": "🚬 Smoking Laws & Food Allergies",
+      "title_ja": "🚬 喫煙所・電子タバコ禁止とアレルギー",
+      "title_ko": "🚬 흡연구역·전자담배 금지 및 알레르기 안내",
+      "items": [
+        {
+          "q_zh": "南港展覽館哪裡可以吸菸？台灣對電子煙或加熱菸有何法律規定？",
+          "q_en": "Where is the designated smoking area at TaiNEX? What are Taiwan's strict laws regarding e-cigarettes and heated tobacco?",
+          "q_ja": "指定喫煙所はどこですか？台湾の電子タバコ・加熱式タバコに関する厳しい法令規則について教えてください。",
+          "q_ko": "난강전시관 내 지정 흡연구역은 어디인가요? 대만의 전자담배 및 궐련형 가열담배 관련 법률 규정은 어떠한가요?",
+          "a_zh": "【重要救命級法規提醒】：\n1. 會場與周邊禁菸：南港展覽館 2 館全館室內及騎樓全面禁菸。違規吸菸者，依法將面臨主管機關處 NT$ 2,000 至 10,000 元罰鍰。\n2. 電子煙與加熱菸全面重罰違法：依台灣現行《菸害防制法》，嚴禁攜帶、製造、輸入、販售或於任何公共場合使用「電子煙 (E-cigarettes / Vapes)」及未經核准之「加熱菸 (Heated Tobacco Products)」。違者最高可處 NT$ 10,000 至 50,000 元重罰，海關亦會沒入銷毀。\n3. 指定吸菸區：僅限於南港 2 館指定之「戶外專用吸菸區」（請由 1 樓戶外標示指引前往，遠離出入口與人行道）。",
+          "a_en": "【CRITICAL LEGAL NOTICE】:\n1. Non-Smoking Venue: TaiNEX 2 is strictly smoke-free throughout all indoor spaces and covered walkways. Violators face fines of NT$ 2,000 to 10,000.\n2. E-Cigarettes & Vapes Completely BANNED in Taiwan: Under Taiwan's Tobacco Hazards Prevention Act, it is strictly ILLEGAL to carry, import, sell, or use electronic cigarettes (vapes) or unauthorized heated tobacco products anywhere in Taiwan. Violators are subject to heavy fines ranging from NT$ 10,000 to NT$ 50,000, and items will be confiscated.\n3. Designated Smoking Area: Permitted ONLY at the designated outdoor smoking station outside TaiNEX 2 (follow ground-level outdoor signage away from main pedestrian doors).",
+          "a_ja": "【重要・法令遵守の厳重警告】：\n1. 館内全面禁煙：南港第2展示館の屋内および屋根付き通路（軒下）は全域禁煙です。違反者には台湾法令により NT$ 2,000〜10,000 の過料が科されます。\n2. 電子タバコ・加熱式タバコの完全禁止：台湾の「煙害防制法」に基づき、電子タバコ（Vape）および未承認の加熱式タバコ（アイコス等）の台湾国内への持ち込み・所持・使用は全面違法です。違反した場合、NT$ 10,000〜50,000 の高額罰金が科され、税関没収の対象となります。\n3. 指定喫煙場所：第2展示館1階の「屋外指定喫煙エリア」のみご利用いただけます（案内表示に従ってください）。",
+          "a_ko": "【중요 법률 및 규정 안내】:\n1. 전 구역 금연: 난강 제2전시관 전 실내 구역 및 필로티 보도는 전면 금연구역입니다. 위반 시 NT$ 2,000~10,000의 과태료가 부과됩니다.\n2. 전자담배 및 가열식 담배 전면 불법: 대만 「담배위해방지법」에 따라 모든 액상형 전자담배(Vape) 및 미승인 궐련형 전자담배의 반입, 소지, 사용은 전면 금지되어 있습니다. 적발 시 NT$ 10,000~50,000의 중벌금이 부과됩니다.\n3. 지정 흡연구역: 제2전시관 1층 외부의 '지정 실외 흡연구역'에서만 흡연이 가능합니다."
+        },
+        {
+          "q_zh": "大會有提供花生過敏 (Peanut Allergy) 或無麩質 (Gluten-Free) 友善餐點嗎？如何登記與領取？",
+          "q_en": "Are peanut allergy friendly and gluten-free (GF) meals provided? How can I register and collect my special meal box?",
+          "q_ja": "ピーナッツアレルギーやグルテンフリー（小麦不使用）対応の食事はありますか？受取方法は？",
+          "q_ko": "땅콩 알레르기(Peanut Allergy) 배려식 또는 글루텐 프리(Gluten-Free) 식사가 제공되나요? 신청 및 수령 방법은?",
+          "a_zh": "【醫療級飲食防護指引】：\n1. 便當成分透明標示：大會中午提供之所有學術午餐會便當，均於盒蓋外層張貼清晰之「過敏原資訊標籤」（含花生、堅果、蛋奶、海鮮成分說明）。\n2. 特殊飲食專屬領取（花生過敏／無麩質／嚴格素食／清真）：\n   - 註冊時有備註特殊飲食者，請於每日中午 11:45 起攜帶名牌至「大會諮詢台（7樓或1樓）特殊膳食專用櫃台」出示名牌領取。\n   - 若行前未登記但有急性嚴重食物過敏史者，請於大會報到當日第一時間向大會諮詢台志工告知，以便秘書處緊急調配獨立特餐。\n3. 急救支援：若不慎誤食引發呼吸困難或急性過敏反應（Anaphylaxis），請立即向身旁志工舉手，會場醫護人員將於 60 秒內攜帶急救裝備抵達支援。",
+          "a_en": "【MEDICAL-GRADE DIETARY SAFETY GUIDELINE】:\n1. Clear Allergen Labelling: All conference lunch boxes feature clear allergen summary labels on outer packaging (indicating peanuts, tree nuts, eggs/dairy, and seafood).\n2. Dedicated Collection (Peanut-Free / Gluten-Free / Halal / Vegetarian):\n   - Pre-registered guests with dietary needs can pick up custom meals from 11:45 daily at the Special Meal Counter beside the Information Desk (7F or 1F).\n   - If you did not pre-register but possess severe allergies, please notify the Information Desk upon morning arrival for emergency custom accommodation.\n3. Emergency Protocol: In case of acute anaphylaxis or respiratory distress from accidental ingestion, inform any volunteer immediately; trained on-site medical staff will respond within 60 seconds.",
+          "a_ja": "【アレルギー対応・安心食事ガイド】：\n1. アレルゲン表示：大会で配布されるすべての昼食弁当には、原材料・アレルゲン表記（落花生、ナッツ類、卵・乳、甲殻類）が明記されています。\n2. 特別食の受取（ピーナッツ不使用・グルテンフリー・ハラール・菜食）：事前登録された先生は、毎日11:45以降に「総合案内所・特別食受取カウンター」にてネームカードをご提示の上お受け取りください。未登録で重度のアレルギーをお持ちの場合は到着時に案内所までお申し出ください。\n3. 緊急医療対応：万が一誤食による急性アナフィラキシー症状が生じた場合、直ちに近くのスタッフにお知らせください。医療班が速やかに駆けつけます。",
+          "a_ko": "【의료급 식품 알레르기 안전 가이드】:\n1. 알레르겐 명확 표기: 학술대회에서 제공되는 모든 점심 도시락에는 알레르기 유발 물질(땅콩, 견과류, 유제품, 갑각류 등) 정보가 부착되어 있습니다.\n2. 맞춤 식사 수령(땅콩 무함유, 글루텐 프리, 할랄식, 채식): 사전 등록 시 신청하신 분은 매일 11:45부터 7층/1층 '대회 안내 데스크 특별식 창구'에서 명찰 확인 후 수령하실 수 있습니다.\n3. 응급 처치: 알레르기 반응(아나필락시스) 발생 시 즉시 주변 자원봉사자에게 알려주시면 행사장 상주 의료진이 즉시 출동합니다."
         }
       ]
     },
