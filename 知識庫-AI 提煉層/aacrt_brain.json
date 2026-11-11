@@ -1,6 +1,6 @@
 {
-  "version": "2027.04.24-v1.3",
-  "updated_at": "2026-11-11T22:07:26.887857+08:00",
+  "version": "2027.04.24-v1.4",
+  "updated_at": "2026-11-11T22:42:00+08:00",
   "timezone": "Asia/Taipei (GMT+8)",
   "conference": {
     "name_zh": "2027年第26屆亞澳區醫事放射師學術國際會議暨中華民國醫事放射學會第60次年會",
@@ -12,7 +12,7 @@
       "name_en": "Taipei Nangang Exhibition Center, Hall 2 (TaiNEX 2)",
       "address_zh": "台北市南港區經貿二路 2 號",
       "address_en": "No. 2, Jingmao 2nd Rd., Nangang District, Taipei City",
-      "mrt_station": "MRT Nangang Exhibition Center Station (BL23 / BR24, Exit 1 & 2)",
+      "mrt_station": "MRT Nangang Exhibition Center Station (BL23 / BR24, Exit 1 & 2 / B1 Underground Walkway)",
       "help_desk_location_zh": "7樓大廳與1樓迎賓大廳「大會諮詢台」",
       "help_desk_location_en": "Main Information Desk at 1F Lobby & 7F Foyer",
       "help_desk_location_ja": "1階ロビーおよび7階ホワイエ「大会総合案内所」",
@@ -74,7 +74,7 @@
       "zh": "醫用超音波",
       "en": "Medical Ultrasound / Sonography",
       "ja": "超音波検査",
-      "ko": "초음파 검사"
+      "ko": "초音波 검사"
     },
     {
       "term_id": "ai_in_imaging",
@@ -88,7 +88,7 @@
     "privacy_policy_zh": "依 GDPR 與個人資料保護規範，本大腦嚴禁提供講者、座長或貴賓之私人手機、個人 Email 或飯店房號。任何公務聯絡請至大會諮詢台洽詢秘書處。",
     "diplomatic_protocol": {
       "persona": "Chief Concierge of the 26th AACRT & TWSRT 60th Annual Meeting",
-      "scope_principle": "善意寬容推定原則 (Conference-Adjacent Inquiries)：凡與大會、學術演講衍生需求（商務影印、插座轉接頭、附近安靜工作咖啡廳）、醫療交流參訪、在台便利生活、文化參訪衍生事項，一律視為大會相關諮詢，予以溫暖熱情解答。僅對純粹惡意濫用（寫程式、算微積分、作業代寫、股票投資、無關謾罵）予以禮貌婉拒。",
+      "scope_principle": "善意寬容推定原則 (Conference-Adjacent Inquiries)：凡與大會商務設施（影印、轉接頭、安靜咖啡廳）、醫療參訪、在台便利生活、文化參訪衍生事項，一律視為大會相關諮詢，予以溫暖熱情解答。僅對純粹惡意濫用（寫程式、算微積分、作業代寫、股票投資、無關謾罵）予以禮貌婉拒。",
       "tier1_taiwan_hospitality": "Warm, polite, professional guide for Taipei life, MRT, EasyCard, souvenirs, weather, business printing, electrical adaptors.",
       "tier2_academic_radiology": "Concise 2-sentence medical/radiology explanation, gracefully referencing 7F conference sessions.",
       "tier3_unlisted_or_private_redirect": {
@@ -98,12 +98,96 @@
         "ko": "문의해 주셔서 대단히 감사합니다. 본 사항은 학술대회 조직위원회 사무국에서 직접 조율 및 관리하는 항목입니다. 선생님께 가장 정확하고 신속한 안내를 제공해 드리기 위해, 번거로우시겠지만 7층 로비 또는 1층 '대회 안내 데스크'를 방문해 주시면 담당자가 성심껏 안내해 드리겠습니다. 성공적이고 유익한 학술대회가 되시기를 기원합니다."
       }
     },
-    "default_redirect_zh": "抱歉，大會知識庫目前未列出此項目或涉及未授權公開資訊（如學者私人聯絡方式）。請前往現場「大會諮詢台」（7樓大廳或1樓大廳）洽詢，大會工作人員與志工將竭誠為您服務。",
-    "default_redirect_en": "Sorry, this specific detail is not available in our public handbook or involves private contact information. Please visit the official Information Desk located at the 7F Foyer or 1F Lobby for assistance.",
-    "default_redirect_ja": "申し訳ございません。この情報は公式ハンドブックに記載されていないか、個人のプライバシーに関わる非公開情報です。7階ホワイエまたは1階ロビーの「大会総合案内所」までお問い合わせください。",
-    "default_redirect_ko": "죄송합니다. 해당 내용은 공식 안내서에 없거나 비공개 개인정보입니다. 7층 로비 또는 1층 '대회 안내 데스크'를 방문해 주시면 감사하겠습니다."
+    "default_redirect_zh": "抱歉，大會知識庫目前未列出此項目或涉及未授權公開資訊（如學者私人聯絡方式）。請前往現場「大會諮詢台」（7樓大廳或1樓大廳）洽詢，大會工作人員與志工將竭誠為您服務。"
   },
   "faq_categories": [
+    {
+      "id": "vip_service",
+      "title_zh": "👑 貴賓禮遇與營運支援",
+      "title_en": "👑 VIP & Conference Services",
+      "title_ja": "👑 VIP控室・会場サービス",
+      "title_ko": "👑 VIP 귀빈실 및 운영 지원",
+      "items": [
+        {
+          "q_zh": "大會貴賓室 (VIP Lounge) 在哪裡？如何入場？",
+          "q_en": "Where is the VIP Lounge located and what are the access guidelines?",
+          "q_ja": "VIP控室（VIP Lounge）の場所と利用方法は？",
+          "q_ko": "VIP 귀빈실(VIP Lounge) 위치와 이용 방법은?",
+          "a_zh": "貴賓室位於南港 2 館 7 樓 705 室（僅限佩戴 VIP / Keynote Speaker 識別證之理事長、主講者及特邀貴賓進入）。\n室內備有專屬咖啡茶點、獨立休息沙發、梳妝整燙設備及高速 Wi-Fi，現場設有專屬接待志工。",
+          "a_en": "The VIP Lounge is located in Room 705 on 7F (Reserved strictly for Keynote Speakers, Society Presidents, and Invited Guests wearing VIP badges).\nComplimentary refreshments, private workspaces, clothing steamers, and dedicated staff are provided.",
+          "a_ja": "VIP控室は7階705号室にございます（VIP・招待講演者バッジをお持ちの方のみ入場可能）。専用の軽食やお飲み物、クローク設備をご用意しております。",
+          "a_ko": "VIP 귀빈실은 7층 705호에 위치해 있습니다 (VIP 및 기조강연자 명찰 소지자 전용). 다과, 휴식 공간 및 전담 안내 직원이 배치되어 있습니다."
+        },
+        {
+          "q_zh": "大會雨天動線指南：下雨時如何免淋雨前往捷運站與南港 1 館？",
+          "q_en": "Rainy Day Guide: How to access the MRT station and TaiNEX 1 without getting wet?",
+          "q_ja": "雨天アクセス：雨に濡れずにMRT駅や第1展示館へ行くには？",
+          "q_ko": "우천 시 안내: 비를 맞지 않고 지하철역이나 제1전시관으로 이동하는 방법은?",
+          "a_zh": "南港 2 館地下 1 樓 (B1) 設有「全封閉全天候地下連通道」：\n1. 往捷運站：循 B1 連通道標示步行 3 分鐘，即可直達捷運南港展覽館站（板南線/文湖線閘門）。\n2. 往南港 1 館：循 B1 連通道直接穿梭至 1 館及地下美食商場。\n大會諮詢台（1F/7F）亦備有「大會愛心傘」可供臨時登記借用。",
+          "a_en": "TaiNEX 2 features a fully enclosed Underground Walkway on Basement 1 (B1):\n1. To MRT: Follow B1 signs for a 3-minute dry walk directly into MRT Nangang Exhibition Center Station (Blue/Brown Lines).\n2. To TaiNEX 1: Direct underground access to Hall 1 and shopping dining areas.\nCourtesy umbrellas are also available for loan at the 1F/7F Information Desks.",
+          "a_ja": "第2展示館の地下1階（B1）に全天候型地下連絡通路がございます。雨天時も濡れることなく、MRT南港展覧館駅改札および第1展示館・地下レストラン街へ徒歩3分で直結しています。案内所にて傘の貸出もございます。",
+          "a_ko": "제2전시관 지하 1층(B1)에 전천후 지하 연결 통로가 있습니다. 비를 맞지 않고 지하철역 개찰구 및 제1전시관 식당가로 도보 3분 만에 이동하실 수 있습니다."
+        },
+        {
+          "q_zh": "南港 2 館哪裡可以租借行動電源？演講廳有充電插座嗎？",
+          "q_en": "Where can I rent a power bank or charge my mobile devices/laptops?",
+          "q_ja": "モバイルバッテリーのレンタルや充電スポットはどこですか？",
+          "q_ko": "보조배터리 대여 장소나 모바일 기기 충전 구역은 어디인가요?",
+          "a_zh": "1. 行動電源租借：南港 2 館 1 樓大廳與 7 樓電梯旁設有 ChargeSPOT 共享行動電源機台（支援 Visa/MasterCard、Apple Pay、LINE Pay 租借）。\n2. 充電吧檯：7 樓休息走廊設有專用充電插座站（台灣電壓 110V 雙平孔）。各演講廳內僅部分靠牆座位備有插座，請優先禮讓發表講者使用。",
+          "a_en": "1. Power Bank Rental: ChargeSPOT stations are available at 1F Lobby and 7F Elevator Lobby (Supports international credit cards & mobile payments).\n2. Charging Stations: Located along the 7F lounge corridor (Standard 110V Type-A plugs). In-hall sockets are reserved primarily for presenters.",
+          "a_ja": "1. モバイルバッテリー：1階ロビーおよび7階エレベーター前に ChargeSPOT レンタル機がございます（各種クレジットカード対応）。\n2. 充電スポット：7階ホワイエに無料充電バーが設置されています（台湾規格110V）。",
+          "a_ko": "1. 보조배터리 대여: 1층 로비 및 7층 엘리베이터 옆에 ChargeSPOT 대여기가 있습니다 (해외 신용카드 결제 가능).\n2. 충전 구역: 7층 휴게 복도에 110V 무료 충전 스테이션이 마련되어 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "medical_emergency",
+      "title_zh": "🏥 緊急醫療與後送院所",
+      "title_en": "🏥 Medical Care & Hospitals",
+      "title_ja": "🏥 救護室と緊急搬送病院",
+      "title_ko": "🏥 응급 의료 및 후송 병원",
+      "items": [
+        {
+          "q_zh": "若有緊急醫療需求，最近具備外語急診的大型醫院在哪裡？",
+          "q_en": "In case of medical emergencies, where are the nearest hospitals with foreign-language ER services?",
+          "q_ja": "緊急時の救護室および近隣の総合病院（救急外来）は？",
+          "q_ko": "응급 의료 상황 발생 시 가장 가까운 응급실 운영 종합병원은 어디인가요?",
+          "a_zh": "1. 會場醫護站：南港 2 館 1 樓設有醫護急救站，駐有護理人員提供血壓測量與初步急救處置。\n2. 鄰近後送醫院（具備 24 小時急診與外語醫療能力）：\n   - 台北市立聯合醫院忠孝院區（車程約 8 分鐘，電話 02-2786-1288）\n   - 汐止國泰綜合醫院（車程約 10 分鐘，電話 02-2648-2121）\n   - 三軍總醫院內湖總院（車程約 12 分鐘，國軍最高醫學中心，電話 02-8792-3311）\n外籍貴賓就醫請攜帶護照與海外旅行保險單（Travel Insurance），以利院方開立正式英文醫療證明與收據。",
+          "a_en": "1. On-site First Aid: Located on 1F (staffed by professional nurses for emergency triage).\n2. Nearest Emergency Referral Hospitals:\n   - Taipei City Hospital Zhongxiao Branch (approx. 8 mins by taxi, +886-2-2786-1288)\n   - Xizhi Cathay General Hospital (approx. 10 mins, +886-2-2648-2121)\n   - Tri-Service General Hospital Neihu Main Branch (approx. 12 mins, Tertiary Medical Center, +886-2-8792-3311)\nOverseas guests should present passports and Travel Insurance certificates for official English medical reports.",
+          "a_ja": "1. 会場救護室：第2展示館1階に看護師常駐の救護室がございます。\n2. 近隣の24時間救急対応総合病院：\n   - 台北市立連合病院 忠孝院区（車で約8分）\n   - 汐止国泰総合病院（車で約10分）\n   - 三軍総医院 内湖本院（車で約12分、高度救命医療センター）\n海外からの受診時はパスポートと海外旅行保険証をご提示ください。",
+          "a_ko": "1. 행사장 의무실: 제2전시관 1층에 전문 간호사가 상주하는 응급처치실이 있습니다.\n2. 인근 응급의료기관:\n   - 타이베이 시립연합병원 중샤오 분원 (택시 8분)\n   - 시즈 국태종합병원 (택시 10분)\n   - 삼군총병원 네이후 본원 (택시 12분, 상급 종합병원)\n해외 참가자는 여권 및 해외여행자보험 증서를 지참해 주십시오."
+        }
+      ]
+    },
+    {
+      "id": "awards_tours",
+      "title_zh": "🏆 優秀論文獎與隨行觀光",
+      "title_en": "🏆 Awards & Accompanying Tours",
+      "title_ja": "🏆 論文表彰と台北観光案内",
+      "title_ko": "🏆 학술상 시상 및 관광 추천",
+      "items": [
+        {
+          "q_zh": "最佳論文獎 (Best Oral Paper) 與壁報獎何時公布？閉幕頒獎典禮在幾點？",
+          "q_en": "When will the Best Oral & Poster Awards be announced, and when is the Closing Ceremony?",
+          "q_ja": "最優秀論文賞・ポスター賞の発表と閉会式・授賞式の日程は？",
+          "q_ko": "최우수 구연상 및 포스터상 발표 시기와 폐회식/시상식 일정은?",
+          "a_zh": "1. 得獎公布：各獎項名單將於 4 月 25 日（日）11:30 於 1 樓海報區佈告欄及大會官網/App 即時同步公布。\n2. 閉幕與頒獎典禮：訂於 4 月 25 日（日）16:00 於 7 樓大會堂 (Plenary Hall) 隆重舉行。\n若得獎者因搭機無法親自領獎，可委由共同作者攜帶得獎通知憑證代表上台領獎。",
+          "a_en": "1. Winner Announcement: Published on Apr 25 (Sun) at 11:30 on the 1F Poster Board and Conference App.\n2. Awards & Closing Ceremony: Held on Apr 25 at 16:00 in the 7F Plenary Hall.\nCo-authors may receive certificates on stage on behalf of winners with prior notice.",
+          "a_ja": "1. 受賞発表：4月25日（日）11:30に1階ポスター掲示板および公式アプリにて発表されます。\n2. 表彰・閉会式：4月25日 16:00より7階プレナリーホールにて執り行われます。",
+          "a_ko": "1. 수상자 발표: 4월 25일(일) 11:30 1층 포스터 게시판 및 공식 앱을 통해 공지됩니다.\n2. 폐회식 및 시상식: 4월 25일 16:00 7층 플레너리 홀에서 진행됩니다."
+        },
+        {
+          "q_zh": "外籍隨行家屬 (Accompanying Persons) 捷運直達半日遊景點推薦？",
+          "q_en": "Sightseeing recommendations for accompanying family members via direct MRT?",
+          "q_ja": "同伴者（ご家族）向け：MRT直通の台北半日観光コースは？",
+          "q_ko": "동반 가족을 위한 지하철 직통 반일/일일 관광 추천 코스는?",
+          "a_zh": "由南港展覽館站出發，無需轉乘之經典半日遊路線：\n1. 板南線直達：\n   - 市政府站（台北 101、信義商圈百貨，車程約 15 分鐘）\n   - 龍山寺站（百年艋舺名剎、傳統夜市美食，車程約 25 分鐘）\n2. 文湖線直達：\n   - 動物園站（台北市立動物園、轉乘貓空纜車品茶賞景，車程約 25 分鐘）\n   - 大湖公園站（落羽松與美麗湖景錦帶橋，車程約 8 分鐘）。",
+          "a_en": "Classic direct routes starting from MRT Nangang Exhibition Center Station (No transfers needed):\n1. Blue Line (Bannan):\n   - Taipei City Hall Station (Taipei 101, Luxury Shopping, ~15 mins)\n   - Longshan Temple Station (Historic Temple & Herbal Alley, ~25 mins)\n2. Brown Line (Wenhu):\n   - Taipei Zoo Station (Taipei Zoo & Maokong Gondola Tea Culture, ~25 mins)\n   - Dahu Park Station (Picturesque Moon Bridge & lake park, ~8 mins).",
+          "a_ja": "南港展覧館駅から乗り換えなしでアクセスできる名所案内：\n1. 板南線（青色）：台北市政府駅（台北101・ショッピング街、約15分）、龍山寺駅（歴史的寺院、約25分）\n2. 文湖線（茶色）：動物園駅（台北動物園・猫空ロープウェイ茶芸体験、約25分）。",
+          "a_ko": "난강전시관역에서 환승 없이 갈 수 있는 대표 관광 코스:\n1. 판난선(파란색): 타이베이 시청역 (타이베이 101 쇼핑몰, 15분), 용산사역 (역사 사찰, 25분)\n2. 원후선(갈색): 동물원역 (동물원 및 마오콩 케이블카 차 문화 체험, 25분)."
+        }
+      ]
+    },
     {
       "id": "academic",
       "title_zh": "🔬 試片室與海報發表",
