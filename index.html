@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>2027 AACRT 智慧大腦助手 | Smart Conference Guide</title>
+  <!-- PWA Manifest & Theme -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .bg-gradient-royal {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    }
+    .text-gold {
+      color: #fbbf24;
+    }
+    .bg-gold {
+      background-color: #f59e0b;
+    }
+    .border-gold {
+      border-color: #f59e0b;
+    }
+    /* Hide scrollbar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- Top Emergency Ticker Banner -->
+  <div id="emergency-banner" class="bg-amber-500 text-slate-900 px-3 py-1.5 text-xs font-semibold flex items-center justify-between shadow-sm">
+    <div class="flex items-center space-x-2 truncate">
+      <span class="bg-slate-900 text-amber-400 px-1.5 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">LIVE</span>
+      <span id="ticker-text" class="truncate">大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。</span>
+    </div>
+    <span class="text-[10px] opacity-75 shrink-0 ml-2">TaiNEX 2</span>
+  </div>
+
+  <!-- Header & Language Bar -->
+  <header class="bg-gradient-royal text-white shadow-md sticky top-0 z-40">
+    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-9 h-9 rounded-xl bg-amber-400 text-slate-900 flex items-center justify-center font-bold text-lg shadow-inner">
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <div>
+          <h1 class="text-sm font-black tracking-wide leading-tight text-white flex items-center">
+            2027 AACRT
+            <span class="ml-1.5 px-1.5 py-0.2 bg-amber-400/20 text-amber-300 text-[10px] rounded font-semibold border border-amber-400/30">AI Guide</span>
+          </h1>
+          <p class="text-[11px] text-slate-300 font-light truncate">The 26th AACRT & TWSRT 60th</p>
+        </div>
+      </div>
+
+      <!-- Language Selector Dropdown -->
+      <div class="relative">
+        <select id="lang-select" class="bg-slate-800/80 text-amber-300 border border-slate-700 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-amber-400 font-medium cursor-pointer">
+          <option value="zh-TW">🇹🇼 繁體中文</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="ja">🇯🇵 日本語</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Mode Tabs: 60% FAQ vs 40% AI Assistant -->
+    <div class="max-w-md mx-auto px-4 flex border-t border-slate-800/60">
+      <button id="tab-faq-btn" onclick="switchTab('faq')" class="flex-1 py-2.5 text-xs font-bold border-b-2 border-amber-400 text-amber-400 flex items-center justify-center space-x-1.5 transition-colors">
+        <i class="fa-solid fa-book-open"></i>
+        <span id="tab-faq-label">60% 快捷手冊</span>
+      </button>
+      <button id="tab-ai-btn" onclick="switchTab('ai')" class="flex-1 py-2.5 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center space-x-1.5 transition-colors">
+        <i class="fa-solid fa-sparkles text-amber-400"></i>
+        <span id="tab-ai-label">40% 智慧對談</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-md mx-auto w-full flex-1 p-4 pb-20">
+
+    <!-- TAB 1: 60% Quick FAQ Section -->
+    <section id="faq-section" class="space-y-4">
+      <!-- Quick Chips / Categories -->
+      <div class="flex space-x-2 overflow-x-auto no-scrollbar py-1">
+        <button onclick="filterFaq('all')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white shadow-sm shrink-0" data-cat="all">全部 (All)</button>
+        <button onclick="filterFaq('transport')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="transport">🚗 交通動線</button>
+        <button onclick="filterFaq('venue')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="venue">🏢 會議室/Wi-Fi</button>
+        <button onclick="filterFaq('practical')" class="faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0" data-cat="practical">🍜 周邊美食/生活</button>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div id="faq-list" class="space-y-2.5">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Help Desk Card -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-2xl p-4 shadow-sm">
+        <div class="flex items-start space-x-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <div>
+            <h3 id="helpdesk-title" class="text-xs font-bold text-slate-900">找不到您的答案？</h3>
+            <p id="helpdesk-desc" class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              請直接前往 1 樓迎賓大廳或 7 樓大廳的<strong class="text-amber-700">「大會諮詢台」</strong>，現場大會志工與秘書處將提供面對面協助。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: 40% AI Assistant Chat Section -->
+    <section id="ai-section" class="hidden flex-col h-[calc(100vh-190px)]">
+      <!-- Quick Prompt Chips -->
+      <div class="mb-3">
+        <p id="suggested-prompts-label" class="text-[11px] font-semibold text-slate-400 mb-1.5 uppercase tracking-wider">熱門提問 (Quick Questions)</p>
+        <div class="flex flex-wrap gap-1.5">
+          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">7樓會議室怎麼走？</button>
+          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">How to get Wi-Fi?</button>
+          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">桃園機場如何到會場？</button>
+          <button onclick="sendQuickPrompt(this.innerText)" class="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg hover:border-amber-400 hover:text-amber-600 transition-all shadow-2xs">附近哪裡有素食？</button>
+        </div>
+      </div>
+
+      <!-- Messages Window -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 p-3 bg-white rounded-2xl border border-slate-100 shadow-inner no-scrollbar">
+        <!-- Initial AI Greeting -->
+        <div class="flex items-start space-x-2.5">
+          <div class="w-7 h-7 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+            <i class="fa-solid fa-sparkles"></i>
+          </div>
+          <div class="bg-slate-100 text-slate-800 rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-xs max-w-[85%] leading-relaxed">
+            <p id="ai-greeting">
+              您好！我是 2027 AACRT 大會智慧助手。您可以用<strong>中文、English、日本語、한국어</strong>詢問大會演講廳、交通動線、Wi-Fi 或周邊資訊。未公開細節我也會指引您至「大會諮詢台」！
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Bar (Speech + Text) -->
+      <div class="mt-3 relative flex items-center">
+        <input id="chat-input" type="text" placeholder="請輸入您的問題 (Type or speak)..." class="w-full bg-white border border-slate-200 rounded-full pl-4 pr-24 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-sm" onkeydown="if(event.key==='Enter') sendMessage()">
+        
+        <!-- Voice Input (Web Speech API) -->
+        <button id="voice-btn" onclick="toggleVoiceInput()" title="語音輸入" class="absolute right-12 w-8 h-8 rounded-full text-slate-500 hover:text-amber-600 flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-microphone text-sm"></i>
+        </button>
+
+        <!-- Send Button -->
+        <button onclick="sendMessage()" class="absolute right-1.5 w-8 h-8 bg-amber-500 hover:bg-amber-600 text-slate-900 rounded-full flex items-center justify-center shadow-sm transition-transform active:scale-95">
+          <i class="fa-solid fa-arrow-up text-xs"></i>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation / Quick Contacts -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2 z-40">
+    <div class="max-w-md mx-auto px-6 flex justify-around items-center text-[10px] text-slate-500">
+      <div class="flex items-center space-x-1">
+        <i class="fa-solid fa-shield-halved text-amber-500"></i>
+        <span>預算防護 $50 Cap</span>
+      </div>
+      <div class="h-3 w-px bg-slate-200"></div>
+      <div class="flex items-center space-x-1">
+        <i class="fa-solid fa-wifi text-emerald-500"></i>
+        <span>PWA 離線支援</span>
+      </div>
+      <div class="h-3 w-px bg-slate-200"></div>
+      <div class="flex items-center space-x-1">
+        <i class="fa-solid fa-location-dot text-blue-500"></i>
+        <span>南港 2 館</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script>
+    let currentLang = 'zh-TW';
+    let brainData = null;
+    let isListening = false;
+    let recognition = null;
+
+    // Load aacrt_brain.json
+    async function loadBrain() {
+      try {
+        const res = await fetch('./知識庫-AI 提煉層/aacrt_brain.json');
+        if (res.ok) {
+          brainData = await res.json();
+          renderFaq();
+        }
+      } catch (e) {
+        console.warn('Local brain json load failed, using fallback.', e);
+      }
+    }
+
+    // Tab Switch
+    function switchTab(tab) {
+      const faqSec = document.getElementById('faq-section');
+      const aiSec = document.getElementById('ai-section');
+      const faqBtn = document.getElementById('tab-faq-btn');
+      const aiBtn = document.getElementById('tab-ai-btn');
+
+      if (tab === 'faq') {
+        faqSec.classList.remove('hidden');
+        aiSec.classList.add('hidden');
+        aiSec.classList.remove('flex');
+        faqBtn.classList.add('border-amber-400', 'text-amber-400');
+        faqBtn.classList.remove('border-transparent', 'text-slate-400');
+        aiBtn.classList.remove('border-amber-400', 'text-amber-400');
+        aiBtn.classList.add('border-transparent', 'text-slate-400');
+      } else {
+        faqSec.classList.add('hidden');
+        aiSec.classList.remove('hidden');
+        aiSec.classList.add('flex');
+        aiBtn.classList.add('border-amber-400', 'text-amber-400');
+        aiBtn.classList.remove('border-transparent', 'text-slate-400');
+        faqBtn.classList.remove('border-amber-400', 'text-amber-400');
+        faqBtn.classList.add('border-transparent', 'text-slate-400');
+      }
+    }
+
+    // Render FAQ
+    function renderFaq(filterCat = 'all') {
+      if (!brainData || !brainData.faq_categories) return;
+      const list = document.getElementById('faq-list');
+      list.innerHTML = '';
+
+      brainData.faq_categories.forEach(cat => {
+        if (filterCat !== 'all' && cat.id !== filterCat) return;
+
+        cat.items.forEach((item, idx) => {
+          const qText = item[`q_${currentLang}`] || item.q_en || item.q_zh;
+          const aText = item[`a_${currentLang}`] || item.a_en || item.a_zh;
+
+          const card = document.createElement('div');
+          card.className = 'bg-white rounded-xl border border-slate-200/80 shadow-2xs overflow-hidden transition-all';
+          card.innerHTML = `
+            <button onclick="toggleAccordion(this)" class="w-full text-left px-3.5 py-3 flex items-center justify-between text-xs font-bold text-slate-800 hover:bg-slate-50">
+              <span class="flex-1 pr-2">${qText}</span>
+              <i class="fa-solid fa-chevron-down text-slate-400 text-[10px] transition-transform"></i>
+            </button>
+            <div class="hidden px-3.5 pb-3 text-xs text-slate-600 border-t border-slate-100 bg-slate-50/50 pt-2.5 whitespace-pre-line leading-relaxed">
+              ${aText}
+            </div>
+          `;
+          list.appendChild(card);
+        });
+      });
+    }
+
+    function toggleAccordion(btn) {
+      const panel = btn.nextElementSibling;
+      const icon = btn.querySelector('.fa-chevron-down');
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        panel.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    function filterFaq(cat) {
+      document.querySelectorAll('.faq-filter-btn').forEach(b => {
+        if (b.dataset.cat === cat) {
+          b.className = 'faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white shadow-sm shrink-0';
+        } else {
+          b.className = 'faq-filter-btn px-3 py-1.5 rounded-full text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 shrink-0';
+        }
+      });
+      renderFaq(cat);
+    }
+
+    // Language Selector Event
+    document.getElementById('lang-select').addEventListener('change', function(e) {
+      currentLang = e.target.value;
+      updateLanguageUI();
+      renderFaq();
+    });
+
+    function updateLanguageUI() {
+      const g = brainData ? brainData.guardrails : null;
+      const i18n = {
+        'zh-TW': {
+          tabFaq: '60% 快捷手冊',
+          tabAi: '40% 智慧對談',
+          promptLabel: '熱門提問 (Quick Questions)',
+          helpTitle: '找不到您的答案？',
+          helpDesc: '請直接前往 1 樓迎賓大廳或 7 樓大廳的<strong class="text-amber-700">「大會諮詢台」</strong>，現場大會志工與秘書處將提供面對面協助。',
+          placeholder: '請輸入您的問題 (Type or speak)...',
+          greeting: '您好！我是 2027 AACRT 大會智慧助手。您可以用<strong>中文、English、日本語、한국어</strong>詢問大會演講廳、交通動線、Wi-Fi 或周邊資訊。未公開細節我也會指引您至「大會諮詢台」！'
+        },
+        'en': {
+          tabFaq: '60% Quick Guide',
+          tabAi: '40% AI Assistant',
+          promptLabel: 'Quick Questions',
+          helpTitle: 'Need further help?',
+          helpDesc: 'Please visit the official <strong class="text-amber-700">Information Desk</strong> located at the 7F Foyer or 1F Lobby. Our team is ready to assist you.',
+          placeholder: 'Ask a question in English...',
+          greeting: 'Hello! I am the 2027 AACRT Conference AI Assistant. Feel free to ask about session halls, Wi-Fi, transportation, and dining. Unlisted details will be directed to the on-site Information Desk!'
+        },
+        'ja': {
+          tabFaq: '60% クイックガイド',
+          tabAi: '40% AIアシスタント',
+          promptLabel: 'よくある質問',
+          helpTitle: 'お困りですか？',
+          helpDesc: '7階ホワイエまたは1階ロビーの<strong class="text-amber-700">「大会総合案内所」</strong>までお気軽にお越しください。',
+          placeholder: '日本語で質問を入力...',
+          greeting: 'こんにちは！2027 AACRT 大会AIアシスタントです。会場、交通、Wi-Fiなどお気軽にお尋ねください。未掲載の情報は総合案内所をご案内いたします。'
+        },
+        'ko': {
+          tabFaq: '60% 퀵 가이드',
+          tabAi: '40% AI 비서',
+          promptLabel: '자주 묻는 질문',
+          helpTitle: '도움이 필요하신가요?',
+          helpDesc: '7층 로비 또는 1층의 <strong class="text-amber-700">「대회 안내 데스크」</strong>를 방문해 주시면 친절히 안내해 드립니다.',
+          placeholder: '한국어로 질문하세요...',
+          greeting: '안녕하십니까! 2027 AACRT 학술대회 AI 도우미입니다. 회의실, 교통, Wi-Fi 등에 대해 무엇이든 물어보세요.'
+        }
+      };
+
+      const t = i18n[currentLang] || i18n['en'];
+      document.getElementById('tab-faq-label').innerText = t.tabFaq;
+      document.getElementById('tab-ai-label').innerText = t.tabAi;
+      document.getElementById('suggested-prompts-label').innerText = t.promptLabel;
+      document.getElementById('helpdesk-title').innerText = t.helpTitle;
+      document.getElementById('helpdesk-desc').innerHTML = t.helpDesc;
+      document.getElementById('chat-input').placeholder = t.placeholder;
+      document.getElementById('ai-greeting').innerHTML = t.greeting;
+    }
+
+    // Quick Prompts
+    function sendQuickPrompt(text) {
+      document.getElementById('chat-input').value = text;
+      sendMessage();
+    }
+
+    // Send Message
+    async function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      appendMessage('user', text);
+      input.value = '';
+
+      // Typing indicator
+      const typingId = appendTypingIndicator();
+
+      // Local keyword matching or Fallback response
+      setTimeout(() => {
+        removeTypingIndicator(typingId);
+        const reply = generateLocalBrainAnswer(text);
+        appendMessage('ai', reply);
+      }, 700);
+    }
+
+    function generateLocalBrainAnswer(query) {
+      const q = query.toLowerCase();
+      // Match Wi-Fi
+      if (q.includes('wifi') || q.includes('wi-fi') || q.includes('網路') || q.includes('ワイファイ') || q.includes('와이파이')) {
+        return currentLang === 'en' ? 'TaiNEX 2 provides free public Wi-Fi (SSID: TaiNEX-Free). For high-speed conference Wi-Fi, please check your registration packet or ask at the Information Desk.' :
+               currentLang === 'ja' ? '全館で無料Wi-Fi（SSID: TaiNEX-Free）がご利用いただけます。学会専用Wi-Fiは受付資料をご確認ください。' :
+               currentLang === 'ko' ? '제2전시관 전 구역에서 무료 Wi-Fi(SSID: TaiNEX-Free)를 사용하실 수 있습니다.' :
+               '南港 2 館全館提供免費公共無線網路（SSID: TaiNEX-Free）；大會專屬高速網路帳密請參閱報到手冊或洽現場「大會諮詢台」。';
+      }
+      // Match Location / Meeting Rooms
+      if (q.includes('7樓') || q.includes('7f') || q.includes('room') || q.includes('會議室') || q.includes('會場') || q.includes('会場') || q.includes('회의실')) {
+        return currentLang === 'en' ? 'Main conference rooms and the Plenary Hall are located on the 7th floor. Room signs and volunteers are available at the 7F elevator lobby.' :
+               '大會主要演講廳與 Plenary Hall 均位於 7 樓（701~703 會議室）。出電梯口即有詳細地圖與志工指引。';
+      }
+      // Match Transportation
+      if (q.includes('機場') || q.includes('airport') || q.includes('空港') || q.includes('공항') || q.includes('捷運') || q.includes('mrt')) {
+        return currentLang === 'en' ? 'From Taoyuan Airport (TPE), take the Airport MRT to Taipei Main Station, then transfer to the Bannan Line (Blue Line) to the final stop "Nangang Exhibition Center Station" (Exit 1 or 2).' :
+               '由桃園機場可搭乘機捷至台北車站，轉乘板南線直達終點「南港展覽館站」（1 或 2 號出口步行 3 分鐘）。';
+      }
+      // Guardrail redirect
+      if (brainData && brainData.guardrails) {
+        return brainData.guardrails[`default_redirect_${currentLang}`] || brainData.guardrails.default_redirect_zh;
+      }
+      return '抱歉，大會知識庫目前未列出此項目。請前往現場「大會諮詢台」洽詢，我們將竭誠為您服務。';
+    }
+
+    function appendMessage(sender, text) {
+      const box = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = sender === 'user' ? 'flex items-start justify-end space-x-2' : 'flex items-start space-x-2.5';
+
+      if (sender === 'user') {
+        div.innerHTML = `
+          <div class="bg-gradient-royal text-white rounded-2xl rounded-tr-sm px-3.5 py-2 text-xs max-w-[85%] leading-relaxed shadow-sm">
+            ${text}
+          </div>
+        `;
+      } else {
+        div.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+            <i class="fa-solid fa-sparkles"></i>
+          </div>
+          <div class="bg-slate-100 text-slate-800 rounded-2xl rounded-tl-sm px-3.5 py-2.5 text-xs max-w-[85%] leading-relaxed shadow-2xs">
+            ${text}
+          </div>
+        `;
+      }
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function appendTypingIndicator() {
+      const id = 'typing-' + Date.now();
+      const box = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.id = id;
+      div.className = 'flex items-start space-x-2.5';
+      div.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+          <i class="fa-solid fa-sparkles"></i>
+        </div>
+        <div class="bg-slate-100 text-slate-400 rounded-2xl px-3 py-2 text-xs flex space-x-1 items-center">
+          <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce"></div>
+          <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce" style="animation-delay: 0.15s"></div>
+          <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+        </div>
+      `;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+      return id;
+    }
+
+    function removeTypingIndicator(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+
+    // Voice Input Toggle (Web Speech API)
+    function toggleVoiceInput() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert('您的瀏覽器不支援語音辨識，請使用 Chrome/Safari 或鍵盤輸入。');
+        return;
+      }
+
+      const voiceBtn = document.getElementById('voice-btn');
+      if (!recognition) {
+        recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.onstart = () => {
+          isListening = true;
+          voiceBtn.classList.add('text-red-500', 'animate-pulse');
+        };
+
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript;
+          document.getElementById('chat-input').value = transcript;
+          sendMessage();
+        };
+
+        recognition.onerror = () => {
+          isListening = false;
+          voiceBtn.classList.remove('text-red-500', 'animate-pulse');
+        };
+
+        recognition.onend = () => {
+          isListening = false;
+          voiceBtn.classList.remove('text-red-500', 'animate-pulse');
+        };
+      }
+
+      if (isListening) {
+        recognition.stop();
+      } else {
+        recognition.lang = currentLang === 'zh-TW' ? 'zh-TW' : currentLang === 'ja' ? 'ja-JP' : currentLang === 'ko' ? 'ko-KR' : 'en-US';
+        recognition.start();
+      }
+    }
+
+    // Init
+    loadBrain();
+
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.log('SW registration failed: ', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

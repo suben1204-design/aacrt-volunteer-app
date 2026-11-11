@@ -1,0 +1,16 @@
+{
+  "name": "2027 AACRT 智慧大腦助手",
+  "short_name": "AACRT Guide",
+  "description": "2027 AACRT 志工與來賓多語言智慧大腦 Web App",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

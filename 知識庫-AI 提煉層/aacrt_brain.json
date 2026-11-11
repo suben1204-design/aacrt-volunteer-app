@@ -1,0 +1,102 @@
+{
+  "conference": {
+    "name_zh": "2027年第26屆亞澳區醫事放射師學術國際會議暨中華民國醫事放射學會第60次年會",
+    "name_en": "The 26th AACRT & TWSRT 60th Annual Meeting",
+    "short_name": "2027 AACRT",
+    "dates": "2027-04-24 ~ 2027-04-25",
+    "venue": {
+      "name_zh": "台北南港展覽館 2 館 (TaiNEX 2)",
+      "name_en": "Taipei Nangang Exhibition Center, Hall 2 (TaiNEX 2)",
+      "address_zh": "台北市南港區經貿二路 2 號",
+      "address_en": "No. 2, Jingmao 2nd Rd., Nangang District, Taipei City",
+      "mrt_station": "MRT Nangang Exhibition Center Station (BL23 / BR24, Exit 1 & 2)",
+      "help_desk_location_zh": "7樓大廳與1樓迎賓大廳「大會諮詢台」",
+      "help_desk_location_en": "Main Information Desk at 1F Lobby & 7F Foyer"
+    }
+  },
+  "guardrails": {
+    "default_redirect_zh": "抱歉，大會知識庫目前未列出此項目或涉及未授權公開資訊。請前往現場「大會諮詢台」（7樓大廳或1樓大廳）洽詢，大會工作人員與志工將竭誠為您服務。",
+    "default_redirect_en": "Sorry, this specific detail is not available in our public handbook. Please visit the official Information Desk located at the 7F Foyer or 1F Lobby for further on-site assistance.",
+    "default_redirect_ja": "申し訳ございません。この情報は公式ハンドブックに記載されていないか、非公開情報です。7階ホワイエまたは1階ロビーの「大会総合案内所（大會諮詢台）」までお気軽にお問い合わせください。",
+    "default_redirect_ko": "죄송합니다. 해당 내용은 공식 안내서에 없거나 미공개 정보입니다. 7층 로비 또는 1층 '대회 안내 데스크'를 방문해 주시면 친절히 안내해 드리겠습니다."
+  },
+  "faq_categories": [
+    {
+      "id": "transport",
+      "title_zh": "🚗 交通與抵達指引",
+      "title_en": "🚗 Transportation & Directions",
+      "title_ja": "🚗 交通アクセス案内",
+      "title_ko": "🚗 교통 및 오시는 길",
+      "items": [
+        {
+          "q_zh": "如何從桃園國際機場 (TPE) 到南港展覽館 2 館？",
+          "q_en": "How to get to TaiNEX 2 from Taoyuan International Airport (TPE)?",
+          "q_ja": "桃園国際空港から南港第2展示館へのアクセスは？",
+          "q_ko": "타오위안 국제공항에서 난강 제2전시관으로 가는 방법은?",
+          "a_zh": "1. 搭乘桃園機場捷運至「台北車站」，轉乘台北捷運板南線（藍線）往南港展覽館方向，終點站「南港展覽館站」下車，由 1 號或 2 號出口步行 3 分鐘即達南港 2 館。\n2. 或由機場搭乘計程車直達南港展覽館 2 館，車程約 45~55 分鐘（車資約 NT$ 1,300~1,500）。",
+          "a_en": "Option 1: Take the Taoyuan Airport MRT to Taipei Main Station, transfer to MRT Bannan Line (Blue Line) towards Nangang Exhibition Center (Exit 1 or 2, 3-min walk).\nOption 2: Take an airport taxi directly to TaiNEX 2 (approx. 45-55 mins, fare around NT$ 1,300-1,500).",
+          "a_ja": "1. 桃園空港MRTで台北駅へ行き、MRT板南線（青色）に乗り換えて終点「南港展覧館駅」で下車（1番・2番出口より徒歩3分）。\n2. 空港タクシーで約45〜55分（運賃約NT$ 1,300〜1,500）。",
+          "a_ko": "1. 타오위안 공항철도를 타고 타이베이역으로 이동 후, 지하철 판난선(파란색)으로 환승하여 종점 '난강전시관역' 1번/2번 출구로 나오시면 도보 3분 거리입니다.\n2. 택시 이용 시 약 45~55분 소요 (요금 약 NT$ 1,300~1,500)."
+        },
+        {
+          "q_zh": "如何從台北松山機場 (TSA) 抵達？",
+          "q_en": "How to get here from Taipei Songshan Airport (TSA)?",
+          "q_ja": "台北松山空港からのアクセスは？",
+          "q_ko": "타이베이 쑹산공항에서 오시는 길은?",
+          "a_zh": "搭乘台北捷運文湖線（棕線）直達「南港展覽館站」（約 18 分鐘直達免轉乘），由 1 號或 2 號出口出站。",
+          "a_en": "Take the MRT Wenhu Line (Brown Line) directly to 'Nangang Exhibition Center Station' (approx. 18 mins, direct), then Exit 1 or 2.",
+          "a_ja": "MRT文湖線（茶色）で「南港展覧館駅」まで直通約18分（乗り換えなし）。1番または2番出口からすぐ。",
+          "a_ko": "지하철 원후선(갈색)을 타고 환승 없이 '난강전시관역'까지 직통 약 18분 소요됩니다."
+        }
+      ]
+    },
+    {
+      "id": "venue",
+      "title_zh": "🏢 會場動線與會議室",
+      "title_en": "🏢 Venue & Rooms",
+      "title_ja": "🏢 会場案内と会議室",
+      "title_ko": "🏢 회의실 및 층별 안내",
+      "items": [
+        {
+          "q_zh": "主要的演講廳與發表會議室在幾樓？",
+          "q_en": "Which floors are the main lecture halls and session rooms located?",
+          "q_ja": "メイン講演会場や発表室は何階にありますか？",
+          "q_ko": "주요 강연장 및 발표 회의실은 몇 층에 있나요?",
+          "a_zh": "大會核心會議室主要集中在 7 樓（大會堂 Plenary Hall、會議室 701~703）與 1 樓展覽交流區。各演講廳門口皆有中英文議程標示與志工協助引導。",
+          "a_en": "The main sessions are located on 7F (Plenary Hall, Rooms 701-703) and 1F Exhibition & Networking Area. Room indicators with bilingual signs are placed outside each room.",
+          "a_ja": "メイン会場は7階（プレナリーホール、701〜703会議室）および1階展示エリアです。各部屋の前に案内表示があります。",
+          "a_ko": "주요 세션은 7층(플레너리 홀, 701~703호 회의실) 및 1층 전시장에서 열립니다."
+        },
+        {
+          "q_zh": "會場是否有提供免費 Wi-Fi？",
+          "q_en": "Is free Wi-Fi provided at the venue?",
+          "q_ja": "会場に無料Wi-Fiはありますか？",
+          "q_ko": "행사장에 무료 Wi-Fi가 제공되나요?",
+          "a_zh": "南港 2 館全館提供免費公共無線網路（SSID: TaiNEX-Free），免密碼登入確認即可連線；大會專用高速網路 SSID 於報到櫃台手冊公告。",
+          "a_en": "Yes. Free public Wi-Fi is available throughout TaiNEX 2 (SSID: TaiNEX-Free). Dedicated conference network details are provided in your registration kit.",
+          "a_ja": "はい、全館で無料Wi-Fi（SSID: TaiNEX-Free）がご利用いただけます。学会専用Wi-Fiは受付資料をご確認ください。",
+          "a_ko": "네, 전 구역에서 무료 공용 Wi-Fi(SSID: TaiNEX-Free)를 이용하실 수 있습니다."
+        }
+      ]
+    },
+    {
+      "id": "practical",
+      "title_zh": "🍜 生活與實用資訊",
+      "title_en": "🍜 Practical & Dining Info",
+      "title_ja": "🍜 周辺飲食と便利情報",
+      "title_ko": "🍜 식사 및 편의 정보",
+      "items": [
+        {
+          "q_zh": "會場附近有用餐或換匯地點嗎？",
+          "q_en": "Where can I find dining options and currency exchange near TaiNEX 2?",
+          "q_ja": "周辺の飲食施設や両替所はどこにありますか？",
+          "q_ko": "전시장 근처 식당 및 환전소는 어디에 있나요?",
+          "a_zh": "1. 用餐：南港 2 館 B1 有美食街與便利商店；南港 1 館及捷運站地下連通道步行 5 分鐘有數十家餐廳（含素食/清真友善選擇）。\n2. 換匯與提款：展館 1 樓設有多家銀行 ATM（支援海外 Visa/MasterCard 提領新台幣）。",
+          "a_en": "1. Dining: B1 of TaiNEX 2 has a food court and convenience store. A 5-minute walk connects to TaiNEX 1 and shopping mall restaurants (Halal and vegetarian options available).\n2. Currency: International ATMs supporting Visa/MasterCard are located on 1F.",
+          "a_ja": "1. 飲食：第2展示館B1にフードコートとコンビニがあります。徒歩5分圏内に多数のレストランがあります。\n2. 両替・ATM：1階に国際カード対応ATMがございます。",
+          "a_ko": "1. 식사: 제2전시관 지하 1층 푸드코트 및 편의점이 있습니다. 도보 5분 거리 쇼핑몰에 다양한 식당이 있습니다.\n2. 환전/ATM: 1층에 해외 카드 사용 가능한 ATM이 구비되어 있습니다."
+        }
+      ]
+    }
+  ]
+}
