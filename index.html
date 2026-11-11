@@ -878,11 +878,13 @@
     loadBrain();
     fetchLiveTicker();
 
-    // Register Service Worker for PWA
+    // Register Service Worker for PWA (Force update to clean old cache)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(err => {
-          console.log('SW registration failed: ', err);
+        navigator.serviceWorker.register('./sw.js?v=2.0').then(reg => {
+          reg.update();
+        }).catch(err => {
+          console.log('SW registration note: ', err);
         });
       });
     }
