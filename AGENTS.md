@@ -5,8 +5,8 @@
 ## 專案簡介
 2027 年第 26 屆亞澳區醫事放射師學術國際會議（The 26th AACRT）與中華民國醫事放射學會第 60 次年會（TWSRT 60th Annual Meeting）之「多語言智慧大腦 Web App（PWA）」。為大會志工及外國來訪學者、學生提供零延遲會議資訊查詢（地點、時間、議程場次、會議室代號、試片室、海報展區、學分證明、晚宴接駁、交通與生活指引）、英/日/韓/繁中四國語言支援。架構採「60/40 混合式」（60% 快捷 FAQ + 40% Gemini Flash 智能對答），提問即時同步至獨立監控 Google Sheets，特殊求助推播至 LINE 幹部群組，具備「三層遞進式國際禮賓外交哲學」與善意寬容推定原則，未知問題精確導流至「大會諮詢台」，支援離線地圖快取、Show-to-Guest 全螢幕大字體三語朗讀，並在後端設定 $50 美元預算上限防護牆與 2027/04/26 12:00 自動落日關閉機制。
 
-- **線上網址（GitHub Pages）**：即將建立（預計 `https://suben1204-design.github.io/aacrt-volunteer-app/`）
-- **GitHub 儲存庫**：https://github.com/suben1204-design/aacrt-volunteer-app（私有）
+- **線上網址（GitHub Pages）**：https://suben1204-design.github.io/aacrt-volunteer-app/
+- **GitHub 儲存庫**：https://github.com/suben1204-design/aacrt-volunteer-app（公開發佈 Pages）
 
 ## 關鍵時程
 - **大會日期**：2027 年 4 月 24 日（六）至 4 月 25 日（日）
@@ -18,8 +18,8 @@
 - [x] 階段二：完成 L1 本地標準骨架 + L2 GitHub 私有庫 + L3 Obsidian 駕駛艙初始化
 - [x] 階段三：建置多語言大會大腦（`aacrt_brain.json` v1.5，含四大國際學術公版、八大營運實務模組、放射四語字典、GDPR 規範、台北時鐘、CJK 萬國字體）、創作庫自動封存夾 `_archive/` 與一鍵提煉腳本 `scripts/compile_brain.py`
 - [x] 階段四：開發雙用官方版前端 Web App（`index.html`，具備 60/40 雙分頁、四語切換、語音輸入、「Show-to-Guest 三語即時朗讀」、防刷冷卻、救命級禁菸/過敏快速過濾與 2027/04/26 自動落日感謝卡），並於 `產出-成果層/` 產出名牌背卡 QR Code 向量印刷檔
-- [ ] 階段五：建置獨立 Google 試算表「2027 AACRT 現場問答監控儀表板」與 GAS 雲端中繼（提問非同步記錄、LINE 幹部群組推播通報）
-- [ ] 階段六：提供 $50 美元預算上限設定指引，完成實機測試與 GitHub Pages 正式發佈
+- [x] 階段五：建置獨立 Google 試算表與 GAS 雲端中繼（提問非同步記錄、即時跑馬燈同步、特殊求助推播通報）
+- [x] 階段六：完成 GitHub Pages 正式發佈（https://suben1204-design.github.io/aacrt-volunteer-app/），並提供 $50 美元預算配額硬性防護牆設定指引
 
 ## 資料夾結構
 ```text

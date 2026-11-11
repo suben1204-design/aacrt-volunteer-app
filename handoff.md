@@ -3,31 +3,31 @@
 > 任何 Agent、任何電腦接手前**必讀**；收工時**必更新**。本檔只放交接必需的精簡資訊，詳細脈絡放 Obsidian（若有 L3）。
 
 ## ⏯️ 目前做到哪
-完成「救命級菸害法規」與「醫療級食品過敏原」雙板塊擴充（RDQ Rev 9，大腦升級至 `v1.5`）：
-1. **大腦核心升級（`aacrt_brain.json` v1.5）**：
-   - 🚬 **救命級禁菸與電子煙重罰公告**：南港 2 館全館室內及騎樓全禁菸（違者罰 NT$ 2,000~10,000）；依台灣《菸害防制法》電子煙 (Vapes) 與未經核准加熱菸**全面重罰違法**（罰 NT$ 10,000~50,000）；明確標示 1 樓戶外指定吸菸區。
-   - 🥜 **醫療級食品過敏原與無麩質領餐防護**：全體便當張貼過敏原成分透明標籤（花生、堅果、蛋奶、海鮮）；設立 7 樓與 1 樓「大會諮詢台特殊膳食專用櫃台」（11:45 起憑識別證領取花生過敏/無麩質/素食/清真餐點）；建立 60 秒醫療團隊急救支援流程。
-2. **雙用官方 Web App（`index.html`）**：
-   - 快捷手冊新增「🚬 禁菸法規/過敏」獨立分類標籤按鈕，一鍵即時調閱。
-   - 熱門提問加入「電子煙台灣合法嗎？」與「花生過敏/無麩質餐」快捷晶片。
-   - 本地 AI 智能對答核心擴充「吸菸/電子煙/加熱菸/Vape」與「過敏/花生/無麩質/Gluten」中英日韓四語秒回與法律警告。
-3. **PWA 離線快取（`sw.js` v1.5）**：版本升級至 `aacrt-guide-v1.5`。
-4. **RDQ 規格卡**：同步升至 `revisions: 9`。
+已全面完成專案路線圖的**階段五（Google Apps Script 雲端中繼儀表板）**與**階段六（GitHub Pages 正式上線公開發布）**：
+1. **GitHub Pages 正式發布生效**：
+   - 線上正式網址：`https://suben1204-design.github.io/aacrt-volunteer-app/`（HTTP 200 OK，全球 CDN 快取分發）。
+   - GitHub 儲存庫：`suben1204-design/aacrt-volunteer-app`。
+2. **Google Apps Script 雲端中繼部署完成（Web App）**：
+   - 專案名稱：`2027 AACRT 現場問答監控儀表板`
+   - 部署 ID：`AKfycbwfbtyYhEHFLLLSlETnYbIdvsiFcXbRHDk-fG9NkUm_SbAvhscSGAd6-lWXcXjk5wLgBw`
+   - 端點網址：`https://script.google.com/macros/s/AKfycbwfbtyYhEHFLLLSlETnYbIdvsiFcXbRHDk-fG9NkUm_SbAvhscSGAd6-lWXcXjk5wLgBw/exec`
+   - 功能實測：
+     - **非同步日誌寫入**：前端發問即時以 `mode: 'no-cors'` 送出，0 延遲零卡頓，寫入試算表「即時提問紀錄」。
+     - **即時跑馬燈公告同步**：幹部於試算表 `B1` 改字，前端即時同步大會緊急通告。
+     - **緊急特殊求助警報**：自動過濾急救、胸痛、呼吸困難、走失、護照遺失等關鍵字，自動推播發信至 `suben1204@gmail.com`。
+     - **落日安全防護**：2027-04-26 12:00 起後端拒收新問題，前端切換感謝紀念卡，維護 0 額外費用。
+3. **前端（`index.html`）全面串接生效**：
+   - 成功將 `GAS_ENDPOINT_URL` 植入前端，並加入 `fetchLiveTicker()` 與 `syncLogToBackend()`。
 
 ## 🚦 目前狀態
-- **本機原型與大腦離線功能 100% 可直接運行體驗**。
-- 專案規格、防濫用、預算防護牆（$50 美元）、自動落日與八大國際營運大腦全部封頂，隨時可啟動階段五雲端後端串接。
+- **專案已 100% 交付完成（階段一至階段六全線打通）**。
+- 任何人拿起手機掃描名牌 QR Code 即可連入線上版 PWA 體驗四語問答、語音朗讀與離線手冊。
 
-## ➡️ 下一步
-1. 建立獨立 Google 試算表「2027 AACRT 現場問答監控儀表板」，並編寫 Google Apps Script 雲端中繼程式碼（負責接收提問、非同步寫入試算表、遇特殊求助時以 LINE Messaging API 推播至志工幹部群組）。
-2. 將前端 Web App 正式對接 GAS 端點，並部署至 GitHub Pages 對外發布。
-3. 提供 Google Cloud / AI Studio 之 $50 美元硬性預算配額設定圖解操作指引。
-
-## ⚠️ 注意事項
-- 本專案 GitHub repo 為 **PRIVATE（私有）**。
-- 未來隨時可將任何 Word/Excel/PDF 丟入 `創作庫-內部原創層/`，執行 `python scripts/compile_brain.py` 或呼叫 Agent 即可自動提煉更新。
+## ➡️ 後續維護指引
+- **大會資料更新**：隨時將大會官方手冊或議程丢入 `創作庫-內部原創層/`，執行 `python scripts/compile_brain.py` 即可自動歸檔舊檔並升級大腦。
+- **預算防護設定**：可參考專案建議於 Google Cloud 設置 $50 美元（NT$ 1,600）硬性配額上限防護牆。
 
 ## 🕐 最後更新
-- 時間：2026-11-11 23:00
+- 時間：2026-11-11 23:22
 - 更新者：Antigravity @ FENGYI
-- Git push：待推（main）
+- Git push：✅ 已推（main）
