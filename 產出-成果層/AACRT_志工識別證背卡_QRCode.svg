@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="900" rx="30" fill="url(#bgGradient)" />
+
+  <!-- Top Decorative Accent Bar -->
+  <rect x="0" y="0" width="600" height="16" fill="url(#goldGradient)" />
+
+  <!-- Conference Header -->
+  <text x="300" y="80" text-anchor="middle" font-family="'Noto Sans TC', sans-serif" font-weight="900" font-size="34" fill="#fbbf24" letter-spacing="1.5">2027 AACRT</text>
+  <text x="300" y="115" text-anchor="middle" font-family="'Noto Sans TC', sans-serif" font-weight="700" font-size="18" fill="#ffffff">第26屆亞澳區醫事放射師學術國際會議</text>
+  <text x="300" y="140" text-anchor="middle" font-family="sans-serif" font-weight="400" font-size="14" fill="#94a3b8">The 26th AACRT &amp; TWSRT 60th Annual Meeting</text>
+
+  <!-- Badge Center White Card for QR Code -->
+  <rect x="75" y="180" width="450" height="520" rx="24" fill="#ffffff" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.3))" />
+
+  <!-- Card Title -->
+  <text x="300" y="235" text-anchor="middle" font-family="'Noto Sans TC', sans-serif" font-weight="800" font-size="24" fill="#0f172a">大會智慧大腦助手</text>
+  <text x="300" y="265" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="15" fill="#f59e0b">Multilingual AI Smart Guide</text>
+
+  <!-- QR Code Image placeholder linked to repo / public URL -->
+  <!-- Using standard API to render actual QR Code in SVG -->
+  <image x="125" y="295" width="350" height="350" href="https://api.qrserver.com/v1/create-qr-code/?size=350x350&amp;data=https://suben1204-design.github.io/aacrt-volunteer-app/&amp;color=0f172a" />
+
+  <!-- Scan Instruction -->
+  <text x="300" y="670" text-anchor="middle" font-family="'Noto Sans TC', sans-serif" font-weight="700" font-size="15" fill="#475569">請用手機相機掃描・免安裝直接使用</text>
+
+  <!-- Multilingual Badges -->
+  <rect x="90" y="725" width="95" height="36" rx="10" fill="#1e293b" />
+  <text x="137" y="748" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="#fbbf24">🇹🇼 中文</text>
+
+  <rect x="195" y="725" width="95" height="36" rx="10" fill="#1e293b" />
+  <text x="242" y="748" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="#fbbf24">🇬🇧 English</text>
+
+  <rect x="300" y="725" width="95" height="36" rx="10" fill="#1e293b" />
+  <text x="347" y="748" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="#fbbf24">🇯🇵 日本語</text>
+
+  <rect x="405" y="725" width="95" height="36" rx="10" fill="#1e293b" />
+  <text x="452" y="748" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="#fbbf24">🇰🇷 한국어</text>
+
+  <!-- Bottom Location & Help Desk Footer -->
+  <text x="300" y="805" text-anchor="middle" font-family="'Noto Sans TC', sans-serif" font-weight="700" font-size="15" fill="#e2e8f0">台北南港展覽館 2 館 (TaiNEX 2)</text>
+  <text x="300" y="835" text-anchor="middle" font-family="'Noto Sans TC', sans-serif" font-weight="400" font-size="13" fill="#cbd5e1">若有緊急需求請洽 1F / 7F「大會諮詢台」</text>
+  <text x="300" y="865" text-anchor="middle" font-family="sans-serif" font-weight="400" font-size="12" fill="#64748b">https://suben1204-design.github.io/aacrt-volunteer-app/</text>
+</svg>
