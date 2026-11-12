@@ -403,12 +403,12 @@
   </main>
 
   <!-- ========================================== -->
-  <!-- 底部狀態列精簡：大腦版本 (v1.06) ＋ 南港 2 館 -->
+  <!-- 底部狀態列精簡：大腦版本 (v1.07) ＋ 南港 2 館 -->
   <!-- ========================================== -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-2.5 px-4 border-t border-slate-800 text-center flex items-center justify-center space-x-4 shrink-0 shadow-lg">
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
       <i class="fa-solid fa-brain text-amber-400"></i>
-      <span id="footer-brain-version">大腦 v1.06</span>
+      <span id="footer-brain-version">大腦 v1.07</span>
     </span>
     <span class="text-slate-600">|</span>
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
@@ -1010,7 +1010,11 @@
         const dateStr = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', month: 'numeric', day: 'numeric' }).format(now);
         targetDay = (dateStr === '4/25') ? '4/25' : '4/24';
         
-        badge.innerText = `實體時間 (Taiwan) ${targetDay} ${currentTimeStr}`;
+        const livePrefix = (currentLang === 'zh-TW') ? '實體時間 (Taiwan)' :
+                           (currentLang === 'ja') ? '現地時刻 (台湾)' :
+                           (currentLang === 'ko') ? '현지 시간 (대만)' :
+                           'Live Taiwan';
+        badge.innerText = `${livePrefix} ${targetDay} ${currentTimeStr}`;
       } else {
         badge.innerText = `${targetDay} ${simulatedTime}`;
       }
@@ -1206,8 +1210,6 @@
       currentLang = e.target.value;
       localStorage.setItem('aacrt_lang_preference', currentLang);
       updateLanguageUI();
-      renderScheduleList();
-      renderHappeningNow();
     });
 
     const QUICK_PROMPTS_DATA = [
@@ -1319,7 +1321,15 @@
           filterAllSessions: '全部焦點議程',
           starHintLabel: '點擊 ⭐ 一鍵加入我的行程',
           footerVenue: '南港 2 館',
-          demoTimeHint: '測試大會現場各時段進行中狀態 (時段模擬切換)：'
+          demoTimeHint: '測試大會現場各時段進行中狀態 (時段模擬切換)：',
+          showGuestBtn: '📱 秀給外賓看',
+          liveStatBadge: '即時統計連線中',
+          liveTimeBtn: '⏱️ 目前實體時間',
+          mapFallbackTitle: '南港 2 館 7 樓會場平面圖',
+          mapFallbackSub: '點擊按鈕直接開啟高清地圖與縮放檢視',
+          lightboxMapTitle: '南港 2 館 7 樓分場動線圖',
+          lightboxFallbackTitle: '南港 2 館 7 樓地圖檔案加載中',
+          lightboxFallbackSub: '若尚未放入實體圖檔，請點擊下方 PDF 下載按鈕查閱。'
         },
         'en': {
           headerGuide: 'Official Guide',
@@ -1363,7 +1373,15 @@
           filterAllSessions: 'Featured Sessions',
           starHintLabel: 'Tap ⭐ to add to itinerary',
           footerVenue: 'TaiNEX Hall 2',
-          demoTimeHint: 'Test live session states by time slot:'
+          demoTimeHint: 'Test live session states by time slot:',
+          showGuestBtn: '📱 Fullscreen & Speak',
+          liveStatBadge: 'AI Ready',
+          liveTimeBtn: '⏱️ Live Time',
+          mapFallbackTitle: 'TaiNEX 2 7F Floor Plan',
+          mapFallbackSub: 'Tap button to open high-res pinch-to-zoom map',
+          lightboxMapTitle: 'TaiNEX 2 - 7F Venue Map',
+          lightboxFallbackTitle: '7F Map Loading',
+          lightboxFallbackSub: 'If map image is not yet placed, tap PDF download below.'
         },
         'ja': {
           headerGuide: '公式ガイド',
@@ -1407,7 +1425,15 @@
           filterAllSessions: '注目セッション',
           starHintLabel: '⭐をタップして追加',
           footerVenue: '南港第2展示館',
-          demoTimeHint: '時間帯ごとのセッション進行状況をテスト:'
+          demoTimeHint: '時間帯ごとのセッション進行状況をテスト:',
+          showGuestBtn: '📱 拡大・音声読上',
+          liveStatBadge: 'AI準備完了',
+          liveTimeBtn: '⏱️ 現在時刻',
+          mapFallbackTitle: '南港第2展示館7階 会場案内図',
+          mapFallbackSub: 'ボタンをタップして拡大表示・ピンチズーム',
+          lightboxMapTitle: '南港第2展示館7階 会場図',
+          lightboxFallbackTitle: '7階会場図を読み込み中',
+          lightboxFallbackSub: '画像が表示されない場合は下のPDF版をご覧ください。'
         },
         'ko': {
           headerGuide: '공식 가이드',
@@ -1451,7 +1477,15 @@
           filterAllSessions: '주요 세션',
           starHintLabel: '⭐ 클릭하여 일정 추가',
           footerVenue: '난강전람관 2관',
-          demoTimeHint: '시간대별 진행 세션 시뮬레이션:'
+          demoTimeHint: '시간대별 진행 세션 시뮬레이션:',
+          showGuestBtn: '📱 크게 보기·음성',
+          liveStatBadge: 'AI 준비 완료',
+          liveTimeBtn: '⏱️ 현재 실시간',
+          mapFallbackTitle: '난강 2관 7층 회의실 배치도',
+          mapFallbackSub: '버튼을 눌러 고해상도 확대 지도를 확인하세요',
+          lightboxMapTitle: '난강 2관 7층 회의장 배치도',
+          lightboxFallbackTitle: '7층 지도 로딩 중',
+          lightboxFallbackSub: '이미지가 표시되지 않을 경우 아래 PDF 다운로드를 이용하세요.'
         }
       };
 
@@ -1533,6 +1567,35 @@
       if (demoHint) {
         demoHint.innerHTML = `<i class="fa-solid fa-clock-rotate-left text-amber-400"></i> <span>${t.demoTimeHint}</span>`;
       }
+
+      // Update Live Time Button Text
+      const liveTimeBtn = document.querySelector('button[data-time="live"]');
+      if (liveTimeBtn) {
+        liveTimeBtn.innerText = t.liveTimeBtn;
+      }
+
+      // Update Live Stat Badge if not active with dynamic hot queries
+      const liveBadge = document.getElementById('live-stat-badge');
+      if (liveBadge && !window.isCloudTopQueriesActive) {
+        liveBadge.innerText = t.liveStatBadge;
+      }
+
+      // Update Map Fallback & Lightbox Titles
+      const mapFallbackTitle = document.querySelector('#map-fallback-box p.font-bold');
+      if (mapFallbackTitle) mapFallbackTitle.innerText = t.mapFallbackTitle;
+      const mapFallbackSub = document.querySelector('#map-fallback-box p.text-slate-300');
+      if (mapFallbackSub) mapFallbackSub.innerText = t.mapFallbackSub;
+      const lightboxMapTitle = document.getElementById('lightbox-map-title');
+      if (lightboxMapTitle) lightboxMapTitle.innerText = t.lightboxMapTitle;
+      const lightboxFallbackTitle = document.querySelector('#lightbox-fallback-box p.font-bold');
+      if (lightboxFallbackTitle) lightboxFallbackTitle.innerText = t.lightboxFallbackTitle;
+      const lightboxFallbackSub = document.querySelector('#lightbox-fallback-box p.text-slate-400');
+      if (lightboxFallbackSub) lightboxFallbackSub.innerText = t.lightboxFallbackSub;
+
+      // Update Show to Guest Buttons on existing AI bubbles
+      document.querySelectorAll('.show-guest-btn-label').forEach(el => {
+        el.innerText = t.showGuestBtn;
+      });
 
       // Re-render schedule and happening-now with updated language room badges
       renderScheduleList();
@@ -1721,7 +1784,16 @@
       }
 
       // 1. 重要大會演講 (Keynote / Plenary)
-      if (/\b(keynote|plenary)\b/i.test(q) || q.includes('重要演講') || q.includes('演講主題') || q.includes('基調講演') || q.includes('기조강연')) {
+      // 排除：若句子同時詢問各演講廳/會議室動線（例如 session rooms, 怎麼走, 行き方, 各演講廳, 각 회의실 等），則不攔截，讓第 2 題處理！
+      const isAskingRoomsOrDirection = /\b(get to|how to|where|direction|directions|session\s*rooms?)\b/i.test(q) ||
+        q.includes('怎麼走') || q.includes('行き方') || q.includes('어떻게') ||
+        q.includes('各演講廳') || q.includes('各會議室') || q.includes('各会議室') || q.includes('각 회의실');
+
+      if (!isAskingRoomsOrDirection && (
+          /\b(keynote|plenary)\b/i.test(q) ||
+          q.includes('大會演講') || q.includes('主題演講') || q.includes('重要演講') || q.includes('演講主題') ||
+          q.includes('基調講演') || q.includes('기조강연')
+      )) {
         return {
           matched: true,
           'zh-TW': '大會最核心的主題演講 (Keynote & Plenary) 於每日上午 09:00～10:30 在 7 樓「大會堂 (Plenary Hall)」隆重舉行，各分場專案演講亦同步於 701~703 展開。您也可以點擊下方「我的行程」查看進行中演講！',
@@ -1730,7 +1802,6 @@
           'ko': '학술대회 핵심 기조강연(Keynote/Plenary)은 매일 09:00~10:30 7층 플레너리 홀에서 진행됩니다. 하단의 「내 일정표」에서도 실시간 세션을 확인하실 수 있습니다!'
         };
       }
-
 
       // 3. 專題分廳主題 (修正：單字邊界防止誤觸)
       if (/\b(ct|mri|ai|ivr|pet|sbrt|igrt)\b/i.test(q) || q.includes('分廳') || q.includes('主題') || q.includes('專題') || q.includes('分科会') || q.includes('분과')) {
@@ -1743,17 +1814,20 @@
         };
       }
 
-      // 4. 試片室簡報繳交期限 (Slide Upload & Ready Room - 擴充自然語言)
-      if (/\b(ppt|slide|slides|upload|ready\s*room|preview\s*room|speaker\s*ready|laptop|usb)\b/i.test(q) ||
+      // 4. 試片室簡報繳交期限 ＆ 口頭發表響鈴規定 (Ready Room & Oral Bell Rules)
+      if (/\b(ppt|slide|slides|upload|ready\s*room|preview\s*room|speaker\s*ready|laptop|usb|oral|bell|time\s*limit)\b/i.test(q) ||
           q.includes('隨身碟') || q.includes('試片室') || q.includes('幾小時') || q.includes('交出') ||
+          q.includes('口頭發表') || q.includes('口頭報告') || q.includes('演講時間') || q.includes('響鈴') ||
           q.includes('スライド') || q.includes('試写室') || q.includes('プレビュー') || q.includes('発表データ') || q.includes('pc持ち込み') ||
-          q.includes('슬라이드') || q.includes('시사회실') || q.includes('준비실') || q.includes('발표자료') || q.includes('노트북')) {
+          q.includes('口頭発表') || q.includes('持ち時間') || q.includes('ベル') ||
+          q.includes('슬라이드') || q.includes('시사회실') || q.includes('준비실') || q.includes('발표자료') || q.includes('노트북') ||
+          q.includes('구연') || q.includes('발표 시간')) {
         return {
           matched: true,
-          'zh-TW': '口頭發表講者請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶隨身碟至 7 樓 704 試片室完成影音測試與檔案拷貝。為確保議程順暢，大會不接受以個人筆電切換投影。',
-          'en': 'Oral presentation speakers must upload and test their slides at the 7F Room 704 Speaker Ready Room at least 2 hours prior to their session (or by 08:00 for the morning session). Personal laptops cannot be connected directly at podiums.',
-          'ja': '口頭発表の演者様は、ご自身の発表開始の【2時間前まで】（午前の最初のセッションは当日08:00まで）に、7階704試写室にてUSBメモリによるスライド動作確認をお済ませください。個人PCの持ち込み接続はできません。',
-          'ko': '구연 발표 연자께서는 발표 시작 최소 2시간 전(오전 첫 세션은 당일 08:00까지)에 7층 704호 슬라이드 준비실을 방문하여 USB 파일 복사 및 점검을 완료해 주십시오. 현장 개인 노트북 연결은 지원되지 않습니다.'
+          'zh-TW': '【口頭發表與試片室規範】：\n1. 簡報繳交：請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶隨身碟至 7 樓 704 試片室完成影音測試與檔案拷貝。為確保議程順暢，大會不接受以個人筆電切換投影。\n2. 口頭發表每題限時 10 分鐘（8 分鐘響一聲提醒鈴，10 分鐘響兩聲結束鈴，請講者掌握時間）。',
+          'en': '【Oral Presentation & Slide Upload Guidelines】:\n1. Slide Submission: Speakers must upload and test slides at 7F Room 704 Speaker Ready Room at least 2 hours prior to presentation (or by 08:00 for the morning session). Personal laptops cannot be connected at podiums.\n2. Oral presentations are limited to 10 minutes per paper (1 reminder bell at 8 min, 2 end bells at 10 min).',
+          'ja': '【口頭発表およびスライド提出規定】:\n1. スライド提出：ご自身の発表開始の【2時間前まで】（午前の最初のセッションは当日08:00まで）に、7階704試写室にてUSBメモリでスライド動作確認をお済ませください。個人PC接続は不可です。\n2. 口頭発表は1題あたり制限時間10分です（8分経過で予鈴1回、10分で終了鈴2回となります。時間厳守をお願いします）。',
+          'ko': '【구연 발표 및 슬라이드 제출 규정】:\n1. 슬라이드 접수: 발표 시작 최소 2시간 전(오전 첫 세션은 당일 08:00까지) 7층 704호 준비실에서 USB 점검 및 복사를 완료해 주십시오. 개인 노트북 연결은 지원되지 않습니다.\n2. 구연 발표는 1편당 10분 제한입니다 (8분에 1회 경고벨, 10분에 2회 종료벨이 울립니다).'
         };
       }
 
@@ -1815,21 +1889,7 @@
         };
       }
 
-      // 10. 捷運與高鐵交通指引 (擴充自然語言)
-      if (/\b(mrt|metro|subway|train|hsr|transit|station|directions|transportation|access|taxi|airport)\b/i.test(q) ||
-          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') || q.includes('計程車') || q.includes('機場') || q.includes('怎麼走') ||
-          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('行き方') || q.includes('タクシー') ||
-          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시')) {
-        return {
-          matched: true,
-          'zh-TW': '交通指引：請搭乘台北捷運【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」。自 1 號或 2 號出口出站，經由戶外徒步區或 B1 地下連通道步行約 3 分鐘即可直通南港展覽館 2 館。搭乘高鐵/台鐵者，請於「南港站」下車後轉乘捷運一站即可抵達。',
-          'en': 'Transportation Guide: Take Taipei MRT Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23 / BR24). Take Exit 1 or Exit 2, and walk 3 minutes through the plaza or B1 underground walkway directly into TaiNEX Hall 2. From Taiwan High Speed Rail Nangang Station, take the MRT 1 stop.',
-          'ja': '交通案内：台北MRT板南線（ブルーライン）または文湖線（ブラウンライン）の「南港展覧館駅（BL23/BR24）」下車。1番または2番出口より徒歩約3分、地下連絡通路（B1）でも南港第2展示館に直結しています。新幹線（高鐵）をご利用の場合は「南港駅」よりMRTで1駅です。',
-          'ko': '교통 안내: 타이베이 MRT 판난선(블루라인) 또는 원후선(브라운라인) 탑승 후 「난강전람관역(BL23 / BR24)」에서 하차하십시오. 1번 또는 2번 출구로 나와 도보 3분 또는 B1 지하 연결통로를 통해 난강 2관으로 바로 진입하실 수 있습니다. 고속철도(THSR) 이용 시 난강역에서 지하철 1정거장 거리입니다.'
-        };
-      }
-
-      // 12. 壁報/海報論文展區 (Poster Session - 新增)
+      // 12. 壁報/海報論文展區 (Poster Session)
       if (/\b(poster|posters)\b/i.test(q) || q.includes('海報') || q.includes('壁報') || q.includes('ポスター') || q.includes('포스터')) {
         return {
           matched: true,
@@ -1840,9 +1900,40 @@
         };
       }
 
-      // 2. 7樓會議室位置與地圖 (精確單字邊界，移至具體主題之後判定，移除「怎麼走」防止攔截交通，修正韓文錯字)
-      if (/\b(7f|floor\s*map|venue|layout)\b/i.test(q) || /\b(room|rooms|hall|halls)\b/i.test(q) ||
-          q.includes('7樓') || q.includes('會議室') || q.includes('会場') || q.includes('地圖') || q.includes('map') || q.includes('배치도')) {
+      // 13. 報到註冊與名牌領取 (Registration & Badge Pickup - 新增)
+      if (/\b(register|registration|badge|check-in|checkin|reception)\b/i.test(q) ||
+          q.includes('報到') || q.includes('註冊') || q.includes('名牌') || q.includes('識別證') ||
+          q.includes('受付') || q.includes('ネームカード') || q.includes('参加証') ||
+          q.includes('등록') || q.includes('명찰') || q.includes('접수')) {
+        return {
+          matched: true,
+          'zh-TW': '【大會報到與名牌領取】：\n大會註冊與報到櫃台設於南港 2 館「1 樓迎賓大廳」與「7 樓大廳」（每日 08:00 開放服務）。請出示報到確認信、註冊收據或 QR Code 即可領取大會名牌、午餐券與手冊。',
+          'en': '【Conference Registration & Badge Pickup】:\nRegistration and badge pickup desks are located at the 1F Lobby and 7F Foyer of TaiNEX 2 (open daily from 08:00). Please present your confirmation letter or QR Code to collect your conference badge, meal coupons, and official handbook.',
+          'ja': '【大会参加受付・ネームカード引換】:\n参加受付およびネームカード引換所は南港第2展示館「1階ロビー」および「7階ホワイエ」に設置されております（毎日08:00オープン）。登録確認書またはQRコードをご提示の上、ネームカード、昼食券、ハンドブックをお受け取りください。',
+          'ko': '【학술대회 등록 및 명찰 수령】:\n학술대회 등록 및 명찰 수령 창구는 난강 2관 「1층 로비」 및 「7층 로비」에 마련되어 있습니다(매일 08:00 오픈). 등록 확인서 또는 QR 코드를 제시하시면 대회 명찰, 식권 및 공식 핸드북을 수령하실 수 있습니다.'
+        };
+      }
+
+      // 10. 捷運與高鐵交通指引 (MRT & Transit - 已移除「怎麼走」與「行き方」，避免誤攔截會場動線)
+      if (/\b(mrt|metro|subway|train|hsr|transit|station|transportation|access|taxi|airport)\b/i.test(q) ||
+          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') || q.includes('計程車') || q.includes('機場') || q.includes('搭車') ||
+          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('タクシー') ||
+          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시')) {
+        return {
+          matched: true,
+          'zh-TW': '交通指引：請搭乘台北捷運【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」。自 1 號或 2 號出口出站，經由戶外徒步區或 B1 地下連通道步行約 3 分鐘即可直通南港展覽館 2 館。搭乘高鐵/台鐵者，請於「南港站」下車後轉乘捷運一站即可抵達。',
+          'en': 'Transportation Guide: Take Taipei MRT Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23 / BR24). Take Exit 1 or Exit 2, and walk 3 minutes through the plaza or B1 underground walkway directly into TaiNEX Hall 2. From Taiwan High Speed Rail Nangang Station, take the MRT 1 stop.',
+          'ja': '交通案内：台北MRT板南線（ブルーライン）または文湖線（ブラウンライン）の「南港展覧館駅（BL23/BR24）」下車。1番または2番出口より徒歩約3分、地下連絡通路（B1）でも南港第2展示館に直結しています。新幹線（高鐵）をご利用の場合は「南港駅」よりMRTで1駅です。',
+          'ko': '교통 안내: 타이베이 MRT 판난선(블루라인) 또는 원후선(브라운라인) 탑승 후 「난강전람관역(BL23 / BR24)」에서 하차하십시오. 1번 또는 2번 출구로 나와 도보 3분 또는 B1 지하 연결통로를 통해 난강 2관으로 바로 진입하실 수 있습니다. 고속철도(THSR) 이용 시 난강역에서 지하철 1정거장 거리입니다.'
+        };
+      }
+
+      // 2. 7樓會議室位置與地圖 (精確四語關鍵字，熱門按鈕 #2 100% 命中)
+      if (/\b(7f|floor\s*map|venue|layout|session\s*rooms?)\b/i.test(q) || /\b(room|rooms|hall|halls)\b/i.test(q) ||
+          q.includes('7樓') || q.includes('演講廳') || q.includes('大會堂') || q.includes('會議室') ||
+          q.includes('7階') || q.includes('プレナリー') || q.includes('会場') || q.includes('会議室') ||
+          q.includes('7층') || q.includes('플레너리') || q.includes('강연장') || q.includes('회의실') ||
+          q.includes('地圖') || q.includes('map') || q.includes('배치도')) {
         return {
           matched: true,
           'zh-TW': '大會核心演講廳皆集中於 7 樓：大會堂 (Plenary Hall)、701（CT/IVR）、702（MRI/放療）、703（AI/核醫）、704（試片室）、705（VIP 貴賓室）。出電梯口即可見指引，亦可點擊第一頁「會場平面圖」開啟雙指手勢縮放燈箱！',
@@ -1875,11 +1966,15 @@
           </div>
         `;
       } else {
+        const showGuestLabel = (currentLang === 'zh-TW') ? '📱 秀給外賓看' :
+                               (currentLang === 'ja') ? '📱 拡大・音声読上' :
+                               (currentLang === 'ko') ? '📱 크게 보기·음성' :
+                               '📱 Fullscreen & Speak';
         const showGuestBtnHtml = (msgIdx !== null) ? `
           <div class="mt-2.5 pt-2 border-t border-slate-200/60 flex justify-end">
-            <button onclick="showToGuestFromStore(${msgIdx})" class="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-white hover:bg-amber-50 text-amber-900 border border-slate-200 hover:border-amber-300 rounded-lg text-[11px] font-bold transition-all shadow-sm">
+            <button onclick="showToGuestFromStore(${msgIdx})" class="show-guest-btn inline-flex items-center space-x-1.5 px-2.5 py-1 bg-white hover:bg-amber-50 text-amber-900 border border-slate-200 hover:border-amber-300 rounded-lg text-[11px] font-bold transition-all shadow-sm">
               <i class="fa-solid fa-expand text-[10px] text-amber-600"></i>
-              <span>📱 秀給外賓看</span>
+              <span class="show-guest-btn-label">${showGuestLabel}</span>
             </button>
           </div>
         ` : '';
@@ -2062,6 +2157,7 @@
     }
 
     function renderDynamicTopQueries(topQueries) {
+      window.isCloudTopQueriesActive = true;
       const container = document.getElementById('quick-prompts-container');
       const badge = document.getElementById('live-stat-badge');
       if (badge) {
@@ -2093,7 +2189,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.08').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.09').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);
