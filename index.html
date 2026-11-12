@@ -267,6 +267,61 @@
         </div>
       </div>
 
+      <!-- 卡片 4：論文摘要快速檢索卡 (Scientific Abstracts Search) -->
+      <div id="abstract-search-card" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 hover:shadow-md transition-shadow">
+        <div class="flex items-start space-x-3 mb-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-100">
+            <i class="fa-solid fa-microscope text-lg"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 id="abstract-card-title" class="text-sm font-extrabold text-slate-900 flex items-center gap-1.5">
+                <span>4、學術論文摘要即時檢索 (Abstract Search)</span>
+              </h3>
+              <span id="abstract-indexed-badge" class="text-[10px] bg-cyan-100 text-cyan-900 font-bold px-2 py-0.5 rounded-full border border-cyan-200">
+                195 篇論文已索引
+              </span>
+            </div>
+            <p id="abstract-card-desc" class="text-xs text-slate-600 mt-1 leading-relaxed">
+              即時檢索口頭與壁報論文。支援專題領域（CT、MRI、AI、放療等）、論文編號（如 P-CT-008、O-AI-001）或關鍵字。
+            </p>
+          </div>
+        </div>
+
+        <!-- 搜尋列 -->
+        <div class="relative flex items-center mb-2.5">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs"></i>
+          <input id="abstract-search-input" type="text" oninput="handleAbstractSearch(this.value)" placeholder="輸入論文編號、題目或關鍵字 (如 CT, AI, PSMA, 劑量)..." class="w-full pl-8 pr-8 py-2 bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:bg-white rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
+          <button id="abstract-clear-btn" onclick="clearAbstractSearch()" class="hidden absolute right-2.5 w-4 h-4 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[9px]">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- 專題快速標籤列 (Horizontal Scroll Pills) -->
+        <div class="flex items-center space-x-1.5 overflow-x-auto no-scrollbar pb-1 mb-3 text-[11px]">
+          <button onclick="filterAbstractCategory('ALL')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-800 text-cyan-300 shrink-0 shadow-sm transition-all" data-cat="ALL">全部 (195)</button>
+          <button onclick="filterAbstractCategory('AI')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="AI">AI 人工智慧 (18)</button>
+          <button onclick="filterAbstractCategory('CT')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="CT">CT 電腦斷層 (17)</button>
+          <button onclick="filterAbstractCategory('MR')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="MR">MRI 磁振造影 (21)</button>
+          <button onclick="filterAbstractCategory('RT')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="RT">RT 放射治療 (23)</button>
+          <button onclick="filterAbstractCategory('NM')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="NM">NM 核子醫學 (8)</button>
+          <button onclick="filterAbstractCategory('CA')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="CA">CA 心導管 (11)</button>
+          <button onclick="filterAbstractCategory('IR')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="IR">IR 血管介入 (7)</button>
+          <button onclick="filterAbstractCategory('MA')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="MA">MA 乳房攝影 (8)</button>
+          <button onclick="filterAbstractCategory('RO')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="RO">RO 常規X光 (12)</button>
+          <button onclick="filterAbstractCategory('ST')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="ST">ST 學生研究 (39)</button>
+        </div>
+
+        <!-- 檢索結果列表 (預設顯示焦點精選，搜尋時動態更新) -->
+        <div id="abstract-results-header" class="flex items-center justify-between text-[11px] text-slate-500 mb-1.5 px-0.5">
+          <span id="abstract-result-count">焦點論文推薦：</span>
+          <span id="abstract-hint-click" class="text-[10px] text-slate-400">點擊卡片查閱摘要詳情</span>
+        </div>
+        <div id="abstract-results-list" class="space-y-2 max-h-80 overflow-y-auto no-scrollbar pr-0.5">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
       <!-- 諮詢台聯絡卡片 -->
       <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/90 rounded-2xl p-4 shadow-sm mt-4">
         <div class="flex items-start space-x-3">
@@ -361,6 +416,8 @@
             <span>測試大會現場各時段進行中狀態 (時段模擬切換)：</span>
           </p>
           <div class="flex flex-wrap gap-1.5">
+            <button onclick="setSimulatedTime('10:00', '4/23')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="10:00" data-day="4/23">4/23 10:00 全人教育/理監事</button>
+            <button onclick="setSimulatedTime('14:00', '4/23')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="14:00" data-day="4/23">4/23 14:00 CT工作坊/ISRRT</button>
             <button onclick="setSimulatedTime('09:30', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="09:30" data-day="4/24">4/24 09:30 開幕主題</button>
             <button onclick="setSimulatedTime('10:45', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500 text-slate-950 transition-all" data-time="10:45" data-day="4/24">4/24 10:45 CT/MRI分廳</button>
             <button onclick="setSimulatedTime('12:30', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="12:30" data-day="4/24">4/24 12:30 海報交流</button>
@@ -372,14 +429,15 @@
         </div>
       </div>
 
-      <!-- 日期分籤 (4/24 vs 4/25) 與個人化收藏切換 -->
+      <!-- 日期分籤 (4/23 vs 4/24 vs 4/25) 與個人化收藏切換 -->
       <div class="space-y-2 pt-1">
-        <!-- 日期選擇按鈕組 -->
+        <!-- 日期選擇按鈕組 (三日切換) -->
         <div class="flex items-center justify-between">
-          <div class="flex space-x-1.5 bg-slate-200 p-1 rounded-xl">
-            <button id="day-filter-all-btn" onclick="filterDaySchedule('all')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all">全部兩日</button>
-            <button id="day-filter-424-btn" onclick="filterDaySchedule('4/24')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all">4/24 (Day 1)</button>
-            <button id="day-filter-425-btn" onclick="filterDaySchedule('4/25')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all">4/25 (Day 2)</button>
+          <div class="flex space-x-1 bg-slate-200 p-1 rounded-xl text-[11px]">
+            <button id="day-filter-all-btn" onclick="filterDaySchedule('all')" class="px-2 py-1 rounded-lg font-bold bg-white text-slate-900 shadow-sm transition-all">全部三日</button>
+            <button id="day-filter-423-btn" onclick="filterDaySchedule('4/23')" class="px-2 py-1 rounded-lg font-bold text-slate-600 hover:text-slate-900 transition-all">4/23 (Day 1)</button>
+            <button id="day-filter-424-btn" onclick="filterDaySchedule('4/24')" class="px-2 py-1 rounded-lg font-bold text-slate-600 hover:text-slate-900 transition-all">4/24 (Day 2)</button>
+            <button id="day-filter-425-btn" onclick="filterDaySchedule('4/25')" class="px-2 py-1 rounded-lg font-bold text-slate-600 hover:text-slate-900 transition-all">4/25 (Day 3)</button>
           </div>
           <span id="star-hint-label" class="text-[11px] text-slate-500">點擊 ⭐ 一鍵加入我的行程</span>
         </div>
@@ -403,12 +461,12 @@
   </main>
 
   <!-- ========================================== -->
-  <!-- 底部狀態列精簡：大腦版本 (v1.07) ＋ 南港 2 館 -->
+  <!-- 底部狀態列精簡：大腦版本 (v1.08) ＋ 南港 2 館 -->
   <!-- ========================================== -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-2.5 px-4 border-t border-slate-800 text-center flex items-center justify-center space-x-4 shrink-0 shadow-lg">
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
       <i class="fa-solid fa-brain text-amber-400"></i>
-      <span id="footer-brain-version">大腦 v1.07</span>
+      <span id="footer-brain-version">大腦 v1.08</span>
     </span>
     <span class="text-slate-600">|</span>
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
@@ -539,10 +597,116 @@
     };
 
     // ==========================================
-    // 雙日核心議程資料庫 (4/24 Day 1 & 4/25 Day 2)
+    // 三日核心議程資料庫 (4/23 Day 1, 4/24 Day 2, 4/25 Day 3)
     // ==========================================
     const CONFERENCE_SESSIONS = [
-      // 4/24 (Day 1)
+      // 4/23 (Day 1)
+      {
+        id: 's0_1',
+        day: '4/23',
+        timeStart: '09:00',
+        timeEnd: '12:00',
+        timeDisplay: '09:00 - 12:00',
+        room: '702 ABC 會議室',
+        room_en: 'Room 702 ABC',
+        roomBadge: '702 ABC (全人教育)',
+        roomBadge_en: '702 ABC (Forum)',
+        topic_zh: 'Section 1: 全人教育論壇 (Holistic Educational Forum)',
+        topic_en: 'Section 1: Holistic Educational Forum',
+        speaker: 'Educational Committee & International Speakers',
+        category: 'Education'
+      },
+      {
+        id: 's0_2',
+        day: '4/23',
+        timeStart: '09:00',
+        timeEnd: '12:00',
+        timeDisplay: '09:00 - 12:00',
+        room: '703 ABC 會議室',
+        room_en: 'Room 703 ABC',
+        roomBadge: '703 ABC (理監事會)',
+        roomBadge_en: '703 ABC (Board)',
+        topic_zh: 'AACRT 理事與監事會議 (AACRT Board Meeting)',
+        topic_en: 'AACRT Board Meeting',
+        speaker: 'AACRT Board Members & Society Presidents',
+        category: 'Meeting'
+      },
+      {
+        id: 's0_3',
+        day: '4/23',
+        timeStart: '12:00',
+        timeEnd: '13:30',
+        timeDisplay: '12:00 - 13:30',
+        room: '7F 餐廳 / 交流區',
+        room_en: '7F Dining / Networking Area',
+        roomBadge: '7F 午餐 Lunch',
+        roomBadge_en: '7F Lunch',
+        topic_zh: '大會交流午餐 (Lunch & Networking)',
+        topic_en: 'Lunch & Networking',
+        speaker: 'All Attendees & Board Delegates',
+        category: 'Lunch'
+      },
+      {
+        id: 's0_4',
+        day: '4/23',
+        timeStart: '13:30',
+        timeEnd: '16:30',
+        timeDisplay: '13:30 - 16:30',
+        room: '702 ABC 會議室',
+        room_en: 'Room 702 ABC',
+        roomBadge: '702 ABC (CT工作坊)',
+        roomBadge_en: '702 ABC (CT Workshop)',
+        topic_zh: 'Section 2: 電腦斷層尖端工作坊 (CT Workshop)',
+        topic_en: 'Section 2: Advanced CT Workshop',
+        speaker: 'CT Special Interest Group & Instructors',
+        category: 'CT'
+      },
+      {
+        id: 's0_5',
+        day: '4/23',
+        timeStart: '13:30',
+        timeEnd: '16:30',
+        timeDisplay: '13:30 - 16:30',
+        room: '703 ABC 會議室',
+        room_en: 'Room 703 ABC',
+        roomBadge: '703 ABC (ISRRT AA)',
+        roomBadge_en: '703 ABC (ISRRT)',
+        topic_zh: 'ISRRT 亞澳區區域代表會議 (ISRRT AA Regional Meeting)',
+        topic_en: 'ISRRT AA Regional Meeting',
+        speaker: 'ISRRT Regional Directors & Delegates',
+        category: 'Meeting'
+      },
+      {
+        id: 's0_6',
+        day: '4/23',
+        timeStart: '16:30',
+        timeEnd: '17:30',
+        timeDisplay: '16:30 - 17:30',
+        room: '703 ABC 會議室',
+        room_en: 'Room 703 ABC',
+        roomBadge: '703 ABC (EACRT)',
+        roomBadge_en: '703 ABC (EACRT)',
+        topic_zh: 'EACRT 東亞醫事放射學會理事會議 (EACRT Board Meeting)',
+        topic_en: 'EACRT Board Meeting',
+        speaker: 'EACRT Executive Board',
+        category: 'Meeting'
+      },
+      {
+        id: 's0_7',
+        day: '4/23',
+        timeStart: '18:30',
+        timeEnd: '20:30',
+        timeDisplay: '18:30 - 20:30',
+        room: '歡迎晚宴會場 (Presidential Dinner)',
+        room_en: 'Welcome Banquet Venue (Presidential Dinner)',
+        roomBadge: '歡迎晚宴 Welcome',
+        roomBadge_en: 'Welcome Banquet',
+        topic_zh: '2027 AACRT 歡迎晚宴暨會長之夜 (Welcome Banquet / Presidential Dinner)',
+        topic_en: 'Welcome Banquet (Presidential Dinner)',
+        speaker: 'AACRT President & Invited Dignitaries',
+        category: 'Gala'
+      },
+      // 4/24 (Day 2)
       {
         id: 's1',
         day: '4/24',
@@ -663,7 +827,7 @@
         speaker: 'Organizing Committee & International Delegates',
         category: 'Gala'
       },
-      // 4/25 (Day 2)
+      // 4/25 (Day 3)
       {
         id: 's9',
         day: '4/25',
@@ -764,7 +928,7 @@
 
     let currentLang = detectInitialLanguage();
     let currentScheduleFilter = 'all'; // 'all' or 'starred'
-    let currentDayFilter = 'all';       // 'all', '4/24', '4/25'
+    let currentDayFilter = 'all';       // 'all', '4/23', '4/24', '4/25'
     let simulatedTime = '10:45';
     let simulatedDay = '4/24';
     let isListening = false;
@@ -885,19 +1049,22 @@
     function filterDaySchedule(day) {
       currentDayFilter = day;
       const allBtn = document.getElementById('day-filter-all-btn');
+      const d423Btn = document.getElementById('day-filter-423-btn');
       const d424Btn = document.getElementById('day-filter-424-btn');
       const d425Btn = document.getElementById('day-filter-425-btn');
 
-      [allBtn, d424Btn, d425Btn].forEach(b => {
-        b.className = 'px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
+      [allBtn, d423Btn, d424Btn, d425Btn].forEach(b => {
+        if (b) b.className = 'px-2 py-1 rounded-lg font-bold text-slate-600 hover:text-slate-900 transition-all';
       });
 
-      if (day === 'all') {
-        allBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all';
-      } else if (day === '4/24') {
-        d424Btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all';
-      } else if (day === '4/25') {
-        d425Btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all';
+      if (day === 'all' && allBtn) {
+        allBtn.className = 'px-2 py-1 rounded-lg font-bold bg-white text-slate-900 shadow-sm transition-all';
+      } else if (day === '4/23' && d423Btn) {
+        d423Btn.className = 'px-2 py-1 rounded-lg font-bold bg-white text-slate-900 shadow-sm transition-all';
+      } else if (day === '4/24' && d424Btn) {
+        d424Btn.className = 'px-2 py-1 rounded-lg font-bold bg-white text-slate-900 shadow-sm transition-all';
+      } else if (day === '4/25' && d425Btn) {
+        d425Btn.className = 'px-2 py-1 rounded-lg font-bold bg-white text-slate-900 shadow-sm transition-all';
       }
       renderScheduleList();
     }
@@ -1006,9 +1173,15 @@
         const now = new Date();
         currentTimeStr = now.toLocaleTimeString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false, hour: '2-digit', minute: '2-digit' });
         
-        // 修正：動態判斷台灣日期是否為 4/25，否則預設 4/24
+        // 修正：動態判斷台灣日期是否為 4/23 或 4/25，否則預設 4/24
         const dateStr = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', month: 'numeric', day: 'numeric' }).format(now);
-        targetDay = (dateStr === '4/25') ? '4/25' : '4/24';
+        if (dateStr === '4/23') {
+          targetDay = '4/23';
+        } else if (dateStr === '4/25') {
+          targetDay = '4/25';
+        } else {
+          targetDay = '4/24';
+        }
         
         const livePrefix = (currentLang === 'zh-TW') ? '實體時間 (Taiwan)' :
                            (currentLang === 'ja') ? '現地時刻 (台湾)' :
@@ -1203,6 +1376,200 @@
     }
 
     // ==========================================
+    // 論文摘要即時檢索卡邏輯 (Abstracts Index & Search)
+    // ==========================================
+    let ABSTRACTS_DATA = [];
+    let currentAbstractCategory = 'ALL';
+    let currentAbstractSearchQuery = '';
+
+    async function loadAbstractsIndex() {
+      try {
+        const resp = await fetch('./docs/abstracts_index.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const data = await resp.json();
+        ABSTRACTS_DATA = Array.isArray(data) ? data : (data.papers || data.abstracts || []);
+        console.log('✅ Loaded abstracts index:', ABSTRACTS_DATA.length);
+        const countBadge = document.getElementById('abstract-indexed-badge');
+        if (countBadge) {
+          const badgeText = (currentLang === 'zh-TW') ? `${ABSTRACTS_DATA.length} 篇論文已索引` :
+                            (currentLang === 'ja') ? `${ABSTRACTS_DATA.length}件の論文索引完了` :
+                            (currentLang === 'ko') ? `${ABSTRACTS_DATA.length}편 논문 색인 완료` :
+                            `${ABSTRACTS_DATA.length} Papers Indexed`;
+          countBadge.innerText = badgeText;
+        }
+        renderAbstractResults();
+      } catch (err) {
+        console.warn('Could not load abstracts_index.json:', err);
+        const countBadge = document.getElementById('abstract-indexed-badge');
+        if (countBadge) {
+          countBadge.innerText = (currentLang === 'zh-TW') ? '論文索引加載中' : 'Index loading...';
+        }
+      }
+    }
+
+    function filterAbstractCategory(category) {
+      currentAbstractCategory = category;
+      document.querySelectorAll('.abstract-cat-btn').forEach(btn => {
+        if (btn.dataset.category === category) {
+          btn.className = 'abstract-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-cyan-700 text-white shrink-0 shadow-sm transition-all';
+        } else {
+          btn.className = 'abstract-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-all';
+        }
+      });
+      renderAbstractResults();
+    }
+
+    function handleAbstractSearch(query) {
+      currentAbstractSearchQuery = (query || '').trim();
+      const clearBtn = document.getElementById('abstract-clear-btn');
+      if (clearBtn) {
+        if (currentAbstractSearchQuery.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      }
+      renderAbstractResults();
+    }
+
+    function clearAbstractSearch() {
+      const input = document.getElementById('abstract-search-input');
+      if (input) input.value = '';
+      currentAbstractSearchQuery = '';
+      const clearBtn = document.getElementById('abstract-clear-btn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      renderAbstractResults();
+    }
+
+    function renderAbstractResults() {
+      const container = document.getElementById('abstract-results-container');
+      const counterEl = document.getElementById('abstract-result-count');
+      if (!container) return;
+
+      if (!ABSTRACTS_DATA || ABSTRACTS_DATA.length === 0) {
+        container.innerHTML = `
+          <div class="py-6 text-center text-slate-400">
+            <i class="fa-solid fa-spinner fa-spin text-xl mb-1 text-cyan-600"></i>
+            <p class="text-xs">論文索引準備中 (Loading abstracts)...</p>
+          </div>
+        `;
+        return;
+      }
+
+      const q = currentAbstractSearchQuery.toLowerCase();
+      const filtered = ABSTRACTS_DATA.filter(item => {
+        // 分類過濾
+        if (currentAbstractCategory !== 'ALL' && item.category !== currentAbstractCategory) {
+          return false;
+        }
+        // 關鍵字搜尋 (支援編號、標題、頁碼、專題)
+        if (q) {
+          const idMatch = (item.id || '').toLowerCase().includes(q);
+          const titleMatch = (item.title || '').toLowerCase().includes(q);
+          const catMatch = (item.category || '').toLowerCase().includes(q);
+          const pageMatch = String(item.page || '').includes(q);
+          return idMatch || titleMatch || catMatch || pageMatch;
+        }
+        return true;
+      });
+
+      if (counterEl) {
+        const countText = (currentLang === 'zh-TW') ? `顯示 ${filtered.length} 篇論文 (共 ${ABSTRACTS_DATA.length} 篇)` :
+                          (currentLang === 'ja') ? `${filtered.length} 件表示 (全 ${ABSTRACTS_DATA.length} 件)` :
+                          (currentLang === 'ko') ? `${filtered.length} 편 표시 (총 ${ABSTRACTS_DATA.length} 편)` :
+                          `Showing ${filtered.length} of ${ABSTRACTS_DATA.length}`;
+        counterEl.innerText = countText;
+      }
+
+      if (filtered.length === 0) {
+        const noResultMsg = (currentLang === 'zh-TW') ? '查無符合條件的學術論文，請嘗試其他關鍵字' :
+                            (currentLang === 'ja') ? '該当する論文が見つかりません。別のキーワードをお試しください' :
+                            (currentLang === 'ko') ? '일치하는 논문이 없습니다. 다른 검색어를 입력해 주세요' :
+                            'No matching papers found. Try different keywords.';
+        container.innerHTML = `
+          <div class="py-6 text-center text-slate-400">
+            <i class="fa-solid fa-magnifying-glass text-xl mb-1 text-slate-300"></i>
+            <p class="text-xs">${noResultMsg}</p>
+          </div>
+        `;
+        return;
+      }
+
+      // 最多渲染 60 筆，避免大量 DOM 影響平滑滾動
+      const displayList = filtered.slice(0, 60);
+      container.innerHTML = displayList.map(item => {
+        const badgeColor = item.category === 'CT' ? 'bg-blue-100 text-blue-800 border-blue-200' :
+                           item.category === 'MRI' ? 'bg-purple-100 text-purple-800 border-purple-200' :
+                           item.category === 'AI' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
+                           item.category === 'RT' ? 'bg-rose-100 text-rose-800 border-rose-200' :
+                           item.category === 'NM' ? 'bg-amber-100 text-amber-900 border-amber-200' :
+                           'bg-slate-100 text-slate-700 border-slate-200';
+
+        const pageLabel = (currentLang === 'zh-TW') ? `論文集 P.${item.page}` :
+                          (currentLang === 'ja') ? `論文集 P.${item.page}` :
+                          (currentLang === 'ko') ? `논문집 P.${item.page}` :
+                          `Proceedings P.${item.page}`;
+
+        const askAiLabel = (currentLang === 'zh-TW') ? '問 AI' :
+                           (currentLang === 'ja') ? 'AIで質問' :
+                           (currentLang === 'ko') ? 'AI 질문' :
+                           'Ask AI';
+
+        const showGuestLabel = (currentLang === 'zh-TW') ? '秀給外賓' :
+                               (currentLang === 'ja') ? '外賓提示' :
+                               (currentLang === 'ko') ? '게스트 보기' :
+                               'Show Guest';
+
+        const cleanId = escapeHtml(item.id || '');
+        const cleanTitle = escapeHtml(item.title || '');
+        const cleanCat = escapeHtml(item.category || '');
+        const pageNum = item.page || 1;
+
+        return `
+          <div class="p-2.5 bg-slate-50 hover:bg-cyan-50/50 rounded-xl border border-slate-200/80 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-1.5 mb-1">
+                <span class="text-[10px] font-mono font-black text-cyan-800 bg-white px-2 py-0.5 rounded border border-cyan-200">${cleanId}</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeColor}">${cleanCat}</span>
+              </div>
+              <h4 class="text-xs font-bold text-slate-900 leading-snug line-clamp-2" title="${cleanTitle}">${cleanTitle}</h4>
+            </div>
+            <div class="mt-2 pt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-slate-500">
+              <span class="text-slate-400 font-mono text-[10px]"><i class="fa-regular fa-file-lines mr-1 text-slate-400"></i>${pageLabel}</span>
+              <div class="flex items-center space-x-1">
+                <button onclick="askAiAboutPaper('${cleanId}', '${cleanTitle.replace(/'/g, "\\'")}')" class="px-2 py-0.5 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-semibold transition-all">
+                  <i class="fa-solid fa-sparkles text-amber-500 mr-0.5"></i>${askAiLabel}
+                </button>
+                <button onclick="showAbstractToGuest('${cleanId}', '${cleanTitle.replace(/'/g, "\\'")}', '${cleanCat}', ${pageNum})" class="px-2 py-0.5 rounded bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white text-[10px] font-bold transition-all shadow-xs">
+                  <i class="fa-solid fa-mobile-screen mr-0.5"></i>${showGuestLabel}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function askAiAboutPaper(id, title) {
+      switchTab('ai');
+      const input = document.getElementById('chat-input');
+      if (input) {
+        input.value = `我想查詢論文 [${id}] 的發表主題與詳細資訊：${title}`;
+        sendMessage();
+      }
+    }
+
+    function showAbstractToGuest(id, title, cat, page) {
+      const bundle = {
+        'zh-TW': `【學術論文檢索指引】\n論文編號：${id}（專題領域：${cat}）\n發表論文題目：\n${title}\n收錄頁碼：論文集第 ${page} 頁\n\n現場口頭與壁報論文發表如有任何疑問，歡迎洽詢南港 2 館 1 樓海報展區志工或 7 樓試片室。`,
+        'en': `[Scientific Abstract Information]\nPaper ID: ${id} (Category: ${cat})\nTitle:\n${title}\nPage in Proceedings: Page ${page}\n\nFor questions regarding oral or poster presentations, please visit the 1F Poster Area or 7F Speaker Ready Room.`,
+        'ja': `【学術論文抄録のご案内】\n論文番号：${id}（分野：${cat}）\n演題名：\n${title}\n掲載ページ：論文集 P.${page}\n\n口頭発表およびポスター発表に関するお問い合わせは、南港第2展示館1階ポスター会場または7階試写室までお越しください。`,
+        'ko': `【학술대회 논문 초록 안내】\n논문 번호: ${id} (분과: ${cat})\n발표 제목:\n${title}\n수록 페이지: 논문집 ${page} 페이지\n\n구연 및 포스터 발표 관련 문의는 난강 2관 1층 포스터 발표장 또는 7층 슬라이드 준비실을 이용해 주시기 바랍니다.`
+      };
+      openShowToGuest(bundle, currentLang);
+    }
+
+    // ==========================================
     // 語系 UI 文字切換 (i18n) - 完整涵蓋歷史對話即時更新
     // ==========================================
     document.getElementById('lang-select').value = currentLang;
@@ -1309,6 +1676,7 @@
           happeningTitle: '🔥 現在進行中 (Happening Now)',
           myFav: '我的收藏',
           focusAreaBadge: 'TaiNEX 2 · 7F 會議核心區',
+          focusAreaDates: '2027/04/23 - 04/25',
           focusHallTitle: '大會堂 (Plenary Hall)',
           focusHallDesc: '主題演講 · 閉幕典禮',
           focusRoomsTitle: '701 ~ 703 會議室',
@@ -1317,7 +1685,10 @@
           focusReadyDesc: '每日 07:30-17:00 繳交簡報',
           focusPosterTitle: '1F 海報展區',
           focusPosterDesc: '12:30-13:30 作者交流時段',
-          dayFilterAll: '全部兩日',
+          dayFilterAll: '全部三日',
+          dayFilter423: '4/23 (Day 1)',
+          dayFilter424: '4/24 (Day 2)',
+          dayFilter425: '4/25 (Day 3)',
           filterAllSessions: '全部焦點議程',
           starHintLabel: '點擊 ⭐ 一鍵加入我的行程',
           footerVenue: '南港 2 館',
@@ -1329,7 +1700,11 @@
           mapFallbackSub: '點擊按鈕直接開啟高清地圖與縮放檢視',
           lightboxMapTitle: '南港 2 館 7 樓分場動線圖',
           lightboxFallbackTitle: '南港 2 館 7 樓地圖檔案加載中',
-          lightboxFallbackSub: '若尚未放入實體圖檔，請點擊下方 PDF 下載按鈕查閱。'
+          lightboxFallbackSub: '若尚未放入實體圖檔，請點擊下方 PDF 下載按鈕查閱。',
+          abstractCardTitle: '4、學術論文摘要即時檢索 (Abstract Search)',
+          abstractCardDesc: '即時檢索口頭與壁報論文。支援專題領域（CT、MRI、AI、放療等）、論文編號（如 P-CT-008、O-AI-001）或關鍵字。',
+          abstractPlaceholder: '輸入論文編號、題目或關鍵字 (如 CT, AI, PSMA, 劑量)...',
+          abstractCatAll: '全部'
         },
         'en': {
           headerGuide: 'Official Guide',
@@ -1361,6 +1736,7 @@
           happeningTitle: '🔥 Happening Now (Active Sessions)',
           myFav: 'My Starred',
           focusAreaBadge: 'TaiNEX 2 · 7F Conference Core',
+          focusAreaDates: '2027/04/23 - 04/25',
           focusHallTitle: 'Plenary Hall',
           focusHallDesc: 'Keynotes & Closing Ceremony',
           focusRoomsTitle: 'Rooms 701 ~ 703',
@@ -1369,7 +1745,10 @@
           focusReadyDesc: 'Daily 07:30-17:00 Slide Upload',
           focusPosterTitle: '1F Poster Area',
           focusPosterDesc: '12:30-13:30 Moderated Q&A',
-          dayFilterAll: 'All Days',
+          dayFilterAll: 'All 3 Days',
+          dayFilter423: '4/23 (Day 1)',
+          dayFilter424: '4/24 (Day 2)',
+          dayFilter425: '4/25 (Day 3)',
           filterAllSessions: 'Featured Sessions',
           starHintLabel: 'Tap ⭐ to add to itinerary',
           footerVenue: 'TaiNEX Hall 2',
@@ -1381,7 +1760,11 @@
           mapFallbackSub: 'Tap button to open high-res pinch-to-zoom map',
           lightboxMapTitle: 'TaiNEX 2 - 7F Venue Map',
           lightboxFallbackTitle: '7F Map Loading',
-          lightboxFallbackSub: 'If map image is not yet placed, tap PDF download below.'
+          lightboxFallbackSub: 'If map image is not yet placed, tap PDF download below.',
+          abstractCardTitle: '4. Scientific Abstracts Search',
+          abstractCardDesc: 'Instant search across oral and poster abstracts by track (CT, MRI, AI, RT), paper ID (e.g. P-CT-008, O-AI-001) or keywords.',
+          abstractPlaceholder: 'Search by paper ID, title or keyword (e.g. CT, AI, dose)...',
+          abstractCatAll: 'ALL'
         },
         'ja': {
           headerGuide: '公式ガイド',
@@ -1413,6 +1796,7 @@
           happeningTitle: '🔥 開催中のセッション (Happening Now)',
           myFav: 'お気に入り',
           focusAreaBadge: 'TaiNEX 2 · 7F 会場コアエリア',
+          focusAreaDates: '2027/04/23 - 04/25',
           focusHallTitle: 'プレナリーホール (大會堂)',
           focusHallDesc: '基調講演 · 閉会式',
           focusRoomsTitle: '701 〜 703 会議室',
@@ -1421,7 +1805,10 @@
           focusReadyDesc: '毎日 07:30-17:00 スライド提出',
           focusPosterTitle: '1F ポスター発表エリア',
           focusPosterDesc: '12:30-13:30 質疑応答時間',
-          dayFilterAll: '全日程',
+          dayFilterAll: '全3日程',
+          dayFilter423: '4/23 (Day 1)',
+          dayFilter424: '4/24 (Day 2)',
+          dayFilter425: '4/25 (Day 3)',
           filterAllSessions: '注目セッション',
           starHintLabel: '⭐をタップして追加',
           footerVenue: '南港第2展示館',
@@ -1433,7 +1820,11 @@
           mapFallbackSub: 'ボタンをタップして拡大表示・ピンチズーム',
           lightboxMapTitle: '南港第2展示館7階 会場図',
           lightboxFallbackTitle: '7階会場図を読み込み中',
-          lightboxFallbackSub: '画像が表示されない場合は下のPDF版をご覧ください。'
+          lightboxFallbackSub: '画像が表示されない場合は下のPDF版をご覧ください。',
+          abstractCardTitle: '4. 学術論文抄録即時検索 (Abstract Search)',
+          abstractCardDesc: '口頭発表・ポスター抄録を専門分野（CT、MRI、AI、放射線治療など）、論文番号（例：P-CT-008、O-AI-001）やキーワードで即時検索。',
+          abstractPlaceholder: '論文番号、タイトル、キーワードを入力 (例: CT, AI, 線量)...',
+          abstractCatAll: '全て'
         },
         'ko': {
           headerGuide: '공식 가이드',
@@ -1465,6 +1856,7 @@
           happeningTitle: '🔥 현재 진행 중인 세션 (Happening Now)',
           myFav: '보관함',
           focusAreaBadge: 'TaiNEX 2 · 7F 컨퍼런스 코어',
+          focusAreaDates: '2027/04/23 - 04/25',
           focusHallTitle: '플레너리 홀 (대회당)',
           focusHallDesc: '기조강연 · 폐회식',
           focusRoomsTitle: '701 ~ 703 회의실',
@@ -1473,7 +1865,10 @@
           focusReadyDesc: '매일 07:30-17:00 파일 접수',
           focusPosterTitle: '1F 포스터 발표장',
           focusPosterDesc: '12:30-13:30 저자 질의응답',
-          dayFilterAll: '전체 일정',
+          dayFilterAll: '전체 3일',
+          dayFilter423: '4/23 (Day 1)',
+          dayFilter424: '4/24 (Day 2)',
+          dayFilter425: '4/25 (Day 3)',
           filterAllSessions: '주요 세션',
           starHintLabel: '⭐ 클릭하여 일정 추가',
           footerVenue: '난강전람관 2관',
@@ -1485,7 +1880,11 @@
           mapFallbackSub: '버튼을 눌러 고해상도 확대 지도를 확인하세요',
           lightboxMapTitle: '난강 2관 7층 회의장 배치도',
           lightboxFallbackTitle: '7층 지도 로딩 중',
-          lightboxFallbackSub: '이미지가 표시되지 않을 경우 아래 PDF 다운로드를 이용하세요.'
+          lightboxFallbackSub: '이미지가 표시되지 않을 경우 아래 PDF 다운로드를 이용하세요.',
+          abstractCardTitle: '4. 학술대회 논문 초록 즉시 검색 (Abstract Search)',
+          abstractCardDesc: '구연 및 포스터 초록을 전공 분야(CT, MRI, AI, 방사선치료 등), 논문 번호(예: P-CT-008, O-AI-001) 또는 키워드로 즉시 검색.',
+          abstractPlaceholder: '논문 번호, 제목, 키워드 입력 (예: CT, AI, 선량)...',
+          abstractCatAll: '전체'
         }
       };
 
@@ -1551,10 +1950,27 @@
       }
 
       // Schedule Section Labels
-      document.getElementById('day-filter-all-btn').innerText = t.dayFilterAll;
+      const dayAllBtn = document.getElementById('day-filter-all-btn');
+      if (dayAllBtn) dayAllBtn.innerText = t.dayFilterAll;
+      const day423Btn = document.getElementById('day-filter-423-btn');
+      if (day423Btn) day423Btn.innerText = t.dayFilter423 || '4/23 (Day 1)';
+      const day424Btn = document.getElementById('day-filter-424-btn');
+      if (day424Btn) day424Btn.innerText = t.dayFilter424 || '4/24 (Day 2)';
+      const day425Btn = document.getElementById('day-filter-425-btn');
+      if (day425Btn) day425Btn.innerText = t.dayFilter425 || '4/25 (Day 3)';
       document.getElementById('filter-all-sessions-btn').innerText = t.filterAllSessions;
       document.getElementById('star-hint-label').innerText = t.starHintLabel;
       document.getElementById('footer-venue-label').innerText = t.footerVenue;
+
+      // Update Abstract Card i18n
+      const abstractCardTitle = document.getElementById('abstract-card-title');
+      if (abstractCardTitle) abstractCardTitle.innerText = t.abstractCardTitle;
+      const abstractCardDesc = document.getElementById('abstract-card-desc');
+      if (abstractCardDesc) abstractCardDesc.innerText = t.abstractCardDesc;
+      const abstractInput = document.getElementById('abstract-search-input');
+      if (abstractInput) abstractInput.placeholder = t.abstractPlaceholder;
+      const allCatPill = document.querySelector('.abstract-cat-btn[data-category="ALL"]');
+      if (allCatPill) allCatPill.innerText = t.abstractCatAll || 'ALL';
 
       // Update My Favorites Button Label (preserve star count)
       const myFavLabel = document.getElementById('my-favorites-label');
@@ -2182,6 +2598,7 @@
     checkConferenceSunset();
     updateLanguageUI();
     updateStarCounter();
+    loadAbstractsIndex();
     fetchLiveTicker();
     // 現場每 60 秒自動非同步檢查試算表跑馬燈是否有更新
     setInterval(fetchLiveTicker, 60000);
@@ -2189,7 +2606,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.09').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.10').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);

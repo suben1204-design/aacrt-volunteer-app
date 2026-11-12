@@ -1,6 +1,7 @@
-const CACHE_NAME = 'aacrt-guide-v2.09';
+const CACHE_NAME = 'aacrt-guide-v2.10';
 const ASSETS_TO_CACHE = [
   './manifest.json',
+  './docs/abstracts_index.json',
   './知識庫-AI 提煉層/aacrt_brain.json'
 ];
 
