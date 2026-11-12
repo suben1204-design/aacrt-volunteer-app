@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aacrt-guide-v2.0-clean';
+const CACHE_NAME = 'aacrt-guide-v2.04';
 const ASSETS_TO_CACHE = [
   './manifest.json',
   './知識庫-AI 提煉層/aacrt_brain.json'
@@ -20,7 +20,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Always network first for index.html so user immediately sees design updates
+  // Always network first for navigation requests so user immediately sees design updates
   if (event.request.mode === 'navigate' || event.request.url.endsWith('index.html') || event.request.url.endsWith('/')) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match('./index.html'))
@@ -45,5 +45,4 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request).catch(() => caches.match(event.request))
   );
-});
 });
