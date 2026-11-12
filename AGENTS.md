@@ -20,26 +20,32 @@
 - [x] 階段四：開發雙用官方版前端 Web App（`index.html`，具備 60/40 雙分頁、四語切換、語音輸入、「Show-to-Guest 三語即時朗讀」、防刷冷卻、救命級禁菸/過敏快速過濾與 2027/04/26 自動落日感謝卡），並於 `產出-成果層/` 產出名牌背卡 QR Code 向量印刷檔
 - [x] 階段五：建置獨立 Google 試算表與 GAS 雲端中繼（提問非同步記錄、即時跑馬燈同步、特殊求助推播通報）
 - [x] 階段六：完成 GitHub Pages 正式發佈（https://suben1204-design.github.io/aacrt-volunteer-app/），並提供 $50 美元預算配額硬性防護牆設定指引
+- [x] 階段七：全面重構升級大腦 v1.04（大會核心文件專區、會場地圖雙指縮放燈箱、個人化行程收藏與當前進行中動態卡片、混合雙層 AI 架構、英文單字邊界防誤判與歷史對話即時四語切換）
 
 ## 資料夾結構
 ```text
 AACRT-志工APP工具/
 ├── AGENTS.md                          # 跨 Agent 靜態專案藍圖與技術規範
 ├── handoff.md                         # 跨電腦／跨 Agent 當下交接檔
-├── index.html                         # 雙用官方 Web App 前端（四語/語音/Show to Guest/落日）
+├── index.html                         # 雙用官方 Web App 前端（四語/語音/Show to Guest/雙指縮放/混合雙層AI）
 ├── manifest.json                      # PWA 設定檔
-├── sw.js                              # PWA Service Worker 離線快取（v1.3）
+├── sw.js                              # PWA Service Worker 離線快取（v2.06）
 ├── .gitignore                         # Git 忽略規則
+├── docs/                              # 前端展示用實體檔案目錄（總議程PDF、地圖JPG/PDF、手冊PDF）
+│   ├── 1_agenda.pdf
+│   ├── 2_floor_map.pdf
+│   ├── 2_floor_map_7f.jpg
+│   └── 3_handbook.pdf
 ├── scripts/
 │   └── compile_brain.py               # 創作庫多檔案一鍵自動提煉編譯腳本（含舊版歸檔）
 ├── Clipping-外部素材層/                # 外部參考（南港 2 館動線圖、北捷/機捷外語指引）
 ├── 創作庫-內部原創層/                  # 大會官方議程、手冊草案、志工 SOP 母檔（神聖唯讀）
+│   ├── 常見 Q&A」/                    # 使用者即時置放與更新之大會最新原檔母庫
 │   └── _archive/                      # 舊版本自動封存區（防版本衝突）
-├── 知識庫-AI 提煉層/                  # AI 提煉之大會精華大腦（aacrt_brain.json v1.3）
+├── 知識庫-AI 提煉層/                  # AI 提煉之大會精華大腦（aacrt_brain.json v1.04）
 ├── 產出-成果層/                       # 交付成果、名牌背卡 QR Code 向量印刷圖檔
-│   └── AACRT_志工識別證背卡_QRCode.svg
 ├── assets/                            # 多媒體資產（images / audio / video）
-└── rdq/                               # RDQ 需求探索規格卡（revisions: 7）
+└── rdq/                               # RDQ 需求探索規格卡
 ```
 
 ## 同步層級（本專案初始化至第 3 層級）
