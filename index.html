@@ -116,7 +116,7 @@
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span id="focus-area-badge" class="text-xs font-bold tracking-wide uppercase text-amber-300">TaiNEX 2 · 7F 會議核心區</span>
           </div>
-          <span class="text-[11px] text-slate-300 font-mono">2027/04/24 - 04/25</span>
+          <span id="focus-area-dates" class="text-[11px] text-slate-300 font-mono">2027/04/23 - 04/25</span>
         </div>
         <div class="grid grid-cols-2 gap-2 text-xs">
           <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700">
@@ -1409,11 +1409,11 @@
 
     function filterAbstractCategory(category) {
       currentAbstractCategory = category;
-      document.querySelectorAll('.abstract-cat-btn').forEach(btn => {
-        if (btn.dataset.category === category) {
-          btn.className = 'abstract-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-cyan-700 text-white shrink-0 shadow-sm transition-all';
+      document.querySelectorAll('.abs-cat-btn').forEach(btn => {
+        if (btn.dataset.cat === category) {
+          btn.className = 'abs-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-cyan-700 text-white shrink-0 shadow-sm transition-all';
         } else {
-          btn.className = 'abstract-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-all';
+          btn.className = 'abs-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-all';
         }
       });
       renderAbstractResults();
@@ -1442,7 +1442,7 @@
     }
 
     function renderAbstractResults() {
-      const container = document.getElementById('abstract-results-container');
+      const container = document.getElementById('abstract-results-list');
       const counterEl = document.getElementById('abstract-result-count');
       if (!container) return;
 
@@ -1554,7 +1554,15 @@
       switchTab('ai');
       const input = document.getElementById('chat-input');
       if (input) {
-        input.value = `我想查詢論文 [${id}] 的發表主題與詳細資訊：${title}`;
+        if (currentLang === 'zh-TW') {
+          input.value = `我想查詢論文 [${id}] 的發表主題與詳細資訊：${title}`;
+        } else if (currentLang === 'ja') {
+          input.value = `論文 [${id}] の詳細発表情報を確認したいです：${title}`;
+        } else if (currentLang === 'ko') {
+          input.value = `논문 [${id}] 의 발표 정보 및 상세 내용을 확인하고 싶습니다: ${title}`;
+        } else {
+          input.value = `Paper inquiry [${id}]: ${title}`;
+        }
         sendMessage();
       }
     }
@@ -1566,7 +1574,12 @@
         'ja': `【学術論文抄録のご案内】\n論文番号：${id}（分野：${cat}）\n演題名：\n${title}\n掲載ページ：論文集 P.${page}\n\n口頭発表およびポスター発表に関するお問い合わせは、南港第2展示館1階ポスター会場または7階試写室までお越しください。`,
         'ko': `【학술대회 논문 초록 안내】\n논문 번호: ${id} (분과: ${cat})\n발표 제목:\n${title}\n수록 페이지: 논문집 ${page} 페이지\n\n구연 및 포스터 발표 관련 문의는 난강 2관 1층 포스터 발표장 또는 7층 슬라이드 준비실을 이용해 주시기 바랍니다.`
       };
-      openShowToGuest(bundle, currentLang);
+      const msgIdx = messageStore.length;
+      messageStore.push({
+        query: `Paper [${id}]`,
+        bundle: bundle
+      });
+      showToGuestFromStore(msgIdx);
     }
 
     // ==========================================
@@ -1922,6 +1935,8 @@
 
       // Focus Area Board
       document.getElementById('focus-area-badge').innerText = t.focusAreaBadge;
+      const focusDatesElem = document.getElementById('focus-area-dates');
+      if (focusDatesElem) focusDatesElem.innerText = t.focusAreaDates || '2027/04/23 - 04/25';
       document.getElementById('focus-hall-title').innerText = t.focusHallTitle;
       document.getElementById('focus-hall-desc').innerText = t.focusHallDesc;
       document.getElementById('focus-rooms-title').innerText = t.focusRoomsTitle;
@@ -1969,8 +1984,21 @@
       if (abstractCardDesc) abstractCardDesc.innerText = t.abstractCardDesc;
       const abstractInput = document.getElementById('abstract-search-input');
       if (abstractInput) abstractInput.placeholder = t.abstractPlaceholder;
-      const allCatPill = document.querySelector('.abstract-cat-btn[data-category="ALL"]');
-      if (allCatPill) allCatPill.innerText = t.abstractCatAll || 'ALL';
+      
+      // Update Category Pills Language Labels
+      const catLabels = {
+        'zh-TW': { ALL: '全部 (195)', AI: 'AI 人工智慧 (18)', CT: 'CT 電腦斷層 (17)', MR: 'MRI 磁振造影 (21)', RT: 'RT 放射治療 (23)', NM: 'NM 核子醫學 (8)', CA: 'CA 心導管 (11)', IR: 'IR 血管介入 (7)', MA: 'MA 乳房攝影 (8)', RO: 'RO 常規X光 (12)', ST: 'ST 學生研究 (39)' },
+        'en':    { ALL: 'ALL (195)', AI: 'AI (18)', CT: 'CT (17)', MR: 'MRI (21)', RT: 'RT (23)', NM: 'NM (8)', CA: 'Cath Lab (11)', IR: 'Interventional (7)', MA: 'Mammography (8)', RO: 'Radiography (12)', ST: 'Student (39)' },
+        'ja':    { ALL: '全て (195)', AI: 'AI (18)', CT: 'CT (17)', MR: 'MRI (21)', RT: '放射線治療 (23)', NM: '核医学 (8)', CA: '心カテ (11)', IR: '血管造影 (7)', MA: 'マンモ (8)', RO: '一般X線 (12)', ST: '学生研究 (39)' },
+        'ko':    { ALL: '전체 (195)', AI: 'AI (18)', CT: 'CT (17)', MR: 'MRI (21)', RT: '방사선치료 (23)', NM: '핵의학 (8)', CA: '심도자 (11)', IR: '인터벤션 (7)', MA: '유방촬영 (8)', RO: '일반촬영 (12)', ST: '학생연구 (39)' }
+      };
+      const activeCatMap = catLabels[currentLang] || catLabels['en'];
+      document.querySelectorAll('.abs-cat-btn').forEach(btn => {
+        const cat = btn.dataset.cat;
+        if (cat && activeCatMap[cat]) {
+          btn.innerText = activeCatMap[cat];
+        }
+      });
 
       // Update My Favorites Button Label (preserve star count)
       const myFavLabel = document.getElementById('my-favorites-label');
@@ -2185,6 +2213,28 @@
         };
       }
 
+      // 0. 學術論文專屬格式快速攔截 (Paper Inquiry: [Paper-ID])
+      const paperIdMatch = query.match(/\[([A-Za-z]+-[A-Za-z]+-\d+|[A-Za-z0-9_-]+)\]/);
+      if (paperIdMatch) {
+        const targetId = paperIdMatch[1].toUpperCase();
+        let matchedPaper = (ABSTRACTS_DATA || []).find(p => (p.id || '').toUpperCase() === targetId);
+        if (!matchedPaper && (ABSTRACTS_DATA || []).length > 0) {
+          matchedPaper = ABSTRACTS_DATA.find(p => targetId.includes((p.id || '').toUpperCase()));
+        }
+        if (matchedPaper) {
+          const pCat = matchedPaper.category || matchedPaper.category_code || 'General';
+          const pPage = matchedPaper.page || 1;
+          const pTitle = matchedPaper.title || '';
+          return {
+            matched: true,
+            'zh-TW': `【學術論文檢索指引】\n論文編號：${matchedPaper.id}（專題領域：${pCat}）\n論文題目：${pTitle}\n收錄頁碼：大會論文集第 ${pPage} 頁\n口頭發表請洽 7 樓 704 試片室，壁報交流時段為每日 12:30-13:30 於 1 樓海報展區。`,
+            'en': `【Scientific Abstract Inquiry】\nPaper ID: ${matchedPaper.id} (Category: ${pCat})\nTitle: ${pTitle}\nProceedings: Page ${pPage}\nFor oral presentations, please visit 7F Room 704. Moderated poster session is daily 12:30-13:30 at 1F Poster Area.`,
+            'ja': `【学術論文抄録のご案内】\n論文番号：${matchedPaper.id}（分野：${pCat}）\n演題名：${pTitle}\n掲載ページ：論文集 P.${pPage}\n口頭発表は7階704試写室、ポスター発表は毎日12:30〜13:30に1階ポスター会場にて行われます。`,
+            'ko': `【학술대회 논문 안내】\n논문 번호: ${matchedPaper.id} (분과: ${pCat})\n발표 제목: ${pTitle}\n수록 페이지: 논문집 ${pPage} 페이지\n구연 발표는 7층 704호 준비실, 포스터 세션은 매일 12:30-13:30 1층 포스터 발표장에서 진행됩니다.`
+          };
+        }
+      }
+
       // 11. 洗手間與哺集乳室 (優先判定，避免被 room/hall 誤捕獲)
       if (/\b(restroom|restrooms|bathroom|bathrooms|toilet|toilets|washroom|lavatory|wc)\b/i.test(q) ||
           q.includes('洗手間') || q.includes('廁所') || q.includes('化妝室') || q.includes('便所') ||
@@ -2258,14 +2308,16 @@
         };
       }
 
-      // 6. 大會晚宴與接駁專車 (Gala Dinner & Shuttle Bus)
-      if (/\b(gala|dinner|banquet|shuttle)\b/i.test(q) || q.includes('晚宴') || q.includes('接駁') || q.includes('晩餐会') || q.includes('만찬')) {
+      // 6. 大會晚宴與接駁專車 (Gala Dinner, Welcome Banquet & Shuttle Bus)
+      if (/\b(gala|dinner|banquet|shuttle|welcome\s*banquet|presidential\s*dinner)\b/i.test(q) ||
+          q.includes('晚宴') || q.includes('接駁') || q.includes('歡迎晚宴') || q.includes('會長之夜') ||
+          q.includes('晩餐会') || q.includes('歓迎晩餐会') || q.includes('만찬') || q.includes('환영 만찬')) {
         return {
           matched: true,
-          'zh-TW': '大會晚宴於 4/24（六）18:30 盛大舉行（憑票入場）。大會於南港 2 館 1 樓門口備有接駁專車，自 17:30 起每 10 分鐘一班直達會場。服裝建議為商務休閒 (Smart Casual)。',
-          'en': 'The official Gala Dinner will be held on April 24 (Sat) at 18:30 (ticket required). Complimentary shuttle buses depart every 10 minutes from TaiNEX 2 (1F main entrance) starting from 17:30. Dress code: Smart Casual.',
-          'ja': '公式晩餐会は 4/24（土）18:30 より開催されます（入場券必須）。南港第2展示館1階エントランスより 17:30 から10分間隔で無料送迎シャトルバスが運行されます。服装はスマートカジュアルを推奨いたします。',
-          'ko': '공식 갈라 디너 만찬은 4월 24일(토) 18:30에 개최됩니다(입장권 지참 필수). 난강 2관 1층 정문에서 17:30부터 10분 간격으로 무료 셔틀버스가 운행됩니다. 복장 규정은 스마트 캐주얼입니다.'
+          'zh-TW': '【2027 AACRT 晚宴與接駁專車資訊】：\n1. 歡迎晚宴暨會長之夜 (Welcome Banquet / Presidential Dinner)：4/23（五）18:30-20:30 舉行（邀請制與代表出席）。\n2. 大會晚宴 (Official Gala Dinner)：4/24（六）18:30-21:00 盛大舉行（憑票入場）。大會於南港 2 館 1 樓門口備有接駁專車，自 17:30 起每 10 分鐘一班直達會場。服裝建議為商務休閒 (Smart Casual)。',
+          'en': '【2027 AACRT Banquets & Shuttle Information】:\n1. Welcome Banquet (Presidential Dinner): April 23 (Fri) 18:30-20:30 (By invitation / delegates).\n2. Official Gala Dinner: April 24 (Sat) 18:30-21:00 (Ticket required). Complimentary shuttle buses depart every 10 minutes from TaiNEX 2 (1F main entrance) starting from 17:30. Dress code: Smart Casual.',
+          'ja': '【2027 AACRT 晩餐会および送迎バスのご案内】:\n1. 歓迎晩餐会・プレジデンシャルディナー：4/23（金）18:30〜20:30 開催（招待制・役員代表）。\n2. 公式大会晩餐会（Gala Dinner）：4/24（土）18:30〜21:00 開催（入場券必須）。南港第2展示館1階エントランスより 17:30 から10分間隔で無料送迎シャトルバスが運行されます。服装はスマートカジュアル推奨。',
+          'ko': '【2027 AACRT 만찬 및 셔틀버스 안내】:\n1. 환영 만찬 및 프레지덴셜 디너: 4월 23일(금) 18:30~20:30 개최 (초청 및 대표단 대상).\n2. 공식 대회 갈라 디너 (Gala Dinner): 4월 24일(토) 18:30~21:00 개최 (입장권 필수 지참). 난강 2관 1층 정문에서 17:30부터 10분 간격으로 무료 셔틀버스가 운행됩니다. 복장은 스마트 캐주얼입니다.'
         };
       }
 
@@ -2330,17 +2382,18 @@
         };
       }
 
-      // 10. 捷運與高鐵交通指引 (MRT & Transit - 已移除「怎麼走」與「行き方」，避免誤攔截會場動線)
-      if (/\b(mrt|metro|subway|train|hsr|transit|station|transportation|access|taxi|airport)\b/i.test(q) ||
-          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') || q.includes('計程車') || q.includes('機場') || q.includes('搭車') ||
-          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('タクシー') ||
-          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시')) {
+      // 10. 捷運與高鐵交通指引、會場地址與計程車 (MRT, Transit, Venue Address & Taxi)
+      if (/\b(mrt|metro|subway|train|hsr|transit|station|transportation|access|taxi|airport|taoyuan|address)\b/i.test(q) ||
+          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') ||
+          q.includes('計程車') || q.includes('機場') || q.includes('桃園機場') || q.includes('搭車') || q.includes('地址') ||
+          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('タクシー') || q.includes('住所') ||
+          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시') || q.includes('주소')) {
         return {
           matched: true,
-          'zh-TW': '交通指引：請搭乘台北捷運【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」。自 1 號或 2 號出口出站，經由戶外徒步區或 B1 地下連通道步行約 3 分鐘即可直通南港展覽館 2 館。搭乘高鐵/台鐵者，請於「南港站」下車後轉乘捷運一站即可抵達。',
-          'en': 'Transportation Guide: Take Taipei MRT Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23 / BR24). Take Exit 1 or Exit 2, and walk 3 minutes through the plaza or B1 underground walkway directly into TaiNEX Hall 2. From Taiwan High Speed Rail Nangang Station, take the MRT 1 stop.',
-          'ja': '交通案内：台北MRT板南線（ブルーライン）または文湖線（ブラウンライン）の「南港展覧館駅（BL23/BR24）」下車。1番または2番出口より徒歩約3分、地下連絡通路（B1）でも南港第2展示館に直結しています。新幹線（高鐵）をご利用の場合は「南港駅」よりMRTで1駅です。',
-          'ko': '교통 안내: 타이베이 MRT 판난선(블루라인) 또는 원후선(브라운라인) 탑승 후 「난강전람관역(BL23 / BR24)」에서 하차하십시오. 1번 또는 2번 출구로 나와 도보 3분 또는 B1 지하 연결통로를 통해 난강 2관으로 바로 진입하실 수 있습니다. 고속철도(THSR) 이용 시 난강역에서 지하철 1정거장 거리입니다.'
+          'zh-TW': '【會場地址與交通指引】：\n- 會場地址（可出示給計程車司機）：台北市南港區經貿二路2號（台北南港展覽館 2 館 / TaiNEX 2）。\n- 台北捷運：搭乘【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」1號或2號出口，步行3分鐘（或經B1地下連通道）直達南港2館。\n- 桃園機場 (TPE)：搭乘桃園機場捷運至「台北車站」，轉乘捷運板南線直達南港展覽館站。\n- 高鐵/台鐵：於「南港站」下車後轉乘捷運一站即可抵達。',
+          'en': '【Venue Address & Transportation Guide】:\n- Official Venue Address (Show to Taxi Driver):\nNo. 2, Jingmao 2nd Rd., Nangang Dist., Taipei (Taipei Nangang Exhibition Center Hall 2 / TaiNEX 2)\n- Taipei MRT: Take Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23/BR24), Exit 1 or 2, 3 min walk into TaiNEX Hall 2.\n- From Taoyuan Airport (TPE): Take Airport MRT to Taipei Main Station, then transfer to MRT Bannan Line directly to Nangang Exhibition Center Station.\n- High Speed Rail (THSR): Disembark at "Nangang Station" and take MRT 1 stop.',
+          'ja': '【会場住所および交通案内】:\n- 会場住所（タクシー運転手提示用）：\n台北市南港区経貿二路2号（台北南港第2展示館 / TaiNEX 2）\n- 台北MRT：板南線（ブルー）または文湖線（ブラウン）「南港展覧館駅（BL23/BR24）」1番または2番出口より徒歩3分、B1地下通路直結。\n- 桃園国際空港より：桃園空港MRTで台北駅へ、板南線に乗り換えて直通。\n- 新幹線（高鐵）：南港駅よりMRTで1駅です。',
+          'ko': '【학술대회장 주소 및 교통 안내】:\n- 대회장 공식 주소 (택시 기사 제시용):\n台北市南港區經貿二路2號 (Taipei Nangang Exhibition Center Hall 2 / 난강 2관)\n- 타이베이 MRT: 판난선(블루) 또는 원후선(브라운) 「난강전람관역(BL23/BR24)」 1번/2번 출구에서 도보 3분 (B1 지하통로 직결).\n- 타오위안 공항(TPE): 공항철도 탑승 후 타이베이역에서 MRT 판난선 환승.\n- 고속철도(THSR): 난강역 하차 후 지하철 1정거장 거리.'
         };
       }
 
