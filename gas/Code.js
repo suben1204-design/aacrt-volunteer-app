@@ -37,7 +37,7 @@ function ensureSheetsConfigured(ss) {
     configSheet.getRange("A1").setValue("即時跑馬燈公告 (可隨時修改 B1)");
     configSheet.getRange("B1").setValue("大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。");
     configSheet.getRange("A2").setValue("大腦版本");
-    configSheet.getRange("B2").setValue("v1.04");
+    configSheet.getRange("B2").setValue("v1.05");
     configSheet.getRange("A3").setValue("操作指南");
     configSheet.getRange("B3").setValue("大會幹部直接在此處修改 B1，所有與會學者及志工手機 APP 即刻於重整或 60 秒內即時更新！");
     
@@ -89,7 +89,7 @@ function doGet(e) {
     var configSheet = sheetsObj.configSheet;
     
     var ticker = "大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。";
-    var version = "v1.04";
+    var version = "v1.05";
 
     if (configSheet) {
       var tickerCell = configSheet.getRange("B1").getValue();
@@ -99,6 +99,11 @@ function doGet(e) {
       var versionCell = configSheet.getRange("B2").getValue();
       if (versionCell && versionCell.toString().trim() !== "") {
         version = versionCell.toString().trim();
+      }
+      // 若原試算表仍保留舊版 v1.04，自動幫主管升級為 v1.05
+      if (version === "v1.04") {
+        version = "v1.05";
+        configSheet.getRange("B2").setValue("v1.05");
       }
     }
 
