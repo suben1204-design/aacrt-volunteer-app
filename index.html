@@ -67,7 +67,7 @@
         <div>
           <h1 class="text-base font-extrabold tracking-wide leading-tight text-white flex items-center gap-1.5">
             2027 AACRT
-            <span class="px-2 py-0.5 bg-amber-400/20 text-amber-300 text-[10px] rounded-full font-bold border border-amber-400/30">官方指南</span>
+            <span id="header-guide-tag" class="px-2 py-0.5 bg-amber-400/20 text-amber-300 text-[10px] rounded-full font-bold border border-amber-400/30">官方指南</span>
           </h1>
           <p class="text-[11px] text-slate-300 font-normal truncate">The 26th AACRT & TWSRT 60th Annual Meeting</p>
         </div>
@@ -403,12 +403,12 @@
   </main>
 
   <!-- ========================================== -->
-  <!-- 底部狀態列精簡：大腦版本 (v1.05) ＋ 南港 2 館 -->
+  <!-- 底部狀態列精簡：大腦版本 (v1.06) ＋ 南港 2 館 -->
   <!-- ========================================== -->
   <footer class="bg-slate-900 text-slate-400 text-xs py-2.5 px-4 border-t border-slate-800 text-center flex items-center justify-center space-x-4 shrink-0 shadow-lg">
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
       <i class="fa-solid fa-brain text-amber-400"></i>
-      <span id="footer-brain-version">大腦 v1.05</span>
+      <span id="footer-brain-version">大腦 v1.06</span>
     </span>
     <span class="text-slate-600">|</span>
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
@@ -550,7 +550,9 @@
         timeEnd: '10:30',
         timeDisplay: '09:00 - 10:30',
         room: '大會堂 (Plenary Hall)',
+        room_en: 'Plenary Hall (7F)',
         roomBadge: '7F 大會堂',
+        roomBadge_en: '7F Plenary Hall',
         topic_zh: '2027 AACRT 開幕式暨大會主題演講 (Plenary Keynote)',
         topic_en: 'Opening Ceremony & Plenary Keynote Address',
         speaker: 'Prof. Hiroshi Tanaka (Japan) & Keynote Speakers',
@@ -563,7 +565,9 @@
         timeEnd: '12:15',
         timeDisplay: '10:45 - 12:15',
         room: '701 會議室',
+        room_en: 'Room 701',
         roomBadge: '701 (CT/IVR)',
+        roomBadge_en: '701 (CT/IVR)',
         topic_zh: '尖端多能譜 CT 臨床突破與心臟介入血管攝影 (Photon Counting CT)',
         topic_en: 'Photon-Counting CT Clinical Breakthroughs & Advanced IVR',
         speaker: 'Dr. Michael Chen & Panel of Radiologists',
@@ -576,7 +580,9 @@
         timeEnd: '12:15',
         timeDisplay: '10:45 - 12:15',
         room: '702 會議室',
+        room_en: 'Room 702',
         roomBadge: '702 (MRI)',
+        roomBadge_en: '702 (MRI)',
         topic_zh: '高場 Ultra-High Field 7T MRI 臨床神經影像與品管 SOP',
         topic_en: '7T Ultra-High Field MRI in Clinical Neuroimaging & QA/QC',
         speaker: 'Dr. Sarah Jenkins & Experts',
@@ -589,7 +595,9 @@
         timeEnd: '12:15',
         timeDisplay: '10:45 - 12:15',
         room: '703 會議室',
+        room_en: 'Room 703',
         roomBadge: '703 (AI/核醫)',
+        roomBadge_en: '703 (AI/Nuclear)',
         topic_zh: '生成式 AI 輔助放射工作流程與次世代 PET/CT 腫瘤造影',
         topic_en: 'Generative AI in Radiology Workflows & Next-Gen PET/CT',
         speaker: 'Prof. David Lee & AI Working Group',
@@ -602,7 +610,9 @@
         timeEnd: '13:30',
         timeDisplay: '12:30 - 13:30',
         room: '1F 海報展區 / 1F & 7F 餐廳',
+        room_en: '1F Poster Area / 1F & 7F Dining',
         roomBadge: '1F 海報區',
+        roomBadge_en: '1F Poster Area',
         topic_zh: '學術論文海報交流時段 (作者現場答詢) 與午餐便當領取',
         topic_en: 'Moderated Poster Session & Lunch Box Distribution',
         speaker: 'All Poster Presenters & Committee',
@@ -615,7 +625,9 @@
         timeEnd: '15:30',
         timeDisplay: '14:00 - 15:30',
         room: '701 會議室',
+        room_en: 'Room 701',
         roomBadge: '701 (放療/質子)',
+        roomBadge_en: '701 (RT/Proton)',
         topic_zh: '重粒子與質子精準放射治療之影像導引技術 (IGRT/SBRT)',
         topic_en: 'Image-Guided Proton and Heavy Ion Radiation Therapy',
         speaker: 'Dr. Kenji Sato & Oncology Team',
@@ -628,7 +640,9 @@
         timeEnd: '15:30',
         timeDisplay: '14:00 - 15:30',
         room: '703 會議室',
+        room_en: 'Room 703',
         roomBadge: '703 (臨床教學)',
+        roomBadge_en: '703 (Clinical Edu)',
         topic_zh: '放射師臨床考核 Mini-CEX / DOPS 數位化教案工作坊',
         topic_en: 'Radiologic Technologist Clinical Assessment Workshop',
         speaker: 'TWSRT Education Board',
@@ -641,7 +655,9 @@
         timeEnd: '21:00',
         timeDisplay: '18:30 - 21:00',
         room: '大會晚宴會場 (南港2館 1F 門口專車接駁)',
+        room_en: 'Gala Venue (Shuttle bus at 1F Main Entrance)',
         roomBadge: '大會晚宴 Gala',
+        roomBadge_en: 'Gala Dinner',
         topic_zh: '2027 AACRT 亞澳國際大會晚宴 (憑票入場，17:30 接駁)',
         topic_en: 'Official AACRT Gala Dinner (Smart Casual, Shuttle from 17:30)',
         speaker: 'Organizing Committee & International Delegates',
@@ -655,7 +671,9 @@
         timeEnd: '10:00',
         timeDisplay: '08:30 - 10:00',
         room: '701 會議室',
+        room_en: 'Room 701',
         roomBadge: '701 (QA/QC)',
+        roomBadge_en: '701 (QA/QC)',
         topic_zh: '醫學影像設備品管標準與輻射劑量安全防護考核評鑑',
         topic_en: 'Medical Imaging QA/QC Standards & Radiation Safety Protocol',
         speaker: 'Radiation Safety Committee & International Experts',
@@ -668,7 +686,9 @@
         timeEnd: '11:45',
         timeDisplay: '10:15 - 11:45',
         room: '702 會議室',
+        room_en: 'Room 702',
         roomBadge: '702 (優秀論文)',
+        roomBadge_en: '702 (YIA Oral)',
         topic_zh: 'AACRT 青年研究者優秀論文競賽發表 (Young Investigator Awards)',
         topic_en: 'Young Investigator Award (YIA) Oral Competition',
         speaker: 'Finalist Radiographers & Judging Panel',
@@ -681,7 +701,9 @@
         timeEnd: '13:30',
         timeDisplay: '12:00 - 13:30',
         room: '1F 海報展區 / 7F 餐廳',
+        room_en: '1F Poster Area / 7F Dining',
         roomBadge: '1F 海報區',
+        roomBadge_en: '1F Poster Area',
         topic_zh: '第二日壁報論文評選交流、午餐便當發放',
         topic_en: 'Day 2 Poster Review, Discussion & Lunch Distribution',
         speaker: 'Poster Evaluators & Delegates',
@@ -694,7 +716,9 @@
         timeEnd: '15:30',
         timeDisplay: '14:00 - 15:30',
         room: '大會堂 (Plenary Hall)',
+        room_en: 'Plenary Hall (7F)',
         roomBadge: '7F 大會堂',
+        roomBadge_en: '7F Plenary Hall',
         topic_zh: '亞澳區放射師國際高峰圓桌論壇：跨國專業認證與AI時代願景',
         topic_en: 'AACRT Leaders Forum: Professional Certification & AI Vision',
         speaker: 'Presidents of National Radiographer Societies',
@@ -707,7 +731,9 @@
         timeEnd: '16:45',
         timeDisplay: '15:45 - 16:45',
         room: '大會堂 (Plenary Hall)',
+        room_en: 'Plenary Hall (7F)',
         roomBadge: '7F 大會堂',
+        roomBadge_en: '7F Plenary Hall',
         topic_zh: '2027 AACRT 閉幕典禮暨優秀論文大獎頒獎典禮 (Awards & Closing)',
         topic_en: 'Awards Ceremony & Official Closing Ceremony',
         speaker: 'Organizing Committee & Next Host Country',
@@ -928,13 +954,15 @@
       container.innerHTML = sessions.map(s => {
         const isStarred = starred.includes(s.id);
         const title = (currentLang === 'zh-TW') ? s.topic_zh : s.topic_en;
+        const roomName = (currentLang === 'zh-TW') ? s.room : (s.room_en || s.room);
+        const roomBadgeText = (currentLang === 'zh-TW') ? s.roomBadge : (s.roomBadge_en || s.roomBadge);
         return `
           <div class="bg-white rounded-2xl border ${isStarred ? 'border-amber-300 ring-1 ring-amber-300/40 shadow-md' : 'border-slate-200 shadow-sm'} p-3.5 transition-all">
             <div class="flex items-start justify-between">
               <div class="flex items-center space-x-2">
                 <span class="text-[10px] font-bold bg-amber-400/20 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded font-mono">${s.day}</span>
                 <span class="text-[11px] font-black bg-slate-900 text-amber-300 px-2 py-0.5 rounded-md font-mono">${s.timeDisplay}</span>
-                <span class="text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200 px-2 py-0.5 rounded-md">${s.roomBadge}</span>
+                <span class="text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200 px-2 py-0.5 rounded-md">${escapeHtml(roomBadgeText)}</span>
               </div>
               <button onclick="toggleStarSession('${s.id}')" class="p-1 rounded-lg text-base ${isStarred ? 'text-amber-500 hover:text-amber-600' : 'text-slate-300 hover:text-amber-400'} transition-transform active:scale-125" title="${isStarred ? '取消收藏' : '加入收藏'}">
                 <i class="${isStarred ? 'fa-solid fa-star' : 'fa-regular fa-star'}"></i>
@@ -943,7 +971,7 @@
             <h4 class="text-xs font-bold text-slate-900 mt-2 leading-snug">${escapeHtml(title)}</h4>
             <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
               <span class="truncate max-w-[200px]"><i class="fa-solid fa-user-doctor text-slate-400 mr-1"></i>${escapeHtml(s.speaker)}</span>
-              <span class="text-slate-400 shrink-0"><i class="fa-solid fa-door-open text-amber-500 mr-1"></i>${escapeHtml(s.room)}</span>
+              <span class="text-slate-400 shrink-0"><i class="fa-solid fa-door-open text-amber-500 mr-1"></i>${escapeHtml(roomName)}</span>
             </div>
           </div>
         `;
@@ -1014,18 +1042,21 @@
         return;
       }
 
+      const venueLabel = (currentLang === 'zh-TW') ? '地點：' : (currentLang === 'ja') ? '場所：' : (currentLang === 'ko') ? '장소: ' : 'Venue: ';
       container.innerHTML = activeSessions.map(s => {
         const title = (currentLang === 'zh-TW') ? s.topic_zh : s.topic_en;
+        const roomName = (currentLang === 'zh-TW') ? s.room : (s.room_en || s.room);
+        const roomBadgeText = (currentLang === 'zh-TW') ? s.roomBadge : (s.roomBadge_en || s.roomBadge);
         return `
           <div class="bg-slate-800/90 rounded-xl p-3 border border-amber-400/30 flex items-start justify-between shadow-sm">
             <div class="flex-1 pr-2">
               <div class="flex items-center space-x-2">
                 <span class="px-1.5 py-0.5 bg-amber-400 text-slate-950 rounded text-[9px] font-black uppercase tracking-wider animate-pulse">NOW</span>
                 <span class="text-amber-400 font-bold text-xs font-mono">${s.day} ${s.timeDisplay}</span>
-                <span class="text-[11px] text-slate-300 font-bold">· ${s.roomBadge}</span>
+                <span class="text-[11px] text-slate-300 font-bold">· ${escapeHtml(roomBadgeText)}</span>
               </div>
               <p class="text-xs font-extrabold text-white mt-1 leading-snug">${escapeHtml(title)}</p>
-              <p class="text-[11px] text-slate-400 mt-1 truncate"><i class="fa-solid fa-location-arrow text-amber-400 mr-1"></i>地點：${escapeHtml(s.room)}</p>
+              <p class="text-[11px] text-slate-400 mt-1 truncate"><i class="fa-solid fa-location-arrow text-amber-400 mr-1"></i>${venueLabel}${escapeHtml(roomName)}</p>
             </div>
             <div class="shrink-0 flex items-center justify-center">
               <span class="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center text-sm font-bold">
@@ -1247,6 +1278,7 @@
     function updateLanguageUI() {
       const i18n = {
         'zh-TW': {
+          headerGuide: '官方指南',
           tabFaq: '大會文件 / 地圖',
           tabAi: '智慧對談',
           tabSchedule: '我的行程',
@@ -1258,6 +1290,9 @@
           doc1BtnDl: '下載檔案 (Download)',
           doc2Title: '2、會場平面圖 (7F 各會議室與試片室)',
           doc2Desc: '南港 2 館 7 樓全區平面分場圖，清楚標示大會堂、701~705 各廳、試片室、電梯手扶梯動線。',
+          doc2PinchBadge: '支援雙指手勢縮放',
+          mapPreviewCaption: '點擊立即開啟手勢縮放燈箱 (Pinch to Zoom)',
+          mapPreviewBtnTag: '放大檢視',
           doc2BtnZoom: '🔍 手勢縮放檢視 (Pinch Zoom)',
           doc2BtnPdf: 'PDF 版本',
           doc3Title: '3、大會手冊 (手冊指南與法規)',
@@ -1268,6 +1303,7 @@
           helpDesc: '如有特殊需求或手冊未列事項，歡迎前往 1 樓迎賓大廳或 7 樓大廳的<strong class="text-amber-800 font-bold">「大會諮詢台」</strong>，志工與秘書處將提供面對面專人協助。',
           placeholder: '請輸入您的問題或按語音 (Type or speak)...',
           greeting: '您好！我是 2027 AACRT 大會智慧助手。您可以用<strong>中文、English、日本語、한국어</strong>詢問大會議程、演講廳、Wi-Fi 或周邊資訊。未公開細節我也會指引您至「大會諮詢台」！',
+          defaultTicker: '大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。',
           happeningTitle: '🔥 現在進行中 (Happening Now)',
           myFav: '我的收藏',
           focusAreaBadge: 'TaiNEX 2 · 7F 會議核心區',
@@ -1286,6 +1322,7 @@
           demoTimeHint: '測試大會現場各時段進行中狀態 (時段模擬切換)：'
         },
         'en': {
+          headerGuide: 'Official Guide',
           tabFaq: 'Documents & Map',
           tabAi: 'AI Assistant',
           tabSchedule: 'My Schedule',
@@ -1297,6 +1334,9 @@
           doc1BtnDl: 'Download PDF',
           doc2Title: '2. 7F Floor & Venue Map',
           doc2Desc: 'TaiNEX 2 Hall 7F layout: Plenary Hall, Rooms 701-705, Ready Room, and escalators.',
+          doc2PinchBadge: 'Pinch-to-zoom enabled',
+          mapPreviewCaption: 'Tap to open Pinch-to-Zoom Lightbox',
+          mapPreviewBtnTag: 'Zoom In',
           doc2BtnZoom: '🔍 Pinch to Zoom',
           doc2BtnPdf: 'PDF Version',
           doc3Title: '3. Conference Handbook',
@@ -1307,6 +1347,7 @@
           helpDesc: 'For unlisted details or special arrangements, please visit the official <strong class="text-amber-800 font-bold">Information Desk</strong> located at the 7F Foyer or 1F Lobby.',
           placeholder: 'Ask a question in English or speak...',
           greeting: 'Hello! I am the 2027 AACRT Conference AI Assistant. Feel free to ask about session halls, Wi-Fi, transportation, and dining. Unlisted details will be directed to the on-site Information Desk!',
+          defaultTicker: 'Conference Notice: Opening Ceremony at 7F Plenary Hall starts at 09:00. Early admission welcomed.',
           happeningTitle: '🔥 Happening Now (Active Sessions)',
           myFav: 'My Starred',
           focusAreaBadge: 'TaiNEX 2 · 7F Conference Core',
@@ -1325,6 +1366,7 @@
           demoTimeHint: 'Test live session states by time slot:'
         },
         'ja': {
+          headerGuide: '公式ガイド',
           tabFaq: '大会資料 / 地図',
           tabAi: 'AIアシスタント',
           tabSchedule: 'マイスケジュール',
@@ -1336,6 +1378,9 @@
           doc1BtnDl: 'ダウンロード',
           doc2Title: '2. 7階会場案内図 (Floor Map)',
           doc2Desc: '南港第2展示館7階の各会議室（701〜705）、試写室、動線を掲載。',
+          doc2PinchBadge: 'ピンチズーム対応',
+          mapPreviewCaption: 'タップしてピンチズーム拡大表示',
+          mapPreviewBtnTag: '拡大表示',
           doc2BtnZoom: '🔍 拡大縮小表示',
           doc2BtnPdf: 'PDF版',
           doc3Title: '3. 公式大会ハンドブック (Handbook)',
@@ -1346,6 +1391,7 @@
           helpDesc: '特別なご要望や未掲載の情報につきましては、7階ホワイエまたは1階ロビーの<strong class="text-amber-800 font-bold">「大会総合案内所」</strong>までお気軽にお越しください。',
           placeholder: '日本語で質問を入力または音声で発話...',
           greeting: 'こんにちは！2027 AACRT 大会AIアシスタントです。会場、交通、Wi-Fiなどお気軽にお尋ねください。未掲載の情報は総合案内所をご案内いたします。',
+          defaultTicker: '大会会場アナウンス：7階プレナリーホールでの開会式は09:00開始予定です。お早めにご入場ください。',
           happeningTitle: '🔥 開催中のセッション (Happening Now)',
           myFav: 'お気に入り',
           focusAreaBadge: 'TaiNEX 2 · 7F 会場コアエリア',
@@ -1364,6 +1410,7 @@
           demoTimeHint: '時間帯ごとのセッション進行状況をテスト:'
         },
         'ko': {
+          headerGuide: '공식 가이드',
           tabFaq: '대회 자료 / 지도',
           tabAi: 'AI 비서',
           tabSchedule: '내 일정표',
@@ -1375,6 +1422,9 @@
           doc1BtnDl: '다운로드',
           doc2Title: '2. 7층 회의실 배치도 (Floor Map)',
           doc2Desc: '난강전람관 2관 7층 전체 회의실, 시사회실, 엘리베이터 동선.',
+          doc2PinchBadge: '핀치 투 줌 지원',
+          mapPreviewCaption: '터치하여 핀치 줌 라이트박스 열기',
+          mapPreviewBtnTag: '확대 보기',
           doc2BtnZoom: '🔍 확대/축소 보기',
           doc2BtnPdf: 'PDF 버전',
           doc3Title: '3. 공식 대회 핸드북 (Handbook)',
@@ -1385,6 +1435,7 @@
           helpDesc: '특별한 요청 사항이나 기타 문의는 7층 로비 또는 1층의 <strong class="text-amber-800 font-bold">「대회 안내 데스크」</strong>를 방문해 주시면 전담 인력이 성심껏 안내해 드립니다.',
           placeholder: '한국어로 질문하세요...',
           greeting: '안녕하십니까! 2027 AACRT 학술대회 AI 도우미입니다. 회의실, 교통, Wi-Fi 등에 대해 무엇이든 물어보세요.',
+          defaultTicker: '대회장 공지: 7층 플레너리 홀 개회식이 09:00에 시작될 예정입니다. 사전 입장을 환영합니다.',
           happeningTitle: '🔥 현재 진행 중인 세션 (Happening Now)',
           myFav: '보관함',
           focusAreaBadge: 'TaiNEX 2 · 7F 컨퍼런스 코어',
@@ -1447,15 +1498,45 @@
       document.getElementById('focus-poster-title').innerText = t.focusPosterTitle;
       document.getElementById('focus-poster-desc').innerText = t.focusPosterDesc;
 
+      // Header Guide Tag
+      const headerTag = document.getElementById('header-guide-tag');
+      if (headerTag) headerTag.innerText = t.headerGuide;
+
+      // Map Preview Badges & Caption
+      const pinchBadge = document.getElementById('doc2-pinch-badge');
+      if (pinchBadge) pinchBadge.innerText = t.doc2PinchBadge;
+      const mapCaption = document.getElementById('map-preview-caption');
+      if (mapCaption) mapCaption.innerText = t.mapPreviewCaption;
+      const mapBtnTag = document.getElementById('map-preview-btn-tag');
+      if (mapBtnTag) mapBtnTag.innerText = t.mapPreviewBtnTag;
+
+      // Default Ticker Announcement (update only if cloud hasn't overridden)
+      if (!window.isCloudTickerActive) {
+        const tickerElem = document.getElementById('ticker-text');
+        if (tickerElem) tickerElem.innerText = t.defaultTicker;
+      }
+
       // Schedule Section Labels
       document.getElementById('day-filter-all-btn').innerText = t.dayFilterAll;
       document.getElementById('filter-all-sessions-btn').innerText = t.filterAllSessions;
       document.getElementById('star-hint-label').innerText = t.starHintLabel;
       document.getElementById('footer-venue-label').innerText = t.footerVenue;
+
+      // Update My Favorites Button Label (preserve star count)
+      const myFavLabel = document.getElementById('my-favorites-label');
+      if (myFavLabel) {
+        const starCount = document.getElementById('star-count') ? document.getElementById('star-count').innerText : '0';
+        myFavLabel.innerHTML = `${t.myFav} (<span id="star-count">${starCount}</span>)`;
+      }
+
       const demoHint = document.getElementById('demo-time-hint');
       if (demoHint) {
         demoHint.innerHTML = `<i class="fa-solid fa-clock-rotate-left text-amber-400"></i> <span>${t.demoTimeHint}</span>`;
       }
+
+      // Re-render schedule and happening-now with updated language room badges
+      renderScheduleList();
+      renderHappeningNow();
 
       // 修正：動態切換畫面上已顯示的歷史 AI 對話語言
       document.querySelectorAll('[data-msg-idx]').forEach(el => {
@@ -1528,7 +1609,13 @@
       }
 
       if (userQueryCount >= MAX_QUERIES_PER_SESSION) {
-        appendMessage('ai', '抱歉，您在此階段的即時諮詢次數已達安全保護上限。如有更多需求，誠摯歡迎您移步至現場「大會諮詢台」洽詢！');
+        const rateLimitMsgs = {
+          'zh-TW': '抱歉，您在此階段的即時諮詢次數已達安全保護上限。如有更多需求，誠摯歡迎您移步至現場「大會諮詢台」洽詢！',
+          'en': 'You have reached the maximum inquiry limit for this session. For further assistance, please visit the on-site Information Desk at 1F Lobby or 7F Foyer.',
+          'ja': 'セッションあたりの問い合わせ回数上限に達しました。詳細につきましては、7階または1階の「大会総合案内所」までお越しください。',
+          'ko': '세션당 최대 질의 횟수에 도달했습니다. 추가 안내가 필요하신 경우 1층 또는 7층의 「대회 안내 데스크」를 방문해 주시기 바랍니다.'
+        };
+        appendMessage('ai', rateLimitMsgs[currentLang] || rateLimitMsgs['en']);
         return;
       }
 
@@ -1644,17 +1731,6 @@
         };
       }
 
-      // 2. 7樓會議室位置與地圖 (精確單字邊界)
-      if (/\b(7f|floor\s*map|venue|layout)\b/i.test(q) || /\b(room|rooms|hall|halls)\b/i.test(q) ||
-          q.includes('7樓') || q.includes('會議室') || q.includes('怎麼走') || q.includes('会場') || q.includes('地圖') || q.includes('map') || q.includes('배치도')) {
-        return {
-          matched: true,
-          'zh-TW': '大會核心演講廳皆集中於 7 樓：大會堂 (Plenary Hall)、701（CT/IVR）、702（MRI/放療）、703（AI/核醫）、704（試片室）、705（VIP 貴賓室）。出電梯口即可見指引，亦可點擊第一頁「會場平面圖」開啟雙指手勢縮放燈箱！',
-          'en': 'All main session halls are located on the 7th floor: Plenary Hall, Rooms 701-703, Speaker Ready Room 704, and VIP Room 705. Signage is posted outside elevators, and you can open the interactive Pinch-to-Zoom Map on the Documents tab!',
-          'ja': '主要会場はすべて7階にございます（大會堂、701〜703会議室、704試写室、705VIP室）。エレベーター前に案内看板があり、また「大会資料」タブで拡大地図をご利用いただけます。',
-          'ko': '주요 세션장은 모두 7층에 집중되어 있습니다 (플레너리 홀, 701~703호, 704호 준비실, 705호 귀빈실). 엘리베이터 앞 안내판 또는 첫 페이지의 「대회 자료 / 지도」에서 고海상도 지도를 확대해 보실 수 있습니다.'
-        };
-      }
 
       // 3. 專題分廳主題 (修正：單字邊界防止誤觸)
       if (/\b(ct|mri|ai|ivr|pet|sbrt|igrt)\b/i.test(q) || q.includes('分廳') || q.includes('主題') || q.includes('專題') || q.includes('分科会') || q.includes('분과')) {
@@ -1667,8 +1743,11 @@
         };
       }
 
-      // 4. 試片室簡報繳交期限 (Slide Upload & Ready Room)
-      if (/\b(ppt|slide|slides|upload)\b/i.test(q) || q.includes('隨身碟') || q.includes('試片室') || q.includes('幾小時') || q.includes('交出') || q.includes('スライド') || q.includes('슬라이드')) {
+      // 4. 試片室簡報繳交期限 (Slide Upload & Ready Room - 擴充自然語言)
+      if (/\b(ppt|slide|slides|upload|ready\s*room|preview\s*room|speaker\s*ready|laptop|usb)\b/i.test(q) ||
+          q.includes('隨身碟') || q.includes('試片室') || q.includes('幾小時') || q.includes('交出') ||
+          q.includes('スライド') || q.includes('試写室') || q.includes('プレビュー') || q.includes('発表データ') || q.includes('pc持ち込み') ||
+          q.includes('슬라이드') || q.includes('시사회실') || q.includes('준비실') || q.includes('발표자료') || q.includes('노트북')) {
         return {
           matched: true,
           'zh-TW': '口頭發表講者請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶隨身碟至 7 樓 704 試片室完成影音測試與檔案拷貝。為確保議程順暢，大會不接受以個人筆電切換投影。',
@@ -1700,8 +1779,11 @@
         };
       }
 
-      // 7. Wi-Fi 無線網路 (Wi-Fi Access)
-      if (/\b(wifi|wi-fi|internet)\b/i.test(q) || q.includes('網路') || q.includes('インターネット') || q.includes('와이파이')) {
+      // 7. Wi-Fi 無線網路 (Wi-Fi Access - 擴充自然語言)
+      if (/\b(wifi|wi-fi|internet)\b/i.test(q) ||
+          q.includes('網路') || q.includes('連線') || q.includes('密碼') ||
+          q.includes('インターネット') || q.includes('無線lan') || q.includes('パスワード') ||
+          q.includes('와이파이') || q.includes('인터넷') || q.includes('비밀번호')) {
         return {
           matched: true,
           'zh-TW': '南港 2 館全館提供免費公共無線網路（SSID: TaiNEX-Free，免密碼瀏覽器點選連線）；大會專用高速網路帳號密碼請參閱報到手冊內頁或洽現場 7 樓「大會諮詢台」。',
@@ -1733,14 +1815,40 @@
         };
       }
 
-      // 10. 捷運與高鐵交通指引 (修正：單字邊界防止 smart 誤觸)
-      if (/\b(mrt|metro|subway|train|hsr|transit)\b/i.test(q) || q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') || q.includes('지하철')) {
+      // 10. 捷運與高鐵交通指引 (擴充自然語言)
+      if (/\b(mrt|metro|subway|train|hsr|transit|station|directions|transportation|access|taxi|airport)\b/i.test(q) ||
+          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') || q.includes('計程車') || q.includes('機場') || q.includes('怎麼走') ||
+          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('行き方') || q.includes('タクシー') ||
+          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시')) {
         return {
           matched: true,
           'zh-TW': '交通指引：請搭乘台北捷運【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」。自 1 號或 2 號出口出站，經由戶外徒步區或 B1 地下連通道步行約 3 分鐘即可直通南港展覽館 2 館。搭乘高鐵/台鐵者，請於「南港站」下車後轉乘捷運一站即可抵達。',
           'en': 'Transportation Guide: Take Taipei MRT Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23 / BR24). Take Exit 1 or Exit 2, and walk 3 minutes through the plaza or B1 underground walkway directly into TaiNEX Hall 2. From Taiwan High Speed Rail Nangang Station, take the MRT 1 stop.',
           'ja': '交通案内：台北MRT板南線（ブルーライン）または文湖線（ブラウンライン）の「南港展覧館駅（BL23/BR24）」下車。1番または2番出口より徒歩約3分、地下連絡通路（B1）でも南港第2展示館に直結しています。新幹線（高鐵）をご利用の場合は「南港駅」よりMRTで1駅です。',
           'ko': '교통 안내: 타이베이 MRT 판난선(블루라인) 또는 원후선(브라운라인) 탑승 후 「난강전람관역(BL23 / BR24)」에서 하차하십시오. 1번 또는 2번 출구로 나와 도보 3분 또는 B1 지하 연결통로를 통해 난강 2관으로 바로 진입하실 수 있습니다. 고속철도(THSR) 이용 시 난강역에서 지하철 1정거장 거리입니다.'
+        };
+      }
+
+      // 12. 壁報/海報論文展區 (Poster Session - 新增)
+      if (/\b(poster|posters)\b/i.test(q) || q.includes('海報') || q.includes('壁報') || q.includes('ポスター') || q.includes('포스터')) {
+        return {
+          matched: true,
+          'zh-TW': '壁報論文展區位於 1 樓（1F Poster Area）。每日 12:30～13:30 為作者現場交流與評選時段，請海報作者於張貼時間內完成佈置並於交流時段在海報旁解說。',
+          'en': 'The Poster Exhibition Area is located on the 1st Floor (1F Poster Area). Author presentation and evaluation session is held daily from 12:30 to 13:30. Presenters please set up within designated hours and stand by your poster during the session.',
+          'ja': 'ポスター発表エリアは1階（1F Poster Area）にございます。毎日12:30～13:30が発表者立ち会い・質疑応答時間となっております。掲示時間内に貼り付けを完了し、発表時間中はポスター前で待機してください。',
+          'ko': '포스터 발표 구역은 1층(1F Poster Area)에 위치하고 있습니다. 매일 12:30~13:30은 발표자 현장 교류 및 심사 시간입니다. 포스터 발표자는 지정된 시간에 게시를 완료하고 해당 시간에 포스터 앞에서 설명해 주시기 바랍니다.'
+        };
+      }
+
+      // 2. 7樓會議室位置與地圖 (精確單字邊界，移至具體主題之後判定，移除「怎麼走」防止攔截交通，修正韓文錯字)
+      if (/\b(7f|floor\s*map|venue|layout)\b/i.test(q) || /\b(room|rooms|hall|halls)\b/i.test(q) ||
+          q.includes('7樓') || q.includes('會議室') || q.includes('会場') || q.includes('地圖') || q.includes('map') || q.includes('배치도')) {
+        return {
+          matched: true,
+          'zh-TW': '大會核心演講廳皆集中於 7 樓：大會堂 (Plenary Hall)、701（CT/IVR）、702（MRI/放療）、703（AI/核醫）、704（試片室）、705（VIP 貴賓室）。出電梯口即可見指引，亦可點擊第一頁「會場平面圖」開啟雙指手勢縮放燈箱！',
+          'en': 'All main session halls are located on the 7th floor: Plenary Hall, Rooms 701-703, Speaker Ready Room 704, and VIP Room 705. Signage is posted outside elevators, and you can open the interactive Pinch-to-Zoom Map on the Documents tab!',
+          'ja': '主要会場はすべて7階にございます（大會堂、701〜703会議室、704試写室、705VIP室）。エレベーター前に案内看板があり、また「大会資料」タブで拡大地図をご利用いただけます。',
+          'ko': '주요 세션장은 모두 7층에 집중되어 있습니다 (플레너리 홀, 701~703호, 704호 준비실, 705호 귀빈실). 엘리베이터 앞 안내판 또는 첫 페이지의 「대회 자료 / 지도」에서 고해상도 지도를 확대해 보실 수 있습니다.'
         };
       }
 
@@ -1934,6 +2042,7 @@
         if (res.ok) {
           const data = await res.json();
           if (data && data.ticker) {
+            window.isCloudTickerActive = true;
             const tickerElem = document.getElementById('ticker-text');
             if (tickerElem) tickerElem.innerText = data.ticker;
           }
@@ -1984,7 +2093,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.07').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.08').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);
