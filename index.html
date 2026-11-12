@@ -84,11 +84,11 @@
       </div>
     </div>
 
-    <!-- Mode Tabs: 1.常見 Q&A / 文件 | 2.智慧對談 | 3.我的行程 (My Schedule) -->
+    <!-- Mode Tabs: 1.大會文件 / 地圖 | 2.智慧對談 | 3.我的行程 (My Schedule) -->
     <div class="max-w-lg mx-auto px-2 flex border-t border-slate-800/60">
       <button id="tab-faq-btn" onclick="switchTab('faq')" class="flex-1 py-3 text-xs font-bold border-b-2 border-amber-400 text-amber-400 flex items-center justify-center space-x-1.5 transition-all">
         <i class="fa-solid fa-file-lines text-sm"></i>
-        <span id="tab-faq-label">常見 Q&A / 文件</span>
+        <span id="tab-faq-label">大會文件 / 地圖</span>
       </button>
       <button id="tab-ai-btn" onclick="switchTab('ai')" class="flex-1 py-3 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center space-x-1.5 transition-all">
         <i class="fa-solid fa-comments text-sm text-amber-400"></i>
@@ -105,40 +105,40 @@
   <main class="max-w-lg mx-auto w-full flex-1 p-4 pb-8">
 
     <!-- ========================================== -->
-    <!-- TAB 1: 常見 Q&A 與重要大會文件/手冊預覽專區 -->
+    <!-- TAB 1: 大會文件 / 地圖與手冊預覽專區 -->
     <!-- ========================================== -->
     <section id="faq-section" class="space-y-4">
       
-      <!-- 會議焦點看板 Header Card -->
+      <!-- 會議焦點看板 Header Card (支援動態 i18n) -->
       <div class="bg-gradient-royal text-white rounded-2xl p-4 shadow-md border border-slate-800">
         <div class="flex items-center justify-between border-b border-slate-700/80 pb-2 mb-3">
           <div class="flex items-center space-x-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-bold tracking-wide uppercase text-amber-300">TaiNEX 2 · 7F 會議核心區</span>
+            <span id="focus-area-badge" class="text-xs font-bold tracking-wide uppercase text-amber-300">TaiNEX 2 · 7F 會議核心區</span>
           </div>
-          <span class="text-[11px] text-slate-300">2027/04/24 - 04/25</span>
+          <span class="text-[11px] text-slate-300 font-mono">2027/04/24 - 04/25</span>
         </div>
         <div class="grid grid-cols-2 gap-2 text-xs">
           <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700">
-            <p class="text-amber-400 font-bold">大會堂 (Plenary Hall)</p>
-            <p class="text-slate-300 text-[11px] mt-0.5">主題演講 · 閉幕典禮</p>
+            <p id="focus-hall-title" class="text-amber-400 font-bold">大會堂 (Plenary Hall)</p>
+            <p id="focus-hall-desc" class="text-slate-300 text-[11px] mt-0.5">主題演講 · 閉幕典禮</p>
           </div>
           <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700">
-            <p class="text-amber-400 font-bold">701 ~ 703 會議室</p>
-            <p class="text-slate-300 text-[11px] mt-0.5">CT · MRI · AI 分題演講</p>
+            <p id="focus-rooms-title" class="text-amber-400 font-bold">701 ~ 703 會議室</p>
+            <p id="focus-rooms-desc" class="text-slate-300 text-[11px] mt-0.5">CT · MRI · AI 分題演講</p>
           </div>
           <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700">
-            <p class="text-amber-400 font-bold">704 試片室</p>
-            <p class="text-slate-300 text-[11px] mt-0.5">每日 07:30-17:00 繳交簡報</p>
+            <p id="focus-ready-title" class="text-amber-400 font-bold">704 試片室</p>
+            <p id="focus-ready-desc" class="text-slate-300 text-[11px] mt-0.5">每日 07:30-17:00 繳交簡報</p>
           </div>
           <div class="bg-slate-800/70 p-2.5 rounded-xl border border-slate-700">
-            <p class="text-amber-400 font-bold">1F 海報展區</p>
-            <p class="text-slate-300 text-[11px] mt-0.5">12:30-13:30 作者交流時段</p>
+            <p id="focus-poster-title" class="text-amber-400 font-bold">1F 海報展區</p>
+            <p id="focus-poster-desc" class="text-slate-300 text-[11px] mt-0.5">12:30-13:30 作者交流時段</p>
           </div>
         </div>
       </div>
 
-      <!-- 區塊標題：大會重要文件與手冊預覽 -->
+      <!-- 區塊標題：大會核心文件與手冊專區 -->
       <div class="flex items-center justify-between pt-1">
         <h2 id="doc-section-title" class="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
           <i class="fa-solid fa-folder-open text-amber-500"></i>
@@ -171,13 +171,13 @@
           </div>
         </div>
         <div class="mt-3.5 pt-3 border-t border-slate-100 flex items-center justify-end space-x-2">
-          <a href="./docs/1_agenda.pdf" target="_blank" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5">
+          <a id="doc1-btn-view" href="./docs/1_agenda.pdf" target="_blank" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5">
             <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
-            <span id="doc1-btn-view">線上預覽 (View)</span>
+            <span>線上預覽 (View)</span>
           </a>
-          <a href="./docs/1_agenda.pdf" download="2027_AACRT_總議程.pdf" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center space-x-1.5">
+          <a id="doc1-btn-dl" href="./docs/1_agenda.pdf" download="2027_AACRT_總議程.pdf" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center space-x-1.5">
             <i class="fa-solid fa-download text-[11px]"></i>
-            <span id="doc1-btn-dl">下載檔案 (Download)</span>
+            <span>下載檔案 (Download)</span>
           </a>
         </div>
       </div>
@@ -199,31 +199,37 @@
             <div class="text-[11px] text-slate-400 mt-1 flex items-center gap-2">
               <span><i class="fa-regular fa-image text-emerald-600"></i> 2_floor_map_7f.jpg / PDF</span>
               <span>·</span>
-              <span>支援雙指手勢縮放</span>
+              <span id="doc2-pinch-badge">支援雙指手勢縮放</span>
             </div>
           </div>
         </div>
 
-        <!-- 地圖縮圖與一鍵燈箱檢視區 -->
+        <!-- 地圖縮圖與一鍵燈箱檢視區 (含防破圖 fallback 容錯) -->
         <div class="mt-3 relative rounded-xl overflow-hidden border border-slate-200 group cursor-pointer bg-slate-900" onclick="openMapLightbox('./docs/2_floor_map_7f.jpg')">
-          <img id="map-preview-img" src="./docs/2_floor_map_7f.jpg" alt="南港展覽館2館7F會場平面圖" class="w-full h-36 object-cover object-center group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end justify-between p-3">
+          <img id="map-preview-img" src="./docs/2_floor_map_7f.jpg" alt="南港展覽館2館7F會場平面圖" class="w-full h-36 object-cover object-center group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100" onerror="this.style.display='none'; document.getElementById('map-fallback-box').classList.remove('hidden');">
+          <!-- 容錯預覽框 (當圖檔尚未上傳時優雅顯示) -->
+          <div id="map-fallback-box" class="hidden w-full h-36 bg-gradient-to-br from-slate-900 to-blue-950 flex flex-col items-center justify-center text-center p-3">
+            <i class="fa-solid fa-map-location-dot text-3xl text-amber-400 mb-1.5"></i>
+            <p class="text-xs font-bold text-white">南港 2 館 7 樓會場平面圖</p>
+            <p class="text-[10px] text-slate-300 mt-0.5">點擊按鈕直接開啟高清地圖與縮放檢視</p>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end justify-between p-3 pointer-events-none">
             <span class="text-white text-xs font-bold drop-shadow flex items-center gap-1.5">
               <i class="fa-solid fa-magnifying-glass-plus text-amber-400"></i>
-              點擊立即開啟高清手勢縮放燈箱 (Pinch to Zoom)
+              <span id="map-preview-caption">點擊立即開啟手勢縮放燈箱 (Pinch to Zoom)</span>
             </span>
-            <span class="text-[10px] bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded shadow">放大檢視</span>
+            <span id="map-preview-btn-tag" class="text-[10px] bg-amber-400 text-slate-950 font-black px-2 py-0.5 rounded shadow">放大檢視</span>
           </div>
         </div>
 
         <div class="mt-3.5 pt-3 border-t border-slate-100 flex items-center justify-end space-x-2">
-          <button onclick="openMapLightbox('./docs/2_floor_map_7f.jpg')" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-xs flex items-center space-x-1.5">
+          <button id="doc2-btn-zoom" onclick="openMapLightbox('./docs/2_floor_map_7f.jpg')" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-sm flex items-center space-x-1.5">
             <i class="fa-solid fa-maximize text-[11px]"></i>
-            <span id="doc2-btn-zoom">🔍 手勢縮放檢視 (Pinch Zoom)</span>
+            <span>🔍 手勢縮放檢視 (Pinch Zoom)</span>
           </button>
-          <a href="./docs/2_floor_map.pdf" target="_blank" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5">
+          <a id="doc2-btn-pdf" href="./docs/2_floor_map.pdf" target="_blank" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5">
             <i class="fa-solid fa-file-pdf text-red-500 text-[11px]"></i>
-            <span id="doc2-btn-pdf">PDF 版本</span>
+            <span>PDF 版本</span>
           </a>
         </div>
       </div>
@@ -250,13 +256,13 @@
           </div>
         </div>
         <div class="mt-3.5 pt-3 border-t border-slate-100 flex items-center justify-end space-x-2">
-          <a href="./docs/3_handbook.pdf" target="_blank" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5">
+          <a id="doc3-btn-view" href="./docs/3_handbook.pdf" target="_blank" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5">
             <i class="fa-solid fa-book-open-reader text-[11px]"></i>
-            <span id="doc3-btn-view">線上閱讀 (Read)</span>
+            <span>線上閱讀 (Read)</span>
           </a>
-          <a href="./docs/3_handbook.pdf" download="2027_AACRT_大會手冊.pdf" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center space-x-1.5">
+          <a id="doc3-btn-dl" href="./docs/3_handbook.pdf" download="2027_AACRT_大會手冊.pdf" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center space-x-1.5">
             <i class="fa-solid fa-download text-[11px]"></i>
-            <span id="doc3-btn-dl">下載手冊 (Download)</span>
+            <span>下載手冊 (Download)</span>
           </a>
         </div>
       </div>
@@ -280,9 +286,10 @@
     <!-- ========================================== -->
     <!-- TAB 2: 智慧對談 (AI Assistant Chat Section) -->
     <!-- ========================================== -->
-    <section id="ai-section" class="hidden flex-col h-[calc(100vh-175px)]">
+    <!-- 修正為 100dvh，避免 iOS Safari 網址列壓縮高度 -->
+    <section id="ai-section" class="hidden flex-col h-[calc(100dvh-175px)]">
       
-      <!-- Quick Prompt Chips (精選 6 大高頻提問) -->
+      <!-- Quick Prompt Chips (精選 6 大高頻提問，支援四語切換) -->
       <div class="mb-3">
         <div class="flex items-center justify-between mb-2">
           <p id="suggested-prompts-label" class="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
@@ -292,42 +299,18 @@
           <span id="live-stat-badge" class="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-medium">即時統計連線中</span>
         </div>
         <div id="quick-prompts-container" class="grid grid-cols-2 gap-2">
-          <!-- 6 大精選最高頻提問卡片 -->
-          <button onclick="sendQuickPrompt('今日重要大會演講有哪些？')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-amber-500 text-sm">🌟</span>
-            <span class="truncate">今日重要大會演講</span>
-          </button>
-          <button onclick="sendQuickPrompt('7樓大會堂與各演講廳怎麼走？')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-blue-500 text-sm">🏢</span>
-            <span class="truncate">7樓演講廳位置</span>
-          </button>
-          <button onclick="sendQuickPrompt('CT、MRI、AI專題分廳在幾號會議室？')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-emerald-500 text-sm">🔬</span>
-            <span class="truncate">各專題分廳主題</span>
-          </button>
-          <button onclick="sendQuickPrompt('演講開始前幾小時必須交出PPT隨身碟？')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-purple-500 text-sm">💾</span>
-            <span class="truncate">簡報繳交期限 (2h前)</span>
-          </button>
-          <button onclick="sendQuickPrompt('中午午餐便當在幾點、哪裡憑券領取？')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-orange-500 text-sm">🍱</span>
-            <span class="truncate">午餐便當領取處</span>
-          </button>
-          <button onclick="sendQuickPrompt('大會晚宴幾點開始？接駁車在哪搭？')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-rose-500 text-sm">🍷</span>
-            <span class="truncate">晚宴時間與接駁車</span>
-          </button>
+          <!-- Rendered dynamically by updateLanguageUI() -->
         </div>
       </div>
 
-      <!-- Messages Window -->
+      <!-- Messages Window (支援換行 whitespace-pre-line) -->
       <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3.5 p-4 bg-white rounded-3xl border border-slate-200 shadow-sm no-scrollbar">
         <!-- Initial AI Greeting -->
         <div class="flex items-start space-x-3">
           <div class="w-9 h-9 rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center text-sm shrink-0 mt-0.5 shadow-sm">
             <i class="fa-solid fa-atom"></i>
           </div>
-          <div class="bg-slate-100 text-slate-800 rounded-3xl rounded-tl-sm px-4 py-3 text-sm max-w-[85%] leading-relaxed font-normal">
+          <div class="bg-slate-100 text-slate-800 rounded-3xl rounded-tl-sm px-4 py-3 text-xs max-w-[85%] leading-relaxed font-normal whitespace-pre-line shadow-sm">
             <p id="ai-greeting">
               您好！我是 2027 AACRT 大會智慧助手。您可以用<strong>中文、English、日本語、한국어</strong>詢問大會議程、演講廳、Wi-Fi 或周邊資訊。未公開細節我也會指引您至「大會諮詢台」！
             </p>
@@ -335,15 +318,15 @@
         </div>
       </div>
 
-      <!-- Enlarged Input Bar (加大輸入框、加大語音與發送按鈕 48x48) -->
+      <!-- Enlarged Input Bar (輸入字體改為 text-base 16px，防止 iOS 縮放) -->
       <div class="mt-3 relative flex items-center bg-white rounded-2xl border-2 border-slate-200 focus-within:border-amber-400 shadow-md p-1.5 transition-all">
         <!-- Voice Input (Big Microphone Button) -->
         <button id="voice-btn" onclick="toggleVoiceInput()" title="語音輸入 (按一下說話)" class="w-12 h-12 rounded-xl text-slate-500 hover:text-amber-600 hover:bg-amber-50 flex items-center justify-center transition-all shrink-0">
           <i class="fa-solid fa-microphone text-xl"></i>
         </button>
 
-        <!-- Big Text Input -->
-        <input id="chat-input" type="text" placeholder="請輸入問題或點按語音 (Type or speak)..." class="w-full bg-transparent px-3 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none font-medium" onkeydown="if(event.key==='Enter') sendMessage()">
+        <!-- Big Text Input (text-base 16px 防止 iOS 放大) -->
+        <input id="chat-input" type="text" placeholder="請輸入問題或點按語音 (Type or speak)..." class="w-full bg-transparent px-3 py-3 text-base text-slate-800 placeholder-slate-400 focus:outline-none font-medium" onkeydown="if(event.key==='Enter') sendMessage()">
 
         <!-- Big Send Button -->
         <button onclick="sendMessage()" title="送出問題" class="w-12 h-12 bg-gradient-to-tr from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl flex items-center justify-center shadow-sm transition-transform active:scale-95 shrink-0 ml-1">
@@ -357,7 +340,7 @@
     <!-- ========================================== -->
     <section id="schedule-section" class="hidden space-y-4">
       
-      <!-- Happening Now: 當前進行中演講卡片 (即時比對 / 支援情境模擬) -->
+      <!-- Happening Now: 當前進行中演講卡片 (以台灣 Asia/Taipei 台北時間比對) -->
       <div class="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-2xl p-4 shadow-md border border-slate-800">
         <div class="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3">
           <div class="flex items-center space-x-2">
@@ -374,30 +357,42 @@
 
         <!-- 展前時段模擬切換器 (Time Travel Demo) -->
         <div class="mt-3.5 pt-2.5 border-t border-slate-800/80">
-          <p class="text-[10px] text-slate-400 mb-1.5 flex items-center gap-1">
+          <p id="demo-time-hint" class="text-[10px] text-slate-400 mb-1.5 flex items-center gap-1">
             <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>
-            <span>測試大會當日各時段現場動態 (時段切換)：</span>
+            <span>測試大會現場各時段進行中狀態 (時段模擬切換)：</span>
           </p>
           <div class="flex flex-wrap gap-1.5">
-            <button onclick="setSimulatedTime('09:30')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="09:30">09:30 開幕/主題演講</button>
-            <button onclick="setSimulatedTime('10:45')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500 text-slate-950 transition-all" data-time="10:45">10:45 CT/MRI 分廳</button>
-            <button onclick="setSimulatedTime('12:30')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="12:30">12:30 海報交流/便當</button>
-            <button onclick="setSimulatedTime('14:30')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="14:30">14:30 AI/放療前沿</button>
+            <button onclick="setSimulatedTime('09:30', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="09:30" data-day="4/24">4/24 09:30 開幕主題</button>
+            <button onclick="setSimulatedTime('10:45', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500 text-slate-950 transition-all" data-time="10:45" data-day="4/24">4/24 10:45 CT/MRI分廳</button>
+            <button onclick="setSimulatedTime('12:30', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="12:30" data-day="4/24">4/24 12:30 海報交流</button>
+            <button onclick="setSimulatedTime('14:30', '4/24')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="14:30" data-day="4/24">4/24 14:30 AI/放療</button>
+            <button onclick="setSimulatedTime('10:30', '4/25')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="10:30" data-day="4/25">4/25 10:30 優秀論文</button>
+            <button onclick="setSimulatedTime('15:50', '4/25')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="15:50" data-day="4/25">4/25 15:50 閉幕頒獎</button>
             <button onclick="setSimulatedTime('live')" class="sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-time="live">⏱️ 目前實體時間</button>
           </div>
         </div>
       </div>
 
-      <!-- 個人化收藏與全部焦點議程切換 -->
-      <div class="flex items-center justify-between pt-1">
-        <div class="flex space-x-1.5 bg-slate-200 p-1 rounded-xl">
-          <button id="filter-all-sessions-btn" onclick="filterScheduleView('all')" class="px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-xs transition-all">全部焦點議程</button>
-          <button id="filter-my-sessions-btn" onclick="filterScheduleView('starred')" class="px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1">
+      <!-- 日期分籤 (4/24 vs 4/25) 與個人化收藏切換 -->
+      <div class="space-y-2 pt-1">
+        <!-- 日期選擇按鈕組 -->
+        <div class="flex items-center justify-between">
+          <div class="flex space-x-1.5 bg-slate-200 p-1 rounded-xl">
+            <button id="day-filter-all-btn" onclick="filterDaySchedule('all')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all">全部兩日</button>
+            <button id="day-filter-424-btn" onclick="filterDaySchedule('4/24')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all">4/24 (Day 1)</button>
+            <button id="day-filter-425-btn" onclick="filterDaySchedule('4/25')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all">4/25 (Day 2)</button>
+          </div>
+          <span id="star-hint-label" class="text-[11px] text-slate-500">點擊 ⭐ 一鍵加入我的行程</span>
+        </div>
+
+        <!-- 收藏狀態切換 -->
+        <div class="flex items-center space-x-2">
+          <button id="filter-all-sessions-btn" onclick="filterScheduleView('all')" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-800 text-amber-300 shadow-sm transition-all">全部焦點議程</button>
+          <button id="filter-my-sessions-btn" onclick="filterScheduleView('starred')" class="px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-sm transition-all flex items-center gap-1">
             <i class="fa-solid fa-star text-amber-500 text-[11px]"></i>
             <span id="my-favorites-label">我的收藏 (<span id="star-count">0</span>)</span>
           </button>
         </div>
-        <span class="text-[11px] text-slate-500">點擊 ⭐ 一鍵加入我的行程</span>
       </div>
 
       <!-- 演講列表 (Session List) -->
@@ -419,7 +414,7 @@
     <span class="text-slate-600">|</span>
     <span class="flex items-center gap-1.5 font-medium text-slate-300">
       <i class="fa-solid fa-location-dot text-amber-400"></i>
-      <span>南港 2 館</span>
+      <span id="footer-venue-label">南港 2 館</span>
     </span>
   </footer>
 
@@ -431,7 +426,7 @@
     <div class="flex items-center justify-between p-3.5 bg-slate-900/90 border-b border-slate-800 text-white z-10">
       <div class="flex items-center space-x-2">
         <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded">高清地圖</span>
-        <span class="text-xs font-bold truncate">南港 2 館 7 樓分場動線圖</span>
+        <span id="lightbox-map-title" class="text-xs font-bold truncate">南港 2 館 7 樓分場動線圖</span>
       </div>
       <div class="flex items-center space-x-1.5">
         <button onclick="zoomMap(0.25)" class="w-8 h-8 rounded-lg bg-slate-800 text-amber-300 hover:bg-slate-700 flex items-center justify-center text-xs font-bold" title="放大 (+)">
@@ -499,9 +494,24 @@
   <!-- Application Logic -->
   <script>
     // ==========================================
+    // 全域安全訊息庫 (Message Store)
+    // 解決直接拼接字串造成的雙引號截斷與多語系缺失 Bug
+    // ==========================================
+    const messageStore = [];
+
+    // HTML Escape Helper
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // ==========================================
     // 大會重要文件路徑配置 (Document Path Config)
-    // 說明：日後實體檔案由本機路徑 [G:\我的雲端硬碟\100、AI\02、projects\AACRT-志工APP工具\創作庫-內部原創層\常見 Q&A」]
-    // 轉存至專案目錄 ./docs/ 下（PDF 或高解析圖檔格式）。
     // ==========================================
     const CONFERENCE_DOCS = {
       agenda: {
@@ -525,8 +535,11 @@
       }
     };
 
-    // 核心議程資料庫 (4/24 焦點 Session 與演講廳配當)
+    // ==========================================
+    // 雙日核心議程資料庫 (4/24 Day 1 & 4/25 Day 2)
+    // ==========================================
     const CONFERENCE_SESSIONS = [
+      // 4/24 (Day 1)
       {
         id: 's1',
         day: '4/24',
@@ -630,6 +643,72 @@
         topic_en: 'Official AACRT Gala Dinner (Smart Casual, Shuttle from 17:30)',
         speaker: 'Organizing Committee & International Delegates',
         category: 'Gala'
+      },
+      // 4/25 (Day 2)
+      {
+        id: 's9',
+        day: '4/25',
+        timeStart: '08:30',
+        timeEnd: '10:00',
+        timeDisplay: '08:30 - 10:00',
+        room: '701 會議室',
+        roomBadge: '701 (QA/QC)',
+        topic_zh: '醫學影像設備品管標準與輻射劑量安全防護考核評鑑',
+        topic_en: 'Medical Imaging QA/QC Standards & Radiation Safety Protocol',
+        speaker: 'Radiation Safety Committee & International Experts',
+        category: 'Safety'
+      },
+      {
+        id: 's10',
+        day: '4/25',
+        timeStart: '10:15',
+        timeEnd: '11:45',
+        timeDisplay: '10:15 - 11:45',
+        room: '702 會議室',
+        roomBadge: '702 (優秀論文)',
+        topic_zh: 'AACRT 青年研究者優秀論文競賽發表 (Young Investigator Awards)',
+        topic_en: 'Young Investigator Award (YIA) Oral Competition',
+        speaker: 'Finalist Radiographers & Judging Panel',
+        category: 'Oral'
+      },
+      {
+        id: 's11',
+        day: '4/25',
+        timeStart: '12:00',
+        timeEnd: '13:30',
+        timeDisplay: '12:00 - 13:30',
+        room: '1F 海報展區 / 7F 餐廳',
+        roomBadge: '1F 海報區',
+        topic_zh: '第二日壁報論文評選交流、午餐便當發放',
+        topic_en: 'Day 2 Poster Review, Discussion & Lunch Distribution',
+        speaker: 'Poster Evaluators & Delegates',
+        category: 'Poster'
+      },
+      {
+        id: 's12',
+        day: '4/25',
+        timeStart: '14:00',
+        timeEnd: '15:30',
+        timeDisplay: '14:00 - 15:30',
+        room: '大會堂 (Plenary Hall)',
+        roomBadge: '7F 大會堂',
+        topic_zh: '亞澳區放射師國際高峰圓桌論壇：跨國專業認證與AI時代願景',
+        topic_en: 'AACRT Leaders Forum: Professional Certification & AI Vision',
+        speaker: 'Presidents of National Radiographer Societies',
+        category: 'Plenary'
+      },
+      {
+        id: 's13',
+        day: '4/25',
+        timeStart: '15:45',
+        timeEnd: '16:45',
+        timeDisplay: '15:45 - 16:45',
+        room: '大會堂 (Plenary Hall)',
+        roomBadge: '7F 大會堂',
+        topic_zh: '2027 AACRT 閉幕典禮暨優秀論文大獎頒獎典禮 (Awards & Closing)',
+        topic_en: 'Awards Ceremony & Official Closing Ceremony',
+        speaker: 'Organizing Committee & Next Host Country',
+        category: 'Closing'
       }
     ];
 
@@ -650,20 +729,21 @@
       } else if (browserLang.startsWith('ko')) {
         return 'ko';
       } else {
-        // 非中文語系瀏覽器直接預設為 English
-        return 'en';
+        return 'en'; // 非中文語系瀏覽器直接預設為 English
       }
     }
 
     let currentLang = detectInitialLanguage();
     let currentScheduleFilter = 'all'; // 'all' or 'starred'
-    let simulatedTime = '10:45'; // default simulated demo time
+    let currentDayFilter = 'all';       // 'all', '4/24', '4/25'
+    let simulatedTime = '10:45';
+    let simulatedDay = '4/24';
     let isListening = false;
     let recognition = null;
     let currentModalBundle = null;
     let currentModalActiveLang = 'en';
 
-    // Google Apps Script Backend Web App Endpoint for Logging & Live Broadcast
+    // Google Apps Script Backend Web App Endpoint
     const GAS_ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbwfbtyYhEHFLLLSlETnYbIdvsiFcXbRHDk-fG9NkUm_SbAvhscSGAd6-lWXcXjk5wLgBw/exec';
 
     // Hard Conference Sunset Deadline: 2027-04-26 12:00 Taipei Time
@@ -677,7 +757,7 @@
         document.getElementById('schedule-section').classList.add('hidden');
         document.getElementById('emergency-banner').innerHTML = `
           <div class="w-full text-center py-1 font-bold text-slate-900 bg-amber-400">
-            🎉 2027 AACRT 已圓滿閉幕 (Conference Successfully Concluded)
+            🎉 2027 AACRT 已圓滿閉幕 (Conference Concluded)
           </div>
         `;
         return true;
@@ -685,7 +765,7 @@
       return false;
     }
 
-    // Live Taiwan Time Clock with Seconds (GMT+8)
+    // Live Taiwan Time Clock with Seconds (Asia/Taipei GMT+8)
     function updateClock() {
       try {
         const now = new Date();
@@ -716,7 +796,7 @@
       const aiBtn = document.getElementById('tab-ai-btn');
       const schBtn = document.getElementById('tab-schedule-btn');
 
-      // Reset tabs
+      // Reset
       [faqSec, aiSec, schSec].forEach(s => {
         s.classList.add('hidden');
         s.classList.remove('flex');
@@ -773,16 +853,36 @@
       if (countEl) countEl.innerText = count;
     }
 
+    function filterDaySchedule(day) {
+      currentDayFilter = day;
+      const allBtn = document.getElementById('day-filter-all-btn');
+      const d424Btn = document.getElementById('day-filter-424-btn');
+      const d425Btn = document.getElementById('day-filter-425-btn');
+
+      [allBtn, d424Btn, d425Btn].forEach(b => {
+        b.className = 'px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
+      });
+
+      if (day === 'all') {
+        allBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all';
+      } else if (day === '4/24') {
+        d424Btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all';
+      } else if (day === '4/25') {
+        d425Btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all';
+      }
+      renderScheduleList();
+    }
+
     function filterScheduleView(filter) {
       currentScheduleFilter = filter;
       const allBtn = document.getElementById('filter-all-sessions-btn');
       const starBtn = document.getElementById('filter-my-sessions-btn');
       if (filter === 'all') {
-        allBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-xs transition-all';
-        starBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1';
+        allBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-slate-800 text-amber-300 shadow-sm transition-all';
+        starBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-sm transition-all flex items-center gap-1';
       } else {
-        starBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-xs transition-all flex items-center gap-1';
-        allBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
+        starBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-slate-800 text-amber-300 shadow-sm transition-all flex items-center gap-1';
+        allBtn.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-sm transition-all';
       }
       renderScheduleList();
     }
@@ -793,16 +893,30 @@
       const starred = getStarredSessions();
       let sessions = CONFERENCE_SESSIONS;
 
+      // Filter Day
+      if (currentDayFilter !== 'all') {
+        sessions = sessions.filter(s => s.day === currentDayFilter);
+      }
+
+      // Filter Starred
       if (currentScheduleFilter === 'starred') {
         sessions = sessions.filter(s => starred.includes(s.id));
       }
 
       if (sessions.length === 0) {
+        const emptyMsg = (currentLang === 'zh-TW') ?
+          { title: '尚未收藏任何專題演講', sub: '點擊演講卡片旁的 ⭐ 星號，即可建立您的專屬大會行程！' } :
+          (currentLang === 'ja') ?
+          { title: 'お気に入りのセッションはありません', sub: 'カード横の ⭐ アイコンをタップして、個人スケジュールを作成してください！' } :
+          (currentLang === 'ko') ?
+          { title: '보관된 세션이 없습니다', sub: '세션 카드 옆의 ⭐ 별표를 눌러 나만의 학술대회 일정을 만드세요!' } :
+          { title: 'No Starred Sessions Yet', sub: 'Tap the ⭐ star icon on any session to add it to your personal itinerary!' };
+
         container.innerHTML = `
-          <div class="bg-white rounded-2xl p-6 text-center border border-slate-200 text-slate-500 shadow-xs">
+          <div class="bg-white rounded-2xl p-6 text-center border border-slate-200 text-slate-500 shadow-sm">
             <i class="fa-regular fa-star text-3xl text-amber-400 mb-2"></i>
-            <p class="text-xs font-bold text-slate-700">尚未收藏任何專題演講</p>
-            <p class="text-[11px] text-slate-400 mt-1">點擊演講卡片旁的 ⭐ 星號，即可建立您的專屬大會行程！</p>
+            <p class="text-xs font-bold text-slate-700">${emptyMsg.title}</p>
+            <p class="text-[11px] text-slate-400 mt-1">${emptyMsg.sub}</p>
           </div>
         `;
         return;
@@ -812,9 +926,10 @@
         const isStarred = starred.includes(s.id);
         const title = (currentLang === 'zh-TW') ? s.topic_zh : s.topic_en;
         return `
-          <div class="bg-white rounded-2xl border ${isStarred ? 'border-amber-300 ring-1 ring-amber-300/40 shadow-md' : 'border-slate-200 shadow-xs'} p-3.5 transition-all">
+          <div class="bg-white rounded-2xl border ${isStarred ? 'border-amber-300 ring-1 ring-amber-300/40 shadow-md' : 'border-slate-200 shadow-sm'} p-3.5 transition-all">
             <div class="flex items-start justify-between">
               <div class="flex items-center space-x-2">
+                <span class="text-[10px] font-bold bg-amber-400/20 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded font-mono">${s.day}</span>
                 <span class="text-[11px] font-black bg-slate-900 text-amber-300 px-2 py-0.5 rounded-md font-mono">${s.timeDisplay}</span>
                 <span class="text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200 px-2 py-0.5 rounded-md">${s.roomBadge}</span>
               </div>
@@ -822,10 +937,10 @@
                 <i class="${isStarred ? 'fa-solid fa-star' : 'fa-regular fa-star'}"></i>
               </button>
             </div>
-            <h4 class="text-xs font-bold text-slate-900 mt-2 leading-snug">${title}</h4>
+            <h4 class="text-xs font-bold text-slate-900 mt-2 leading-snug">${escapeHtml(title)}</h4>
             <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-              <span class="truncate max-w-[200px]"><i class="fa-solid fa-user-doctor text-slate-400 mr-1"></i>${s.speaker}</span>
-              <span class="text-slate-400 shrink-0"><i class="fa-solid fa-door-open text-amber-500 mr-1"></i>${s.room}</span>
+              <span class="truncate max-w-[200px]"><i class="fa-solid fa-user-doctor text-slate-400 mr-1"></i>${escapeHtml(s.speaker)}</span>
+              <span class="text-slate-400 shrink-0"><i class="fa-solid fa-door-open text-amber-500 mr-1"></i>${escapeHtml(s.room)}</span>
             </div>
           </div>
         `;
@@ -833,12 +948,13 @@
     }
 
     // ==========================================
-    // 當前進行中 (Happening Now) 邏輯
+    // 當前進行中 (Happening Now) 邏輯 (帶時區比對)
     // ==========================================
-    function setSimulatedTime(timeStr) {
+    function setSimulatedTime(timeStr, dayStr = '4/24') {
       simulatedTime = timeStr;
+      simulatedDay = dayStr;
       document.querySelectorAll('.sim-time-btn').forEach(b => {
-        if (b.dataset.time === timeStr) {
+        if (b.dataset.time === timeStr && (!b.dataset.day || b.dataset.day === dayStr)) {
           b.className = 'sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500 text-slate-950 transition-all';
         } else {
           b.className = 'sim-time-btn px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-800 text-slate-300 hover:bg-amber-500 hover:text-slate-950 transition-all';
@@ -853,27 +969,39 @@
       if (!container) return;
 
       let currentTimeStr = simulatedTime;
+      let targetDay = simulatedDay;
+
       if (simulatedTime === 'live') {
         const now = new Date();
-        currentTimeStr = now.toLocaleTimeString('zh-TW', { hour12: false, hour: '2-digit', minute: '2-digit' });
-        badge.innerText = `實體時間 ${currentTimeStr}`;
+        currentTimeStr = now.toLocaleTimeString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false, hour: '2-digit', minute: '2-digit' });
+        badge.innerText = `實體時間 (Taiwan) ${currentTimeStr}`;
+        targetDay = '4/24'; // default fallback for pre-conference
       } else {
-        badge.innerText = `4/24 ${simulatedTime}`;
+        badge.innerText = `${targetDay} ${simulatedTime}`;
       }
 
-      // Filter sessions that are happening around currentTimeStr
+      // Filter sessions by Day and Time
       const currentMinutes = parseTimeToMinutes(currentTimeStr);
       const activeSessions = CONFERENCE_SESSIONS.filter(s => {
+        if (simulatedTime !== 'live' && s.day !== targetDay) return false;
         const start = parseTimeToMinutes(s.timeStart);
         const end = parseTimeToMinutes(s.timeEnd);
         return currentMinutes >= start && currentMinutes < end;
       });
 
       if (activeSessions.length === 0) {
+        const noSessionMsg = (currentLang === 'zh-TW') ?
+          { title: '目前時段為中場休息或換場交流時間', sub: '歡迎前往 7 樓茶歇區交流，下一場次將於預定時間準時開始。' } :
+          (currentLang === 'ja') ?
+          { title: '現在は休憩・セッション入替時間です', sub: '7階ホワイエにてご歓談ください。次のセッションは定刻に開始いたします。' } :
+          (currentLang === 'ko') ?
+          { title: '현재는 휴식 및 준비 시간입니다', sub: '7층 로비에서 티타임을 즐겨주세요. 다음 세션은 예정대로 진행됩니다.' } :
+          { title: 'Intermission / Transition Period', sub: 'Please enjoy coffee and networking at the 7F Foyer. Next session starts on schedule.' };
+
         container.innerHTML = `
           <div class="bg-slate-800/80 rounded-xl p-3 text-center border border-slate-700">
-            <p class="text-xs text-amber-300 font-bold">目前時段為中場休息或換場交流時間</p>
-            <p class="text-[11px] text-slate-400 mt-0.5">歡迎前往 7 樓茶歇區交流，下一場次將於預定時間準時開始。</p>
+            <p class="text-xs text-amber-300 font-bold">${noSessionMsg.title}</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">${noSessionMsg.sub}</p>
           </div>
         `;
         return;
@@ -886,11 +1014,11 @@
             <div class="flex-1 pr-2">
               <div class="flex items-center space-x-2">
                 <span class="px-1.5 py-0.5 bg-amber-400 text-slate-950 rounded text-[9px] font-black uppercase tracking-wider animate-pulse">NOW</span>
-                <span class="text-amber-400 font-bold text-xs font-mono">${s.timeDisplay}</span>
+                <span class="text-amber-400 font-bold text-xs font-mono">${s.day} ${s.timeDisplay}</span>
                 <span class="text-[11px] text-slate-300 font-bold">· ${s.roomBadge}</span>
               </div>
-              <p class="text-xs font-extrabold text-white mt-1 leading-snug">${title}</p>
-              <p class="text-[11px] text-slate-400 mt-1 truncate"><i class="fa-solid fa-location-arrow text-amber-400 mr-1"></i>地點：${s.room}</p>
+              <p class="text-xs font-extrabold text-white mt-1 leading-snug">${escapeHtml(title)}</p>
+              <p class="text-[11px] text-slate-400 mt-1 truncate"><i class="fa-solid fa-location-arrow text-amber-400 mr-1"></i>地點：${escapeHtml(s.room)}</p>
             </div>
             <div class="shrink-0 flex items-center justify-center">
               <span class="w-8 h-8 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center text-sm font-bold">
@@ -1001,22 +1129,17 @@
       }
     });
 
+    // 修正：雙指放開時不誤觸雙擊
+    let lastTap = 0;
     viewport.addEventListener('touchend', (e) => {
+      if (e.touches.length > 0 || (e.changedTouches && e.changedTouches.length > 1)) {
+        return;
+      }
       if (e.touches.length === 0) {
         isDraggingMap = false;
         initialTouchDistance = null;
       }
-    });
 
-    function getTouchDistance(touches) {
-      const dx = touches[0].clientX - touches[1].clientX;
-      const dy = touches[0].clientY - touches[1].clientY;
-      return Math.sqrt(dx * dx + dy * dy);
-    }
-
-    // Double tap to zoom
-    let lastTap = 0;
-    viewport.addEventListener('touchend', (e) => {
       const currentTime = new Date().getTime();
       const tapLength = currentTime - lastTap;
       if (tapLength < 300 && tapLength > 0) {
@@ -1031,8 +1154,14 @@
       lastTap = currentTime;
     });
 
+    function getTouchDistance(touches) {
+      const dx = touches[0].clientX - touches[1].clientX;
+      const dy = touches[0].clientY - touches[1].clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
     // ==========================================
-    // 語系 UI 文字切換 (i18n)
+    // 語系 UI 文字切換 (i18n) - 完整包含首頁看板與按鈕
     // ==========================================
     document.getElementById('lang-select').value = currentLang;
     document.getElementById('lang-select').addEventListener('change', function(e) {
@@ -1043,83 +1172,208 @@
       renderHappeningNow();
     });
 
+    const QUICK_PROMPTS_DATA = [
+      {
+        icon: '🌟',
+        key: 'keynote',
+        'zh-TW': { label: '今日重要大會演講', prompt: '今日重要大會演講有哪些？' },
+        'en':    { label: 'Keynote Addresses', prompt: 'What are the keynote and plenary sessions today?' },
+        'ja':    { label: '本日の基調講演', prompt: '本日の基調講演とプレナリーセッションは？' },
+        'ko':    { label: '오늘의 주요 기조강연', prompt: '오늘 진행되는 주요 기조강연은 무엇인가요?' }
+      },
+      {
+        icon: '🏢',
+        key: 'rooms',
+        'zh-TW': { label: '7樓演講廳位置', prompt: '7樓大會堂與各演講廳怎麼走？' },
+        'en':    { label: '7F Session Halls', prompt: 'How to get to the 7F Plenary Hall and session rooms?' },
+        'ja':    { label: '7階各会場案内', prompt: '7階のプレナリーホールと各会議室への行き方は？' },
+        'ko':    { label: '7층 강연장 위치', prompt: '7층 플레너리 홀과 각 회의실은 어떻게 가나요?' }
+      },
+      {
+        icon: '🔬',
+        key: 'tracks',
+        'zh-TW': { label: '各專題分廳主題', prompt: 'CT、MRI、AI專題分廳在幾號會議室？' },
+        'en':    { label: 'Tracks by Room', prompt: 'Which rooms host the CT, MRI, and AI sessions?' },
+        'ja':    { label: 'CT・MRI・AI分科会', prompt: 'CT、MRI、AIのセッションはどの部屋ですか？' },
+        'ko':    { label: '분과별 세션 주제', prompt: 'CT, MRI, AI 세션은 몇 번 회의실에서 열리나요?' }
+      },
+      {
+        icon: '💾',
+        key: 'slides',
+        'zh-TW': { label: '簡報繳交期限 (2h前)', prompt: '演講開始前幾小時必須交出PPT隨身碟？' },
+        'en':    { label: 'Slide Upload (2h Prior)', prompt: 'How many hours before presentation must slides be submitted?' },
+        'ja':    { label: '発表スライド提出 (2時間前)', prompt: '発表スライドは何時間前までに提出が必要ですか？' },
+        'ko':    { label: '발표 슬라이드 제출 (2시간 전)', prompt: '발표 시작 몇 시간 전까지 슬라이드를 제출해야 하나요?' }
+      },
+      {
+        icon: '🍱',
+        key: 'lunch',
+        'zh-TW': { label: '午餐便當領取處', prompt: '中午午餐便當在幾點、哪裡憑券領取？' },
+        'en':    { label: 'Lunch Box Counters', prompt: 'Where and when to pick up lunch boxes with meal coupons?' },
+        'ja':    { label: 'お弁当引換場所', prompt: 'お弁当は何時からどこで引き換えできますか？' },
+        'ko':    { label: '도시락 수령 장소', prompt: '점심 도시락은 몇 시에 어디서 수령하나요?' }
+      },
+      {
+        icon: '🍷',
+        key: 'gala',
+        'zh-TW': { label: '晚宴時間與接駁車', prompt: '大會晚宴幾點開始？接駁車在哪搭？' },
+        'en':    { label: 'Gala Dinner Shuttle', prompt: 'When is the Gala Dinner and where is the shuttle bus?' },
+        'ja':    { label: '晩餐会と送迎バス', prompt: '大会晩餐会は何時からですか？送迎バスの乗車場所は？' },
+        'ko':    { label: '만찬 시간 및 셔틀', prompt: '대회 만찬 시간과 셔틀버스 탑승 위치는 어디인가요?' }
+      }
+    ];
+
+    function renderQuickPromptsUI() {
+      const container = document.getElementById('quick-prompts-container');
+      if (!container) return;
+      container.innerHTML = QUICK_PROMPTS_DATA.map(item => {
+        const loc = item[currentLang] || item['en'];
+        return `
+          <button onclick="sendQuickPrompt('${loc.prompt.replace(/'/g, "\\'")}')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
+            <span class="text-sm">${item.icon}</span>
+            <span class="truncate">${loc.label}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
     function updateLanguageUI() {
       const i18n = {
         'zh-TW': {
-          tabFaq: '常見 Q&A / 文件',
+          tabFaq: '大會文件 / 地圖',
           tabAi: '智慧對談',
           tabSchedule: '我的行程',
           promptLabel: '熱門提問 (Quick Questions)',
           docSectionTitle: '大會核心文件與手冊專區 (Official Documents)',
           doc1Title: '1、2027 AACRT 總議程表',
           doc1Desc: '涵蓋兩日大會堂主題演講、各分題演講廳（701-703）時間配當表、口頭發表 10 分鐘響鈴規定。',
+          doc1BtnView: '線上預覽 (View)',
+          doc1BtnDl: '下載檔案 (Download)',
           doc2Title: '2、會場平面圖 (7F 各會議室與試片室)',
           doc2Desc: '南港 2 館 7 樓全區平面分場圖，清楚標示大會堂、701~705 各廳、試片室、電梯手扶梯動線。',
+          doc2BtnZoom: '🔍 手勢縮放檢視 (Pinch Zoom)',
+          doc2BtnPdf: 'PDF 版本',
           doc3Title: '3、大會手冊 (手冊指南與法規)',
           doc3Desc: '學分認證刷卡、午餐便當與晚宴接駁、吸菸與過敏領餐規範、在台交通生活與緊急聯絡電話。',
+          doc3BtnView: '線上閱讀 (Read)',
+          doc3BtnDl: '下載手冊 (Download)',
           helpTitle: '大會現場服務與諮詢台',
           helpDesc: '如有特殊需求或手冊未列事項，歡迎前往 1 樓迎賓大廳或 7 樓大廳的<strong class="text-amber-800 font-bold">「大會諮詢台」</strong>，志工與秘書處將提供面對面專人協助。',
           placeholder: '請輸入您的問題或按語音 (Type or speak)...',
           greeting: '您好！我是 2027 AACRT 大會智慧助手。您可以用<strong>中文、English、日本語、한국어</strong>詢問大會議程、演講廳、Wi-Fi 或周邊資訊。未公開細節我也會指引您至「大會諮詢台」！',
           happeningTitle: '🔥 現在進行中 (Happening Now)',
-          myFav: '我的收藏'
+          myFav: '我的收藏',
+          focusAreaBadge: 'TaiNEX 2 · 7F 會議核心區',
+          focusHallTitle: '大會堂 (Plenary Hall)',
+          focusHallDesc: '主題演講 · 閉幕典禮',
+          focusRoomsTitle: '701 ~ 703 會議室',
+          focusRoomsDesc: 'CT · MRI · AI 分題演講',
+          focusReadyTitle: '704 試片室',
+          focusReadyDesc: '每日 07:30-17:00 繳交簡報',
+          focusPosterTitle: '1F 海報展區',
+          focusPosterDesc: '12:30-13:30 作者交流時段'
         },
         'en': {
-          tabFaq: 'Documents & Guides',
+          tabFaq: 'Documents & Map',
           tabAi: 'AI Assistant',
           tabSchedule: 'My Schedule',
           promptLabel: 'Quick Questions',
           docSectionTitle: 'Official Conference Documents & Guides',
           doc1Title: '1. General Scientific Program',
           doc1Desc: 'Detailed timetable of Keynote Plenary and Rooms 701-703, oral 10-minute bell rules.',
+          doc1BtnView: 'View PDF',
+          doc1BtnDl: 'Download PDF',
           doc2Title: '2. 7F Floor & Venue Map',
           doc2Desc: 'TaiNEX 2 Hall 7F layout: Plenary Hall, Rooms 701-705, Ready Room, and escalators.',
+          doc2BtnZoom: '🔍 Pinch to Zoom',
+          doc2BtnPdf: 'PDF Version',
           doc3Title: '3. Conference Handbook',
           doc3Desc: 'CME credits, Gala dinner shuttle, special dietary lunch, and strict smoking regulations.',
+          doc3BtnView: 'Read Handbook',
+          doc3BtnDl: 'Download Handbook',
           helpTitle: 'On-site Information Desk',
           helpDesc: 'For unlisted details or special arrangements, please visit the official <strong class="text-amber-800 font-bold">Information Desk</strong> located at the 7F Foyer or 1F Lobby.',
           placeholder: 'Ask a question in English or speak...',
           greeting: 'Hello! I am the 2027 AACRT Conference AI Assistant. Feel free to ask about session halls, Wi-Fi, transportation, and dining. Unlisted details will be directed to the on-site Information Desk!',
           happeningTitle: '🔥 Happening Now (Active Sessions)',
-          myFav: 'My Starred'
+          myFav: 'My Starred',
+          focusAreaBadge: 'TaiNEX 2 · 7F Conference Core',
+          focusHallTitle: 'Plenary Hall',
+          focusHallDesc: 'Keynotes & Closing Ceremony',
+          focusRoomsTitle: 'Rooms 701 ~ 703',
+          focusRoomsDesc: 'CT · MRI · AI Scientific Tracks',
+          focusReadyTitle: 'Room 704 Speaker Ready',
+          focusReadyDesc: 'Daily 07:30-17:00 Slide Upload',
+          focusPosterTitle: '1F Poster Area',
+          focusPosterDesc: '12:30-13:30 Moderated Q&A'
         },
         'ja': {
-          tabFaq: '大会資料 / 手引き',
+          tabFaq: '大会資料 / 地図',
           tabAi: 'AIアシスタント',
           tabSchedule: 'マイスケジュール',
           promptLabel: 'よくある質問',
           docSectionTitle: '公式大会資料・マニュアル',
           doc1Title: '1. 大会総日程・プログラム (Program)',
           doc1Desc: '基調講演、701〜703室分科会日程、口頭発表ベル規定を完全収録。',
+          doc1BtnView: 'プレビュー',
+          doc1BtnDl: 'ダウンロード',
           doc2Title: '2. 7階会場案内図 (Floor Map)',
           doc2Desc: '南港第2展示館7階の各会議室（701〜705）、試写室、動線を掲載。',
+          doc2BtnZoom: '🔍 拡大縮小表示',
+          doc2BtnPdf: 'PDF版',
           doc3Title: '3. 公式大会ハンドブック (Handbook)',
           doc3Desc: '単位取得、晩餐会送迎、禁煙規則、非常連絡先のご案内。',
+          doc3BtnView: '閲覧する',
+          doc3BtnDl: 'ハンドブック保存',
           helpTitle: '大会総合案内所のご案内',
           helpDesc: '特別なご要望や未掲載の情報につきましては、7階ホワイエまたは1階ロビーの<strong class="text-amber-800 font-bold">「大会総合案内所」</strong>までお気軽にお越しください。',
           placeholder: '日本語で質問を入力または音声で発話...',
           greeting: 'こんにちは！2027 AACRT 大会AIアシスタントです。会場、交通、Wi-Fiなどお気軽にお尋ねください。未掲載の情報は総合案内所をご案内いたします。',
           happeningTitle: '🔥 開催中のセッション (Happening Now)',
-          myFav: 'お気に入り'
+          myFav: 'お気に入り',
+          focusAreaBadge: 'TaiNEX 2 · 7F 会場コアエリア',
+          focusHallTitle: 'プレナリーホール (大會堂)',
+          focusHallDesc: '基調講演 · 閉会式',
+          focusRoomsTitle: '701 〜 703 会議室',
+          focusRoomsDesc: 'CT · MRI · AI 分科会発表',
+          focusReadyTitle: '704 プレビュー室 (試写室)',
+          focusReadyDesc: '毎日 07:30-17:00 スライド提出',
+          focusPosterTitle: '1F ポスター発表エリア',
+          focusPosterDesc: '12:30-13:30 質疑応答時間'
         },
         'ko': {
-          tabFaq: '대회 자료 및 가이드',
+          tabFaq: '대회 자료 / 지도',
           tabAi: 'AI 비서',
           tabSchedule: '내 일정표',
           promptLabel: '자주 묻는 질문',
           docSectionTitle: '공식 학술대회 자료 및 안내서',
           doc1Title: '1. 전체 학술 프로그램 (Program)',
           doc1Desc: '플레너리 기조강연 및 701~703호 분과 세션 일정표 수록.',
+          doc1BtnView: '미리보기',
+          doc1BtnDl: '다운로드',
           doc2Title: '2. 7층 회의실 배치도 (Floor Map)',
           doc2Desc: '난강전람관 2관 7층 전체 회의실, 시사회실, 엘리베이터 동선.',
+          doc2BtnZoom: '🔍 확대/축소 보기',
+          doc2BtnPdf: 'PDF 버전',
           doc3Title: '3. 공식 대회 핸드북 (Handbook)',
           doc3Desc: '평점 등록, 만찬 셔틀버스, 금연 규정 및 비상 연락처 안내.',
+          doc3BtnView: '핸드북 읽기',
+          doc3BtnDl: '다운로드',
           helpTitle: '대회 현장 안내 데스크',
           helpDesc: '특별한 요청 사항이나 기타 문의는 7층 로비 또는 1층의 <strong class="text-amber-800 font-bold">「대회 안내 데스크」</strong>를 방문해 주시면 전담 인력이 성심껏 안내해 드립니다.',
           placeholder: '한국어로 질문하세요...',
           greeting: '안녕하십니까! 2027 AACRT 학술대회 AI 도우미입니다. 회의실, 교통, Wi-Fi 등에 대해 무엇이든 물어보세요.',
           happeningTitle: '🔥 현재 진행 중인 세션 (Happening Now)',
-          myFav: '보관함'
+          myFav: '보관함',
+          focusAreaBadge: 'TaiNEX 2 · 7F 컨퍼런스 코어',
+          focusHallTitle: '플레너리 홀 (대회당)',
+          focusHallDesc: '기조강연 · 폐회식',
+          focusRoomsTitle: '701 ~ 703 회의실',
+          focusRoomsDesc: 'CT · MRI · AI 분과 발표',
+          focusReadyTitle: '704 슬라이드 준비실',
+          focusReadyDesc: '매일 07:30-17:00 파일 접수',
+          focusPosterTitle: '1F 포스터 발표장',
+          focusPosterDesc: '12:30-13:30 저자 질의응답'
         }
       };
 
@@ -1129,20 +1383,48 @@
       document.getElementById('tab-schedule-label').innerText = t.tabSchedule;
       document.getElementById('suggested-prompts-label').innerHTML = `<i class="fa-solid fa-fire text-amber-500"></i> ${t.promptLabel}`;
       document.getElementById('doc-section-title').innerHTML = `<i class="fa-solid fa-folder-open text-amber-500"></i> ${t.docSectionTitle}`;
+
+      // Doc Card 1
       document.getElementById('doc1-title').innerText = t.doc1Title;
       document.getElementById('doc1-desc').innerText = t.doc1Desc;
+      document.querySelector('#doc1-btn-view span').innerText = t.doc1BtnView;
+      document.querySelector('#doc1-btn-dl span').innerText = t.doc1BtnDl;
+
+      // Doc Card 2
       document.getElementById('doc2-title').innerText = t.doc2Title;
       document.getElementById('doc2-desc').innerText = t.doc2Desc;
+      document.querySelector('#doc2-btn-zoom span').innerText = t.doc2BtnZoom;
+      document.querySelector('#doc2-btn-pdf span').innerText = t.doc2BtnPdf;
+
+      // Doc Card 3
       document.getElementById('doc3-title').innerText = t.doc3Title;
       document.getElementById('doc3-desc').innerText = t.doc3Desc;
+      document.querySelector('#doc3-btn-view span').innerText = t.doc3BtnView;
+      document.querySelector('#doc3-btn-dl span').innerText = t.doc3BtnDl;
+
+      // Help Desk
       document.getElementById('helpdesk-title').innerText = t.helpTitle;
       document.getElementById('helpdesk-desc').innerHTML = t.helpDesc;
       document.getElementById('chat-input').placeholder = t.placeholder;
       document.getElementById('ai-greeting').innerHTML = t.greeting;
       document.getElementById('happening-title').innerText = t.happeningTitle;
+
+      // Focus Area Board
+      document.getElementById('focus-area-badge').innerText = t.focusAreaBadge;
+      document.getElementById('focus-hall-title').innerText = t.focusHallTitle;
+      document.getElementById('focus-hall-desc').innerText = t.focusHallDesc;
+      document.getElementById('focus-rooms-title').innerText = t.focusRoomsTitle;
+      document.getElementById('focus-rooms-desc').innerText = t.focusRoomsDesc;
+      document.getElementById('focus-ready-title').innerText = t.focusReadyTitle;
+      document.getElementById('focus-ready-desc').innerText = t.focusReadyDesc;
+      document.getElementById('focus-poster-title').innerText = t.focusPosterTitle;
+      document.getElementById('focus-poster-desc').innerText = t.focusPosterDesc;
+
+      // Render Dynamic Quick Prompts
+      renderQuickPromptsUI();
     }
 
-    // Quick Prompts
+    // Quick Prompts Click
     function sendQuickPrompt(text) {
       document.getElementById('chat-input').value = text;
       sendMessage();
@@ -1151,15 +1433,15 @@
     // Anti-Spam Rate Limiting
     let lastSendTime = 0;
     let userQueryCount = 0;
-    const MAX_QUERIES_PER_SESSION = 25;
+    const MAX_QUERIES_PER_SESSION = 30;
 
     // Send Message
     async function sendMessage() {
       if (checkConferenceSunset()) return;
 
       const now = Date.now();
-      if (now - lastSendTime < 3500) {
-        alert('請稍候幾秒再送出問題 (Please wait a few seconds between questions).');
+      if (now - lastSendTime < 3000) {
+        alert('請稍候幾秒再送出問題 (Please wait 3 seconds between questions).');
         return;
       }
 
@@ -1182,20 +1464,32 @@
 
       setTimeout(() => {
         removeTypingIndicator(typingId);
-        const reply = generateLocalBrainAnswer(text);
-        appendMessage('ai', reply);
-        syncLogToBackend(text, reply);
-      }, 600);
+        const replyBundle = generateLocalBrainAnswerBundle(text);
+        
+        // 將四語對照存入 messageStore，解決截斷與多語系問題
+        const msgIdx = messageStore.length;
+        messageStore.push({
+          query: text,
+          bundle: replyBundle
+        });
+
+        const replyText = replyBundle[currentLang] || replyBundle['en'] || replyBundle['zh-TW'];
+        appendMessage('ai', replyText, msgIdx);
+        syncLogToBackend(text, replyText);
+      }, 500);
     }
 
-    // Asynchronously log inquiry to Google Sheets
+    // ==========================================
+    // 修正 Google Apps Script 後台紀錄 Header
+    // text/plain;charset=utf-8 完美符合 no-cors 規範
+    // ==========================================
     function syncLogToBackend(query, reply) {
       if (!GAS_ENDPOINT_URL || GAS_ENDPOINT_URL.includes('PASTE_')) return;
       try {
         fetch(GAS_ENDPOINT_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify({
             query: query,
             reply: reply,
@@ -1209,98 +1503,161 @@
       }
     }
 
-    function generateLocalBrainAnswer(query) {
+    // ==========================================
+    // AI 知識庫：10 大核心問題完整四語對照回傳
+    // ==========================================
+    function generateLocalBrainAnswerBundle(query) {
       const q = query.toLowerCase();
 
-      // Pure Abuse Protection
+      // 純惡意防護 (Pure Abuse Protection)
       const pureAbuseKeywords = ['寫程式', 'python程式', 'javascript代碼', '算數學', '微積分', '寫作業', '寫論文代寫', 'write code', 'solve equation', 'homework helper'];
       if (pureAbuseKeywords.some(kw => q.includes(kw))) {
-        return currentLang === 'en' ? 'Apologies, this assistant is exclusively dedicated to the 26th AACRT conference, medical imaging topics, and official visiting guidance. Non-conference topics cannot be processed. Thank you for your understanding!' :
-               currentLang === 'ja' ? '申し訳ございません。当AIアシスタントは第26回AACRT国際学会および医用画像、会場案内専用となっております。学会と無関係なご質問には対応いたしかねますのでご了承ください。' :
-               currentLang === 'ko' ? '죄송합니다. 본 AI 비서는 제26회 AACRT 학술대회 및 의료영상 관련 안내 전용입니다. 학술대회와 무관한 질문에는 답변을 제공하지 않습니다.' :
-               '感謝您的使用。本智慧助手為 2027 AACRT 國際年會專用禮賓系統，僅提供本屆大會會議、醫學影像學術與在台指引服務。非大會相關主題暫無法為您處理，謝謝您的理解與配合！';
+        return {
+          'zh-TW': '感謝您的使用。本智慧助手為 2027 AACRT 國際年會專用禮賓系統，僅提供本屆大會會議、醫學影像學術與在台指引服務。非大會相關主題暫無法為您處理，謝謝您的理解與配合！',
+          'en': 'Apologies, this assistant is exclusively dedicated to the 26th AACRT conference, medical imaging topics, and official visiting guidance. Non-conference topics cannot be processed. Thank you for your understanding!',
+          'ja': '申し訳ございません。当AIアシスタントは第26回AACRT国際学会および医用画像、会場案内専用となっております。学会と無関係なご質問には対応いたしかねますのでご了承ください。',
+          'ko': '죄송합니다. 본 AI 비서는 제26회 AACRT 학술대회 및 의료영상 관련 안내 전용입니다. 학술대회와 무관한 질문에는 답변을 제공하지 않습니다.'
+        };
       }
 
-      // 1. 重要大會演講
-      if (q.includes('重要演講') || q.includes('keynote') || q.includes('plenary') || q.includes('演講主題')) {
-        return currentLang === 'en' ? 'Keynote & Plenary Addresses are held daily from 09:00 to 10:30 in the 7F Plenary Hall, featuring international leaders in radiology and medical AI.' :
-               currentLang === 'ja' ? '基調講演（Keynote・Plenary）は毎日 09:00〜10:30 に7階プレナリーホールにて開催されます。' :
-               currentLang === 'ko' ? '기조강연(Keynote/Plenary)은 매일 09:00~10:30 7층 플레너리 홀에서 진행됩니다.' :
-               '大會最核心的主題演講 (Keynote & Plenary) 於每日上午 09:00～10:30 在 7 樓「大會堂 (Plenary Hall)」隆重舉行，各分場專案演講亦同步於 701~703 展開。您也可以點擊下方「我的行程」查看進行中演講！';
+      // 1. 重要大會演講 (Keynote / Plenary)
+      if (q.includes('重要演講') || q.includes('keynote') || q.includes('plenary') || q.includes('演講主題') || q.includes('基調講演') || q.includes('기조강연')) {
+        return {
+          'zh-TW': '大會最核心的主題演講 (Keynote & Plenary) 於每日上午 09:00～10:30 在 7 樓「大會堂 (Plenary Hall)」隆重舉行，各分場專案演講亦同步於 701~703 展開。您也可以點擊下方「我的行程」查看進行中演講！',
+          'en': 'Keynote & Plenary Addresses are held daily from 09:00 to 10:30 in the 7F Plenary Hall, featuring international leaders in radiology and medical AI. Tap "My Schedule" below to view live tracks!',
+          'ja': '主要な基調講演（Keynote・Plenary）は毎日 09:00〜10:30 に7階プレナリーホールにて開催されます。画面下の「マイスケジュール」でも進行中の講演をご確認いただけます。',
+          'ko': '학술대회 핵심 기조강연(Keynote/Plenary)은 매일 09:00~10:30 7층 플레너리 홀에서 진행됩니다. 하단의 「내 일정표」에서도 실시간 세션을 확인하실 수 있습니다!'
+        };
       }
 
-      // 2. 7樓會議室位置與地圖
-      if (q.includes('7樓') || q.includes('會議室') || q.includes('怎麼走') || q.includes('7f') || q.includes('room') || q.includes('会場') || q.includes('地圖') || q.includes('map')) {
-        return currentLang === 'en' ? 'All main session halls are on 7F: Plenary Hall, Rooms 701-703, Speaker Ready Room 704, and VIP Lounge 705. You can view the High-Res Floor Map in the "Documents" tab with pinch-to-zoom!' :
-               currentLang === 'ja' ? '主要会場はすべて7階にございます（大會堂、701〜703室、704試写室、705VIP室）。「大会資料」タブで拡大地図をご覧いただけます。' :
-               currentLang === 'ko' ? '주요 강연장은 7층에 집중되어 있습니다 (플레너리 홀, 701~703호, 704호 준비실, 705호 귀빈실). 「대회 자료」 탭에서 고해상도 지도를 확대해 보실 수 있습니다.' :
-               '大會核心演講廳皆集中於 7 樓：大會堂 (Plenary Hall)、701（CT/IVR）、702（MRI/放療）、703（AI/核醫）、704（試片室）、705（VIP 貴賓室）。出電梯口即可見指引，亦可點擊第一頁「會場平面圖」開啟雙指手勢縮放燈箱！';
+      // 2. 7樓會議室位置與地圖 (7F Rooms & Map)
+      if (q.includes('7樓') || q.includes('會議室') || q.includes('怎麼走') || q.includes('7f') || q.includes('room') || q.includes('会場') || q.includes('地圖') || q.includes('map') || q.includes('배치도')) {
+        return {
+          'zh-TW': '大會核心演講廳皆集中於 7 樓：大會堂 (Plenary Hall)、701（CT/IVR）、702（MRI/放療）、703（AI/核醫）、704（試片室）、705（VIP 貴賓室）。出電梯口即可見指引，亦可點擊第一頁「會場平面圖」開啟雙指手勢縮放燈箱！',
+          'en': 'All main session halls are located on the 7th floor: Plenary Hall, Rooms 701-703, Speaker Ready Room 704, and VIP Room 705. Signage is posted outside elevators, and you can open the interactive Pinch-to-Zoom Map on the Documents tab!',
+          'ja': '主要会場はすべて7階にございます（大會堂、701〜703会議室、704試写室、705VIP室）。エレベーター前に案内看板があり、また「大会資料」タブで拡大地図をご利用いただけます。',
+          'ko': '주요 세션장은 모두 7층에 집중되어 있습니다 (플레너리 홀, 701~703호, 704호 준비실, 705호 귀빈실). 엘리베이터 앞 안내판 또는 첫 페이지의 「대회 자료 / 지도」에서 고해상도 지도를 확대해 보실 수 있습니다.'
+        };
       }
 
-      // 3. 專題分廳主題
-      if (q.includes('分廳') || q.includes('主題') || q.includes('專題') || q.includes('ct') || q.includes('mri') || q.includes('ai')) {
-        return '【7 樓分廳主題】：\n- 701 室：CT 尖端技術與血管攝影介入 (IVR)\n- 702 室：MRI 臨床前沿與放射線治療 (RT) 品管\n- 703 室：醫學影像 AI 與核子醫學 (PET/SPECT)\n各廳門口均有大螢幕顯示即時講者與講題，您亦可隨時在「我的行程」將重要場次加入收藏！';
+      // 3. 專題分廳主題 (Tracks by Room)
+      if (q.includes('分廳') || q.includes('主題') || q.includes('專題') || q.includes('ct') || q.includes('mri') || q.includes('ai') || q.includes('分科会') || q.includes('분과')) {
+        return {
+          'zh-TW': '【7 樓分廳專業主題】：\n- 701 室：CT 尖端技術、光子計數 CT 與血管攝影介入 (IVR)\n- 702 室：超高場 MRI 臨床神經影像與放射治療 (RT/SBRT) 品管\n- 703 室：生成式 AI 放射工作流與次世代 PET/CT 核子醫學\n各廳門口均有大螢幕顯示即時講者，亦可於「我的行程」加入收藏！',
+          'en': '【7F Track Allocation】:\n- Room 701: Advanced Photon-Counting CT & Interventional Radiology (IVR)\n- Room 702: Ultra-High Field 7T MRI & Precision Radiotherapy (RT/SBRT)\n- Room 703: Generative AI in Radiology & Next-Gen PET/CT Nuclear Medicine\nDigital screens outside each door show active speakers. Tap "My Schedule" to star sessions!',
+          'ja': '【7階 分科会テーマ】：\n- 701会議室：CT先端技術・フォトンカウンティングCT・血管内治療（IVR）\n- 702会議室：超高磁場7T MRI・放射線治療（RT/SBRT）品質管理\n- 703会議室：画像生成AI放射線ワークフロー・次世代PET/CT核医学\n各室前のモニターで進行状況をご確認いただけます。',
+          'ko': '【7층 분과별 세션 주제】:\n- 701호: 첨단 다중에너지 CT, 광자계수 CT 및 인터벤션(IVR)\n- 702호: 초고자장 7T MRI 임상 신경영상 및 방사선치료(RT/SBRT) 품질관리\n- 703호: 생성형 AI 보조 판독 및 차세대 PET/CT 핵의학 영상\n각 회의실 문 앞 모니터에서 현재 연자를 확인하실 수 있습니다.'
+        };
       }
 
-      // 4. 簡報繳交期限
-      if (q.includes('隨身碟') || q.includes('試片室') || q.includes('幾小時') || q.includes('交出') || q.includes('ppt') || q.includes('slide')) {
-        return '所有口頭報告講者，請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶 USB 隨身碟至 7 樓 704 試片室完成影音測試與檔案拷貝。大會不接受個人筆電直接切換投影。';
+      // 4. 試片室簡報繳交期限 (Slide Upload & Ready Room)
+      if (q.includes('隨身碟') || q.includes('試片室') || q.includes('幾小時') || q.includes('交出') || q.includes('ppt') || q.includes('slide') || q.includes('スライド') || q.includes('슬라이드')) {
+        return {
+          'zh-TW': '口頭發表講者請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶隨身碟至 7 樓 704 試片室完成影音測試與檔案拷貝。為確保議程順暢，大會不接受以個人筆電切換投影。',
+          'en': 'Oral presentation speakers must upload and test their slides at the 7F Room 704 Speaker Ready Room at least 2 hours prior to their session (or by 08:00 for the morning session). Personal laptops cannot be connected directly at podiums.',
+          'ja': '口頭発表の演者様は、ご自身の発表開始の【2時間前まで】（午前の最初のセッションは当日08:00まで）に、7階704試写室にてUSBメモリによるスライド動作確認をお済ませください。個人PCの持ち込み接続はできません。',
+          'ko': '구연 발표 연자께서는 발표 시작 최소 2시간 전(오전 첫 세션은 당일 08:00까지)에 7층 704호 슬라이드 준비실을 방문하여 USB 파일 복사 및 점검을 완료해 주십시오. 현장 개인 노트북 연결은 지원되지 않습니다.'
+        };
       }
 
-      // 5. 便當午餐
-      if (q.includes('便當') || q.includes('午餐') || q.includes('lunch') || q.includes('餐券') || q.includes('弁当')) {
-        return '午餐便當於每日 11:45 起憑名牌中的「午餐券」至 1 樓與 7 樓指定發餐處領取。素食、清真友善、花生過敏與無麩質特餐請至「大會諮詢台旁特殊膳食專用櫃台」領取。';
+      // 5. 便當午餐與特殊餐點 (Lunch Box & Special Dietary)
+      if (q.includes('便當') || q.includes('午餐') || q.includes('lunch') || q.includes('餐券') || q.includes('弁当') || q.includes('도시락')) {
+        return {
+          'zh-TW': '午餐便當於每日 11:45 起憑名牌內的「午餐券」至 1 樓迎賓大廳或 7 樓發餐處領取。全素、清真友善、花生過敏與無麩質特餐，請至「大會諮詢台旁特殊膳食專用櫃台」出示標註領取。',
+          'en': 'Lunch boxes are available daily from 11:45 upon presenting the Meal Coupon in your badge at 1F Lobby or 7F counters. Vegetarian, Halal, peanut-allergy, and gluten-free meals can be claimed at the Special Dietary Counter next to the Information Desk.',
+          'ja': 'お弁当は毎日 11:45 より、ネームカード内の「昼食券」をご提示の上、1階ロビーまたは7階配布所にてお受け取りください。ベジタリアン、ハラール、アレルギー対応食は総合案内所横の特別食窓口にて承ります。',
+          'ko': '점심 도시락은 매일 11:45부터 명찰 내의 「식권」을 제시하신 후 1층 로비 또는 7층 배부처에서 수령하실 수 있습니다. 채식, 할랄, 알레르기 및 글루텐 프리 특별식은 안내 데스크 옆 전용 창구에서 배부합니다.'
+        };
       }
 
-      // 6. 大會晚宴與接駁
-      if (q.includes('晚宴') || q.includes('gala') || q.includes('dinner') || q.includes('接駁') || q.includes('shuttle')) {
-        return '大會晚宴於 4/24（六）18:30 舉行（憑名牌內票券入場）。大會於南港 2 館 1 樓備有直達晚宴專車，17:30 起每 10 分鐘一班接駁。著裝建議為商務休閒 (Smart Casual)。';
+      // 6. 大會晚宴與接駁專車 (Gala Dinner & Shuttle Bus)
+      if (q.includes('晚宴') || q.includes('gala') || q.includes('dinner') || q.includes('接駁') || q.includes('shuttle') || q.includes('晩餐会') || q.includes('만찬')) {
+        return {
+          'zh-TW': '大會晚宴於 4/24（六）18:30 盛大舉行（憑票入場）。大會於南港 2 館 1 樓門口備有接駁專車，自 17:30 起每 10 分鐘一班直達會場。服裝建議為商務休閒 (Smart Casual)。',
+          'en': 'The official Gala Dinner will be held on April 24 (Sat) at 18:30 (ticket required). Complimentary shuttle buses depart every 10 minutes from TaiNEX 2 (1F main entrance) starting from 17:30. Dress code: Smart Casual.',
+          'ja': '公式晩餐会は 4/24（土）18:30 より開催されます（入場券必須）。南港第2展示館1階エントランスより 17:30 から10分間隔で無料送迎シャトルバスが運行されます。服装はスマートカジュアルを推奨いたします。',
+          'ko': '공식 갈라 디너 만찬은 4월 24일(토) 18:30에 개최됩니다(입장권 지참 필수). 난강 2관 1층 정문에서 17:30부터 10분 간격으로 무료 셔틀버스가 운행됩니다. 복장 규정은 스마트 캐주얼입니다.'
+        };
       }
 
-      // 7. Wi-Fi
-      if (q.includes('wifi') || q.includes('wi-fi') || q.includes('網路')) {
-        return '南港 2 館全館提供免費公共無線網路（SSID: TaiNEX-Free，免密碼登入確認連線）；大會專用高速網路帳密請參閱報到手冊或洽現場「大會諮詢台」。';
+      // 7. Wi-Fi 無線網路 (Wi-Fi Access)
+      if (q.includes('wifi') || q.includes('wi-fi') || q.includes('網路') || q.includes('internet') || q.includes('インターネット') || q.includes('와이파이')) {
+        return {
+          'zh-TW': '南港 2 館全館提供免費公共無線網路（SSID: TaiNEX-Free，免密碼瀏覽器點選連線）；大會專用高速網路帳號密碼請參閱報到手冊內頁或洽現場 7 樓「大會諮詢台」。',
+          'en': 'Complimentary Wi-Fi is available across TaiNEX 2 (SSID: TaiNEX-Free, connect via browser agreement). For dedicated high-speed conference Wi-Fi, please check your handbook or visit the 7F Information Desk.',
+          'ja': '南港第2展示館全館にて無料公衆Wi-Fi（SSID: TaiNEX-Free）をご利用いただけます。学会専用の高速Wi-Fi接続情報は参加手引書または7階総合案内所にてご確認ください。',
+          'ko': '난강 2관 전 구역에서 무료 공용 Wi-Fi(SSID: TaiNEX-Free, 웹 동의 후 접속)를 이용하실 수 있습니다. 학술대회 전용 고속 Wi-Fi 비밀번호는 등록 안내서 또는 7층 안내 데스크에서 확인해 주십시오.'
+        };
       }
 
-      // 8. 吸菸法規
-      if (q.includes('吸菸') || q.includes('抽菸') || q.includes('電子煙') || q.includes('vape') || q.includes('smoke')) {
-        return '【重要救命級法規】：南港 2 館全館室內及騎樓全面禁菸（違者罰 NT$ 2,000~10,000）。依台灣《菸害防制法》，「電子煙 (Vapes)」與未核准之「加熱菸」在台灣全面違法，嚴禁攜帶與使用，違者重罰 NT$ 10,000 至 50,000 元！吸菸請至 1 樓戶外指定吸菸區。';
+      // 8. 吸菸法規與電子煙重罰 (Smoking & Vape Laws)
+      if (q.includes('吸菸') || q.includes('抽菸') || q.includes('電子煙') || q.includes('vape') || q.includes('smoke') || q.includes('喫煙') || q.includes('금연')) {
+        return {
+          'zh-TW': '【重要救命級法規公告】：南港 2 館全館室內及騎樓全面禁菸（違者罰 NT$ 2,000~10,000）。依台灣《菸害防制法》，「電子煙 (Vapes)」與未核准之「加熱菸」在台灣全面違法，嚴禁攜帶入境與使用，違者重罰 NT$ 10,000 至 50,000 元！吸菸請至 1 樓戶外指定吸菸區。',
+          'en': '【Strict Taiwan Smoking & Vape Laws】: Smoking is strictly prohibited throughout TaiNEX 2 indoors and covered walkways. In Taiwan, all E-cigarettes (Vapes) and heated tobacco products are completely ILLEGAL. Possessing or using vapes incurs heavy fines between NT$ 10,000 and 50,000! Smoking is permitted only at the designated 1F outdoor smoking booth.',
+          'ja': '【厳格な禁煙および電子タバコ規制】：南港第2展示館内および屋根下通路は全面禁煙です。台湾の法律により、【電子タバコ（Vape）および未認可の加熱式タバコ】は国内持込・使用が全面的に禁止されており、違反者には1万〜5万台湾ドルの高額罰金が科されます！喫煙は1階屋外の指定喫煙所をご利用ください。',
+          'ko': '【대만 금연 및 전자담배 법규 경고】: 난강 2관 실내 및 복도는 전 구역 금연입니다. 특히 대만 법률상 【액상형 전자담배(Vape) 및 가열식 전자담배】는 반입 및 사용이 전면 불법이며, 적발 시 NT$ 10,000~50,000(한화 약 40~200만원)의 무거운 벌금이 부과됩니다! 흡연은 1층 야외 지정 흡연구역을 이용해 주십시오.'
+        };
       }
 
-      // 預設禮賓導流
-      return (currentLang === 'en') ?
-        'Thank you for your inquiry. For specific arrangements or live updates, our secretariat team and volunteers at the official Information Desk (7F Foyer or 1F Lobby) are ready to assist you in person!' :
-        (currentLang === 'ja') ?
-        'ご質問ありがとうございます。詳細につきましては、7階ホワイエまたは1階ロビーの「大会総合案内所」にて事務局スタッフが対面でご案内いたします。' :
-        (currentLang === 'ko') ?
-        '문의해 주셔서 감사합니다. 보다 자세한 사항은 7층 로비 또는 1층의 「대회 안내 데스크」를 방문하시면 친절히 안내해 드리겠습니다.' :
-        '感謝您的提問。這項具體安排屬於大會籌委會的即時協調事項。為了確保向您提供最即時、絕對準確的訊息，我們誠摯邀請您移步至 1 樓迎賓大廳或 7 樓的「大會諮詢台」，現場志工與秘書處夥伴將親自為您確認！';
+      // 9. 繼續教育學分認證 (CME Credits & Attendance)
+      if (q.includes('學分') || q.includes('簽到') || q.includes('簽退') || q.includes('cme') || q.includes('credit') || q.includes('出席證明') || q.includes('単位') || q.includes('평점')) {
+        return {
+          'zh-TW': '醫事放射師繼續教育學分認證：請持會員卡或大會名牌條碼，於每日「上午 08:30-10:00」完成上午刷卡簽到，並於「下午 16:00 後」完成刷卡簽退。各國海外學者之出席證明 (Certificate of Attendance) 將於 4/25 下午於 1 樓註冊櫃台統一領取或由官方系統下載。',
+          'en': 'CME Credits & Certificate of Attendance: Domestic radiographers must tap in daily between 08:30-10:00 and tap out after 16:00. Certificates of Attendance for international delegates can be collected at the 1F Registration Counter on April 25 afternoon or downloaded online.',
+          'ja': '学術単位・参加証明書のご案内：台湾国内の放射線技師様は毎日 08:30〜10:00 に受付でチェックイン、16:00 以降にチェックアウトのスキャンが必要です。海外からの参加証明書（Certificate）は 4/25 午後に1階受付にて発行いたします。',
+          'ko': '연수평점 및 참석증명서 안내: 국내 방사선사는 매일 08:30~10:00에 입실 태그, 16:00 이후에 퇴실 태그를 완료해야 평점이 인정됩니다. 해외 참가자의 참석증명서(Certificate)는 4/25 오후 1층 등록 데스크에서 수령하시거나 온라인으로 발급받으실 수 있습니다.'
+        };
+      }
+
+      // 10. 捷運與高鐵交通指引 (MRT & Transportation)
+      if (q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') || q.includes('mrt') || q.includes('metro') || q.includes('station') || q.includes('지하철')) {
+        return {
+          'zh-TW': '交通指引：請搭乘台北捷運【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」。自 1 號或 2 號出口出站，經由戶外徒步區或 B1 地下連通道步行約 3 分鐘即可直通南港展覽館 2 館。搭乘高鐵/台鐵者，請於「南港站」下車後轉乘捷運一站即可抵達。',
+          'en': 'Transportation Guide: Take Taipei MRT Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23 / BR24). Take Exit 1 or Exit 2, and walk 3 minutes through the plaza or B1 underground walkway directly into TaiNEX Hall 2. From Taiwan High Speed Rail Nangang Station, take the MRT 1 stop.',
+          'ja': '交通案内：台北MRT板南線（ブルーライン）または文湖線（ブラウンライン）の「南港展覧館駅（BL23/BR24）」下車。1番または2番出口より徒歩約3分、地下連絡通路（B1）でも南港第2展示館に直結しています。新幹線（高鐵）をご利用の場合は「南港駅」よりMRTで1駅です。',
+          'ko': '교통 안내: 타이베이 MRT 판난선(블루라인) 또는 원후선(브라운라인) 탑승 후 「난강전람관역(BL23 / BR24)」에서 하차하십시오. 1번 또는 2번 출구로 나와 도보 3분 또는 B1 지하 연결통로를 통해 난강 2관으로 바로 진입하실 수 있습니다. 고속철도(THSR) 이용 시 난강역에서 지하철 1정거장 거리입니다.'
+        };
+      }
+
+      // 預設禮賓導流 (Tier 3 Diplomatic Redirect)
+      return {
+        'zh-TW': '感謝您的提問。這項具體安排屬於大會籌委會的即時協調事項。為了確保向您提供最即時、絕對準確的訊息，我們誠摯邀請您移步至 1 樓迎賓大廳或 7 樓的「大會諮詢台」，現場志工與秘書處夥伴將親自為您確認！',
+        'en': 'Thank you for your inquiry. For specific arrangements or live updates, our secretariat team and volunteers at the official Information Desk (7F Foyer or 1F Lobby) are ready to assist you in person!',
+        'ja': 'ご質問ありがとうございます。詳細につきましては、7階ホワイエまたは1階ロビーの「大会総合案内所」にて事務局スタッフが対面でご案内いたします。',
+        'ko': '문의해 주셔서 감사합니다. 보다 자세한 사항은 7층 로비 또는 1층의 「대회 안내 데스크」를 방문하시면 전담 인력이 친절히 안내해 드리겠습니다.'
+      };
     }
 
-    function appendMessage(sender, text) {
+    // Append Message with HTML Escape, whitespace-pre-line, and messageStore index
+    function appendMessage(sender, text, msgIdx = null) {
       const box = document.getElementById('chat-messages');
       const div = document.createElement('div');
       div.className = sender === 'user' ? 'flex items-start justify-end space-x-2' : 'flex items-start space-x-2.5';
 
       if (sender === 'user') {
         div.innerHTML = `
-          <div class="bg-gradient-royal text-white rounded-2xl rounded-tr-sm px-4 py-2.5 text-xs max-w-[85%] leading-relaxed shadow-sm">
-            ${text}
+          <div class="bg-gradient-royal text-white rounded-2xl rounded-tr-sm px-4 py-2.5 text-xs max-w-[85%] leading-relaxed shadow-sm whitespace-pre-line font-medium">
+            ${escapeHtml(text)}
           </div>
         `;
       } else {
+        const showGuestBtnHtml = (msgIdx !== null) ? `
+          <div class="mt-2.5 pt-2 border-t border-slate-200/60 flex justify-end">
+            <button onclick="showToGuestFromStore(${msgIdx})" class="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-white hover:bg-amber-50 text-amber-900 border border-slate-200 hover:border-amber-300 rounded-lg text-[11px] font-bold transition-all shadow-sm">
+              <i class="fa-solid fa-expand text-[10px] text-amber-600"></i>
+              <span>📱 秀給外賓看</span>
+            </button>
+          </div>
+        ` : '';
+
         div.innerHTML = `
           <div class="w-8 h-8 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs shrink-0 mt-0.5 shadow-sm">
             <i class="fa-solid fa-atom"></i>
           </div>
-          <div class="bg-slate-100 text-slate-800 rounded-2xl rounded-tl-sm px-4 py-3 text-xs max-w-[85%] leading-relaxed shadow-2xs">
-            ${text}
-            <div class="mt-2.5 pt-2 border-t border-slate-200/60 flex justify-end">
-              <button onclick="showToGuest('${text.replace(/'/g, "\\'").replace(/\n/g, '\\n')}')" class="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-white hover:bg-amber-50 text-amber-900 border border-slate-200 hover:border-amber-300 rounded-lg text-[11px] font-bold transition-all shadow-2xs">
-                <i class="fa-solid fa-expand text-[10px] text-amber-600"></i>
-                <span>📱 秀給外賓看</span>
-              </button>
-            </div>
+          <div class="bg-slate-100 text-slate-800 rounded-2xl rounded-tl-sm px-4 py-3 text-xs max-w-[85%] leading-relaxed shadow-sm whitespace-pre-line">
+            ${escapeHtml(text)}
+            ${showGuestBtnHtml}
           </div>
         `;
       }
@@ -1383,16 +1740,13 @@
       recognition.start();
     }
 
-    // Show-to-Guest Modal
-    function showToGuest(text) {
-      currentModalBundle = {
-        'zh-TW': text,
-        'en': text,
-        'ja': text,
-        'ko': text
-      };
-      currentModalActiveLang = currentLang === 'zh-TW' ? 'en' : currentLang;
-      openShowToGuestModal(text);
+    // Show-to-Guest Modal (透過 messageStore 取得完整四語對照)
+    function showToGuestFromStore(idx) {
+      if (!messageStore[idx] || !messageStore[idx].bundle) return;
+      currentModalBundle = messageStore[idx].bundle;
+      currentModalActiveLang = (currentLang === 'zh-TW') ? 'en' : currentLang;
+      const textToDisplay = currentModalBundle[currentModalActiveLang] || currentModalBundle['en'] || currentModalBundle['zh-TW'];
+      openShowToGuestModal(textToDisplay);
     }
 
     function openShowToGuestModal(text) {
@@ -1481,8 +1835,8 @@
       topQueries.forEach(q => {
         if (!currentButtons.some(bText => bText.includes(q.substring(0, 10)))) {
           const btn = document.createElement('button');
-          btn.className = 'text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 px-2.5 py-1.5 rounded-xl hover:bg-amber-100 transition-all shadow-2xs font-bold flex items-center space-x-1';
-          btn.innerHTML = `<span>🔥 ${q.length > 16 ? q.substring(0, 16) + '...' : q}</span>`;
+          btn.className = 'text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 px-2.5 py-1.5 rounded-xl hover:bg-amber-100 transition-all shadow-sm font-bold flex items-center space-x-1';
+          btn.innerHTML = `<span>🔥 ${escapeHtml(q.length > 16 ? q.substring(0, 16) + '...' : q)}</span>`;
           btn.onclick = () => sendQuickPrompt(q);
           container.insertBefore(btn, container.firstChild);
         }
@@ -1498,7 +1852,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.04').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.05').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);
