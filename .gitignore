@@ -7,3 +7,5 @@ credentials.*
 *.gsheet
 *.gdoc
 *.gslides
+# 忽略近 100MB 之本地大型測試論文集 PDF（防止超過 GitHub 100MB 上限）
+創作庫-內部原創層/第59次年會暨國際醫學影像學術研討會-論文集.pdf
