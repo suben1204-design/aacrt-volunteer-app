@@ -21,14 +21,16 @@
 ## 🚦 目前狀態
 - **線上正式網址**：`https://suben1204-design.github.io/aacrt-volunteer-app/`（已同步至 GitHub Pages）。
 - **當前大腦版本**：`大腦 v1.07`（PWA Cache: `aacrt-guide-v2.09`）
+- **論文測試基準庫**：`知識庫-AI 提煉層/test_abstracts_benchmark.json`（共 195 篇 2026 測試論文）
+- **論文提煉腳本**：`scripts/test_abstract_pipeline.py`（支援全文抽取與毫秒級檢索）
 - **Google 試算表後台**：`https://docs.google.com/spreadsheets/d/1IRhviHHTulLPx2ZXL25JD-8NgBCWGIU9HLyOO7CHjjc/edit`
 - **GAS 部署 ID**：`AKfycbwfbtyYhEHFLLLSlETnYbIdvsiFcXbRHDk-fG9NkUm_SbAvhscSGAd6-lWXcXjk5wLgBw`（版本 `@9`）
 
 ## ➡️ 下一步可做事項
 1. **實地會場模擬測試**：志工或外國學者可開啟手機瀏覽器加入主畫面，實測英文/日文/韓文語音提問與 Show-to-Guest 大字體朗讀功能。
-2. **後續資料擴充**：若大會 2027 手冊正式定稿，可將正式 PDF/JPG 置入 `docs/` 資料夾取代占位檔。
+2. **後續資料擴充**：若大會 2027 手冊與論文集正式定稿，可置入 `創作庫-內部原創層/`，執行腳本一鍵自動置換升級。
 
 ## 🕐 最後更新
-- 時間：2026-11-12 14:05
+- 時間：2026-11-12 14:55
 - 更新者：Antigravity @ FENGYI
-- Git push：✅ 已推（main，commit `95c85f7`）
+- Git push：✅ 已推（main，commit `11b8e54`）
