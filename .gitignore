@@ -4,3 +4,6 @@ desktop.ini
 .env
 *.key
 credentials.*
+*.gsheet
+*.gdoc
+*.gslides

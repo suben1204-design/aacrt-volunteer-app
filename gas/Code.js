@@ -6,10 +6,12 @@
  * 2. 即時動態統計「熱門提問 TOP 榜單」，供前端即時動態抓取展示 (GET)。
  * 3. 即時緊急跑馬燈同步 (GET)，回傳首列緊急廣播文字與當前狀態。
  * 4. 特殊求助關鍵字監控 (Special Assistance Alert)，自動發信或推播給大會幹部。
- * 5. 2027/04/26 12:00 自動落日關閉防護 (Sunset Guardrail)。
+ * 5. 雲端智慧大腦混合架構 (Gemini Flash / 外交禮賓導流)。
+ * 6. 2027/04/26 12:00 自動落日關閉防護 (Sunset Guardrail)。
  */
 
-var SPREADSHEET_ID = ""; // 若未填寫則自動取得主動試算表，或以第一張工作表為準
+// 綁定正式 Google 試算表 ID
+var SPREADSHEET_ID = "1IRhviHHTulLPx2ZXL25JD-8NgBCWGIU9HLyOO7CHjjc";
 var SHEET_LOGS = "即時提問紀錄";
 var SHEET_CONFIG = "大會設定與跑馬燈";
 
@@ -18,6 +20,53 @@ var LEADER_EMAIL = "suben1204@gmail.com";
 
 // 落日時間點：2027-04-26 12:00:00 (台北時間 GMT+8)
 var SUNSET_TIMESTAMP = new Date("2027-04-26T12:00:00+08:00").getTime();
+
+/**
+ * 確保試算表具備工作表與初始設定
+ */
+function ensureSheetsConfigured(ss) {
+  var configSheet = ss.getSheetByName(SHEET_CONFIG);
+  if (!configSheet) {
+    var sheets = ss.getSheets();
+    if (sheets.length === 1 && sheets[0].getLastRow() === 0) {
+      configSheet = sheets[0];
+      configSheet.setName(SHEET_CONFIG);
+    } else {
+      configSheet = ss.insertSheet(SHEET_CONFIG);
+    }
+    configSheet.getRange("A1").setValue("即時跑馬燈公告 (可隨時修改 B1)");
+    configSheet.getRange("B1").setValue("大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。");
+    configSheet.getRange("A2").setValue("大腦版本");
+    configSheet.getRange("B2").setValue("v1.04");
+    configSheet.getRange("A3").setValue("操作指南");
+    configSheet.getRange("B3").setValue("大會幹部直接在此處修改 B1，所有與會學者及志工手機 APP 即刻於重整或 60 秒內即時更新！");
+    
+    configSheet.getRange("A1:A3").setBackground("#0f172a").setFontColor("#fbbf24").setFontWeight("bold");
+    configSheet.getRange("B1").setFontColor("#1e3a8a").setFontWeight("bold").setFontSize(11);
+    configSheet.setColumnWidth(1, 260);
+    configSheet.setColumnWidth(2, 650);
+  }
+
+  var logSheet = ss.getSheetByName(SHEET_LOGS);
+  if (!logSheet) {
+    logSheet = ss.insertSheet(SHEET_LOGS);
+    logSheet.appendRow(["提問時間 (台北時間)", "來源端", "發問語言", "提問內容 (User Query)", "大腦/AI回覆摘要", "特殊求助警示", "處理狀態"]);
+    logSheet.getRange(1, 1, 1, 7).setBackground("#0f172a").setFontColor("#fbbf24").setFontWeight("bold");
+    logSheet.setColumnWidth(1, 170);
+    logSheet.setColumnWidth(4, 250);
+    logSheet.setColumnWidth(5, 300);
+  }
+  return { configSheet: configSheet, logSheet: logSheet };
+}
+
+/**
+ * 手動初始化專用函數（可直接在 Apps Script 編輯器執行）
+ */
+function initSpreadsheet() {
+  var ss = getSpreadsheet();
+  ensureSheetsConfigured(ss);
+  Logger.log("試算表初始化完成！");
+}
 
 /**
  * 處理 GET 請求：前端抓取最新緊急跑馬燈、大會設定以及「即時熱門提問排行榜」
@@ -36,15 +85,21 @@ function doGet(e) {
     }
 
     var ss = getSpreadsheet();
-    var configSheet = ss.getSheetByName(SHEET_CONFIG);
+    var sheetsObj = ensureSheetsConfigured(ss);
+    var configSheet = sheetsObj.configSheet;
+    
     var ticker = "大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。";
-    var version = "v1.5";
+    var version = "v1.04";
 
     if (configSheet) {
       var tickerCell = configSheet.getRange("B1").getValue();
-      if (tickerCell) ticker = tickerCell.toString();
+      if (tickerCell && tickerCell.toString().trim() !== "") {
+        ticker = tickerCell.toString().trim();
+      }
       var versionCell = configSheet.getRange("B2").getValue();
-      if (versionCell) version = versionCell.toString();
+      if (versionCell && versionCell.toString().trim() !== "") {
+        version = versionCell.toString().trim();
+      }
     }
 
     // 動態統計試算表日誌中「最常被問的 TOP 問題」
@@ -70,7 +125,7 @@ function doGet(e) {
 }
 
 /**
- * 處理 POST 請求：前端送來提問、語言、回覆摘要與特殊求助
+ * 處理 POST 請求：前端送來提問、語言、回覆摘要與特殊求助，或請求雲端 AI 問答
  */
 function doPost(e) {
   try {
@@ -84,11 +139,16 @@ function doPost(e) {
 
     var payload = {};
     if (e.postData && e.postData.contents) {
-      payload = JSON.parse(e.postData.contents);
+      try {
+        payload = JSON.parse(e.postData.contents);
+      } catch (pe) {
+        payload = { query: e.postData.contents };
+      }
     } else if (e.parameter) {
       payload = e.parameter;
     }
 
+    var action = payload.action || "";
     var query = payload.query || "";
     var reply = payload.reply || "";
     var lang = payload.lang || "zh-TW";
@@ -107,16 +167,32 @@ function doPost(e) {
       }
     }
 
-    // 寫入 Google 試算表
     var ss = getSpreadsheet();
-    var logSheet = ss.getSheetByName(SHEET_LOGS);
-    if (!logSheet) {
-      logSheet = ss.insertSheet(SHEET_LOGS);
-      logSheet.appendRow(["提問時間 (台北時間)", "來源端", "發問語言", "提問內容 (User Query)", "大腦/AI回覆摘要", "特殊求助警示", "處理狀態"]);
-      logSheet.getRange(1, 1, 1, 7).setBackground("#0f172a").setFontColor("#fbbf24").setFontWeight("bold");
+    var sheetsObj = ensureSheetsConfigured(ss);
+    var logSheet = sheetsObj.logSheet;
+    var timeStr = Utilities.formatDate(new Date(), "Asia/Taipei", "yyyy-MM-dd HH:mm:ss");
+
+    // 模式一：雲端智慧大腦動態問答 (action: 'ask_ai')
+    if (action === 'ask_ai') {
+      var aiBundle = handleCloudAiQuery(query, lang);
+      var alertBadge = isEmergency ? "🚨 特殊急迫求助" : "雲端AI諮詢";
+      var status = isEmergency ? "待幹部跟進" : "雲端解答/外交導流";
+      var replySummary = (aiBundle["zh-TW"] || "").substring(0, 150);
+
+      logSheet.appendRow([timeStr, source, lang, query, replySummary, alertBadge, status]);
+
+      if (isEmergency) {
+        notifyLeader(timeStr, lang, query, replySummary);
+      }
+
+      return jsonResponse({
+        status: "success",
+        matched: false,
+        bundle: aiBundle
+      });
     }
 
-    var timeStr = Utilities.formatDate(new Date(), "Asia/Taipei", "yyyy-MM-dd HH:mm:ss");
+    // 模式二：一般前台日誌同步
     var alertBadge = isEmergency ? "🚨 特殊急迫求助" : "一般諮詢";
     var status = isEmergency ? "待幹部跟進" : "系統自動解答";
 
@@ -139,6 +215,54 @@ function doPost(e) {
       message: err.toString()
     });
   }
+}
+
+/**
+ * 處理雲端智慧大腦問答 (若有設定 GEMINI_API_KEY 則呼叫，否則提供四語外交導流)
+ */
+function handleCloudAiQuery(query, lang) {
+  var apiKey = PropertiesService.getScriptProperties().getProperty("GEMINI_API_KEY");
+  if (apiKey && apiKey.trim() !== "") {
+    try {
+      var prompt = "You are the official AI concierge for the 2027 AACRT (Asia-Australasia Conference of Radiographers and Radiological Technologists) & TWSRT 60th Annual Meeting at Taipei Nangang Exhibition Center Hall 2 (TaiNEX 2).\n" +
+        "Answer the attendee query clearly, diplomatically, and concisely. Output a strict JSON object with four keys: 'zh-TW', 'en', 'ja', 'ko'.\n" +
+        "If the query involves specific locations or procedures you do not know, advise visiting the 1F or 7F Conference Information Desk.\n\n" +
+        "Query: " + query;
+
+      var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey.trim();
+      var reqPayload = {
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: { responseMimeType: "application/json" }
+      };
+
+      var options = {
+        method: "post",
+        contentType: "application/json",
+        payload: JSON.stringify(reqPayload),
+        muteHttpExceptions: true
+      };
+
+      var res = UrlFetchApp.fetch(url, options);
+      if (res.getResponseCode() === 200) {
+        var resJson = JSON.parse(res.getContentText());
+        var rawText = resJson.candidates[0].content.parts[0].text;
+        var parsed = JSON.parse(rawText);
+        if (parsed["zh-TW"] && parsed["en"]) {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      Logger.log("Gemini API error: " + e.toString());
+    }
+  }
+
+  // 預設外交導流四語回覆包
+  return {
+    "zh-TW": "這項問題涉及大會最新即時安排或特定專屬細節，已為您記錄並同步回報！建議您可直接前往 7 樓或 1 樓「大會官方諮詢服務台」，將由現場幹部為您即時確認處置。",
+    "en": "This inquiry involves the latest conference arrangements or specific details, and has been logged! We recommend visiting the Official Information Desk on the 1st or 7th floor for immediate assistance.",
+    "ja": "このご質問は大会の最新スケジュールまたは特定の詳細に関するものです。記録いたしましたので、1階または7階の「大会公式インフォメーションデスク」でスタッフにご確認いただくことをお勧めします。",
+    "ko": "해당 문의는 대회의 최신 일정 또는 특정 세부 사항과 관련되어 있어 기록되었습니다. 즉각적인 확인을 위해 1층 또는 7층의 '대회 공식 안내 데스크'를 방문해 주시기 바랍니다."
+  };
 }
 
 /**
@@ -207,9 +331,9 @@ function getTopFrequentQueries(ss) {
  */
 function getSpreadsheet() {
   if (SPREADSHEET_ID && SPREADSHEET_ID.trim() !== "") {
-    return SpreadsheetApp.openById(SPREADSHEET_ID);
+    return SpreadsheetApp.openById(SPREADSHEET_ID.trim());
   }
-  return SpreadsheetApp.getActiveSpreadsheet() || SpreadsheetApp.create("2027 AACRT 現場問答監控儀表板");
+  return SpreadsheetApp.getActiveSpreadsheet();
 }
 
 /**

@@ -1938,6 +1938,11 @@
             if (tickerElem) tickerElem.innerText = data.ticker;
           }
 
+          if (data && data.version) {
+            const versionElem = document.getElementById('footer-brain-version');
+            if (versionElem) versionElem.innerText = `大腦 ${data.version}`;
+          }
+
           if (data && data.top_queries && data.top_queries.length > 0) {
             renderDynamicTopQueries(data.top_queries);
           }
@@ -1973,6 +1978,8 @@
     updateLanguageUI();
     updateStarCounter();
     fetchLiveTicker();
+    // 現場每 60 秒自動非同步檢查試算表跑馬燈是否有更新
+    setInterval(fetchLiveTicker, 60000);
 
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
