@@ -1,1782 +1,2180 @@
 {
   "is_test_benchmark": true,
-  "year": 2026,
-  "dataset_source": "中華民國醫事放射學會第59次年會暨國際醫學影像學術研討會論文集 (測試樣本)",
-  "note": "本資料庫為 2026 測試基準，僅供大腦檢索演算法與壓力測試，嚴格與 2027 AACRT 知識大腦隔離。",
-  "total_papers": 195,
-  "categories_summary": {
-    "人工智慧 (Artificial Intelligence)": 18,
-    "心臟導管 (Cardiac Catheterization)": 11,
-    "電腦斷層 (Computed Tomography)": 17,
-    "實證醫學 (Evidence-Based Medicine)": 2,
-    "EP 專題": 8,
-    "血管攝影介入 (Interventional Radiology)": 7,
-    "乳房攝影 (Mammography)": 8,
-    "磁振造影 (Magnetic Resonance Imaging)": 21,
-    "核子醫學 (Nuclear Medicine)": 8,
-    "其他放射技術 (Other)": 13,
-    "PA 專題": 3,
-    "放射護理 (Radiology Nursing)": 3,
-    "常規X光 (Routine Radiography)": 12,
-    "放射治療 (Radiation Therapy)": 23,
-    "學生研究 (Radiology Student Research)": 39,
-    "超音波 (Ultrasound)": 2
-  },
+  "dataset_source": "第59次年會暨國際醫學影像學術研討會 (口頭與POSTER拆分測試檔)",
+  "note": "⚠️ 本資料庫僅作為 2027 AACRT 檢索演算法與 UI 展示之測試 Benchmark，非 2027 正式議程。",
+  "total_papers": 217,
+  "oral_count": 74,
+  "poster_count": 143,
   "papers": [
-    {
-      "id": "O-AI-001",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 51,
-      "title": "O-AI-002 ҽᔨѹ 13:20-13:30 ɽۨႧԊᅼۨί፧࢛τΌϽ༊ٙ಻༊",
-      "snippet": "O-AI-001 ெૺඩ 13:10-13:20 ਿ׵ଉܓኪ୦ʘ YOLOv11 ፫ᗆᅼۨІ ਗਈ಻ MRI ໐ಖಖගᆵ߉̈ O-AI-002 ҽᔨѹ 13:20-13:30 ɽۨႧԊᅼۨί፧࢛τΌϽ༊ٙ಻༊ O-AI-003 ᇹ֠Ꮂ 13:30-13:40 ਿ׵ DeepLabv3+ ၾε၇৶฀ၣ༩ʘӿ ᛔཥ໘ᓙᄴᅂ྅Іਗʱ௲޼Ӻ O-AI-004 ю࢕ᄃ 13:40-13:50 ਿ׵੫ًʹɸ᜕ᗇˢ༰ε၇ଉܓኪ୦ᅼ ׵ۨ໐ಖ MRI ಖගˆৗʷ̬ॴʱᗳʘ"
-    },
-    {
-      "id": "O-AI-002",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 51,
-      "title": "O-AI-003 ᇹ֠Ꮂ 13:30-13:40 ਿ׵ DeepLabv3+ ၾε၇৶฀ၣ༩ʘӿ ᛔཥ໘ᓙᄴᅂ྅Іਗʱ௲޼Ӻ",
-      "snippet": "O-AI-002 ҽᔨѹ 13:20-13:30 ɽۨႧԊᅼۨί፧࢛τΌϽ༊ٙ಻༊ O-AI-003 ᇹ֠Ꮂ 13:30-13:40 ਿ׵ DeepLabv3+ ၾε၇৶฀ၣ༩ʘӿ ᛔཥ໘ᓙᄴᅂ྅Іਗʱ௲޼Ӻ O-AI-004 ю࢕ᄃ 13:40-13:50 ਿ׵੫ًʹɸ᜕ᗇˢ༰ε၇ଉܓኪ୦ᅼ ׵ۨ໐ಖ MRI ಖගˆৗʷ̬ॴʱᗳʘ ޼Ӻ"
-    },
-    {
-      "id": "O-AI-003",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 75,
-      "title": "基於 DeepLabv3+ 與多種骨幹網路之肝臟電腦斷層影像自動分割研究",
-      "snippet": "O-AI-003 基於 DeepLabv3+ 與多種骨幹網路之肝臟電腦斷層影像自動分割研究 蔡尚龍 1 吳家儀 4"
-    },
-    {
-      "id": "O-AI-004",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 76,
-      "title": "基於巢狀交叉驗證比較多種深度學習模型於腰椎 MRI 椎間孔退化四級分類之研究",
-      "snippet": "O-AI-004 基於巢狀交叉驗證比較多種深度學習模型於腰椎 MRI 椎間孔退化四級分類之研究 吳家儀 1 蔡尚龍 2"
-    },
-    {
-      "id": "O-NAI-001",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 65,
-      "title": "Automated 4D Evaluation of Smile Attractiveness via 3D Contour–Based Multitask",
-      "snippet": "O-NAI-001 Automated 4D Evaluation of Smile Attractiveness via 3D Contour–Based Multitask Learning for Orthognathic Surgical Planning Hsiu-Hsia Lin 1 Lun-Jou Lo"
-    },
-    {
-      "id": "O-NAI-002",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 65,
-      "title": "AI-Assisted Automated Aortic Valve Detection System for TA VI Pre-procedural",
-      "snippet": "O-NAI-002 AI-Assisted Automated Aortic Valve Detection System for TA VI Pre-procedural Planning: A Clinical Workflow Integration Study"
-    },
-    {
-      "id": "O-NAI-01",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 58,
-      "title": "Comparison of Template Matching and Convolutional Neural Networks for ACR CT",
-      "snippet": "O-NAI-01 Comparison of Template Matching and Convolutional Neural Networks for ACR CT Phantom Module Classification PHAN HOÀI PHƯƠNG 1,2* , HOÀNG THỊ KIỀU TRANG 1, VÕ TẤN ĐỨC 2"
-    },
-    {
-      "id": "O-NAI-02",
-      "type": "Oral (口頭)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 59,
-      "title": "Development of an Adaptive Image Processing Method for Chest Radiographs Using",
-      "snippet": "O-NAI-02 Development of an Adaptive Image Processing Method for Chest Radiographs Using Artificial Intelligence Mei Hashimoto1 Asumi Yamazaki2 Takayuki Ishida3* 1 Department of Health Sciences, School of Medicine, The University of Osaka2 Department of Radiological Technology, School of Health Scien"
-    },
-    {
-      "id": "P-AI-001",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 97,
-      "title": "P-AI-002 ༶͛͜ϓό AI(ChatGPT) ՘Ъක೯ CT ًڿਗএඑʷʱᅰІਗʷజ ѓӻ୕ ቍၪࢬ",
-      "snippet": "P-AI-001 ઞী GE Fast Stroke ׵ Perfusion CT ʕਗ᎑এ፩ɝՌᅰІਗ፯՟ʘ๟ ᆽ׌ ю׋ໞ P-AI-002 ༶͛͜ϓό AI(ChatGPT) ՘Ъක೯ CT ًڿਗএඑʷʱᅰІਗʷజ ѓӻ୕ ቍၪࢬ P-AI-003 ৗʷ׌ᗫື׵فቋ୅όᅼۨਈ಻ၾᏐ͜૒ܓ̋ᛆ࢛݈̙ൖʷᆠਜ̙ ༆ᙑ׌ઞীၾ઺ኪᏐ͜ юࢡ؇ P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி P-AI-005 Artiﬁcial Intelligence-Assis"
-    },
-    {
-      "id": "P-AI-002",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 97,
-      "title": "P-AI-003 ৗʷ׌ᗫື׵فቋ୅όᅼۨਈ಻ၾᏐ͜૒ܓ̋ᛆ࢛݈̙ൖʷᆠਜ̙ ༆ᙑ׌ઞীၾ઺ኪᏐ͜ юࢡ؇",
-      "snippet": "P-AI-002 ༶͛͜ϓό AI(ChatGPT) ՘Ъක೯ CT ًڿਗএඑʷʱᅰІਗʷజ ѓӻ୕ ቍၪࢬ P-AI-003 ৗʷ׌ᗫື׵فቋ୅όᅼۨਈ಻ၾᏐ͜૒ܓ̋ᛆ࢛݈̙ൖʷᆠਜ̙ ༆ᙑ׌ઞীၾ઺ኪᏐ͜ юࢡ؇ P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி P-AI-005 Artiﬁcial Intelligence-Assisted Brain Tumor Segmentation: Investigation of Manpower, Time Co"
-    },
-    {
-      "id": "P-AI-003",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 97,
-      "title": "P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி",
-      "snippet": "P-AI-003 ৗʷ׌ᗫື׵فቋ୅όᅼۨਈ಻ၾᏐ͜૒ܓ̋ᛆ࢛݈̙ൖʷᆠਜ̙ ༆ᙑ׌ઞীၾ઺ኪᏐ͜ юࢡ؇ P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி P-AI-005 Artiﬁcial Intelligence-Assisted Brain Tumor Segmentation: Investigation of Manpower, Time Cost and Accuracy ஢͍ᅃ P-AI-006 Improving Clinical Efﬁcienc"
-    },
-    {
-      "id": "P-AI-004",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 97,
-      "title": "P-AI-005 Artiﬁcial Intelligence-Assisted Brain Tumor Segmentation: Investigation of Manpower, Time Cost and Accuracy ஢͍ᅃ",
-      "snippet": "P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி P-AI-005 Artiﬁcial Intelligence-Assisted Brain Tumor Segmentation: Investigation of Manpower, Time Cost and Accuracy ஢͍ᅃ P-AI-006 Improving Clinical Efﬁciency Using an AI Screening Platform for Aortic Dilation a"
-    },
-    {
-      "id": "P-AI-005",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 97,
-      "title": "P-AI-006 Improving Clinical Efﬁciency Using an AI Screening Platform for Aortic Dilation and Lung Nodule Detection ు˰௫",
-      "snippet": "P-AI-005 Artiﬁcial Intelligence-Assisted Brain Tumor Segmentation: Investigation of Manpower, Time Cost and Accuracy ஢͍ᅃ P-AI-006 Improving Clinical Efﬁciency Using an AI Screening Platform for Aortic Dilation and Lung Nodule Detection ు˰௫ P-AI-007 ਿ׵ቋ୅ኪ୦ʘεᅺᜀᝍʫ̈Аਈ಻ᅼۨϓࣖ൙П մ͉؍ P-AI-008 Development and"
-    },
-    {
-      "id": "P-AI-006",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 107,
-      "title": "Improving Clinical Efficiency Using an AI Screening Platform",
-      "snippet": "P-AI-006 Improving Clinical Efficiency Using an AI Screening Platform for Aortic Dilation and Lung Nodule Detection Shih-Chieh Peng, Sen-Ping Lin, Yuan-Heng Mo, Kuei-Yuan Hou, Wen-Wei Lu, Yung- Cheng Wang *"
-    },
-    {
-      "id": "P-AI-007",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 108,
-      "title": "基於遷移學習之多標籤顱內出血偵測模型成效評估",
-      "snippet": "P-AI-007 基於遷移學習之多標籤顱內出血偵測模型成效評估 周本林 1 阮春榮 2"
-    },
-    {
-      "id": "P-AI-008",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 108,
-      "title": "Development and Validation of a CT Radiomics–Based Predictive Model for",
-      "snippet": "P-AI-008 Development and Validation of a CT Radiomics–Based Predictive Model for Pathological Complete Response in Locally Advanced Colorectal Cancer Treated with Neoadjuvant Chemoradiotherapy Shu-Han Yang 1"
-    },
-    {
-      "id": "P-AI-009",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 109,
-      "title": "Systematic Evaluation of CNN Architectures for Multi-Label Chest X-ray",
-      "snippet": "P-AI-009 Systematic Evaluation of CNN Architectures for Multi-Label Chest X-ray Classification: System Stability and Deployment Efficiency Tze-Hsiang Tang 1 Yi-Tzu Chen"
-    },
-    {
-      "id": "P-NAI-01",
-      "type": "Poster (壁報)",
-      "category_code": "AI",
-      "category_name": "人工智慧 (Artificial Intelligence)",
-      "page": 149,
-      "title": "Evaluating Generative AI–Supported Learning : Answer and Explanation Accuracy in",
-      "snippet": "P-NAI-01 Evaluating Generative AI–Supported Learning : Answer and Explanation Accuracy in Japan’s National Examination for Radiologica l Technologists Hideki Kato"
-    },
-    {
-      "id": "O-CA-001",
-      "type": "Oral (口頭)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 76,
-      "title": "主動脈氣球幫浦輔助下機械性吸栓治療右冠狀動脈完全阻塞之NSTEMI 案例分享",
-      "snippet": "O-CA-001 主動脈氣球幫浦輔助下機械性吸栓治療右冠狀動脈完全阻塞之NSTEMI 案例分享 李羿頡 中國醫藥大學附設醫院心導管室 研究目的：ًڿ׌ܢਗএसࡉ໊ʕdً̛ڿਗএҁΌڜ෦ԨМᎇɽඎАࠋࣼஃd݊ʧɝ׌ːᛔ߅ᔼ ࠦࢪᑗࠠٙɽܿ኷f߰͊ঐʿܨࣛూАݴd̙ঐኬߧːЄᙺݴʔԄʿː๕׌;дfഐΥ˴ਗএʫं"
-    },
-    {
-      "id": "O-CA-002",
-      "type": "Oral (口頭)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 77,
-      "title": "OCT AI 人工智慧運算鈣化點與技術人員判讀比對準確率之研究",
-      "snippet": "O-CA-002 OCT AI 人工智慧運算鈣化點與技術人員判讀比對準確率之研究 黃資淯 台北國泰綜合醫院 心導管室 研究目的：ًڿਗএطᐕʕषӦඑʷ೻ܓᅂᚤ 1. ंଢᓒੵ؈ࣖ 2. ˕ݖҁ዆׌ 3. Ύद॥ዚଟdၚᆽ ٙඑʷ൙ПϞп׵ᔼҿண௪ʿطᐕഄଫٙ፯኿fА၍ʫ 3D Έኪᓙᄴધ౜ᅂ྅ (Optical Coherence"
-    },
-    {
-      "id": "P-CA-001",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-002 Digitizing Cardiac Catheterization Laboratories Workﬂows: A Smart System for Quality Assurance and Inventory Management ؍ฺࢸ",
-      "snippet": "P-CA-001 Bovine Aortic ArchjɓԷˇԈ˴ਗএʐᜊମᅂ྅ൢᓙ Оᕄρ P-CA-002 Digitizing Cardiac Catheterization Laboratories Workﬂows: A Smart System for Quality Assurance and Inventory Management ؍ฺࢸ P-CA-003 ༶͜ၚྼ၍ଣᎴʷːኬ၍˓ஔɝ৫ݴ೻j౤ʺषґմᔷଟၾಯჀᚐ ଣࠋஃʘ༨ྠඟΥЪࠇ೥ රߧശ P-CA-004 ਿ࢛׳׵ଡ଼ኪٙዚኜኪ୦˙ج࿁А၍ʫ൴تࠪᜑًͪڿٙਗএඑʷ ᘌࠠ೻ܓආБʱᗳ ᆙ˖ᄫ P-CA-005 ືܛኜಔ"
-    },
-    {
-      "id": "P-CA-002",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 111,
-      "title": "Digitizing Cardiac Catheterization Laboratories Workflows: A Smart System for",
-      "snippet": "P-CA-002 Digitizing Cardiac Catheterization Laboratories Workflows: A Smart System for Quality Assurance and Inventory Management Kai-En Lin 1 , Chen-Jung Chang"
-    },
-    {
-      "id": "P-CA-003",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-004 ਿ࢛׳׵ଡ଼ኪٙዚኜኪ୦˙ج࿁А၍ʫ൴تࠪᜑًͪڿٙਗএඑʷ ᘌࠠ೻ܓආБʱᗳ ᆙ˖ᄫ",
-      "snippet": "P-CA-003 ༶͜ၚྼ၍ଣᎴʷːኬ၍˓ஔɝ৫ݴ೻j౤ʺषґմᔷଟၾಯჀᚐ ଣࠋஃʘ༨ྠඟΥЪࠇ೥ රߧശ P-CA-004 ਿ࢛׳׵ଡ଼ኪٙዚኜኪ୦˙ج࿁А၍ʫ൴تࠪᜑًͪڿٙਗএඑʷ ᘌࠠ೻ܓආБʱᗳ ᆙ˖ᄫ P-CA-005 ືܛኜಔɝஔܝෆɹո֛ʘҦஔҷԄj˸݅Ϟ˟Аༀໄ՟˾ෂ୕൨ ؍ج ྗᓆ P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃"
-    },
-    {
-      "id": "P-CA-004",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-005 ືܛኜಔɝஔܝෆɹո֛ʘҦஔҷԄj˸݅Ϟ˟Аༀໄ՟˾ෂ୕൨ ؍ج ྗᓆ",
-      "snippet": "P-CA-004 ਿ࢛׳׵ଡ଼ኪٙዚኜኪ୦˙ج࿁А၍ʫ൴تࠪᜑًͪڿٙਗএඑʷ ᘌࠠ೻ܓආБʱᗳ ᆙ˖ᄫ P-CA-005 ືܛኜಔɝஔܝෆɹո֛ʘҦஔҷԄj˸݅Ϟ˟Аༀໄ՟˾ෂ୕൨ ؍ج ྗᓆ P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃ P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ"
-    },
-    {
-      "id": "P-CA-005",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ",
-      "snippet": "P-CA-005 ືܛኜಔɝஔܝෆɹո֛ʘҦஔҷԄj˸݅Ϟ˟Аༀໄ՟˾ෂ୕൨ ؍ج ྗᓆ P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃ P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶"
-    },
-    {
-      "id": "P-CA-006",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ",
-      "snippet": "P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃ P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶"
-    },
-    {
-      "id": "P-CA-007",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃",
-      "snippet": "P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃ P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶"
-    },
-    {
-      "id": "P-CA-008",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ",
-      "snippet": "P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃ P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶"
-    },
-    {
-      "id": "P-CA-009",
-      "type": "Poster (壁報)",
-      "category_code": "CA",
-      "category_name": "心臟導管 (Cardiac Catheterization)",
-      "page": 97,
-      "title": "P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶",
-      "snippet": "P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶"
-    },
-    {
-      "id": "O-CT-001",
-      "type": "Oral (口頭)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 78,
-      "title": "ECMO 於 CT 掃描之假性主動脈剝離個案探討",
-      "snippet": "O-CT-001 ECMO 於 CT 掃描之假性主動脈剝離個案探討 花家名 亞洲大學附屬醫院放射診斷科 研究目的：໢дᇫ ECMOطᐕึˏৎА૰ਗɢኪٙᜊʷdவԬᜊʷ̙ঐᅂᚤ࿁ˢኒٙʱбdආ Ͼᅂᚤᅂ྅ۜٙሯdޟЇପ͛৿ᅂfઞীίԴ͜ ECMO ٙઋرɨdνОਿ͉ᗆйԨஈଣ৿׌˴ਗএ"
-    },
-    {
-      "id": "O-NCT-01",
-      "type": "Oral (口頭)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 59,
-      "title": "Evaluation of the Accuracy of Electronic Cleansing Using Material Density Images in",
-      "snippet": "O-NCT-01 Evaluation of the Accuracy of Electronic Cleansing Using Material Density Images in CT Colonography Shinya Misawa Junji Mochizuki Department of Radiological Technology, Minamino Cardiovascular Hospital Purpose:In CT colonography (CTC), the use of electronic cleansing (EC) enables visualizat"
-    },
-    {
-      "id": "P-CT-001",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 116,
-      "title": "探討低劑量肺部電腦斷層影像在人工智慧電腦輔助偵測系統判讀的差異",
-      "snippet": "P-CT-001 探討低劑量肺部電腦斷層影像在人工智慧電腦輔助偵測系統判讀的差異 楊國強 戴德森醫療財團法人嘉義基督教醫院影像醫學科 研究目的 ：Դ͜٬௅ཥ໘ᓙᄴ(Low Dose Lung Computed Tomography, LDCT)ආБ٬ᐖጜᏨʊ݊˴ݴf ᅂ྅кᛘഐ؈ԸІɛʈၾཥ໘Ⴞпӻ୕ (Computer Aid Detect, CAD) f͉޼Ӻઞীɛʈкᛘၾ CAD"
-    },
-    {
-      "id": "P-CT-002",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 117,
-      "title": "Immediate chest CT scan after a failed lower extremity computed tomography",
-      "snippet": "P-CT-002 Immediate chest CT scan after a failed lower extremity computed tomography angiography may help reveal more severe lesion: a case reminder Chun-Hsien Lee 1 Xiang-Wei Huang"
-    },
-    {
-      "id": "P-CT-003",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 117,
-      "title": "Evaluation of Pediatric Brain CT Radiation Dose Control and Compliance with",
-      "snippet": "P-CT-003 Evaluation of Pediatric Brain CT Radiation Dose Control and Compliance with ALARA Guidelines: A Retrospective Study of a Regional Hospital in Southern Taiwan Yu-Chen Zhang1 Ming-Ye Cheng 1 1"
-    },
-    {
-      "id": "P-CT-004",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-005 ً̛ڿਗএৎ๕ମ੬Мᎇ˴ਗএၾ٬ਗএගԐБ (Anomalous origin of the right coronary artery with an interarterial course)- षԷజѓ ༗؍˖",
-      "snippet": "P-CT-004 ε޴ࣛཥ໘ᓙᄴА၍ᙲᅂί׌ܢॹА׌໘ʕٙࠬᏐ͜ - ࣩԷઞী ؍ወҕ P-CT-005 ً̛ڿਗএৎ๕ମ੬Мᎇ˴ਗএၾ٬ਗএගԐБ (Anomalous origin of the right coronary artery with an interarterial course)- षԷజѓ ༗؍˖ P-CT-006 ˸Ϋ๑׌ʱؓઞীԒ᜗ሯඎܸᅰၾ᜗ࠦڌጐ࿁ًڿਗএཥ໘ᓙᄴА ၍ᙲᅂА၍ᜑᅂʘᅂᚤ ܅؍ԕ P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port"
-    },
-    {
-      "id": "P-CT-005",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-006 ˸Ϋ๑׌ʱؓઞীԒ᜗ሯඎܸᅰၾ᜗ࠦڌጐ࿁ًڿਗএཥ໘ᓙᄴА ၍ᙲᅂА၍ᜑᅂʘᅂᚤ ܅؍ԕ",
-      "snippet": "P-CT-005 ً̛ڿਗএৎ๕ମ੬Мᎇ˴ਗএၾ٬ਗএගԐБ (Anomalous origin of the right coronary artery with an interarterial course)- षԷజѓ ༗؍˖ P-CT-006 ˸Ϋ๑׌ʱؓઞীԒ᜗ሯඎܸᅰၾ᜗ࠦڌጐ࿁ًڿਗএཥ໘ᓙᄴА ၍ᙲᅂА၍ᜑᅂʘᅂᚤ ܅؍ԕ P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳ P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ"
-    },
-    {
-      "id": "P-CT-006",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ",
-      "snippet": "P-CT-006 ˸Ϋ๑׌ʱؓઞীԒ᜗ሯඎܸᅰၾ᜗ࠦڌጐ࿁ًڿਗএཥ໘ᓙᄴА ၍ᙲᅂА၍ᜑᅂʘᅂᚤ ܅؍ԕ P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳ P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏ P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ P-CT-011 Impact of RAPID-AI Perfus"
-    },
-    {
-      "id": "P-CT-007",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳",
-      "snippet": "P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳ P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏ P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ P-CT-011 Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notiﬁcation on EVT Tim"
-    },
-    {
-      "id": "P-CT-008",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏",
-      "snippet": "P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳ P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏ P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ P-CT-011 Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notiﬁcation on EVT Timeliness in Acute Ischemic Stroke մྗႴ P-CT-012 ࿁ˢኒ࢛ء"
-    },
-    {
-      "id": "P-CT-009",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ",
-      "snippet": "P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏ P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ P-CT-011 Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notiﬁcation on EVT Timeliness in Acute Ischemic Stroke մྗႴ P-CT-012 ࿁ˢኒ࢛ءഄଫ௰Գʷ˸౤ʺ᎘௅ཥ໘ᓙᄴА၍ᜑᅂۜሯʘΫᚥ׌ ʱؓ ੵ೸ත P-CT-013 Ν˚݄͂ў"
-    },
-    {
-      "id": "P-CT-010",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-011 Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notiﬁcation on EVT Timeliness in Acute Ischemic Stroke մྗႴ",
-      "snippet": "P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ P-CT-011 Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notiﬁcation on EVT Timeliness in Acute Ischemic Stroke մྗႴ P-CT-012 ࿁ˢኒ࢛ءഄଫ௰Գʷ˸౤ʺ᎘௅ཥ໘ᓙᄴА၍ᜑᅂۜሯʘΫᚥ׌ ʱؓ ੵ೸ත P-CT-013 Ν˚݄͂ўຢၾўᰕ࿁ˢኒ࿁ഥ̌ঐʘࠬᎈ൙Пٙྼᗇ޼Ӻʱؓ ጅૠᚆ P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗ"
-    },
-    {
-      "id": "P-CT-011",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 122,
-      "title": "Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notification on EVT",
-      "snippet": "P-CT-011 Impact of RAPID-AI Perfusion Analysis and Real-Time Push Notification on EVT Timeliness in Acute Ischemic Stroke Zhou Jia Hao1, Wei JR DA1, Chang Sheng Chang1, Hsu Yuan Yu 1 1"
-    },
-    {
-      "id": "P-CT-012",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-013 Ν˚݄͂ўຢၾўᰕ࿁ˢኒ࿁ഥ̌ঐʘࠬᎈ൙Пٙྼᗇ޼Ӻʱؓ ጅૠᚆ",
-      "snippet": "P-CT-012 ࿁ˢኒ࢛ءഄଫ௰Գʷ˸౤ʺ᎘௅ཥ໘ᓙᄴА၍ᜑᅂۜሯʘΫᚥ׌ ʱؓ ੵ೸ත P-CT-013 Ν˚݄͂ўຢၾўᰕ࿁ˢኒ࿁ഥ̌ঐʘࠬᎈ൙Пٙྼᗇ޼Ӻʱؓ ጅૠᚆ P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗএᜑᅂʘˢ༰ ٓړຄ P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ"
-    },
-    {
-      "id": "P-CT-013",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗএᜑᅂʘˢ༰ ٓړຄ",
-      "snippet": "P-CT-013 Ν˚݄͂ўຢၾўᰕ࿁ˢኒ࿁ഥ̌ঐʘࠬᎈ൙Пٙྼᗇ޼Ӻʱؓ ጅૠᚆ P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗএᜑᅂʘˢ༰ ٓړຄ P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃"
-    },
-    {
-      "id": "P-CT-014",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ",
-      "snippet": "P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗএᜑᅂʘˢ༰ ٓړຄ P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃ P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜"
-    },
-    {
-      "id": "P-CT-015",
-      "type": "Poster (壁報)",
-      "category_code": "CT",
-      "category_name": "電腦斷層 (Computed Tomography)",
-      "page": 98,
-      "title": "P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ",
-      "snippet": "P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃ P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜ P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ"
-    },
-    {
-      "id": "P-EBM-001",
-      "type": "Poster (壁報)",
-      "category_code": "EBM",
-      "category_name": "實證醫學 (Evidence-Based Medicine)",
-      "page": 98,
-      "title": "P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ",
-      "snippet": "P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃ P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜ P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ"
-    },
-    {
-      "id": "P-EBM-002",
-      "type": "Poster (壁報)",
-      "category_code": "EBM",
-      "category_name": "實證醫學 (Evidence-Based Medicine)",
-      "page": 98,
-      "title": "P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃",
-      "snippet": "P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃ P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜ P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Tre"
-    },
-    {
-      "id": "O-EP-001",
-      "type": "Oral (口頭)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 78,
-      "title": "利用實境角色扮演遊 戲LARP (Live-action Role Playing)培育放射PGY的全人教",
-      "snippet": "O-EP-001 利用實境角色扮演遊 戲LARP (Live-action Role Playing)培育放射PGY的全人教 學 溫漢忠 黃詩華 沈妗襄 葉育伸 * 義大醫療財團法人義大醫院 一般影像診斷科"
-    },
-    {
-      "id": "O-EP-002",
-      "type": "Oral (口頭)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 79,
-      "title": "結合 NotebookLM與 Google Gemini 之 AI 工具應用文獻導讀創新教學模式",
-      "snippet": "O-EP-002 結合 NotebookLM與 Google Gemini 之 AI 工具應用文獻導讀創新教學模式 吳東峻 侯貴圓 呂文瑋 劉名宏 國泰綜合醫院 研究目的：޼Ӻͦٙ˴ࠅί઺ኪᏐ͜ɛʈ౽ᅆʈՈ׵ᔼኪ઺ԃʕʘᏐ͜dၳೊ׵ኪࡰίሞ˖ቡᛘၾ ࠠᓃ࿜ٙࠅኪ୦ཀ೻f ෂ୕ٙ˖ᘠʱؓცঃ൬ɽඎࣛගၾਖ਼ุٝᗆd ࿁ᑗґʿ޼Ӻɛ݊ࡰɓɽܿ኷f"
-    },
-    {
-      "id": "O-EP-003",
-      "type": "Oral (口頭)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 51,
-      "title": "O-EP-004 ҽځ׼ 14:30-14:40",
-      "snippet": "O-EP-003 เ͗ణ 14:20-14:30 ˸ઋྤᅼᏝ੃ԃԪגᙲᅂࢪ࢛׳ʘΝଣ ː๫ᚐ O-EP-004 ҽځ׼ 14:30-14:40 ੽౤ͪ൚Ցݴ೻ྡj༶͜ᜌ፨ ኬΣʘ͛ϓό AI ᔕᔷ઺ኪ͏˴ʷ࢛׳ ᔼኪൖᙂ९ቮ"
-    },
-    {
-      "id": "O-EP-004",
-      "type": "Oral (口頭)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 80,
-      "title": "從「 提 示 詞 」 到「 流 程 圖 」：",
-      "snippet": "O-EP-004 從「 提 示 詞 」 到「 流 程 圖 」： 運用邏輯導向之生成式 AI 翻轉教學民主化放射醫學視覺素養 李明芬 陳正庸 石怡婷 謝慧苓 洪世凱 佛教慈濟醫療財團法人大林慈濟醫院放射腫瘤科 研究目的：ط࢛׳ᐕᑗґ઺ԃڣცਗ਼פ൥يٙଣኒඎၾطᐕݴ೻ᔷʷٜމᝈൖᙂ઺ҿdઓεᅰ࢛׳"
-    },
-    {
-      "id": "P-EP-001",
-      "type": "Poster (壁報)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 98,
-      "title": "P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜",
-      "snippet": "P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃ P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜ P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ"
-    },
-    {
-      "id": "P-EP-002",
-      "type": "Poster (壁報)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 98,
-      "title": "P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ",
-      "snippet": "P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜ P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ"
-    },
-    {
-      "id": "P-EP-003",
-      "type": "Poster (壁報)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 98,
-      "title": "P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ",
-      "snippet": "P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ"
-    },
-    {
-      "id": "P-EP-004",
-      "type": "Poster (壁報)",
-      "category_code": "EP",
-      "category_name": "EP 專題",
-      "page": 98,
-      "title": "P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ",
-      "snippet": "P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ"
-    },
-    {
-      "id": "P-IR-001",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 129,
-      "title": "Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-",
-      "snippet": "P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon- Expandable Stent Graft Zih-Chi Tseng1, Hsing-Miao Tsai1, Hsueh-Cheng Tseng1, Jhen-Wen Huang 1 1"
-    },
-    {
-      "id": "P-IR-002",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 99,
-      "title": "P-IR-003 Treatment of blood blister–like aneurysms of the internal carotid artery with Pipeline ﬂow diverters ௓ܔლ",
-      "snippet": "P-IR-002 д؂ෂ୕ᅂ྅ࠢڻj༶͜ Overlay ҦஔᎴʷኬݴ˕ݖ൨ኣ׌ၾ၍ഢ ࿫ஷٙܓஔܝ൙П ˮ∑඘ P-IR-003 Treatment of blood blister–like aneurysms of the internal carotid artery with Pipeline ﬂow diverters ௓ܔლ P-IR-004 Ꮠ͜А၍ᙲᅂݴ஺ʱؓழ᜗ආБɽ໘А၍˕ݖໄܝ׳ʘ؈ࣖ൙П ದлڄ P-IR-005 ӿ୅ಔܝӿ᎑এၾɨഢ᎑এѕΥஈद॥ʘ˕ݖʧɝطᐕၾஔܝᅂ྅ ڌତ : षԷజѓ մࠜႴ P-IR-006 Severe Left Internal Caro"
-    },
-    {
-      "id": "P-IR-003",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 131,
-      "title": "Treatment of blood blister–like aneurysms of the internal carotid artery with Pipeline",
-      "snippet": "P-IR-003 Treatment of blood blister–like aneurysms of the internal carotid artery with Pipeline flow diverters Chien-Chuan Chen, Pei-Ying Chen Department of Radiology, Kuang Tien General Hospital PurposejBlood blister-like aneurysms (BBAs) are a relatively rare subtype of intracranial aneurysms and"
-    },
-    {
-      "id": "P-IR-004",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 99,
-      "title": "P-IR-005 ӿ୅ಔܝӿ᎑এၾɨഢ᎑এѕΥஈद॥ʘ˕ݖʧɝطᐕၾஔܝᅂ྅ ڌତ : षԷజѓ մࠜႴ",
-      "snippet": "P-IR-004 Ꮠ͜А၍ᙲᅂݴ஺ʱؓழ᜗ආБɽ໘А၍˕ݖໄܝ׳ʘ؈ࣖ൙П ದлڄ P-IR-005 ӿ୅ಔܝӿ᎑এၾɨഢ᎑এѕΥஈद॥ʘ˕ݖʧɝطᐕၾஔܝᅂ྅ ڌତ : षԷజѓ մࠜႴ P-IR-006 Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and Color-Coded Circulation: A Case Report ᑽС׀ P-IR-007 ڡˇϋːᛔᓂ૰ᆯኬ׌ܢߧॹА׌໘ʕࠬʘᅂ྅ൢᓙၾᑗґஈໄjषԷ జѓ ˮወവ P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ"
-    },
-    {
-      "id": "P-IR-005",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 99,
-      "title": "P-IR-006 Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and Color-Coded Circulation: A Case Report ᑽС׀",
-      "snippet": "P-IR-005 ӿ୅ಔܝӿ᎑এၾɨഢ᎑এѕΥஈद॥ʘ˕ݖʧɝطᐕၾஔܝᅂ྅ ڌତ : षԷజѓ մࠜႴ P-IR-006 Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and Color-Coded Circulation: A Case Report ᑽС׀ P-IR-007 ڡˇϋːᛔᓂ૰ᆯኬ׌ܢߧॹА׌໘ʕࠬʘᅂ྅ൢᓙၾᑗґஈໄjषԷ జѓ ˮወവ P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ᜗֛Зʲ˪዁ЪࣖଟၾτΌ׌ Оඩణ P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ"
-    },
-    {
-      "id": "P-IR-006",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 133,
-      "title": "Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and",
-      "snippet": "P-IR-006 Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and Color-Coded Circulation: A Case Report You-Zhong Xie1, Feng-Yi Su 1 , Yen-Chih Huang"
-    },
-    {
-      "id": "P-IR-007",
-      "type": "Poster (壁報)",
-      "category_code": "IR",
-      "category_name": "血管攝影介入 (Interventional Radiology)",
-      "page": 99,
-      "title": "P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ᜗֛Зʲ˪዁ЪࣖଟၾτΌ׌ Оඩణ",
-      "snippet": "P-IR-007 ڡˇϋːᛔᓂ૰ᆯኬ׌ܢߧॹА׌໘ʕࠬʘᅂ྅ൢᓙၾᑗґஈໄjषԷ జѓ ˮወവ P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ᜗֛Зʲ˪዁ЪࣖଟၾτΌ׌ Оඩణ P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ࢛׳ʘᑗґঐɢ੃ԃ ੵ་܈ P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ P-MA-005"
-    },
-    {
-      "id": "O-NMA-01",
-      "type": "Oral (口頭)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 49,
-      "title": "O-NAI-01 Phan Hoai Phuong 14:10 - 14:20",
-      "snippet": "O-NMA-01 Lei Kuai Kio 14:00 - 14:10 STEREOTACTIC BREAST BIOPSY O-NAI-01 Phan Hoai Phuong 14:10 - 14:20 Comparison of Template Matching and Convolutional Neural Networks for ACR CT Phantom Module Classiﬁcation O-NAI-02 Mei Hashimoto 14:20 - 14:30"
-    },
-    {
-      "id": "P-MA-001",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 99,
-      "title": "P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ࢛׳ʘᑗґঐɢ੃ԃ ੵ་܈",
-      "snippet": "P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ᜗֛Зʲ˪዁ЪࣖଟၾτΌ׌ Оඩణ P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ࢛׳ʘᑗґঐɢ੃ԃ ੵ་܈ P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ P-MA-005 Radiologic Technologist-Led Environmental Interventions in"
-    },
-    {
-      "id": "P-MA-002",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 99,
-      "title": "P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ",
-      "snippet": "P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ࢛׳ʘᑗґঐɢ੃ԃ ੵ་܈ P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ P-MA-005 Radiologic Technologist-Led Environmental Interventions in Mammography: Associations of Patient-Reported Helpfulness of Music"
-    },
-    {
-      "id": "P-MA-003",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 99,
-      "title": "P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ",
-      "snippet": "P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ P-MA-005 Radiologic Technologist-Led Environmental Interventions in Mammography: Associations of Patient-Reported Helpfulness of Music and Video Education with Pre-procedural Anxiety"
-    },
-    {
-      "id": "P-MA-004",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 136,
-      "title": "利用PDCA 模式改善乳房攝影廢片率之研究",
-      "snippet": "P-MA-004 利用PDCA 模式改善乳房攝影廢片率之研究 吳慧真 葉婷玉 王基誠  惲純和 台北馬偕紀念醫院 放射線科 研究目的： ઞীνО༶͜ PDCAPlan-Do-Check-ActృᐑᅼόdҷഛԪגᙲᅂཀ೻ʕٙᄻ˪ଟd ˸౤ʺᅂ྅ۜሯၾषɛτΌf"
-    },
-    {
-      "id": "P-MA-005",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 99,
-      "title": "Radiologic Technologist-Led Environmental Interventions in",
-      "snippet": "P-MA-005 Radiologic Technologist-Led Environmental Interventions in Mammography: Associations of Patient-Reported Helpfulness of Music and Video Education with Pre-procedural Anxiety ҽಱୣ P-MA-006 Ԫגᅂ྅ኪᏨݟ፧࢛ኒඎၾԪגϓ྅ඎʷʱؓ เ͗ణ"
-    },
-    {
-      "id": "P-MA-006",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 99,
-      "title": "P-MA-007 ൙ПԪגᙲᅂ̻ٙѩ AGD ձ ESD Ꮄʷᙲᅂਞᅰᅼό ๝Գᆦ",
-      "snippet": "P-MA-006 Ԫגᅂ྅ኪᏨݟ፧࢛ኒඎၾԪגϓ྅ඎʷʱؓ เ͗ణ P-MA-007 ൙ПԪגᙲᅂ̻ٙѩ AGD ձ ESD Ꮄʷᙲᅂਞᅰᅼό ๝Գᆦ P-MR-001 Integrative MRI and Molecular Analysis of Cerebral Edema and Aquaporin Expression following Traumatic Brain Injury: Implications for Sensorimotor Function"
-    },
-    {
-      "id": "P-MA-007",
-      "type": "Poster (壁報)",
-      "category_code": "MA",
-      "category_name": "乳房攝影 (Mammography)",
-      "page": 138,
-      "title": "評估乳房攝影的平均AGD和 ESD 優化攝影參數模式",
-      "snippet": "P-MA-007 評估乳房攝影的平均AGD和 ESD 優化攝影參數模式 温佳瑩 1 劉妤真 吳佩珊 涂郁雯 何采容 鄭伃婷 鍾玲娜 2*"
-    },
-    {
-      "id": "O-MR-001",
-      "type": "Oral (口頭)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 52,
-      "title": "O-MR-002 ௓ێኔ 16:20-16:30",
-      "snippet": "O-MR-001 ቍᶣణ 16:10-16:20 л͜ਗ࿒࿁ˢᄣ੶ှࣈிᅂႾпф੫ᐖ ൢᓙ - ࣩԷʱԮ O-MR-002 ௓ێኔ 16:20-16:30 ൙ПЭኒඎ Elucirem ၾෂ୕ኒඎ Dotarem ׵ːᛔ MRI ַ፰੶ʷᅂ྅ʘ ڌତɓ׌ߧ O-CA-002 ර༟ᴂ 16:30-16:40 OCT AI ɛʈ౽ᅆ༶ၑඑʷᓃၾҦஔɛ ࡰкᛘˢ࿁๟ᆽଟʘ޼Ӻ"
-    },
-    {
-      "id": "O-MR-002",
-      "type": "Oral (口頭)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 82,
-      "title": "評估低劑量 Elucirem 與傳統劑量 Dotarem 於心臟 MRI",
-      "snippet": "O-MR-002 評估低劑量 Elucirem 與傳統劑量 Dotarem 於心臟 MRI 延遲強化影像之表現一致性 陳厚勳 王琪惠 奇美醫療財團法人奇美醫院 放射診斷科 研 究目的：͉޼Ӻ০࿁຾ɓΤਿΪᏨ಻ᗇྼމ FLNC(Filamin C) ਿΪᜊମːЄषᜊʘઃ٫dઞীՉί"
-    },
     {
       "id": "O-NMR-01",
       "type": "Oral (口頭)",
       "category_code": "MR",
+      "category": "MR",
       "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 49,
-      "title": "O-NMR-03 Vũ Kế Khôi 13:10 - 13:20 3T MR neurography of the head and neck using MENSA NERVE",
-      "snippet": "O-NMR-01 Nguyen Quang Trung 13:00 - 13:10 MRI in the Evaluation of Diplopia: From Neuroanatomy to Imaging Diagnosis O-NMR-03 Vũ Kế Khôi 13:10 - 13:20 3T MR neurography of the head and neck using MENSA NERVE O-NMR-04 Nogueira Li Cecilia 13:20 - 13:30 Optimizing Cardiac MRI Planning for the Assessment"
-    },
-    {
-      "id": "O-NMR-02",
-      "type": "Oral (口頭)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 60,
-      "title": "Comparison of T1-Weighted MPRAGE and T1-Weighted Silent Sequences in the",
-      "snippet": "O-NMR-02 Comparison of T1-Weighted MPRAGE and T1-Weighted Silent Sequences in the Evaluation of Brain and Meningeal Tumors"
+      "page": 1,
+      "title": "O-NMR-01 Nguyen Quang Trung 13:00 - 13:10 MRI in the Evaluation of Diplopia: From Neuroanatomy to Imaging Diagnosis",
+      "snippet": "O-NMR-01 Nguyen Quang Trung 13:00 - 13:10 MRI in the Evaluation of Diplopia: From Neuroanatomy to Imaging Diagnosis"
     },
     {
       "id": "O-NMR-03",
       "type": "Oral (口頭)",
       "category_code": "MR",
+      "category": "MR",
       "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 62,
-      "title": "3T MR neurography of the head and neck using MENSA NERVE",
-      "snippet": "O-NMR-03 3T MR neurography of the head and neck using MENSA NERVE Vũ Kế Khôi Department of Diagnostic Imaging, Tam Anh General Hospital, Ho Chi Minh City, Vietnam Purpose:To evaluate the feasibility and diagnostic value of 3D MENSA NERVE for extracranial cranial and"
+      "page": 1,
+      "title": "O-NMR-03 9ŕ\u0003.͡\u0003.K{L 13:10 - 13:20 3T MR neurography of the head and neck using MENSA NERVE",
+      "snippet": "O-NMR-03 9ŕ\u0003.͡\u0003.K{L 13:10 - 13:20 3T MR neurography of the head and neck using MENSA NERVE"
     },
     {
       "id": "O-NMR-04",
       "type": "Oral (口頭)",
       "category_code": "MR",
+      "category": "MR",
       "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 63,
-      "title": "Optimizing Cardiac MRI Planning for the Assessment of Transposition of the Great",
-      "snippet": "O-NMR-04 Optimizing Cardiac MRI Planning for the Assessment of Transposition of the Great Arteries: A Structured Protocol Approach NOGUEIRA LI Cecilia Department of Radiology, Centro Hospitalar Conde de Sao Januario Purpose:Transposition of the Great Arteries (TGA) requires precise anatomical and fu"
+      "page": 1,
+      "title": "Nogueira Li Cecilia 13:20 - 13:30 2SWLPL]LQJ\u0003&DUGLDF\u000305,\u00033ODQQLQJ\u0003IRU\u0003WKH\u0003 Assessment of Transposition of the Great Arteries: A Structured P",
+      "snippet": "O-NMR-04 Nogueira Li Cecilia 13:20 - 13:30 2SWLPL]LQJ\u0003&DUGLDF\u000305,\u00033ODQQLQJ\u0003IRU\u0003WKH\u0003 Assessment of Transposition of the Great Arteries: A Structured Protocol Approach"
     },
     {
-      "id": "P-MR-001",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 139,
-      "title": "Integrative MRI and Molecular Analysis of Cerebral Edema and Aquaporin",
-      "snippet": "P-MR-001 Integrative MRI and Molecular Analysis of Cerebral Edema and Aquaporin Expression following Traumatic Brain Injury: Implications for Sensorimotor Function Pen-Sen Huang 1 , Chih-Tung Lin"
-    },
-    {
-      "id": "P-MR-002",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 99,
-      "title": "P-MR-003 Development and Optimization of an Automated Paging System to Improve Workﬂow in Executive Medical Image Center ᄎߖё",
-      "snippet": "P-MR-002 ۃφࢤᗫືٲٙف௅৅ᇖ MRI षԷజѓ เؚ࢕ P-MR-003 Development and Optimization of an Automated Paging System to Improve Workﬂow in Executive Medical Image Center ᄎߖё P-MR-004 ှࣈிᅂʕΪইٴʔԑிϓᅂ྅࿁ˢˀᔷ - ᑗґࣩԷజѓ ѐྗ˖ P-MR-005 A Preliminary experience in using T1 mapping quantitative techniques to assess Native T1 va"
-    },
-    {
-      "id": "P-MR-003",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 140,
-      "title": "Development and Optimization of an Automated Paging System to Improve Workflow",
-      "snippet": "P-MR-003 Development and Optimization of an Automated Paging System to Improve Workflow in Executive Medical Image Center Yi-Chun Liu 1 , Kai-En Lin"
-    },
-    {
-      "id": "P-MR-004",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 141,
-      "title": "磁振造影因脂肪不足造成影像對比反轉- 臨床案例報告",
-      "snippet": "P-MR-004 磁振造影因脂肪不足造成影像對比反轉- 臨床案例報告 呂嘉文  莊曉雯 詹松宇 國立臺灣大學醫學院附設醫院雲林分院 影像醫學部 研究目的：͉޼ӺϙίʱԮɓԷΪΌԒইٴўඎ฽ܓʔԑdϾ̈ତʘᅂ྅ˀᔷࣩԷf༈षɛϞᗳࠬ ᐀׌ᗫືفष̦dषɛ׵ှࣈிᅂᏨݟʕdᔟ͟ʱؓʔΝှࣈிᅂҏΐʕইٴၾ৶᜖ৃ໮ڌٙତd"
-    },
-    {
-      "id": "P-MR-005",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 142,
-      "title": "A Preliminary experience in using T1 mapping quantitative techniques to assess Native",
-      "snippet": "P-MR-005 A Preliminary experience in using T1 mapping quantitative techniques to assess Native T1 values of different regions of the left ventricle myocardium Chen-Chang Lee , Jen-Chen kuo , Yao-Nan Lin , Jung-Chieh Chang , Chao-Jui Tseng, Sheung-Fat Ko Department of Radiology, Kaohsiung Chang Gung "
-    },
-    {
-      "id": "P-MR-006",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 99,
-      "title": "P-MR-007 ༶͜ᑛʲනΣᓒ౳̋ᛆϓ྅DWIൢᓙᅲ׌ࣛΌ̰ࠦኳसTGA ʘ൙ПၾषԷʱؓ ᒤԳᘄ",
-      "snippet": "P-MR-006 ˸ݴ᜗ᇞ໊৿᜗ඎʷှࣈிᅂ࠭БࣛගҦஔᅂ྅༆ܓؓʘ̙Б޼׌ Ӻ ᄎ䄣қ P-MR-007 ༶͜ᑛʲනΣᓒ౳̋ᛆϓ྅DWIൢᓙᅲ׌ࣛΌ̰ࠦኳसTGA ʘ൙ПၾषԷʱؓ ᒤԳᘄ P-MR-008 ှʷ̋ᛆှࣈᅂ྅ί׌ܢɽА၍ʕࠬ຾՟طࣼᐕषઃٙᏐ͜ ᘽ၀࿰"
-    },
-    {
-      "id": "P-MR-007",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 143,
-      "title": "運 用薄 切 順 向 擴 散 加 權 成 像（DWI）診 斷 暫 時 性 全 面 失 憶 症（TGA）",
-      "snippet": "P-MR-007 運 用薄 切 順 向 擴 散 加 權 成 像（DWI）診 斷 暫 時 性 全 面 失 憶 症（TGA） 之評估與病例分析 鍾佳鵬 奇美醫療財團法人奇美醫院 研究目的：ᅲ׌ࣛΌ̰ࠦኳस TGAၾऎ৵৙אൖ˳૚෦ίᑗґڋಂसً฽޴މЧd๟ᆽٙᅂ྅"
-    },
-    {
-      "id": "P-MR-008",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 144,
-      "title": "磁化加權磁振影像在急性大血管中風經取栓治療病患的應用",
-      "snippet": "P-MR-008 磁化加權磁振影像在急性大血管中風經取栓治療病患的應用 蘇碧榕  雷粟蓉 * 光田醫療社團法人光田綜合醫院 影像醫學科 研究目的：ှʷ̋ᛆှࣈᅂ྅ (SWI) ݊л͜΢ଡ଼ᔌගʔΝှʷଟϓ྅ٙɓ၇ MRI Ҧஔd྅݊А૰e"
-    },
-    {
-      "id": "P-MR-009",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 100,
-      "title": "P-MR-010 ːᛔှࣈிᅂ T1 / T2 ࢛݈͍੬ܔ࠽ͭj˸ 1.5T GE SIGNA V oyager މԷ ֚؍ዳ",
-      "snippet": "P-MR-009 лࣨ͜ှ΍ࣈ಻ඎইٴӿၾͤɨইٴўඎʘઞী ݚၪࢡ P-MR-010 ːᛔှࣈிᅂ T1 / T2 ࢛݈͍੬ܔ࠽ͭj˸ 1.5T GE SIGNA V oyager މԷ ֚؍ዳ P-MR-011 ှࣈிᅂੵඎϓ྅ί໐ಖගᆵ߉̈ிϓग़຾࣬षᜊٙᑗґൢᓙᏐ͜ ੰ௹௷ P-MR-012 ў᚛ှ׌ᕙࣘʘߕ͠෩ᄴ࿁ှࣈிᅂᅂ྅ʘᅂᚤj˸፟଻ߕ͠މԷ ҽ߹ন P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺ P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ"
-    },
-    {
-      "id": "P-MR-010",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 145,
-      "title": "心臟磁振造影T1 / T2 映 射正常值 建 立：以1.5T GE SIGNA Voyager 為例",
-      "snippet": "P-MR-010 心臟磁振造影T1 / T2 映 射正常值 建 立：以1.5T GE SIGNA Voyager 為例 林宗熹 黃彥智 劉曜端 林以津 陳靖文 王琮閔 中國醫藥大學附設醫院 醫學影像部 研究目的：T1 / T2 ࢛݈( mapping) ίːᛔှࣈிᅂCMRʕҲစࠅࠠԉЍd̙͜׵൙ПːЄଡ଼ϓe ᜄၪʷe ओ໕ၾଡ଼ᔌᜊʷf ್Ͼd ӊɓ̨ှࣈધ౜ᄃe ှఙ੶ܓe ᅀ೐ၾҏΐਞᅰேึᅂᚤඎ಻ഐ؈d"
-    },
-    {
-      "id": "P-MR-011",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 100,
-      "title": "P-MR-012 ў᚛ှ׌ᕙࣘʘߕ͠෩ᄴ࿁ှࣈிᅂᅂ྅ʘᅂᚤj˸፟଻ߕ͠މԷ ҽ߹ন",
-      "snippet": "P-MR-011 ှࣈிᅂੵඎϓ྅ί໐ಖගᆵ߉̈ிϓग़຾࣬षᜊٙᑗґൢᓙᏐ͜ ੰ௹௷ P-MR-012 ў᚛ှ׌ᕙࣘʘߕ͠෩ᄴ࿁ှࣈிᅂᅂ྅ʘᅂᚤj˸፟଻ߕ͠މԷ ҽ߹ন P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺ P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ P-NAI-01 Evaluating Gener"
-    },
-    {
-      "id": "P-MR-012",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 100,
-      "title": "P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺",
-      "snippet": "P-MR-012 ў᚛ှ׌ᕙࣘʘߕ͠෩ᄴ࿁ှࣈிᅂᅂ྅ʘᅂᚤj˸፟଻ߕ͠މԷ ҽ߹ন P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺ P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Expl"
-    },
-    {
-      "id": "P-MR-013",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 100,
-      "title": "P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ",
-      "snippet": "P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺ P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Explanation Accuracy in Japan§s National Examin"
-    },
-    {
-      "id": "P-MR-014",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 100,
-      "title": "P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ",
-      "snippet": "P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Explanation Accuracy in Japan§s National Examination for Radiological  Hideki Kato P-NM-001 ග๊"
-    },
-    {
-      "id": "P-MR-015",
-      "type": "Poster (壁報)",
-      "category_code": "MR",
-      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
-      "page": 100,
-      "title": "P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Explanation Accuracy in Japan§s National Examination for Radiological  Hideki Kato",
-      "snippet": "P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Explanation Accuracy in Japan§s National Examination for Radiological  Hideki Kato P-NM-001 ග๊׌໑ߞ༸̈Аࣨٙᔼᅂ྅j˸षԷމਿᓾٙᝈᓃ ර೘ත P-NM-002 ᙲᚐ໗ᐖઃ٫"
-    },
-    {
-      "id": "O-NNM-001",
-      "type": "Oral (口頭)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 66,
-      "title": "Taguchi Optimization of thermoluminescent dosimeters for evaluating emergency",
-      "snippet": "O-NNM-001 Taguchi Optimization of thermoluminescent dosimeters for evaluating emergency exposure of medical staff entering an isotope therapy center during critical situations Chi-Wen Huang 1,2 Bo-Wen Chen"
-    },
-    {
-      "id": "P-NM-001",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 100,
-      "title": "P-NM-002 ᙲᚐ໗ᐖઃ٫ Tc-99m MDP ΌԒ৶ધ౜ၾ F-18 rhPSMA-7.3 ͍ɿி ᅂʘᅂ྅ઞী - ࣩԷజѓ ഁ౉ޙ",
-      "snippet": "P-NM-001 ග๊׌໑ߞ༸̈Аࣨٙᔼᅂ྅j˸षԷމਿᓾٙᝈᓃ ර೘ත P-NM-002 ᙲᚐ໗ᐖઃ٫ Tc-99m MDP ΌԒ৶ધ౜ၾ F-18 rhPSMA-7.3 ͍ɿி ᅂʘᅂ྅ઞী - ࣩԷజѓ ഁ౉ޙ P-NM-003 л̘͜ः໧ൃጟ͍ɿᓙᄴધ౜จ̮ਈ಻Ցᙲᚐ໗ᐖ - ࣩࡈజѓ ੵԳ೘ P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis ௓ځ࣭ P-NM-005 Դͤ͜ɨ࢛"
-    },
-    {
-      "id": "P-NM-002",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 100,
-      "title": "P-NM-003 л̘͜ः໧ൃጟ͍ɿᓙᄴધ౜จ̮ਈ಻Ցᙲᚐ໗ᐖ - ࣩࡈజѓ ੵԳ೘",
-      "snippet": "P-NM-002 ᙲᚐ໗ᐖઃ٫ Tc-99m MDP ΌԒ৶ધ౜ၾ F-18 rhPSMA-7.3 ͍ɿி ᅂʘᅂ྅ઞী - ࣩԷజѓ ഁ౉ޙ P-NM-003 л̘͜ः໧ൃጟ͍ɿᓙᄴધ౜จ̮ਈ಻Ցᙲᚐ໗ᐖ - ࣩࡈజѓ ੵԳ೘ P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis ௓ځ࣭ P-NM-005 Դͤ͜ɨ࢛ء 99mTc In Vivo Tagged RBCආБ᎑এிᅂᏨݟԸҷഛ"
-    },
-    {
-      "id": "P-NM-003",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 100,
-      "title": "P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis ௓ځ࣭",
-      "snippet": "P-NM-003 л̘͜ः໧ൃጟ͍ɿᓙᄴધ౜จ̮ਈ಻Ցᙲᚐ໗ᐖ - ࣩࡈజѓ ੵԳ೘ P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis ௓ځ࣭ P-NM-005 Դͤ͜ɨ࢛ء 99mTc In Vivo Tagged RBCආБ᎑এிᅂᏨݟԸҷഛ ર೻Ꮐɢʿ౤ʺᔼᐕۜሯ ቍḾѹ P-NM-006 ˸ Discovery IQ ͍ɿᙲᅂᅂ྅މԷආБ᎘௅੭ً৿ᅂʘઞী ؍͗ణ P-NM-00"
-    },
-    {
-      "id": "P-NM-004",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 152,
-      "title": "Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning",
-      "snippet": "P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis Kuei-Fen Chen 1 , Chi-Yuan Wang"
-    },
-    {
-      "id": "P-NM-005",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 100,
-      "title": "P-NM-006 ˸ Discovery IQ ͍ɿᙲᅂᅂ྅މԷආБ᎘௅੭ً৿ᅂʘઞী ؍͗ణ",
-      "snippet": "P-NM-005 Դͤ͜ɨ࢛ء 99mTc In Vivo Tagged RBCආБ᎑এிᅂᏨݟԸҷഛ ર೻Ꮐɢʿ౤ʺᔼᐕۜሯ ቍḾѹ P-NM-006 ˸ Discovery IQ ͍ɿᙲᅂᅂ྅މԷආБ᎘௅੭ً৿ᅂʘઞী ؍͗ణ P-NM-007 Experience with the Implementation of OSCE in Nuclear Medicine Radiological Technologist Training ҽޮໞ P-OT-001 یਜݔ઺ኪᔼ৫௴จ઺ኪ຾᜕ʱԮ ᇹٹ֝ P-OT-002 ࢛׳Ꮭॆᘩᒄ TRM ᒄۃ຾᜕ʱԮj˸ᒄۃ৅ᇖၾ৷ᏝॆᅼᏝ౤ʺ ᑗґঐ"
-    },
-    {
-      "id": "P-NM-006",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 100,
-      "title": "P-NM-007 Experience with the Implementation of OSCE in Nuclear Medicine Radiological Technologist Training ҽޮໞ",
-      "snippet": "P-NM-006 ˸ Discovery IQ ͍ɿᙲᅂᅂ྅މԷආБ᎘௅੭ً৿ᅂʘઞী ؍͗ణ P-NM-007 Experience with the Implementation of OSCE in Nuclear Medicine Radiological Technologist Training ҽޮໞ P-OT-001 یਜݔ઺ኪᔼ৫௴จ઺ኪ຾᜕ʱԮ ᇹٹ֝ P-OT-002 ࢛׳Ꮭॆᘩᒄ TRM ᒄۃ຾᜕ʱԮj˸ᒄۃ৅ᇖၾ৷ᏝॆᅼᏝ౤ʺ ᑗґঐɢ ю᎑ν P-OT-003 ᔟ͟ PDCA Ꮄʷ MRI Ꮸݴݟ೻ ᇹؒЬ P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI "
-    },
-    {
-      "id": "P-NM-007",
-      "type": "Poster (壁報)",
-      "category_code": "NM",
-      "category_name": "核子醫學 (Nuclear Medicine)",
-      "page": 154,
-      "title": "Experience with the Implementation of OSCE in Nuclear Medicine Radiological",
-      "snippet": "P-NM-007 Experience with the Implementation of OSCE in Nuclear Medicine Radiological Technologist Training Ying-Hsuan Li 1 Yi-Hsuan Tsai"
-    },
-    {
-      "id": "O-OT-001",
+      "id": "O-NCT-01",
       "type": "Oral (口頭)",
       "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 51,
-      "title": "O-AI-001 ெૺඩ 13:10-13:20 ਿ׵ଉܓኪ୦ʘ YOLOv11 ፫ᗆᅼۨІ ਗਈ಻ MRI ໐ಖಖගᆵ߉̈",
-      "snippet": "O-OT-001 ؍ጷᄫ 13:00-13:10 ༶͜ ECRS ˓جᐵ೵ᅂ྅ᔼኪ߅Б݁Ъ ุࣛගʘਖ਼ࣩҷഛ O-AI-001 ெૺඩ 13:10-13:20 ਿ׵ଉܓኪ୦ʘ YOLOv11 ፫ᗆᅼۨІ ਗਈ಻ MRI ໐ಖಖගᆵ߉̈ O-AI-002 ҽᔨѹ 13:20-13:30 ɽۨႧԊᅼۨί፧࢛τΌϽ༊ٙ಻༊ O-AI-003 ᇹ֠Ꮂ 13:30-13:40 ਿ׵ DeepLabv3+ ၾε၇৶฀ၣ༩ʘӿ ᛔཥ໘ᓙᄴᅂ྅Іਗʱ௲޼Ӻ O-AI-004 ю࢕ᄃ 13:40-13:50 ਿ׵੫ًʹɸ᜕ᗇˢ༰ε၇ଉܓኪ୦ᅼ"
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 1,
+      "title": "Shinya Misawa 13:30 - 13:40 Evaluation of the Accuracy of Electronic Cleansing Using Material Density Images in CT Colonography",
+      "snippet": "O-NCT-01 Shinya Misawa 13:30 - 13:40 Evaluation of the Accuracy of Electronic Cleansing Using Material Density Images in CT Colonography"
     },
     {
-      "id": "P-OT-001",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 100,
-      "title": "P-OT-002 ࢛׳Ꮭॆᘩᒄ TRM ᒄۃ຾᜕ʱԮj˸ᒄۃ৅ᇖၾ৷ᏝॆᅼᏝ౤ʺ ᑗґঐɢ ю᎑ν",
-      "snippet": "P-OT-001 یਜݔ઺ኪᔼ৫௴จ઺ኪ຾᜕ʱԮ ᇹٹ֝ P-OT-002 ࢛׳Ꮭॆᘩᒄ TRM ᒄۃ຾᜕ʱԮj˸ᒄۃ৅ᇖၾ৷ᏝॆᅼᏝ౤ʺ ᑗґঐɢ ю᎑ν P-OT-003 ᔟ͟ PDCA Ꮄʷ MRI Ꮸݴݟ೻ ᇹؒЬ P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI Ⴐ೯ʘɧɸग़຾ମЗ़೨jࣩԷజ ѓ ᆙڲኊ P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A R"
-    },
-    {
-      "id": "P-OT-002",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 155,
-      "title": "放射擬真競賽 TRM 賽前經驗分享 ： 以賽前訓練與高擬真模擬提升臨床能力",
-      "snippet": "P-OT-002 放射擬真競賽 TRM 賽前經驗分享 ： 以賽前訓練與高擬真模擬提升臨床能力 吳靜如 1 葉季洋 2"
-    },
-    {
-      "id": "P-OT-003",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 100,
-      "title": "P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI Ⴐ೯ʘɧɸग़຾ମЗ़೨jࣩԷజ ѓ ᆙڲኊ",
-      "snippet": "P-OT-003 ᔟ͟ PDCA Ꮄʷ MRI Ꮸݴݟ೻ ᇹؒЬ P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI Ⴐ೯ʘɧɸग़຾ମЗ़೨jࣩԷజ ѓ ᆙڲኊ P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB ර་ശ P-OT-007 ༶ۜ͜၍ਸ਼˓ࠥجЭ CT ʿ MRI Ꮸۃݟ๟௪ࣛග ௓͑೘"
-    },
-    {
-      "id": "P-OT-004",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 100,
-      "title": "P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ",
-      "snippet": "P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI Ⴐ೯ʘɧɸग़຾ମЗ़೨jࣩԷజ ѓ ᆙڲኊ P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB ර་ശ P-OT-007 ༶ۜ͜၍ਸ਼˓ࠥجЭ CT ʿ MRI Ꮸۃݟ๟௪ࣛග ௓͑೘"
-    },
-    {
-      "id": "P-OT-005",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 100,
-      "title": "P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB ර་ശ",
-      "snippet": "P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB ර་ശ P-OT-007 ༶ۜ͜၍ਸ਼˓ࠥجЭ CT ʿ MRI Ꮸۃݟ๟௪ࣛග ௓͑೘"
-    },
-    {
-      "id": "P-OT-006",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 158,
-      "title": "Correlation of Anthropometric Parameters with Bone Mineral Density: A",
-      "snippet": "P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB Huang Shih Hua 1 Wen Han Cheng"
-    },
-    {
-      "id": "P-OT-007",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 158,
-      "title": "運用品管圈手法降低CT及 MRI 檢查前準備時間",
-      "snippet": "P-OT-007 運用品管圈手法降低CT及 MRI 檢查前準備時間 陳永琪  蔣獻仁 李姍靜 董又誠 高雄市立鳳山醫院(委託長庚醫療財團法人經營) 放射診斷科 研究目的：͉޼Ӻϙίீཀۜ၍ਸ਼ݺਗdҷഛ CT ၾ MRI Ꮸۃݟ๟௪ݴ೻ᐿိʿषઃɮࡉਪᕚfͦ ᅺ݊ਗ਼̻ѩ๟௪ࣛග͟ 10.31 ʱᙒࠥЭ 50% ˸ɪdண֛ͦᅺމ࠽ 5.15 ʱᙒdᔟϤ౤ʺᏨࣖݟଟeᔼ"
-    },
-    {
-      "id": "P-OT-008",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 101,
-      "title": "P-OT-009 л͜ Power BI ൖᙂʷਗ࿒္છࠠ߅࢛׳๫ଟʱؓ ᔊСٹ",
-      "snippet": "P-OT-008 Ꮠ͜ Flexsim ᅼᏝҦஔ߅࢛׳׵Ꮸ܃ݟਗᇞᎴʷʘ޼Ӻj˸ࠥЭࢪ࢛׳ ʈЪࠋஃၾᔖุࠬᎈމኬΣ ಀ˰⒜ P-OT-009 л͜ Power BI ൖᙂʷਗ࿒္છࠠ߅࢛׳๫ଟʱؓ ᔊСٹ P-OT-010 ჯኬࣸࠬᔷۨɨٙද׌၍ଣj࿁ࢪ࢛׳ూࡡɢၾʈЪတจٙܓᅂᚤ ڨ൮෥ P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀ P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ"
-    },
-    {
-      "id": "P-OT-009",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 101,
-      "title": "P-OT-010 ჯኬࣸࠬᔷۨɨٙද׌၍ଣj࿁ࢪ࢛׳ూࡡɢၾʈЪတจٙܓᅂᚤ ڨ൮෥",
-      "snippet": "P-OT-009 л͜ Power BI ൖᙂʷਗ࿒္છࠠ߅࢛׳๫ଟʱؓ ᔊСٹ P-OT-010 ჯኬࣸࠬᔷۨɨٙද׌၍ଣj࿁ࢪ࢛׳ూࡡɢၾʈЪတจٙܓᅂᚤ ڨ൮෥ P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀ P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻"
-    },
-    {
-      "id": "P-OT-010",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 101,
-      "title": "P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ",
-      "snippet": "P-OT-010 ჯኬࣸࠬᔷۨɨٙද׌၍ଣj࿁ࢪ࢛׳ూࡡɢၾʈЪတจٙܓᅂᚤ ڨ൮෥ P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀ P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻ P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ"
-    },
-    {
-      "id": "P-OT-011",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 101,
-      "title": "P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀",
-      "snippet": "P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀ P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻ P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ"
-    },
-    {
-      "id": "P-OT-012",
-      "type": "Poster (壁報)",
-      "category_code": "OT",
-      "category_name": "其他放射技術 (Other)",
-      "page": 101,
-      "title": "P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ",
-      "snippet": "P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀ P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻ P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫"
-    },
-    {
-      "id": "P-PA-001",
-      "type": "Poster (壁報)",
-      "category_code": "PA",
-      "category_name": "PA 專題",
-      "page": 101,
-      "title": "P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻",
-      "snippet": "P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻ P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫ P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ"
-    },
-    {
-      "id": "P-PA-002",
-      "type": "Poster (壁報)",
-      "category_code": "PA",
-      "category_name": "PA 專題",
-      "page": 101,
-      "title": "P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ",
-      "snippet": "P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻ P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫ P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇"
-    },
-    {
-      "id": "P-PA-003",
-      "type": "Poster (壁報)",
-      "category_code": "PA",
-      "category_name": "PA 專題",
-      "page": 101,
-      "title": "P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ",
-      "snippet": "P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫ P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇ P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ"
-    },
-    {
-      "id": "O-RN-001",
+      "id": "O-NMR-02",
       "type": "Oral (口頭)",
-      "category_code": "RN",
-      "category_name": "放射護理 (Radiology Nursing)",
-      "page": 57,
-      "title": "O-RN-002 ࢱૺٹ 11:10 - 11:20 ᅂ྅Ꮸݟ࿁ˢኒʔԄˀᏐʘࠬᎈʱбʱ ؓၾᑗґ္಻൙П",
-      "snippet": "O-RN-001 ю͗ߕ 11:00 - 11:10 ౤ʺᅂ྅ᔼኪ௅ᚐଣɛ݄ࡰ͂࿁ˢኒܝ ೯͛ཀઽˀᏐʘஈଣঐɢ O-RN-002 ࢱૺٹ 11:10 - 11:20 ᅂ྅Ꮸݟ࿁ˢኒʔԄˀᏐʘࠬᎈʱбʱ ؓၾᑗґ္಻൙П O-RN-003 ӓٹْ 11:20 - 11:30 ࢛׳ᚐଣࢪආචՓ׵ܓᔼኪʕːʘՓܓ ᔷᙇၾܔ࿴ዝ೻"
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 1,
+      "title": "Dao Ngoc Khuong 13:40 - 13:50 (online) Comparison of T1-Weighted MPRAGE and T1-Weighted Silent Sequences in the Evaluation of Brain and Meni",
+      "snippet": "O-NMR-02 Dao Ngoc Khuong 13:40 - 13:50 (online) Comparison of T1-Weighted MPRAGE and T1-Weighted Silent Sequences in the Evaluation of Brain and Meningeal Tumors ਷ყߵ˖ɹ᎘೯&\t\u0001\u0013ڌ OHMJTI\u00014FDUJPO\u0013 ڗࢭjᘽඅؚe؍๬"
     },
     {
-      "id": "O-RN-002",
+      "id": "O-NMA-01",
       "type": "Oral (口頭)",
-      "category_code": "RN",
-      "category_name": "放射護理 (Radiology Nursing)",
-      "page": 57,
-      "title": "O-RN-003 ӓٹْ 11:20 - 11:30 ࢛׳ᚐଣࢪආචՓ׵ܓᔼኪʕːʘՓܓ ᔷᙇၾܔ࿴ዝ೻",
-      "snippet": "O-RN-002 ࢱૺٹ 11:10 - 11:20 ᅂ྅Ꮸݟ࿁ˢኒʔԄˀᏐʘࠬᎈʱбʱ ؓၾᑗґ္಻൙П O-RN-003 ӓٹْ 11:20 - 11:30 ࢛׳ᚐଣࢪආචՓ׵ܓᔼኪʕːʘՓܓ ᔷᙇၾܔ࿴ዝ೻"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 1,
+      "title": "O-NMA-01 Lei Kuai Kio 14:00 - 14:10 STEREOTACTIC BREAST BIOPSY",
+      "snippet": "O-NMA-01 Lei Kuai Kio 14:00 - 14:10 STEREOTACTIC BREAST BIOPSY"
     },
     {
-      "id": "O-RN-003",
+      "id": "O-NAI-01",
       "type": "Oral (口頭)",
-      "category_code": "RN",
-      "category_name": "放射護理 (Radiology Nursing)",
-      "page": 95,
-      "title": "放射護理師進階制度於醫學中心之制度轉譯與建構歷程",
-      "snippet": "O-RN-003 放射護理師進階制度於醫學中心之制度轉譯與建構歷程 汪玟芳 1 楊必立 1"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 1,
+      "title": "Phan Hoai Phuong 14:10 - 14:20 Comparison of Template Matching and Convolutional Neural Networks for ACR &7\u00033KDQWRP\u00030RGXOH\u0003&ODVVL¿FDWLRQ",
+      "snippet": "O-NAI-01 Phan Hoai Phuong 14:10 - 14:20 Comparison of Template Matching and Convolutional Neural Networks for ACR &7\u00033KDQWRP\u00030RGXOH\u0003&ODVVL¿FDWLRQ"
     },
     {
-      "id": "O-NRO-001",
+      "id": "O-NAI-02",
       "type": "Oral (口頭)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 67,
-      "title": "Influence of Exposure Time and Tube Current Combinations on Reciprocity",
-      "snippet": "O-NRO-001 Influence of Exposure Time and Tube Current Combinations on Reciprocity Law Failure in Digital Radiograph Cheng-Han Li 1,2 Yun-Lung Ting"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 1,
+      "title": "Mei Hashimoto 14:20 - 14:30 Development of an Adaptive Image Processing Method for Chest Radiographs 8VLQJ\u0003$UWL¿FLDO\u0003,QWHOOLJHQFH",
+      "snippet": "O-NAI-02 Mei Hashimoto 14:20 - 14:30 Development of an Adaptive Image Processing Method for Chest Radiographs 8VLQJ\u0003$UWL¿FLDO\u0003,QWHOOLJHQFH"
     },
     {
       "id": "O-NRO-01",
       "type": "Oral (口頭)",
       "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 64,
-      "title": "Evaluation of RGB-D camera-based subject thickness measurement in chest",
-      "snippet": "O-NRO-01 Evaluation of RGB-D camera-based subject thickness measurement in chest radiography Kenji Yasue Evaluation of RGB-D camera-based subject thickness measurement in chest radiography"
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 1,
+      "title": "Kenji Yasue 14:30-14:40 Evaluation of RGB-D camera-based subject thickness measurement in chest radiography",
+      "snippet": "O-NRO-01 Kenji Yasue 14:30-14:40 Evaluation of RGB-D camera-based subject thickness measurement in chest radiography"
     },
     {
-      "id": "P-RO-001",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫",
-      "snippet": "P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫ P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇ P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ"
+      "id": "O-NNM-001",
+      "type": "Oral (口頭)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 2,
+      "title": "රᙇሬ 15:00-15:10 7DJXFKL\u00032SWLPL]DWLRQ\u0003RI\u0003WKHUPROXPLQHVFHQW\u0003 dosimeters for evaluating emergency exposure of medical staff entering an isotope",
+      "snippet": "O-NNM-001 රᙇሬ 15:00-15:10 7DJXFKL\u00032SWLPL]DWLRQ\u0003RI\u0003WKHUPROXPLQHVFHQW\u0003 dosimeters for evaluating emergency exposure of medical staff entering an isotope therapy center during critical situations."
     },
     {
-      "id": "P-RO-002",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ",
-      "snippet": "P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫ P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇ P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣"
-    },
-    {
-      "id": "P-RO-003",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇",
-      "snippet": "P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇ P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣 P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ"
-    },
-    {
-      "id": "P-RO-004",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ",
-      "snippet": "P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇ P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣 P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜"
-    },
-    {
-      "id": "P-RO-005",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ",
-      "snippet": "P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣 P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜ P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖"
-    },
-    {
-      "id": "P-RO-006",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣",
-      "snippet": "P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣 P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜ P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖ P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝"
-    },
-    {
-      "id": "P-RO-007",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ",
-      "snippet": "P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣 P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜ P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖ P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝ P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ"
-    },
-    {
-      "id": "P-RO-008",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜",
-      "snippet": "P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜ P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖ P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝ P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ͜ ؍ˁખ P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖष"
-    },
-    {
-      "id": "P-RO-009",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖",
-      "snippet": "P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜ P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖ P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝ P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ͜ ؍ˁખ P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖषɛ׳ໄ Space OAR طٙᐕ˙ό ༗ૺν P-RT-004 ৶ޯഢط࢛׳ᐕ"
-    },
-    {
-      "id": "P-RO-010",
-      "type": "Poster (壁報)",
-      "category_code": "RO",
-      "category_name": "常規X光 (Routine Radiography)",
-      "page": 101,
-      "title": "P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝",
-      "snippet": "P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖ P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝ P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ͜ ؍ˁખ P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖषɛ׳ໄ Space OAR طٙᐕ˙ό ༗ૺν P-RT-004 ৶ޯഢط࢛׳ᐕʔΝ࿁З˙ό๟ᆽܓʱؓ ҍӸ͗ P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌"
+      "id": "O-NAI-001",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "؍Ӹᒳ 15:10-15:20 Automated 4D Evaluation of Smile Attractiveness via 3D Contour–Based Multitask Learning for Orthognathic Surgical Planning",
+      "snippet": "O-NAI-001 ؍Ӹᒳ 15:10-15:20 Automated 4D Evaluation of Smile Attractiveness via 3D Contour–Based Multitask Learning for Orthognathic Surgical Planning"
     },
     {
       "id": "O-NRT-001",
       "type": "Oral (口頭)",
       "category_code": "RT",
+      "category": "RT",
       "category_name": "放射治療 (Radiation Therapy)",
-      "page": 68,
-      "title": "Site-Stratified Analysis of Patient-Specific QA Metrics in Pencil-Beam Scanning IMPT",
-      "snippet": "O-NRT-001 Site-Stratified Analysis of Patient-Specific QA Metrics in Pencil-Beam Scanning IMPT Hsiao-Wei Yu 1,2, Ping-Hsiu Wu 2,"
+      "page": 2,
+      "title": "O-NRT-001 Яѽᇗ 15:20-15:30 6LWH\u00106WUDWL¿HG\u0003$QDO\\VLV\u0003RI\u00033DWLHQW\u00106SHFL¿F\u00034$\u0003 Metrics in Pencil-Beam Scanning IMPT",
+      "snippet": "O-NRT-001 Яѽᇗ 15:20-15:30 6LWH\u00106WUDWL¿HG\u0003$QDO\\VLV\u0003RI\u00033DWLHQW\u00106SHFL¿F\u00034$\u0003 Metrics in Pencil-Beam Scanning IMPT"
     },
     {
-      "id": "O-RT-001",
+      "id": "O-NRO-001",
       "type": "Oral (口頭)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 52,
-      "title": "O-RT-002 ݚϻૅ 15:20-15:30 ൙ПԪᐖ࢛׳ᇞطᐕd3D ΐΙ܄Ⴁʷ ଡ଼ᔌ෬̂ي͜ʘኒඎኪࣖू",
-      "snippet": "O-RT-001 เૺೞ 15:10-15:20 ઞী᎕௅ూ਄׵᎘᎕ᐖઃ٫ط࢛׳ᐕᓖ ЗႬࢨʘᅂᚤ O-RT-002 ݚϻૅ 15:20-15:30 ൙ПԪᐖ࢛׳ᇞطᐕd3D ΐΙ܄Ⴁʷ ଡ଼ᔌ෬̂ي͜ʘኒඎኪࣖू O-US-002 රᅃл 15:30-15:40 л͜Ӂ౷ਔ൴تࠪႾп൙Пۉৎ̌ঐღ ᖟ - षԷʱԮ O-CT-001 ࢕ڀΤ 15:40-15:50 ECMO ׵ CT ધ౜ʘ৿׌˴ਗএ࡞ᕎࣩࡈ ઞী 座長：林育駿、蔡銘松 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 2,
+      "title": "ҽוጫ 15:30-15:40 ,QÀXHQFH\u0003RI\u0003([SRVXUH\u00037LPH\u0003DQG\u00037XEH\u0003&XUUHQW\u0003 Combinations on Reciprocity Law Failure in Digital Radiograph",
+      "snippet": "O-NRO-001 ҽוጫ 15:30-15:40 ,QÀXHQFH\u0003RI\u0003([SRVXUH\u00037LPH\u0003DQG\u00037XEH\u0003&XUUHQW\u0003 Combinations on Reciprocity Law Failure in Digital Radiograph"
     },
     {
-      "id": "O-RT-002",
+      "id": "O-NAI-002",
       "type": "Oral (口頭)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 52,
-      "title": "O-US-002 රᅃл 15:30-15:40 л͜Ӂ౷ਔ൴تࠪႾп൙Пۉৎ̌ঐღ ᖟ - षԷʱԮ",
-      "snippet": "O-RT-002 ݚϻૅ 15:20-15:30 ൙ПԪᐖ࢛׳ᇞطᐕd3D ΐΙ܄Ⴁʷ ଡ଼ᔌ෬̂ي͜ʘኒඎኪࣖू O-US-002 රᅃл 15:30-15:40 л͜Ӂ౷ਔ൴تࠪႾп൙Пۉৎ̌ঐღ ᖟ - षԷʱԮ O-CT-001 ࢕ڀΤ 15:40-15:50 ECMO ׵ CT ધ౜ʘ৿׌˴ਗএ࡞ᕎࣩࡈ ઞী 座長：林育駿、蔡銘松 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ O-CA-001 ҽߖቪ 16:00-16:10"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "ࡥɿജ 15:40-15:50 AI-Assisted Automated Aortic Valve Detection System for TA VI Pre-procedural Planning: A &OLQLFDO\u0003:RUNÀRZ\u0003,QWHJUDWLRQ\u00036WXG\\",
+      "snippet": "O-NAI-002 ࡥɿജ 15:40-15:50 AI-Assisted Automated Aortic Valve Detection System for TA VI Pre-procedural Planning: A &OLQLFDO\u0003:RUNÀRZ\u0003,QWHJUDWLRQ\u00036WXG\\"
     },
     {
-      "id": "P-RT-001",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 170,
-      "title": "SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for",
-      "snippet": "P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients Chen-Lin Kang 1,2,* Ya-Yu Huang"
-    },
-    {
-      "id": "P-RT-002",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 101,
-      "title": "P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖषɛ׳ໄ Space OAR طٙᐕ˙ό ༗ૺν",
-      "snippet": "P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ͜ ؍ˁખ P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖषɛ׳ໄ Space OAR طٙᐕ˙ό ༗ૺν P-RT-004 ৶ޯഢط࢛׳ᐕʔΝ࿁З˙ό๟ᆽܓʱؓ ҍӸ͗ P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌ীሞ ړͭ੻ P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ"
-    },
-    {
-      "id": "P-RT-003",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 172,
-      "title": "探討立體定位放射治療時攝護腺癌病人放置Space OAR的治療方式",
-      "snippet": "P-RT-003 探討立體定位放射治療時攝護腺癌病人放置Space OAR的治療方式 詹淑如  林佳琮  林鈺芳  郭登宇 亞東紀念醫院 放射腫瘤科 研究目的：ෂ୕ٙᙲᚐ໗࢛׳ᇞطᐕΪމᙲᚐ໗ၡ൨ٜ໑d࢛׳ᇞί๫࢛໕ᆯ׸࢙ܘࣛΝࣛෆ࢔Ց ٜ໑ʿմቊଡ଼ᔌfவԬʔ̀ٙࠅ፧࢛ኒඎึிϓɓӻΐਓЪ͜fΪϤԴ͜ SpaceOAR Ъڭމᚐ܈ღf"
-    },
-    {
-      "id": "P-RT-004",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 101,
-      "title": "P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌ীሞ ړͭ੻",
-      "snippet": "P-RT-004 ৶ޯഢط࢛׳ᐕʔΝ࿁З˙ό๟ᆽܓʱؓ ҍӸ͗ P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌ীሞ ړͭ੻ P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ"
-    },
-    {
-      "id": "P-RT-005",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 101,
-      "title": "P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ",
-      "snippet": "P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌ীሞ ړͭ੻ P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ"
-    },
-    {
-      "id": "P-RT-006",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 101,
-      "title": "P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ",
-      "snippet": "P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ"
-    },
-    {
-      "id": "P-RT-007",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 174,
-      "title": "堆疊式組織填充物提升火山口樣潰瘍乳房腫瘤表淺劑量之個案報告",
-      "snippet": "P-RT-007 堆疊式組織填充物提升火山口樣潰瘍乳房腫瘤表淺劑量之個案報告 鄧怡華　江品儀　王裕文 戴德森醫療財團法人嘉義基督教醫院　放射腫瘤科 研究目的：˦ʆɹᅵcrateriformᆖဴʘጸًԪᐖΪࠦڌ৷ܓʔ஝ۆd዆˪όଡ଼ᔌ෬̂ي bolus ᗭ˸ѩʴ൨Υd׸ிϓڌ૵ኒඎʔԑiϾ໕ᆯ᜗ጐط׵ᐕʕҞ஺ᜊʷࣛdࠠ෧ bolus ͵዁ЪѢᗭfତ"
-    },
-    {
-      "id": "P-RT-008",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 175,
-      "title": "The role of medical radiation technologist in AI-assisted image processing and",
-      "snippet": "P-RT-008 The role of medical radiation technologist in AI-assisted image processing and providing specific suggestions for improving image processing quality and efficiency - taking pelvic cancer as an example Pei-Jin Tsai, Chun-Chiao Huang, Kai-Cheng Chuang, Tzu-Hua Lee, Min-Hsuan Tsai, Yi-Ting Shi"
-    },
-    {
-      "id": "P-RT-009",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-010 Ҟ஺ႆή̔ᖯኒඎ༶ၑˏᏗʘيଣᅼۨ፯኿ၾ༶ၑࣖଟʱؓ ҽڠዙ",
-      "snippet": "P-RT-009 Ꮠ͜ၶআ൴ت္ࠪ಻ၾપПပ҇ࣛගj౤ʺ৶ޯഢط࢛׳ᐕᓖЗ๟ ᆽ׌ʘᑗґ൙П ᇹᯣ୮ P-RT-010 Ҟ஺ႆή̔ᖯኒඎ༶ၑˏᏗʘيଣᅼۨ፯኿ၾ༶ၑࣖଟʱؓ ҽڠዙ P-RT-011 л͜܄Ⴁʷ᎘؆ᎴʷԪᐖΥԻᕁ৶ɪ၊૸ˋഐਜਹ࢛׳ᇞطᐕ ؍Գ∑ P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ"
-    },
-    {
-      "id": "P-RT-010",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-011 л͜܄Ⴁʷ᎘؆ᎴʷԪᐖΥԻᕁ৶ɪ၊૸ˋഐਜਹ࢛׳ᇞطᐕ ؍Գ∑",
-      "snippet": "P-RT-010 Ҟ஺ႆή̔ᖯኒඎ༶ၑˏᏗʘيଣᅼۨ፯኿ၾ༶ၑࣖଟʱؓ ҽڠዙ P-RT-011 л͜܄Ⴁʷ᎘؆ᎴʷԪᐖΥԻᕁ৶ɪ၊૸ˋഐਜਹ࢛׳ᇞطᐕ ؍Գ∑ P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ"
-    },
-    {
-      "id": "P-RT-011",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ",
-      "snippet": "P-RT-011 л͜܄Ⴁʷ᎘؆ᎴʷԪᐖΥԻᕁ৶ɪ၊૸ˋഐਜਹ࢛׳ᇞطᐕ ؍Գ∑ P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω"
-    },
-    {
-      "id": "P-RT-012",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ",
-      "snippet": "P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ"
-    },
-    {
-      "id": "P-RT-013",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 178,
-      "title": "以系統化控管取代人工書寫之放射腫瘤科 Daily QA 無紙化流程成效分析",
-      "snippet": "P-RT-013 以系統化控管取代人工書寫之放射腫瘤科 Daily QA 無紙化流程成效分析 林淑寶 汐止國泰醫院 放射腫瘤科 研究目的：࢛׳໕ᆯط࢛׳߅ᐕண௪ʘ Daily Quality AssuranceQAމ৷᎖ଟ˲৷ࠠܓል׌ʘԷБ Ъุdෂ୕˸ɛʈࣣᄳॷ͉˙όආБߏ፽d׸Ϊο༦ʔ૶eဍ෬אкᛘࢨମϾிϓߏ፽፹Ⴌdᅂᚤ"
-    },
-    {
-      "id": "P-RT-014",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ",
-      "snippet": "P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉ P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍"
-    },
-    {
-      "id": "P-RT-015",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω",
-      "snippet": "P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉ P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍ P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝"
-    },
-    {
-      "id": "P-RT-016",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ",
-      "snippet": "P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉ P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍ P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝ P-ST-001 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼόʘኒඎᜊʷ ҽ૔ຄ"
-    },
-    {
-      "id": "P-RT-017",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉",
-      "snippet": "P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉ P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍ P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝ P-ST-001 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼόʘኒඎᜊʷ ҽ૔ຄ P-ST-002 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ ಀڲ၂"
-    },
-    {
-      "id": "P-RT-018",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍",
-      "snippet": "P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉ P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍ P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝ P-ST-001 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼόʘኒඎᜊʷ ҽ૔ຄ P-ST-002 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ ಀڲ၂ P-ST-003 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥόൖᙂʷӻ୕ ᇹձጘ"
-    },
-    {
-      "id": "P-RT-019",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 102,
-      "title": "P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝",
-      "snippet": "P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍ P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝ P-ST-001 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼόʘኒඎᜊʷ ҽ૔ຄ P-ST-002 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ ಀڲ၂ P-ST-003 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥόൖᙂʷӻ୕ ᇹձጘ P-ST-004 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ྅ৃᕏˢٙᅂᚤ൙П юऔ⒠"
-    },
-    {
-      "id": "P-RT-020",
-      "type": "Poster (壁報)",
-      "category_code": "RT",
-      "category_name": "放射治療 (Radiation Therapy)",
-      "page": 182,
-      "title": "電腦斷層模擬定位後到治療開始等待天數的多寡是否會影響其治療位置精準度之差異",
-      "snippet": "P-RT-020 電腦斷層模擬定位後到治療開始等待天數的多寡是否會影響其治療位置精準度之差異 李宜庭 1 李孟珊 2"
-    },
-    {
-      "id": "O-NST-001",
+      "id": "O-OT-001",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 69,
-      "title": "Evaluated Skin dose of Breast Cancer with Tangential Field, IMRT and VMAT",
-      "snippet": "O-NST-001 Evaluated Skin dose of Breast Cancer with Tangential Field, IMRT and VMAT Jian-Kai Hong 1 Ching-Hsiung Su 2"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 3,
+      "title": "O-OT-001 ؍ጷᄫ 13:00-13:10 ༶͜ ECRS ˓جᐵ೵ᅂ྅ᔼኪ߅Б݁Ъ ุࣛගʘਖ਼ࣩҷഛ",
+      "snippet": "O-OT-001 ؍ጷᄫ 13:00-13:10 ༶͜ ECRS ˓جᐵ೵ᅂ྅ᔼኪ߅Б݁Ъ ุࣛගʘਖ਼ࣩҷഛ"
     },
     {
-      "id": "O-NST-002",
+      "id": "O-AI-001",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 69,
-      "title": "Mimicking Radiologist Workflow: A Hierarchical Routing Model for Automated",
-      "snippet": "O-NST-002 Mimicking Radiologist Workflow: A Hierarchical Routing Model for Automated Mammogram Classification Zhong-Ying Li1 Yu-Jun Zheng 1 Shih-Yen Hsu"
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 3,
+      "title": "O-AI-001 ெૺඩ 13:10-13:20 ਿ׵ଉܓኪ୦ʘ YOLOv11 ፫ᗆᅼۨІ ਗਈ಻ MRI ໐ಖಖගᆵ߉̈",
+      "snippet": "O-AI-001 ெૺඩ 13:10-13:20 ਿ׵ଉܓኪ୦ʘ YOLOv11 ፫ᗆᅼۨІ ਗਈ಻ MRI ໐ಖಖගᆵ߉̈"
     },
     {
-      "id": "O-NST-003",
+      "id": "O-AI-002",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 70,
-      "title": "A Two-Stage Deep Learning Framework for Automatic Segmentation of Thyroid",
-      "snippet": "O-NST-003 A Two-Stage Deep Learning Framework for Automatic Segmentation of Thyroid Tumors in Ultrasound Images Wei-Cheng Clou 1, Chi-Yuan Wang"
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 3,
+      "title": "O-AI-002 ҽᔨѹ 13:20-13:30 ɽۨႧԊᅼۨί፧࢛τΌϽ༊ٙ಻༊",
+      "snippet": "O-AI-002 ҽᔨѹ 13:20-13:30 ɽۨႧԊᅼۨί፧࢛τΌϽ༊ٙ಻༊"
     },
     {
-      "id": "O-NST-004",
+      "id": "O-AI-003",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 71,
-      "title": "Automated Two-Stage Brain Tumor Analysis: Integrating U-Net Segmentation with",
-      "snippet": "O-NST-004 Automated Two-Stage Brain Tumor Analysis: Integrating U-Net Segmentation with CNN and Radiomics-Based Classification Li-Ling Chiu1, Yung-Hui Huang 1, Shih-Yen Hsu"
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 3,
+      "title": "O-AI-003 ᇹ֠Ꮂ 13:30-13:40 ਿ׵ DeepLabv3+ ၾε၇৶฀ၣ༩ʘӿ ᛔཥ໘ᓙᄴᅂ྅Іਗʱ௲޼Ӻ",
+      "snippet": "O-AI-003 ᇹ֠Ꮂ 13:30-13:40 ਿ׵ DeepLabv3+ ၾε၇৶฀ၣ༩ʘӿ ᛔཥ໘ᓙᄴᅂ྅Іਗʱ௲޼Ӻ"
     },
     {
-      "id": "O-NST-005",
+      "id": "O-AI-004",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 72,
-      "title": "Automatic Left Ventricle Segmentation on Cardiac MRI Using a Deep Learning U-Net",
-      "snippet": "O-NST-005 Automatic Left Ventricle Segmentation on Cardiac MRI Using a Deep Learning U-Net Framework with Case-Level Data Splitting and Robust Preprocessing Pei-Chen Su 1 Shih-Yen Hsu"
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 3,
+      "title": "ю࢕ᄃ 13:40-13:50 ਿ׵੫ًʹɸ᜕ᗇˢ༰ε၇ଉܓኪ୦ᅼ ׵ۨ໐ಖ MRI ಖගˆৗʷ̬ॴʱᗳʘ ޼Ӻ ڗࢭjරߕᚆeරܗ౽ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ",
+      "snippet": "O-AI-004 ю࢕ᄃ 13:40-13:50 ਿ׵੫ًʹɸ᜕ᗇˢ༰ε၇ଉܓኪ୦ᅼ ׵ۨ໐ಖ MRI ಖගˆৗʷ̬ॴʱᗳʘ ޼Ӻ ڗࢭjරߕᚆeරܗ౽ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
     },
     {
-      "id": "O-NST-006",
+      "id": "O-EP-001",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 72,
-      "title": "Differentiation of Benign and Malignant Breast Tumors Using Integrated Ultrasound",
-      "snippet": "O-NST-006 Differentiation of Benign and Malignant Breast Tumors Using Integrated Ultrasound Radiomics and Neighborhood Component Analysis Chin-Ting Lin1, Yung-Hui Huang 1, Shih-Yen Hsu"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 3,
+      "title": "๝ဏ׀ 14:00-14:10 л͜ྼྤԉЍҲစ༷Ꮥ LARP (Live- action Role Playing) ੃ԃ࢛׳ PGY ٙ Όɛ઺ኪ",
+      "snippet": "O-EP-001 ๝ဏ׀ 14:00-14:10 л͜ྼྤԉЍҲစ༷Ꮥ LARP (Live- action Role Playing) ੃ԃ࢛׳ PGY ٙ Όɛ઺ኪ"
     },
     {
-      "id": "O-ST-001",
+      "id": "O-EP-002",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 56,
-      "title": "O-ST-002 ௓ρɭ 14:20-14:30 ʱؓཥ໘ᓙᄴ̬၇ᑗґ੬๫௅З DLP ᔷ౬Ϟࣖኒඎʘᔷ౬Ϊᅰ",
-      "snippet": "O-ST-001 ؍๕ጳ 14:10-14:20 ൈᏝఊঐඎၾ৷ЭᕐཥᏀᅂ྅ί঍ഢА ၍ʕຢձඑʘ፫ᗆଟˢ༰ O-ST-002 ௓ρɭ 14:20-14:30 ʱؓཥ໘ᓙᄴ̬၇ᑗґ੬๫௅З DLP ᔷ౬Ϟࣖኒඎʘᔷ౬Ϊᅰ O-ST-003 ᇹ׼ጲ 14:30-14:40 ཥ໘ᓙᄴ୚ʲܓێࠦ( 1 mm) ࿁঍ഢА ၍එʷધ౜ Agatston ʱᅰٙᅂᚤ 學生中文口頭發表 2 ( Oral Presentation Of Radiology students 2 ) 302a 會議室 (Conference Rm.302a) 座長：王祺元、游浚彥、洪一吉"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 3,
+      "title": "O-EP-002 юࢡ؇ 14:10-14:20 ഐΥ NotebookLM ၾ Google Gemini ʘ AI ʈՈᏐ͜˖ᘠኬᛘ௴อ઺ኪᅼό",
+      "snippet": "O-EP-002 юࢡ؇ 14:10-14:20 ഐΥ NotebookLM ၾ Google Gemini ʘ AI ʈՈᏐ͜˖ᘠኬᛘ௴อ઺ኪᅼό"
     },
     {
-      "id": "O-ST-002",
+      "id": "O-EP-003",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 56,
-      "title": "O-ST-003 ᇹ׼ጲ 14:30-14:40 ཥ໘ᓙᄴ୚ʲܓێࠦ( 1 mm) ࿁঍ഢА ၍එʷધ౜ Agatston ʱᅰٙᅂᚤ",
-      "snippet": "O-ST-002 ௓ρɭ 14:20-14:30 ʱؓཥ໘ᓙᄴ̬၇ᑗґ੬๫௅З DLP ᔷ౬Ϟࣖኒඎʘᔷ౬Ϊᅰ O-ST-003 ᇹ׼ጲ 14:30-14:40 ཥ໘ᓙᄴ୚ʲܓێࠦ( 1 mm) ࿁঍ഢА ၍එʷધ౜ Agatston ʱᅰٙᅂᚤ 學生中文口頭發表 2 ( Oral Presentation Of Radiology students 2 ) 302a 會議室 (Conference Rm.302a) 座長：王祺元、游浚彥、洪一吉 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 3,
+      "title": "O-EP-003 เ͗ణ 14:20-14:30 ˸ઋྤᅼᏝ੃ԃԪגᙲᅂࢪ࢛׳ʘΝଣ ː๫ᚐ",
+      "snippet": "O-EP-003 เ͗ణ 14:20-14:30 ˸ઋྤᅼᏝ੃ԃԪגᙲᅂࢪ࢛׳ʘΝଣ ː๫ᚐ"
     },
     {
-      "id": "O-ST-003",
+      "id": "O-EP-004",
       "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 56,
-      "title": "學生中文口頭發表 2 ( Oral Presentation Of Radiology students 2 )",
-      "snippet": "O-ST-003 ᇹ׼ጲ 14:30-14:40 ཥ໘ᓙᄴ୚ʲܓێࠦ( 1 mm) ࿁঍ഢА ၍එʷધ౜ Agatston ʱᅰٙᅂᚤ 學生中文口頭發表 2 ( Oral Presentation Of Radiology students 2 ) 302a 會議室 (Conference Rm.302a) 座長：王祺元、游浚彥、洪一吉 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ O-ST-004 ˮ׋್ 15:00-15:10 ཥ໘ᓙᄴӿഐືࠥኒඎٙଉܓኪ୦ᅂ྅ ڌତ - ৿᜗޼Ӻ"
-    },
-    {
-      "id": "O-ST-004",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 56,
-      "title": "O-ST-005 เ᪮ࠀ 15:10-15:20 ɓছ X Έ१ͭձ΃ٶό঍ഢᙲᅂЭ࿁ ˢᅂ྅ʘ၍ཥᏀ௰Գʷண֛",
-      "snippet": "O-ST-004 ˮ׋್ 15:00-15:10 ཥ໘ᓙᄴӿഐືࠥኒඎٙଉܓኪ୦ᅂ྅ ڌତ - ৿᜗޼Ӻ O-ST-005 เ᪮ࠀ 15:10-15:20 ɓছ X Έ१ͭձ΃ٶό঍ഢᙲᅂЭ࿁ ˢᅂ྅ʘ၍ཥᏀ௰Գʷண֛ O-ST-006 เඩ଄ 15:20-15:30 ઞীɓছձ୅ਗό X Έί໖௅ᙲᅂٙ ᅂ྅ۜሯၾኒඎڌତ O-ST-007 ᄎ͗౹ 15:30-15:40 PC MRA ίࠥЭᝍʫږ᙮৿ᅂɪٙᏐ͜"
-    },
-    {
-      "id": "O-ST-005",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 56,
-      "title": "O-ST-006 เඩ଄ 15:20-15:30 ઞীɓছձ୅ਗό X Έί໖௅ᙲᅂٙ ᅂ྅ۜሯၾኒඎڌତ",
-      "snippet": "O-ST-005 เ᪮ࠀ 15:10-15:20 ɓছ X Έ१ͭձ΃ٶό঍ഢᙲᅂЭ࿁ ˢᅂ྅ʘ၍ཥᏀ௰Գʷண֛ O-ST-006 เඩ଄ 15:20-15:30 ઞীɓছձ୅ਗό X Έί໖௅ᙲᅂٙ ᅂ྅ۜሯၾኒඎڌତ O-ST-007 ᄎ͗౹ 15:30-15:40 PC MRA ίࠥЭᝍʫږ᙮৿ᅂɪٙᏐ͜"
-    },
-    {
-      "id": "O-ST-006",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 56,
-      "title": "O-ST-007 ᄎ͗౹ 15:30-15:40 PC MRA ίࠥЭᝍʫږ᙮৿ᅂɪٙᏐ͜",
-      "snippet": "O-ST-006 เඩ଄ 15:20-15:30 ઞীɓছձ୅ਗό X Έί໖௅ᙲᅂٙ ᅂ྅ۜሯၾኒඎڌତ O-ST-007 ᄎ͗౹ 15:30-15:40 PC MRA ίࠥЭᝍʫږ᙮৿ᅂɪٙᏐ͜"
-    },
-    {
-      "id": "O-ST-007",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 88,
-      "title": "PC MRA 在降低顱內金屬假影上的應用",
-      "snippet": "O-ST-007 PC MRA 在降低顱內金屬假影上的應用 劉玉晴 1 李正輝 2"
-    },
-    {
-      "id": "O-ST-008",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 57,
-      "title": "O-ST-009 ጽ݈ႂ 16:10-16:20 ˸ʃԿೞް௴อྼЪᄣආኪ୦ϓࣖ",
-      "snippet": "O-ST-008 ݇ݳሬ 16:00-16:10 ˸ Ansys ᅼᏝ᜕ᗇІႡɨٮʧɝ˓ஔ PAD ᙲᅂո֛ႾՈഐ࿴׌࡝ O-ST-009 ጽ݈ႂ 16:10-16:20 ˸ʃԿೞް௴อྼЪᄣආኪ୦ϓࣖ O-ST-010 ᄎཨѹ 16:20-16:30 ґᗙ᎘ᝍᙲᅂʕ٤ंගქҦஔ࿁౳࢛ҵՓ ၾᅂ྅ۜሯʘᅂᚤ O-ST-011 ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻ 臺灣放射護理中文口頭發表 ( TRNA Oral Section ) 303a 會議室 ( Conference Rm.303a )"
-    },
-    {
-      "id": "O-ST-009",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 57,
-      "title": "O-ST-010 ᄎཨѹ 16:20-16:30 ґᗙ᎘ᝍᙲᅂʕ٤ंගქҦஔ࿁౳࢛ҵՓ ၾᅂ྅ۜሯʘᅂᚤ",
-      "snippet": "O-ST-009 ጽ݈ႂ 16:10-16:20 ˸ʃԿೞް௴อྼЪᄣආኪ୦ϓࣖ O-ST-010 ᄎཨѹ 16:20-16:30 ґᗙ᎘ᝍᙲᅂʕ٤ंගქҦஔ࿁౳࢛ҵՓ ၾᅂ྅ۜሯʘᅂᚤ O-ST-011 ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻ 臺灣放射護理中文口頭發表 ( TRNA Oral Section ) 303a 會議室 ( Conference Rm.303a ) 座長：李美貞、 陳尹婷"
-    },
-    {
-      "id": "O-ST-010",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 57,
-      "title": "O-ST-011 ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻",
-      "snippet": "O-ST-010 ᄎཨѹ 16:20-16:30 ґᗙ᎘ᝍᙲᅂʕ٤ंගქҦஔ࿁౳࢛ҵՓ ၾᅂ྅ۜሯʘᅂᚤ O-ST-011 ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻ 臺灣放射護理中文口頭發表 ( TRNA Oral Section ) 303a 會議室 ( Conference Rm.303a ) 座長：李美貞、 陳尹婷 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
-    },
-    {
-      "id": "O-ST-011",
-      "type": "Oral (口頭)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 57,
-      "title": "臺灣放射護理中文口頭發表 ( TRNA Oral Section )",
-      "snippet": "O-ST-011 ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻ 臺灣放射護理中文口頭發表 ( TRNA Oral Section ) 303a 會議室 ( Conference Rm.303a ) 座長：李美貞、 陳尹婷 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ O-RN-001 ю͗ߕ 11:00 - 11:10 ౤ʺᅂ྅ᔼኪ௅ᚐଣɛ݄ࡰ͂࿁ˢኒܝ ೯͛ཀઽˀᏐʘஈଣঐɢ"
-    },
-    {
-      "id": "P-ST-001",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-002 ಀڲ၂ 10:05-10:10 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ",
-      "snippet": "P-ST-001 ҽ૔ຄ 10:00-10:05 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼ όʘኒඎᜊʷ P-ST-002 ಀڲ၂ 10:05-10:10 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ P-ST-003 ᇹձጘ 10:10-10:15 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥό ൖᙂʷӻ୕ P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П P-ST-006 ቍᆇ౵ 10:25-10:30"
-    },
-    {
-      "id": "P-ST-002",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-003 ᇹձጘ 10:10-10:15 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥό ൖᙂʷӻ୕",
-      "snippet": "P-ST-002 ಀڲ၂ 10:05-10:10 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ P-ST-003 ᇹձጘ 10:10-10:15 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥό ൖᙂʷӻ୕ P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П P-ST-006 ቍᆇ౵ 10:25-10:30 Quantitative Characterization of Head and"
-    },
-    {
-      "id": "P-ST-003",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П",
-      "snippet": "P-ST-003 ᇹձጘ 10:10-10:15 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥό ൖᙂʷӻ୕ P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П P-ST-006 ቍᆇ౵ 10:25-10:30 Quantitative Characterization of Head and Neck Tumors using Diffusional Kurtosis"
-    },
-    {
-      "id": "P-ST-004",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П",
-      "snippet": "P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П P-ST-006 ቍᆇ౵ 10:25-10:30 Quantitative Characterization of Head and Neck Tumors using Diffusional Kurtosis Imaging"
-    },
-    {
-      "id": "P-ST-005",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 102,
-      "title": "P-ST-006 Quantitative Characterization of Head and Neck Tumors using Diffusional Kurtosis Imaging ቍᆇ౵",
-      "snippet": "P-ST-005 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ༩ʘຢඑਜʱࣖू൙П юݱڲ P-ST-006 Quantitative Characterization of Head and Neck Tumors using Diffusional Kurtosis Imaging ቍᆇ౵ P-ST-007 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients ڃ؍ᆦ P-ST-008 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ኒඎ"
-    },
-    {
-      "id": "P-ST-006",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 102,
-      "title": "P-ST-007 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients ڃ؍ᆦ",
-      "snippet": "P-ST-006 Quantitative Characterization of Head and Neck Tumors using Diffusional Kurtosis Imaging ቍᆇ౵ P-ST-007 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients ڃ؍ᆦ P-ST-008 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ኒඎ ݳຄẘ P-ST-009 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ˢ༆ܓؓʘ൙П ᘽ"
-    },
-    {
-      "id": "P-ST-007",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 187,
-      "title": "Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI",
-      "snippet": "P-ST-007 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients Xin-Ying Lin 1 , Kai-Lun Cheng"
-    },
-    {
-      "id": "P-ST-008",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-009 ᘽ◔ణ 10:45-10:50 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ ˢ༆ܓؓʘ൙",
-      "snippet": "P-ST-008 ݳຄẘ 10:40-10:45 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ ኒඎ P-ST-009 ᘽ◔ణ 10:45-10:50 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ ˢ༆ܓؓʘ൙ P-ST-010 ஢્ຸ 10:50-10:55 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ P-ST-011 ᇹؚҊ 10:55-11:00 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ"
-    },
-    {
-      "id": "P-ST-009",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-010 ஢્ຸ 10:50-10:55 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ",
-      "snippet": "P-ST-009 ᘽ◔ణ 10:45-10:50 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ ˢ༆ܓؓʘ൙ P-ST-010 ஢્ຸ 10:50-10:55 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ P-ST-011 ᇹؚҊ 10:55-11:00 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ"
-    },
-    {
-      "id": "P-ST-010",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-011 ᇹؚҊ 10:55-11:00 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ",
-      "snippet": "P-ST-010 ஢્ຸ 10:50-10:55 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ P-ST-011 ᇹؚҊ 10:55-11:00 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ"
-    },
-    {
-      "id": "P-ST-011",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 103,
-      "title": "P-ST-012 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy ኇٺᡚ",
-      "snippet": "P-ST-011 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ ᇹؚҊ P-ST-012 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy ኇٺᡚ P-ST-013 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR ҽْᅆ P-ST-014 ሯɿລࣉᐏၾʕɿࣉᐏᄣ"
-    },
-    {
-      "id": "P-ST-012",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 103,
-      "title": "P-ST-013 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR ҽْᅆ",
-      "snippet": "P-ST-012 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy ኇٺᡚ P-ST-013 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR ҽْᅆ P-ST-014 ሯɿລࣉᐏၾʕɿࣉᐏᄣ੶୐ɿطᐕʘ̙Б׌ႆή̔ᖯ൙П ૑ʛ⑗ P-ST-015 л͜ X ΈᙲᅂආБইٴˢԷ൙"
-    },
-    {
-      "id": "P-ST-013",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 191,
-      "title": "Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid",
-      "snippet": "P-ST-013 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR Wen-Hui Lee 1 Jia-Hao Zhou"
-    },
-    {
-      "id": "P-ST-014",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 54,
-      "title": "P-ST-015 ҽࢸ׸ 11:25-11:30 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼ Ӻ",
-      "snippet": "P-ST-014 ૑ʛ⑗ 11:20-11:25 ሯɿລࣉᐏၾʕɿࣉᐏᄣ੶୐ɿطᐕʘ ̙Б׌ႆή̔ᖯ൙П P-ST-015 ҽࢸ׸ 11:25-11:30 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼ Ӻ P-ST-016 ˬ̋Ў 11:30-11:35 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰ Գʷ޼Ӻ P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT P-ST"
-    },
-    {
-      "id": "P-ST-015",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 54,
-      "title": "P-ST-016 ˬ̋Ў 11:30-11:35 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰ Գʷ޼Ӻ",
-      "snippet": "P-ST-015 ҽࢸ׸ 11:25-11:30 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼ Ӻ P-ST-016 ˬ̋Ў 11:30-11:35 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰ Գʷ޼Ӻ P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT P-ST-019 ර᪮➲ 11:40-11:45 Automated Classiﬁcation of Liver"
-    },
-    {
-      "id": "P-ST-016",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 54,
-      "title": "P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ",
-      "snippet": "P-ST-016 ˬ̋Ў 11:30-11:35 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰ Գʷ޼Ӻ P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT P-ST-019 ර᪮➲ 11:40-11:45 Automated Classiﬁcation of Liver CT Images via Deep Feature Extraction and"
-    },
-    {
-      "id": "P-ST-017",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 54,
-      "title": "P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT",
-      "snippet": "P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT P-ST-019 ර᪮➲ 11:40-11:45 Automated Classiﬁcation of Liver CT Images via Deep Feature Extraction and Ensemble Machine Learning"
-    },
-    {
-      "id": "P-ST-018",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 103,
-      "title": "P-ST-019 Automated Classiﬁcation of Liver CT Images via Deep Feature Extraction and Ensemble Machine Learning ර᪮➲",
-      "snippet": "P-ST-018 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT ஢ɻܗ P-ST-019 Automated Classiﬁcation of Liver CT Images via Deep Feature Extraction and Ensemble Machine Learning ර᪮➲ P-ST-020 Ꮠ͜ཫ৅ᇖ CNN ׵Ԫג൴تࠪʱᗳj༨̨̻ਿ๟಻༊޼Ӻ ᘽ௱ፕ P-ST-021 Pretrained CNNs for Mammography Classiﬁcation: A Cross"
-    },
-    {
-      "id": "P-ST-019",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 195,
-      "title": "Automated Classification of Liver CT Images via Deep Feature Extraction and",
-      "snippet": "P-ST-019 Automated Classification of Liver CT Images via Deep Feature Extraction and Ensemble Machine Learning Pei-Chen Haung 1 , Shih-Yen Hsu"
-    },
-    {
-      "id": "P-ST-020",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 103,
-      "title": "P-ST-021 Pretrained CNNs for Mammography Classiﬁcation: A Cross-Platform Benchmark ර໋ࢸ",
-      "snippet": "P-ST-020 Ꮠ͜ཫ৅ᇖ CNN ׵Ԫג൴تࠪʱᗳj༨̨̻ਿ๟಻༊޼Ӻ ᘽ௱ፕ P-ST-021 Pretrained CNNs for Mammography Classiﬁcation: A Cross-Platform Benchmark ර໋ࢸ P-ST-022 ΌԒ͍ɿཥɿਅϓ྅ӻ୕ʘᅼᏝʱؓ ҽוጫ"
-    },
-    {
-      "id": "P-ST-021",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 197,
-      "title": "Pretrained CNNs for Mammography Classification: A Cross-Platform Benchmark",
-      "snippet": "P-ST-021 Pretrained CNNs for Mammography Classification: A Cross-Platform Benchmark Sheng-En Huang 1 , Zhong-Ying Li 1"
-    },
-    {
-      "id": "P-ST-022",
-      "type": "Poster (壁報)",
-      "category_code": "ST",
-      "category_name": "學生研究 (Radiology Student Research)",
-      "page": 53,
-      "title": "P-ST-007 ڃ؍ᆦ 10:35-10:40",
-      "snippet": "P-ST-022 ҽוጫ 10:30-10:35 ΌԒ͍ɿཥɿਅϓ྅ӻ୕ʘᅼᏝʱؓ P-ST-007 ڃ؍ᆦ 10:35-10:40 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients P-ST-008 ݳຄẘ 10:40-10:45 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ ኒඎ"
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 3,
+      "title": "ҽځ׼ 14:30-14:40 ੽౤ͪ൚Ցݴ೻ྡj༶͜ᜌ፨ ኬΣʘ͛ϓό AI ᔕᔷ઺ኪ͏˴ʷ࢛׳ ᔼኪൖᙂ९ቮ",
+      "snippet": "O-EP-004 ҽځ׼ 14:30-14:40 ੽౤ͪ൚Ցݴ೻ྡj༶͜ᜌ፨ ኬΣʘ͛ϓό AI ᔕᔷ઺ኪ͏˴ʷ࢛׳ ᔼኪൖᙂ९ቮ"
     },
     {
       "id": "O-US-001",
       "type": "Oral (口頭)",
       "category_code": "US",
-      "category_name": "超音波 (Ultrasound)",
-      "page": 92,
-      "title": "評估電腦斷層掃描融合即時超音波導引在經皮射頻熱消融治療三叉神經痛的準確性",
-      "snippet": "O-US-001 評估電腦斷層掃描融合即時超音波導引在經皮射頻熱消融治療三叉神經痛的準確性 鄭雅芬 郭家宏 * 1 三軍總醫院 外科部"
+      "category": "US",
+      "category_name": "超音波 (Ultrasonography)",
+      "page": 4,
+      "title": "ቍඩځ 15:00-15:10 ൙Пཥ໘ᓙᄴધ౜ፄΥуࣛ൴تࠪኬˏ ί຾࢛ͤ᎖ᆠऊፄطᐕɧɸग़຾೨ٙ๟ ᆽ׌",
+      "snippet": "O-US-001 ቍඩځ 15:00-15:10 ൙Пཥ໘ᓙᄴધ౜ፄΥуࣛ൴تࠪኬˏ ί຾࢛ͤ᎖ᆠऊፄطᐕɧɸग़຾೨ٙ๟ ᆽ׌"
+    },
+    {
+      "id": "O-RT-001",
+      "type": "Oral (口頭)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 4,
+      "title": "O-RT-001 เૺೞ 15:10-15:20 ઞী᎕௅ూ਄׵᎘᎕ᐖઃ٫ط࢛׳ᐕᓖ ЗႬࢨʘᅂᚤ",
+      "snippet": "O-RT-001 เૺೞ 15:10-15:20 ઞী᎕௅ూ਄׵᎘᎕ᐖઃ٫ط࢛׳ᐕᓖ ЗႬࢨʘᅂᚤ"
+    },
+    {
+      "id": "O-RT-002",
+      "type": "Oral (口頭)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 4,
+      "title": "O-RT-002 ݚϻૅ 15:20-15:30 ൙ПԪᐖ࢛׳ᇞطᐕd3D ΐΙ܄Ⴁʷ ଡ଼ᔌ෬̂ي͜ʘኒඎኪࣖू",
+      "snippet": "O-RT-002 ݚϻૅ 15:20-15:30 ൙ПԪᐖ࢛׳ᇞطᐕd3D ΐΙ܄Ⴁʷ ଡ଼ᔌ෬̂ي͜ʘኒඎኪࣖू"
     },
     {
       "id": "O-US-002",
       "type": "Oral (口頭)",
       "category_code": "US",
-      "category_name": "超音波 (Ultrasound)",
-      "page": 52,
-      "title": "O-CT-001 ࢕ڀΤ 15:40-15:50 ECMO ׵ CT ધ౜ʘ৿׌˴ਗএ࡞ᕎࣩࡈ ઞী",
-      "snippet": "O-US-002 රᅃл 15:30-15:40 л͜Ӂ౷ਔ൴تࠪႾп൙Пۉৎ̌ঐღ ᖟ - षԷʱԮ O-CT-001 ࢕ڀΤ 15:40-15:50 ECMO ׵ CT ધ౜ʘ৿׌˴ਗএ࡞ᕎࣩࡈ ઞী 座長：林育駿、蔡銘松 ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ O-CA-001 ҽߖቪ 16:00-16:10 ˴ਗএंଢᏍऌႾпɨዚ૛׌іطࣼᐕ"
+      "category": "US",
+      "category_name": "超音波 (Ultrasonography)",
+      "page": 4,
+      "title": "O-US-002 රᅃл 15:30-15:40 л͜Ӂ౷ਔ൴تࠪႾп൙Пۉৎ̌ঐღ ᖟ - षԷʱԮ",
+      "snippet": "O-US-002 රᅃл 15:30-15:40 л͜Ӂ౷ਔ൴تࠪႾп൙Пۉৎ̌ঐღ ᖟ - षԷʱԮ"
+    },
+    {
+      "id": "O-CT-001",
+      "type": "Oral (口頭)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 4,
+      "title": "࢕ڀΤ 15:40-15:50 ECMO ׵ CT ધ౜ʘ৿׌˴ਗএ࡞ᕎࣩࡈ ઞী ڗࢭj؍ԃᒺeᇹთؒ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ",
+      "snippet": "O-CT-001 ࢕ڀΤ 15:40-15:50 ECMO ׵ CT ધ౜ʘ৿׌˴ਗএ࡞ᕎࣩࡈ ઞী ڗࢭj؍ԃᒺeᇹთؒ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
+    },
+    {
+      "id": "O-CA-001",
+      "type": "Oral (口頭)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 4,
+      "title": "ҽߖቪ 16:00-16:10 ˴ਗএंଢᏍऌႾпɨዚ૛׌іطࣼᐕ ً̛ڿਗএҁΌڜ෦ʘ NSTEMI ࣩԷ ʱԮ",
+      "snippet": "O-CA-001 ҽߖቪ 16:00-16:10 ˴ਗএंଢᏍऌႾпɨዚ૛׌іطࣼᐕ ً̛ڿਗএҁΌڜ෦ʘ NSTEMI ࣩԷ ʱԮ"
+    },
+    {
+      "id": "O-MR-001",
+      "type": "Oral (口頭)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "O-MR-001 ቍᶣణ 16:10-16:20 л͜ਗ࿒࿁ˢᄣ੶ှࣈிᅂႾпф੫ᐖ ൢᓙ - ࣩԷʱԮ",
+      "snippet": "O-MR-001 ቍᶣణ 16:10-16:20 л͜ਗ࿒࿁ˢᄣ੶ှࣈிᅂႾпф੫ᐖ ൢᓙ - ࣩԷʱԮ"
+    },
+    {
+      "id": "O-MR-002",
+      "type": "Oral (口頭)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "௓ێኔ 16:20-16:30 ൙ПЭኒඎ Elucirem ၾෂ୕ኒඎ Dotarem ׵ːᛔ MRI ַ፰੶ʷᅂ྅ʘ ڌତɓ׌ߧ",
+      "snippet": "O-MR-002 ௓ێኔ 16:20-16:30 ൙ПЭኒඎ Elucirem ၾෂ୕ኒඎ Dotarem ׵ːᛔ MRI ַ፰੶ʷᅂ྅ʘ ڌତɓ׌ߧ"
+    },
+    {
+      "id": "O-CA-002",
+      "type": "Oral (口頭)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 4,
+      "title": "O-CA-002 ර༟ᴂ 16:30-16:40 OCT AI ɛʈ౽ᅆ༶ၑඑʷᓃၾҦஔɛ ࡰкᛘˢ࿁๟ᆽଟʘ޼Ӻ",
+      "snippet": "O-CA-002 ර༟ᴂ 16:30-16:40 OCT AI ɛʈ౽ᅆ༶ၑඑʷᓃၾҦஔɛ ࡰкᛘˢ࿁๟ᆽଟʘ޼Ӻ"
+    },
+    {
+      "id": "P-ST-001",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-001 ҽ૔ຄ 10:00-10:05 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼ όʘኒඎᜊʷ",
+      "snippet": "P-ST-001 ҽ૔ຄ 10:00-10:05 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼ όʘኒඎᜊʷ"
+    },
+    {
+      "id": "P-ST-002",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-002 ಀڲ၂ 10:05-10:10 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ",
+      "snippet": "P-ST-002 ಀڲ၂ 10:05-10:10 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ"
+    },
+    {
+      "id": "P-ST-003",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-003 ᇹձጘ 10:10-10:15 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥό ൖᙂʷӻ୕",
+      "snippet": "P-ST-003 ᇹձጘ 10:10-10:15 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥό ൖᙂʷӻ୕"
+    },
+    {
+      "id": "P-ST-004",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П",
+      "snippet": "P-ST-004 юऔ⒠ 10:15-10:20 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ ྅ৃᕏˢٙᅂᚤ൙П"
+    },
+    {
+      "id": "P-ST-005",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П",
+      "snippet": "P-ST-005 юݱڲ 10:20-10:25 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ ༩ʘຢඑਜʱࣖू൙П"
+    },
+    {
+      "id": "P-ST-006",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "ቍᆇ౵ 10:25-10:30 4XDQWLWDWLYH\u0003&KDUDFWHUL]DWLRQ\u0003RI\u0003+HDG\u0003DQG\u0003 Neck Tumors using Diffusional Kurtosis Imaging",
+      "snippet": "P-ST-006 ቍᆇ౵ 10:25-10:30 4XDQWLWDWLYH\u0003&KDUDFWHUL]DWLRQ\u0003RI\u0003+HDG\u0003DQG\u0003 Neck Tumors using Diffusional Kurtosis Imaging"
+    },
+    {
+      "id": "P-ST-022",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-022 ҽוጫ 10:30-10:35 ΌԒ͍ɿཥɿਅϓ྅ӻ୕ʘᅼᏝʱؓ",
+      "snippet": "P-ST-022 ҽוጫ 10:30-10:35 ΌԒ͍ɿཥɿਅϓ྅ӻ୕ʘᅼᏝʱؓ"
+    },
+    {
+      "id": "P-ST-007",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "ڃ؍ᆦ 10:35-10:40 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients",
+      "snippet": "P-ST-007 ڃ؍ᆦ 10:35-10:40 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients"
+    },
+    {
+      "id": "P-ST-008",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-008 ݳຄẘ 10:40-10:45 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ ኒඎ",
+      "snippet": "P-ST-008 ݳຄẘ 10:40-10:45 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ ኒඎ"
+    },
+    {
+      "id": "P-ST-009",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-009 ᘽ◔ణ 10:45-10:50 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ ˢ༆ܓؓʘ൙",
+      "snippet": "P-ST-009 ᘽ◔ణ 10:45-10:50 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ ˢ༆ܓؓʘ൙"
+    },
+    {
+      "id": "P-ST-010",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-010 ஢્ຸ 10:50-10:55 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ",
+      "snippet": "P-ST-010 ஢્ຸ 10:50-10:55 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ"
+    },
+    {
+      "id": "P-ST-011",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 5,
+      "title": "P-ST-011 ᇹؚҊ 10:55-11:00 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ",
+      "snippet": "P-ST-011 ᇹؚҊ 10:55-11:00 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ"
+    },
+    {
+      "id": "P-ST-012",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "ኇٺᡚ 11:10-11:15 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy",
+      "snippet": "P-ST-012 ኇٺᡚ 11:10-11:15 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy"
+    },
+    {
+      "id": "P-ST-013",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "ҽْᅆ 11:15-11:20 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR",
+      "snippet": "P-ST-013 ҽْᅆ 11:15-11:20 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR"
+    },
+    {
+      "id": "P-ST-014",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-014 ૑ʛ⑗ 11:20-11:25 ሯɿລࣉᐏၾʕɿࣉᐏᄣ੶୐ɿطᐕʘ ̙Б׌ႆή̔ᖯ൙П",
+      "snippet": "P-ST-014 ૑ʛ⑗ 11:20-11:25 ሯɿລࣉᐏၾʕɿࣉᐏᄣ੶୐ɿطᐕʘ ̙Б׌ႆή̔ᖯ൙П"
+    },
+    {
+      "id": "P-ST-015",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-015 ҽࢸ׸ 11:25-11:30 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼ Ӻ",
+      "snippet": "P-ST-015 ҽࢸ׸ 11:25-11:30 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼ Ӻ"
+    },
+    {
+      "id": "P-ST-016",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-016 ˬ̋Ў 11:30-11:35 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰ Գʷ޼Ӻ",
+      "snippet": "P-ST-016 ˬ̋Ў 11:30-11:35 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰ Գʷ޼Ӻ"
+    },
+    {
+      "id": "P-ST-017",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ",
+      "snippet": "P-ST-017 ࢑㌢ᨯ 11:45-11:50 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙ ঐ { ৿᜗޼Ӻ"
+    },
+    {
+      "id": "P-ST-018",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT",
+      "snippet": "P-ST-018 ஢ɻܗ 11:35-11:40 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT"
+    },
+    {
+      "id": "P-ST-019",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "ර᪮➲ 11:40-11:45 $XWRPDWHG\u0003&ODVVL¿FDWLRQ\u0003RI\u0003/LYHU\u0003&7\u0003 Images via Deep Feature Extraction and Ensemble Machine Learning",
+      "snippet": "P-ST-019 ර᪮➲ 11:40-11:45 $XWRPDWHG\u0003&ODVVL¿FDWLRQ\u0003RI\u0003/LYHU\u0003&7\u0003 Images via Deep Feature Extraction and Ensemble Machine Learning"
+    },
+    {
+      "id": "P-ST-020",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-020 ᘽ௱ፕ 11:50-11:55 Ꮠ͜ཫ৅ᇖ CNN ׵Ԫג൴تࠪʱᗳj ༨̨̻ਿ๟಻༊޼Ӻ",
+      "snippet": "P-ST-020 ᘽ௱ፕ 11:50-11:55 Ꮠ͜ཫ৅ᇖ CNN ׵Ԫג൴تࠪʱᗳj ༨̨̻ਿ๟಻༊޼Ӻ"
+    },
+    {
+      "id": "P-ST-021",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "ර໋ࢸ 11:55-12:00 Pretrained CNNs for Mammography &ODVVL¿FDWLRQ\u001d\u0003$\u0003&URVV\u00103ODWIRUP\u0003 Benchmark",
+      "snippet": "P-ST-021 ර໋ࢸ 11:55-12:00 Pretrained CNNs for Mammography &ODVVL¿FDWLRQ\u001d\u0003$\u0003&URVV\u00103ODWIRUP\u0003 Benchmark"
+    },
+    {
+      "id": "O-NST-001",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 7,
+      "title": "ܔݳ௱ 13:00-13:10 Evaluated Skin dose of Breast Cancer with Tangential Field, IMRT and VMAT Automated Two-Stage Brain Tumor",
+      "snippet": "O-NST-001 ܔݳ௱ 13:00-13:10 Evaluated Skin dose of Breast Cancer with Tangential Field, IMRT and VMAT Automated Two-Stage Brain Tumor"
+    },
+    {
+      "id": "O-NST-002",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 7,
+      "title": "ҽ׀጑ 13:10-13:20 0LPLFNLQJ\u00035DGLRORJLVW\u0003:RUNÀRZ\u001d\u0003 A Hierarchical Routing Model for $XWRPDWHG\u00030DPPRJUDP\u0003&ODVVL¿FDWLRQ",
+      "snippet": "O-NST-002 ҽ׀጑ 13:10-13:20 0LPLFNLQJ\u00035DGLRORJLVW\u0003:RUNÀRZ\u001d\u0003 A Hierarchical Routing Model for $XWRPDWHG\u00030DPPRJUDP\u0003&ODVVL¿FDWLRQ"
+    },
+    {
+      "id": "O-NST-003",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 7,
+      "title": "ړ⑸೻ 13:20-13:30 A Two-Stage Deep Learning Framework for Automatic Segmentation of Thyroid Tumors in Ultrasound Images",
+      "snippet": "O-NST-003 ړ⑸೻ 13:20-13:30 A Two-Stage Deep Learning Framework for Automatic Segmentation of Thyroid Tumors in Ultrasound Images"
+    },
+    {
+      "id": "O-NST-004",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 7,
+      "title": "߻ڵړ 13:30-13:40 Analysis: Integrating U-Net Segmentation with CNN and Radiomics-Based &ODVVL¿FDWLRQ",
+      "snippet": "O-NST-004 ߻ڵړ 13:30-13:40 Analysis: Integrating U-Net Segmentation with CNN and Radiomics-Based &ODVVL¿FDWLRQ"
+    },
+    {
+      "id": "O-NST-005",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 7,
+      "title": "ᘽ⪺ਈ 13:40-:14:50 Automatic Left Ventricle Segmentation on Cardiac MRI Using a Deep Learning U-Net Framework with Case-Level Data Splitting a",
+      "snippet": "O-NST-005 ᘽ⪺ਈ 13:40-:14:50 Automatic Left Ventricle Segmentation on Cardiac MRI Using a Deep Learning U-Net Framework with Case-Level Data Splitting and Robust Preprocessing"
+    },
+    {
+      "id": "O-NST-006",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 7,
+      "title": "ۊ؍Ғ 13:50-:14:00 Differentiation of Benign and Malignant Breast Tumors Using Integrated Ultrasound Radiomics and Neighborhood Component Anal",
+      "snippet": "O-NST-006 ۊ؍Ғ 13:50-:14:00 Differentiation of Benign and Malignant Breast Tumors Using Integrated Ultrasound Radiomics and Neighborhood Component Analysis"
+    },
+    {
+      "id": "O-ST-001",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "O-ST-001 ؍๕ጳ 14:10-14:20 ൈᏝఊঐඎၾ৷ЭᕐཥᏀᅂ྅ί঍ഢА ၍ʕຢձඑʘ፫ᗆଟˢ༰",
+      "snippet": "O-ST-001 ؍๕ጳ 14:10-14:20 ൈᏝఊঐඎၾ৷ЭᕐཥᏀᅂ྅ί঍ഢА ၍ʕຢձඑʘ፫ᗆଟˢ༰"
+    },
+    {
+      "id": "O-ST-002",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "O-ST-002 ௓ρɭ 14:20-14:30 ʱؓཥ໘ᓙᄴ̬၇ᑗґ੬๫௅З DLP ᔷ౬Ϟࣖኒඎʘᔷ౬Ϊᅰ",
+      "snippet": "O-ST-002 ௓ρɭ 14:20-14:30 ʱؓཥ໘ᓙᄴ̬၇ᑗґ੬๫௅З DLP ᔷ౬Ϟࣖኒඎʘᔷ౬Ϊᅰ"
+    },
+    {
+      "id": "O-ST-003",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "ᇹ׼ጲ 14:30-14:40 ཥ໘ᓙᄴ୚ʲܓێࠦ( 1 mm) ࿁঍ഢА ၍එʷધ౜ Agatston ʱᅰٙᅂᚤ ኪ͛ʕ˖ɹ᎘೯\u0001\t\u0001\u0013ڌ 0SBM\u00011SFTFOUBUJPO\u00010G\u00013BEJPMPHZ\u0001TUVEFOUT\u0001\u0013\u0001 \u0014\u0011\u0013B\u0001ึᙄ$\t܃ POGFSFODF\u00013N\u000f\u0014",
+      "snippet": "O-ST-003 ᇹ׼ጲ 14:30-14:40 ཥ໘ᓙᄴ୚ʲܓێࠦ( 1 mm) ࿁঍ഢА ၍එʷધ౜ Agatston ʱᅰٙᅂᚤ ኪ͛ʕ˖ɹ᎘೯\u0001\t\u0001\u0013ڌ 0SBM\u00011SFTFOUBUJPO\u00010G\u00013BEJPMPHZ\u0001TUVEFOUT\u0001\u0013\u0001 \u0014\u0011\u0013B\u0001ึᙄ$\t܃ POGFSFODF\u00013N\u000f\u0014\u0011\u0013B ڗࢭjˮຩʩeದऔܗeݳɓΛ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
+    },
+    {
+      "id": "O-ST-004",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "O-ST-004 ˮ׋್ 15:00-15:10 ཥ໘ᓙᄴӿഐືࠥኒඎٙଉܓኪ୦ᅂ྅ ڌତ - ৿᜗޼Ӻ",
+      "snippet": "O-ST-004 ˮ׋್ 15:00-15:10 ཥ໘ᓙᄴӿഐືࠥኒඎٙଉܓኪ୦ᅂ྅ ڌତ - ৿᜗޼Ӻ"
+    },
+    {
+      "id": "O-ST-005",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "O-ST-005 เ᪮ࠀ 15:10-15:20 ɓছ X Έ१ͭձ΃ٶό঍ഢᙲᅂЭ࿁ ˢᅂ྅ʘ၍ཥᏀ௰Գʷண֛",
+      "snippet": "O-ST-005 เ᪮ࠀ 15:10-15:20 ɓছ X Έ१ͭձ΃ٶό঍ഢᙲᅂЭ࿁ ˢᅂ྅ʘ၍ཥᏀ௰Գʷண֛"
+    },
+    {
+      "id": "O-ST-006",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "O-ST-006 เඩ଄ 15:20-15:30 ઞীɓছձ୅ਗό X Έί໖௅ᙲᅂٙ ᅂ྅ۜሯၾኒඎڌତ",
+      "snippet": "O-ST-006 เඩ଄ 15:20-15:30 ઞীɓছձ୅ਗό X Έί໖௅ᙲᅂٙ ᅂ྅ۜሯၾኒඎڌତ"
+    },
+    {
+      "id": "O-ST-007",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 8,
+      "title": "O-ST-007 ᄎ͗౹ 15:30-15:40 PC MRA ίࠥЭᝍʫږ᙮৿ᅂɪٙᏐ͜",
+      "snippet": "O-ST-007 ᄎ͗౹ 15:30-15:40 PC MRA ίࠥЭᝍʫږ᙮৿ᅂɪٙᏐ͜"
+    },
+    {
+      "id": "O-ST-008",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 9,
+      "title": "O-ST-008 ݇ݳሬ 16:00-16:10 ˸ Ansys ᅼᏝ᜕ᗇІႡɨٮʧɝ˓ஔ PAD ᙲᅂո֛ႾՈഐ࿴׌࡝",
+      "snippet": "O-ST-008 ݇ݳሬ 16:00-16:10 ˸ Ansys ᅼᏝ᜕ᗇІႡɨٮʧɝ˓ஔ PAD ᙲᅂո֛ႾՈഐ࿴׌࡝"
+    },
+    {
+      "id": "O-ST-009",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 9,
+      "title": "O-ST-009 ጽ݈ႂ 16:10-16:20 ˸ʃԿೞް௴อྼЪᄣආኪ୦ϓࣖ",
+      "snippet": "O-ST-009 ጽ݈ႂ 16:10-16:20 ˸ʃԿೞް௴อྼЪᄣආኪ୦ϓࣖ"
+    },
+    {
+      "id": "O-ST-010",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 9,
+      "title": "O-ST-010 ᄎཨѹ 16:20-16:30 ґᗙ᎘ᝍᙲᅂʕ٤ंගქҦஔ࿁౳࢛ҵՓ ၾᅂ྅ۜሯʘᅂᚤ",
+      "snippet": "O-ST-010 ᄎཨѹ 16:20-16:30 ґᗙ᎘ᝍᙲᅂʕ٤ंගქҦஔ࿁౳࢛ҵՓ ၾᅂ྅ۜሯʘᅂᚤ"
+    },
+    {
+      "id": "O-ST-011",
+      "type": "Oral (口頭)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 9,
+      "title": "ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻ ၽᝄ࢛׳ᚐଣʕ˖ɹ᎘೯\u0001\t\u0001ڌ53/\"\u00010SBM\u00014FDUJPO\u0001 \u0014\u0011\u0014B\u0001ึᙄ$\u0001\t܃ POGFSFODF\u00013N\u000f\u0014\u0011\u0014B\u0001 ڗࢭjҽࠊߕe\u0001௓ʙణ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ",
+      "snippet": "O-ST-011 ದ֚⬇ 16:30-16:40 Ꮠ͜ଉܓኪ୦ࣨ׵ɿᔼኪᅂ྅ଉ௅᎑এࣼ ෦Іਗਈ಻ ၽᝄ࢛׳ᚐଣʕ˖ɹ᎘೯\u0001\t\u0001ڌ53/\"\u00010SBM\u00014FDUJPO\u0001 \u0014\u0011\u0014B\u0001ึᙄ$\u0001\t܃ POGFSFODF\u00013N\u000f\u0014\u0011\u0014B\u0001 ڗࢭjҽࠊߕe\u0001௓ʙణ ᇜ໮ జѓ٫ ೯ࣛڌග ೯ڌᕚͦ"
+    },
+    {
+      "id": "O-RN-001",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 9,
+      "title": "O-RN-001 ю͗ߕ 11:00 - 11:10 ౤ʺᅂ྅ᔼኪ௅ᚐଣɛ݄ࡰ͂࿁ˢኒܝ ೯͛ཀઽˀᏐʘஈଣঐɢ",
+      "snippet": "O-RN-001 ю͗ߕ 11:00 - 11:10 ౤ʺᅂ྅ᔼኪ௅ᚐଣɛ݄ࡰ͂࿁ˢኒܝ ೯͛ཀઽˀᏐʘஈଣঐɢ"
+    },
+    {
+      "id": "O-RN-002",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 9,
+      "title": "O-RN-002 ࢱૺٹ 11:10 - 11:20 ᅂ྅Ꮸݟ࿁ˢኒʔԄˀᏐʘࠬᎈʱбʱ ؓၾᑗґ္಻൙П",
+      "snippet": "O-RN-002 ࢱૺٹ 11:10 - 11:20 ᅂ྅Ꮸݟ࿁ˢኒʔԄˀᏐʘࠬᎈʱбʱ ؓၾᑗґ္಻൙П"
+    },
+    {
+      "id": "O-RN-003",
+      "type": "Oral (口頭)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 9,
+      "title": "O-RN-003 ӓٹْ 11:20 - 11:30 ࢛׳ᚐଣࢪආචՓ׵ܓᔼኪʕːʘՓܓ ᔷᙇၾܔ࿴ዝ೻",
+      "snippet": "O-RN-003 ӓٹْ 11:20 - 11:30 ࢛׳ᚐଣࢪආචՓ׵ܓᔼኪʕːʘՓܓ ᔷᙇၾܔ࿴ዝ೻"
+    },
+    {
+      "id": "P-AI-001",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-001 ઞী GE Fast Stroke ׵ Perfusion CT ʕਗ᎑এ፩ɝՌᅰІਗ፯՟ʘ๟ ᆽ׌ ю׋ໞ",
+      "snippet": "P-AI-001 ઞী GE Fast Stroke ׵ Perfusion CT ʕਗ᎑এ፩ɝՌᅰІਗ፯՟ʘ๟ ᆽ׌ ю׋ໞ"
+    },
+    {
+      "id": "P-AI-002",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-002 ༶͛͜ϓό AI(ChatGPT) ՘Ъක೯ CT ًڿਗএඑʷʱᅰІਗʷజ ѓӻ୕ ቍၪࢬ",
+      "snippet": "P-AI-002 ༶͛͜ϓό AI(ChatGPT) ՘Ъක೯ CT ًڿਗএඑʷʱᅰІਗʷజ ѓӻ୕ ቍၪࢬ"
+    },
+    {
+      "id": "P-AI-003",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-003 ৗʷ׌ᗫື׵فቋ୅όᅼۨਈ಻ၾᏐ͜૒ܓ̋ᛆ࢛݈̙ൖʷᆠਜ̙ ༆ᙑ׌ઞীၾ઺ኪᏐ͜ юࢡ؇",
+      "snippet": "P-AI-003 ৗʷ׌ᗫື׵فቋ୅όᅼۨਈ಻ၾᏐ͜૒ܓ̋ᛆ࢛݈̙ൖʷᆠਜ̙ ༆ᙑ׌ઞীၾ઺ኪᏐ͜ юࢡ؇"
+    },
+    {
+      "id": "P-AI-004",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி",
+      "snippet": "P-AI-004 Mirror-Difference Brain NCCT Radiomics for Acute Ischemic Stroke Prediction රආி"
+    },
+    {
+      "id": "P-AI-005",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-005 $UWL¿FLDO\u0003,QWHOOLJHQFH\u0010$VVLVWHG\u0003%UDLQ\u00037XPRU\u00036HJPHQWDWLRQ\u001d\u0003,QYHVWLJDWLRQ\u0003 of Manpower, Time Cost and Accuracy ஢͍ᅃ",
+      "snippet": "P-AI-005 $UWL¿FLDO\u0003,QWHOOLJHQFH\u0010$VVLVWHG\u0003%UDLQ\u00037XPRU\u00036HJPHQWDWLRQ\u001d\u0003,QYHVWLJDWLRQ\u0003 of Manpower, Time Cost and Accuracy ஢͍ᅃ"
+    },
+    {
+      "id": "P-AI-006",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-006 ,PSURYLQJ\u0003&OLQLFDO\u0003(I¿FLHQF\\\u00038VLQJ\u0003DQ\u0003$,\u00036FUHHQLQJ\u00033ODWIRUP\u0003IRU\u0003$RUWLF\u0003 Dilation and Lung Nodule Detection ు˰௫",
+      "snippet": "P-AI-006 ,PSURYLQJ\u0003&OLQLFDO\u0003(I¿FLHQF\\\u00038VLQJ\u0003DQ\u0003$,\u00036FUHHQLQJ\u00033ODWIRUP\u0003IRU\u0003$RUWLF\u0003 Dilation and Lung Nodule Detection ు˰௫"
+    },
+    {
+      "id": "P-AI-007",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-007 ਿ׵ቋ୅ኪ୦ʘεᅺᜀᝍʫ̈Аਈ಻ᅼۨϓࣖ൙П մ͉؍",
+      "snippet": "P-AI-007 ਿ׵ቋ୅ኪ୦ʘεᅺᜀᝍʫ̈Аਈ಻ᅼۨϓࣖ൙П մ͉؍"
+    },
+    {
+      "id": "P-AI-008",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "Development and Validation of a CT Radiomics–Based Predictive Model for Pathological Complete Response in Locally Advanced Colorectal Cancer",
+      "snippet": "P-AI-008 Development and Validation of a CT Radiomics–Based Predictive Model for Pathological Complete Response in Locally Advanced Colorectal Cancer Treated with Neoadjuvant Chemoradiotherapy เബ଄"
+    },
+    {
+      "id": "P-AI-009",
+      "type": "Poster (壁報)",
+      "category_code": "AI",
+      "category": "AI",
+      "category_name": "人工智慧 (Artificial Intelligence)",
+      "page": 1,
+      "title": "P-AI-009 Systematic Evaluation of CNN Architectures for Multi-Label Chest X-ray &ODVVL¿FDWLRQ\u001d\u00036\\VWHP\u00036WDELOLW\\\u0003DQG\u0003'HSOR\\PHQW\u0003(I¿FLHQF\\ ࡥɿജ",
+      "snippet": "P-AI-009 Systematic Evaluation of CNN Architectures for Multi-Label Chest X-ray &ODVVL¿FDWLRQ\u001d\u00036\\VWHP\u00036WDELOLW\\\u0003DQG\u0003'HSOR\\PHQW\u0003(I¿FLHQF\\ ࡥɿജ"
+    },
+    {
+      "id": "P-CA-001",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-001 Bovine Aortic Arch jɓԷˇԈ˴ਗএʐᜊମᅂ྅ൢᓙ Оᕄρ",
+      "snippet": "P-CA-001 Bovine Aortic Arch jɓԷˇԈ˴ਗএʐᜊମᅂ྅ൢᓙ Оᕄρ"
+    },
+    {
+      "id": "P-CA-002",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-002 'LJLWL]LQJ\u0003&DUGLDF\u0003&DWKHWHUL]DWLRQ\u0003/DERUDWRULHV\u0003:RUNÀRZV\u001d\u0003$\u00036PDUW\u0003 System for Quality Assurance and Inventory Management ؍ฺࢸ",
+      "snippet": "P-CA-002 'LJLWL]LQJ\u0003&DUGLDF\u0003&DWKHWHUL]DWLRQ\u0003/DERUDWRULHV\u0003:RUNÀRZV\u001d\u0003$\u00036PDUW\u0003 System for Quality Assurance and Inventory Management ؍ฺࢸ"
+    },
+    {
+      "id": "P-CA-003",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-003 ༶͜ၚྼ၍ଣᎴʷːኬ၍˓ஔɝ৫ݴ೻j౤ʺषґմᔷଟၾಯჀᚐ ଣࠋஃʘ༨ྠඟΥЪࠇ೥ රߧശ",
+      "snippet": "P-CA-003 ༶͜ၚྼ၍ଣᎴʷːኬ၍˓ஔɝ৫ݴ೻j౤ʺषґմᔷଟၾಯჀᚐ ଣࠋஃʘ༨ྠඟΥЪࠇ೥ රߧശ"
+    },
+    {
+      "id": "P-CA-004",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-004 ਿ࢛׳׵ଡ଼ኪٙዚኜኪ୦˙ج࿁А၍ʫ൴تࠪᜑًͪڿٙਗএඑʷ ᘌࠠ೻ܓආБʱᗳ ᆙ˖ᄫ",
+      "snippet": "P-CA-004 ਿ࢛׳׵ଡ଼ኪٙዚኜኪ୦˙ج࿁А၍ʫ൴تࠪᜑًͪڿٙਗএඑʷ ᘌࠠ೻ܓආБʱᗳ ᆙ˖ᄫ"
+    },
+    {
+      "id": "P-CA-005",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-005 ືܛኜಔɝஔܝෆɹո֛ʘҦஔҷԄj˸݅Ϟ˟Аༀໄ՟˾ෂ୕൨ ؍ج ྗᓆ",
+      "snippet": "P-CA-005 ືܛኜಔɝஔܝෆɹո֛ʘҦஔҷԄj˸݅Ϟ˟Аༀໄ՟˾ෂ୕൨ ؍ج ྗᓆ"
+    },
+    {
+      "id": "P-CA-006",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ",
+      "snippet": "P-CA-006 ܔ࿴ၠЍːኬ၍܃jᅂ྅ݴ೻ᅰЗʷၾൖᙂʷ၍ଣʘᏐ͜ ஢˖വ"
+    },
+    {
+      "id": "P-CA-007",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ",
+      "snippet": "P-CA-007 А၍ᙲᅂภৣ CT ၾ TEE ̸ːЀ܆ੁஔطᐕषԷజѓ ර༟ᴂ"
+    },
+    {
+      "id": "P-CA-008",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃",
+      "snippet": "P-CA-008 Leriche Syndrome ӼԈմᗙਗএशषطᐕषԷజѓ เಃ҃"
+    },
+    {
+      "id": "P-CA-009",
+      "type": "Poster (壁報)",
+      "category_code": "CA",
+      "category": "CA",
+      "category_name": "心導管血管攝影 (Cath Lab & Angiography)",
+      "page": 1,
+      "title": "P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ",
+      "snippet": "P-CA-009 ̨ᝄ࠯Է༨৫ STEMI ᔎ຾ܢൢٜɝኬ၍܃ʘࣩࡈజѓ ޜߕړ"
+    },
+    {
+      "id": "P-CT-001",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 1,
+      "title": "P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶",
+      "snippet": "P-CT-001 ઞীЭኒඎ٬௅ཥ໘ᓙᄴᅂ྅ίɛʈ౽ᅆཥ໘Ⴞпਈ಻ӻ୕кᛘࢨٙ ମ เ਷੶"
+    },
+    {
+      "id": "P-CT-002",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "Immediate chest CT scan after a failed lower extremity computed tomography angiography may help reveal more severe lesion: a case reminder ҽ",
+      "snippet": "P-CT-002 Immediate chest CT scan after a failed lower extremity computed tomography angiography may help reveal more severe lesion: a case reminder ҽڲሬ"
+    },
+    {
+      "id": "P-CT-003",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "Evaluation of Pediatric Brain CT Radiation Dose Control and Compliance with ALARA Guidelines: A Retrospective Study of a Regional Hospital i",
+      "snippet": "P-CT-003 Evaluation of Pediatric Brain CT Radiation Dose Control and Compliance with ALARA Guidelines: A Retrospective Study of a Regional Hospital in Southern Taiwan ੵ߃ો"
+    },
+    {
+      "id": "P-CT-004",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-004 ε޴ࣛཥ໘ᓙᄴА၍ᙲᅂί׌ܢॹА׌໘ʕٙࠬᏐ͜ - ࣩԷઞী ؍ወҕ",
+      "snippet": "P-CT-004 ε޴ࣛཥ໘ᓙᄴА၍ᙲᅂί׌ܢॹА׌໘ʕٙࠬᏐ͜ - ࣩԷઞী ؍ወҕ"
+    },
+    {
+      "id": "P-CT-005",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-005 ً̛ڿਗএৎ๕ମ੬Мᎇ˴ਗএၾ٬ਗএගԐБ (Anomalous origin of the right coronary artery with an interarterial course)- षԷజѓ ༗؍˖",
+      "snippet": "P-CT-005 ً̛ڿਗএৎ๕ମ੬Мᎇ˴ਗএၾ٬ਗএගԐБ (Anomalous origin of the right coronary artery with an interarterial course)- षԷజѓ ༗؍˖"
+    },
+    {
+      "id": "P-CT-006",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-006 ˸Ϋ๑׌ʱؓઞীԒ᜗ሯඎܸᅰၾ᜗ࠦڌጐ࿁ًڿਗএཥ໘ᓙᄴА ၍ᙲᅂА၍ᜑᅂʘᅂᚤ ܅؍ԕ",
+      "snippet": "P-CT-006 ˸Ϋ๑׌ʱؓઞীԒ᜗ሯඎܸᅰၾ᜗ࠦڌጐ࿁ًڿਗএཥ໘ᓙᄴА ၍ᙲᅂА၍ᜑᅂʘᅂᚤ ܅؍ԕ"
+    },
+    {
+      "id": "P-CT-007",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ",
+      "snippet": "P-CT-007 ໢ʫ٬ۨཞᕎसʘཥ໘ᓙᄴᅂ྅तᅄjɓԷ຾͟঍˴ਗএၾ໖ഢ฀ ԶАʘࣩࡈజѓ ቍ໋ጫ"
+    },
+    {
+      "id": "P-CT-008",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳",
+      "snippet": "P-CT-008 л͜຾ͤ߈ഢ᎑এཀᓩༀໄໄ׳ஔ՟̈ᓙ൓ Port-A ʘषԷజѓ ؍ඩ⥳"
+    },
+    {
+      "id": "P-CT-009",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏",
+      "snippet": "P-CT-009 ౽ᅆϓ྅ໝήᑗґ : ࢪ࢛׳ኬɝ AI Ꮄʷ ADPKD ᐼഥ᜗ጐ಻ඎʿ̙ ቦ׌൙П ᄎ׋֏"
+    },
+    {
+      "id": "P-CT-010",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ",
+      "snippet": "P-CT-010 ৷ϋᙧ࿁ཥ໘ᓙᄴኬˏ຾ͤ٬௅ഐື߈ՐԻ೯सٙᅂᚤj˸ 75 ๋ޢމ ʘ৷ᙧઃ٫ࠬᎈΪɿઞী ᕧ๿ᅅ"
+    },
+    {
+      "id": "P-CT-011",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-011 ,PSDFW\u0003RI\u00035$3,'\u0010$,\u00033HUIXVLRQ\u0003$QDO\\VLV\u0003DQG\u00035HDO\u00107LPH\u00033XVK\u00031RWL¿FDWLRQ\u0003 on EVT Timeliness in Acute Ischemic Stroke մྗႴ",
+      "snippet": "P-CT-011 ,PSDFW\u0003RI\u00035$3,'\u0010$,\u00033HUIXVLRQ\u0003$QDO\\VLV\u0003DQG\u00035HDO\u00107LPH\u00033XVK\u00031RWL¿FDWLRQ\u0003 on EVT Timeliness in Acute Ischemic Stroke մྗႴ"
+    },
+    {
+      "id": "P-CT-012",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-012 ࿁ˢኒ࢛ءഄଫ௰Գʷ˸౤ʺ᎘௅ཥ໘ᓙᄴА၍ᜑᅂۜሯʘΫᚥ׌ ʱؓ ੵ೸ත",
+      "snippet": "P-CT-012 ࿁ˢኒ࢛ءഄଫ௰Գʷ˸౤ʺ᎘௅ཥ໘ᓙᄴА၍ᜑᅂۜሯʘΫᚥ׌ ʱؓ ੵ೸ත"
+    },
+    {
+      "id": "P-CT-013",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-013 Ν˚݄͂ўຢၾўᰕ࿁ˢኒ࿁ഥ̌ঐʘࠬᎈ൙Пٙྼᗇ޼Ӻʱؓ ጅૠᚆ",
+      "snippet": "P-CT-013 Ν˚݄͂ўຢၾўᰕ࿁ˢኒ࿁ഥ̌ঐʘࠬᎈ൙Пٙྼᗇ޼Ӻʱؓ ጅૠᚆ"
+    },
+    {
+      "id": "P-CT-014",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗএᜑᅂʘˢ༰ ٓړຄ",
+      "snippet": "P-CT-014 ʔΝຢዢܓ࿁ˢኒ׵ CTA ਗএಂ˴ਗএᜑᅂʘˢ༰ ٓړຄ"
+    },
+    {
+      "id": "P-CT-015",
+      "type": "Poster (壁報)",
+      "category_code": "CT",
+      "category": "CT",
+      "category_name": "電腦斷層攝影 (Computed Tomography)",
+      "page": 2,
+      "title": "P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ",
+      "snippet": "P-CT-015 CBCT ׵ልᕏε࣬၍ΥԻ኉๕׌ɪᕛᘨفʘᅂ྅Ꮠ͜jषԷజѓ Ϫࡐؚ"
+    },
+    {
+      "id": "P-EBM-001",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ",
+      "snippet": "P-EBM-001 ˸ྼᗇᔼኪ൙П N-acetylcysteine ཫԣ࿁ˢኒ޴ᗫ׌ܢഥฦෆʘᑗґ Ꮠ͜ ړ̾ඤ"
+    },
+    {
+      "id": "P-EBM-002",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ",
+      "snippet": "P-EBM-002 ˸ྼᗇᔼኪ˙όઞীʷຈᖹ࿁᎑এ࢛ء࿁ˢኒٙܝഥᛔڭᚐʘࣖɢ ໢νޛ"
+    },
+    {
+      "id": "P-EP-001",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃",
+      "snippet": "P-EP-001 л͜ൈᏝɛ̨̻൙П׵ࢪ࢛׳ှࣈிᅂሊ઺ٙ๖ஷঐɢʘ̙Б׌ ᄎΤ҃"
+    },
+    {
+      "id": "P-EP-002",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜",
+      "snippet": "P-EP-002 ༶͜ AI ʱؓႾп઺ኪ൙ʱᏐ͜׵ಂ̊జѓʘઞী ѐ˖⒜"
+    },
+    {
+      "id": "P-EP-003",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ",
+      "snippet": "P-EP-003 ༶͜ AI ༟ࢫࣘᅂ྅౤ʺྼ୦͛ၾኪࡰఓ᎘ମيᅂ྅кᓙϓ؍ࣖ ᅃܗ"
+    },
+    {
+      "id": "P-EP-004",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 2,
+      "title": "P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ",
+      "snippet": "P-EP-004 ʔΝᅂ྅פ˪൙П࿁ᔼԫ࢛׳ PGY ኪࡰᅂ྅ۜሯ൙ඎഐ؈ʘᅂᚤj ᎇዚפ˪ၾІ˴ႎ˪ᅼόʘˢ༰޼Ӻ ܫ؍ઽ"
+    },
+    {
+      "id": "P-IR-001",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 2,
+      "title": "P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ",
+      "snippet": "P-IR-001 Right Hepatic Artery Pseudoaneurysm Following Hepatectomy Treated with Balloon-Expandable Stent Graft ಀഓၥ"
+    },
+    {
+      "id": "P-IR-002",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 3,
+      "title": "P-IR-002 д؂ෂ୕ᅂ྅ࠢڻj༶͜ Overlay ҦஔᎴʷኬݴ˕ݖ൨ኣ׌ၾ၍ഢ ࿫ஷٙܓஔܝ൙П ˮ∑඘",
+      "snippet": "P-IR-002 д؂ෂ୕ᅂ྅ࠢڻj༶͜ Overlay ҦஔᎴʷኬݴ˕ݖ൨ኣ׌ၾ၍ഢ ࿫ஷٙܓஔܝ൙П ˮ∑඘"
+    },
+    {
+      "id": "P-IR-003",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 3,
+      "title": "P-IR-003 Treatment of blood blister–like aneurysms of the internal carotid artery ZLWK\u00033LSHOLQH\u0003ÀRZ\u0003GLYHUWHUV ௓ܔლ",
+      "snippet": "P-IR-003 Treatment of blood blister–like aneurysms of the internal carotid artery ZLWK\u00033LSHOLQH\u0003ÀRZ\u0003GLYHUWHUV ௓ܔლ"
+    },
+    {
+      "id": "P-IR-004",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 3,
+      "title": "P-IR-004 Ꮠ͜А၍ᙲᅂݴ஺ʱؓழ᜗ආБɽ໘А၍˕ݖໄܝ׳ʘ؈ࣖ൙П ದлڄ",
+      "snippet": "P-IR-004 Ꮠ͜А၍ᙲᅂݴ஺ʱؓழ᜗ආБɽ໘А၍˕ݖໄܝ׳ʘ؈ࣖ൙П ದлڄ"
+    },
+    {
+      "id": "P-IR-005",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 3,
+      "title": "P-IR-005 ӿ୅ಔܝӿ᎑এၾɨഢ᎑এѕΥஈद॥ʘ˕ݖʧɝطᐕၾஔܝᅂ྅ ڌତ : षԷజѓ մࠜႴ",
+      "snippet": "P-IR-005 ӿ୅ಔܝӿ᎑এၾɨഢ᎑এѕΥஈद॥ʘ˕ݖʧɝطᐕၾஔܝᅂ྅ ڌତ : षԷజѓ մࠜႴ"
+    },
+    {
+      "id": "P-IR-006",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 3,
+      "title": "P-IR-006 Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and Color-Coded Circulation: A Case Report ᑽС׀",
+      "snippet": "P-IR-006 Severe Left Internal Carotid Artery Stenosis Evaluated by Parametric Imaging and Color-Coded Circulation: A Case Report ᑽС׀"
+    },
+    {
+      "id": "P-IR-007",
+      "type": "Poster (壁報)",
+      "category_code": "IR",
+      "category": "IR",
+      "category_name": "放射介入治療 (Interventional Radiology)",
+      "page": 3,
+      "title": "P-IR-007 ڡˇϋːᛔᓂ૰ᆯኬ׌ܢߧॹА׌໘ʕࠬʘᅂ྅ൢᓙၾᑗґஈໄjषԷ జѓ ˮወവ",
+      "snippet": "P-IR-007 ڡˇϋːᛔᓂ૰ᆯኬ׌ܢߧॹА׌໘ʕࠬʘᅂ྅ൢᓙၾᑗґஈໄjषԷ జѓ ˮወവ"
+    },
+    {
+      "id": "P-MA-001",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ᜗֛Зʲ˪዁ЪࣖଟၾτΌ׌ Оඩణ",
+      "snippet": "P-MA-001 Ꮠ͜ 3D ΐΙҦஔҷഛԪגͭ᜗֛Зʲ˪዁ЪࣖଟၾτΌ׌ Оඩణ"
+    },
+    {
+      "id": "P-MA-002",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ࢛׳ʘᑗґঐɢ੃ԃ ੵ་܈",
+      "snippet": "P-MA-002 ˸ EPA ܔ࿴Ԫגᙲᅂอආࢪ࢛׳ʘᑗґঐɢ੃ԃ ੵ་܈"
+    },
+    {
+      "id": "P-MA-003",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ",
+      "snippet": "P-MA-003 Ԫגᙲᅂᅂ྅͊༺൙˪ᅺ๟ᅂᚤᆽൢʘࣩԷజѓ ௓ޮЮ"
+    },
+    {
+      "id": "P-MA-004",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ",
+      "snippet": "P-MA-004 л͜ PDCA ᅼόҷഛԪגᙲᅂᄻ˪ଟʘ޼Ӻ юᅆॆ"
+    },
+    {
+      "id": "P-MA-005",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "Radiologic Technologist-Led Environmental Interventions in Mammography: Associations of Patient-Reported Helpfulness of Music and Video Educ",
+      "snippet": "P-MA-005 Radiologic Technologist-Led Environmental Interventions in Mammography: Associations of Patient-Reported Helpfulness of Music and Video Education with Pre-procedural Anxiety ҽಱୣ"
+    },
+    {
+      "id": "P-MA-006",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "P-MA-006 Ԫגᅂ྅ኪᏨݟ፧࢛ኒඎၾԪגϓ྅ඎʷʱؓ เ͗ణ",
+      "snippet": "P-MA-006 Ԫגᅂ྅ኪᏨݟ፧࢛ኒඎၾԪגϓ྅ඎʷʱؓ เ͗ణ"
+    },
+    {
+      "id": "P-MA-007",
+      "type": "Poster (壁報)",
+      "category_code": "MA",
+      "category": "MA",
+      "category_name": "乳房攝影 (Mammography)",
+      "page": 3,
+      "title": "P-MA-007 ൙ПԪגᙲᅂ̻ٙѩ AGD ձ ESD Ꮄʷᙲᅂਞᅰᅼό ๝Գᆦ",
+      "snippet": "P-MA-007 ൙ПԪגᙲᅂ̻ٙѩ AGD ձ ESD Ꮄʷᙲᅂਞᅰᅼό ๝Գᆦ"
+    },
+    {
+      "id": "P-MR-001",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "Integrative MRI and Molecular Analysis of Cerebral Edema and Aquaporin Expression following Traumatic Brain Injury: Implications for Sensori",
+      "snippet": "P-MR-001 Integrative MRI and Molecular Analysis of Cerebral Edema and Aquaporin Expression following Traumatic Brain Injury: Implications for Sensorimotor Function ර͉ಌ"
+    },
+    {
+      "id": "P-MR-002",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "P-MR-002 ۃφࢤᗫືٲٙف௅৅ᇖ MRI षԷజѓ เؚ࢕",
+      "snippet": "P-MR-002 ۃφࢤᗫືٲٙف௅৅ᇖ MRI षԷజѓ เؚ࢕"
+    },
+    {
+      "id": "P-MR-003",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "P-MR-003 'HYHORSPHQW\u0003DQG\u00032SWLPL]DWLRQ\u0003RI\u0003DQ\u0003$XWRPDWHG\u00033DJLQJ\u00036\\VWHP\u0003WR\u0003 ,PSURYH\u0003:RUNÀRZ\u0003LQ\u0003([HFXWLYH\u00030HGLFDO\u0003,PDJH\u0003&HQWHU ᄎߖё",
+      "snippet": "P-MR-003 'HYHORSPHQW\u0003DQG\u00032SWLPL]DWLRQ\u0003RI\u0003DQ\u0003$XWRPDWHG\u00033DJLQJ\u00036\\VWHP\u0003WR\u0003 ,PSURYH\u0003:RUNÀRZ\u0003LQ\u0003([HFXWLYH\u00030HGLFDO\u0003,PDJH\u0003&HQWHU ᄎߖё"
+    },
+    {
+      "id": "P-MR-004",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "P-MR-004 ှࣈிᅂʕΪইٴʔԑிϓᅂ྅࿁ˢˀᔷ - ᑗґࣩԷజѓ ѐྗ˖",
+      "snippet": "P-MR-004 ှࣈிᅂʕΪইٴʔԑிϓᅂ྅࿁ˢˀᔷ - ᑗґࣩԷజѓ ѐྗ˖"
+    },
+    {
+      "id": "P-MR-005",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "A Preliminary experience in using T1 mapping quantitative techniques to assess Native T1 values of different regions of the left ventricle m",
+      "snippet": "P-MR-005 A Preliminary experience in using T1 mapping quantitative techniques to assess Native T1 values of different regions of the left ventricle myocardium ҽ׹ࣈ"
+    },
+    {
+      "id": "P-MR-006",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "P-MR-006 ˸ݴ᜗ᇞ໊৿᜗ඎʷှࣈிᅂ࠭БࣛගҦஔᅂ྅༆ܓؓʘ̙Б޼׌ Ӻ ᄎ䄣қ",
+      "snippet": "P-MR-006 ˸ݴ᜗ᇞ໊৿᜗ඎʷှࣈிᅂ࠭БࣛගҦஔᅂ྅༆ܓؓʘ̙Б޼׌ Ӻ ᄎ䄣қ"
+    },
+    {
+      "id": "P-MR-007",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "P-MR-007 ༶͜ᑛʲනΣᓒ౳̋ᛆϓ྅DWIൢᓙᅲ׌ࣛΌ̰ࠦኳसTGA ʘ൙ПၾषԷʱؓ ᒤԳᘄ",
+      "snippet": "P-MR-007 ༶͜ᑛʲනΣᓒ౳̋ᛆϓ྅DWIൢᓙᅲ׌ࣛΌ̰ࠦኳसTGA ʘ൙ПၾषԷʱؓ ᒤԳᘄ"
+    },
+    {
+      "id": "P-MR-008",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 3,
+      "title": "P-MR-008 ှʷ̋ᛆှࣈᅂ྅ί׌ܢɽА၍ʕࠬ຾՟طࣼᐕषઃٙᏐ͜ ᘽ၀࿰",
+      "snippet": "P-MR-008 ှʷ̋ᛆှࣈᅂ྅ί׌ܢɽА၍ʕࠬ຾՟طࣼᐕषઃٙᏐ͜ ᘽ၀࿰"
+    },
+    {
+      "id": "P-MR-009",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-009 лࣨ͜ှ΍ࣈ಻ඎইٴӿၾͤɨইٴўඎʘઞী ݚၪࢡ",
+      "snippet": "P-MR-009 лࣨ͜ှ΍ࣈ಻ඎইٴӿၾͤɨইٴўඎʘઞী ݚၪࢡ"
+    },
+    {
+      "id": "P-MR-010",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-010 ːᛔှࣈிᅂ T1 / T2 ࢛݈͍੬ܔ࠽ͭj˸ 1.5T GE SIGNA V oyager މԷ ֚؍ዳ",
+      "snippet": "P-MR-010 ːᛔှࣈிᅂ T1 / T2 ࢛݈͍੬ܔ࠽ͭj˸ 1.5T GE SIGNA V oyager މԷ ֚؍ዳ"
+    },
+    {
+      "id": "P-MR-011",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-011 ှࣈிᅂੵඎϓ྅ί໐ಖගᆵ߉̈ிϓग़຾࣬षᜊٙᑗґൢᓙᏐ͜ ੰ௹௷",
+      "snippet": "P-MR-011 ှࣈிᅂੵඎϓ྅ί໐ಖගᆵ߉̈ிϓग़຾࣬षᜊٙᑗґൢᓙᏐ͜ ੰ௹௷"
+    },
+    {
+      "id": "P-MR-012",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-012 ў᚛ှ׌ᕙࣘʘߕ͠෩ᄴ࿁ှࣈிᅂᅂ྅ʘᅂᚤj˸፟଻ߕ͠މԷ ҽ߹ন",
+      "snippet": "P-MR-012 ў᚛ှ׌ᕙࣘʘߕ͠෩ᄴ࿁ှࣈிᅂᅂ྅ʘᅂᚤj˸፟଻ߕ͠މԷ ҽ߹ন"
+    },
+    {
+      "id": "P-MR-013",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺",
+      "snippet": "P-MR-013 ሊ͛ಗૢ׵੉߅ᐖसှࣈிᅂʘᏐ͜j൙ПஔۃʱಂᎴැၾஔܝ৛ᔳ ࠢՓ ю࠺࠺"
+    },
+    {
+      "id": "P-MR-014",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ",
+      "snippet": "P-MR-014 ༶͜ɛʈ౽ᅆίှࣈிᅂᏨݟɪ൙П໘௅ͤሯ᜗ጐʿ໘ᙧПၑ ю͗വ"
+    },
+    {
+      "id": "P-MR-015",
+      "type": "Poster (壁報)",
+      "category_code": "MR",
+      "category": "MR",
+      "category_name": "磁振造影 (Magnetic Resonance Imaging)",
+      "page": 4,
+      "title": "P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ",
+      "snippet": "P-MR-015 Variability of Automated Deep Gray Matter V olumetry at 3T MRI volBrain versus MRICloud ؍͗ٹ"
+    },
+    {
+      "id": "P-NAI-01",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 4,
+      "title": "P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Explanation Accuracy in Japan§s National Examination for Radiological  Hidek",
+      "snippet": "P-NAI-01 Evaluating Generative AI–Supported Learning:Answer and Explanation Accuracy in Japan§s National Examination for Radiological  Hideki Kato"
+    },
+    {
+      "id": "P-NM-001",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-001 ග๊׌໑ߞ༸̈Аࣨٙᔼᅂ྅j˸षԷމਿᓾٙᝈᓃ ර೘ත",
+      "snippet": "P-NM-001 ග๊׌໑ߞ༸̈Аࣨٙᔼᅂ྅j˸षԷމਿᓾٙᝈᓃ ර೘ත"
+    },
+    {
+      "id": "P-NM-002",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-002 ᙲᚐ໗ᐖઃ٫ Tc-99m MDP ΌԒ৶ધ౜ၾ F-18 rhPSMA-7.3 ͍ɿி ᅂʘᅂ྅ઞী - ࣩԷజѓ ഁ౉ޙ",
+      "snippet": "P-NM-002 ᙲᚐ໗ᐖઃ٫ Tc-99m MDP ΌԒ৶ધ౜ၾ F-18 rhPSMA-7.3 ͍ɿி ᅂʘᅂ྅ઞী - ࣩԷజѓ ഁ౉ޙ"
+    },
+    {
+      "id": "P-NM-003",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-003 л̘͜ः໧ൃጟ͍ɿᓙᄴધ౜จ̮ਈ಻Ցᙲᚐ໗ᐖ - ࣩࡈజѓ ੵԳ೘",
+      "snippet": "P-NM-003 л̘͜ः໧ൃጟ͍ɿᓙᄴધ౜จ̮ਈ಻Ցᙲᚐ໗ᐖ - ࣩࡈజѓ ੵԳ೘"
+    },
+    {
+      "id": "P-NM-004",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis ௓ځ࣭",
+      "snippet": "P-NM-004 Enhancing Diagnostic Accuracy in Nuclear Bone Scans: A Robust Deep Learning Framework with Three-Channel Input Synthesis ௓ځ࣭"
+    },
+    {
+      "id": "P-NM-005",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-005 Դͤ͜ɨ࢛ء 99mTc In Vivo Tagged RBCආБ᎑এிᅂᏨݟԸҷഛ ર೻Ꮐɢʿ౤ʺᔼᐕۜሯ ቍḾѹ",
+      "snippet": "P-NM-005 Դͤ͜ɨ࢛ء 99mTc In Vivo Tagged RBCආБ᎑এிᅂᏨݟԸҷഛ ર೻Ꮐɢʿ౤ʺᔼᐕۜሯ ቍḾѹ"
+    },
+    {
+      "id": "P-NM-006",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-006 ˸ Discovery IQ ͍ɿᙲᅂᅂ྅މԷආБ᎘௅੭ً৿ᅂʘઞী ؍͗ణ",
+      "snippet": "P-NM-006 ˸ Discovery IQ ͍ɿᙲᅂᅂ྅މԷආБ᎘௅੭ً৿ᅂʘઞী ؍͗ణ"
+    },
+    {
+      "id": "P-NM-007",
+      "type": "Poster (壁報)",
+      "category_code": "NM",
+      "category": "NM",
+      "category_name": "核子醫學 (Nuclear Medicine)",
+      "page": 4,
+      "title": "P-NM-007 Experience with the Implementation of OSCE in Nuclear Medicine Radiological Technologist Training ҽޮໞ",
+      "snippet": "P-NM-007 Experience with the Implementation of OSCE in Nuclear Medicine Radiological Technologist Training ҽޮໞ"
+    },
+    {
+      "id": "P-OT-001",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-001 یਜݔ઺ኪᔼ৫௴จ઺ኪ຾᜕ʱԮ ᇹٹ֝",
+      "snippet": "P-OT-001 یਜݔ઺ኪᔼ৫௴จ઺ኪ຾᜕ʱԮ ᇹٹ֝"
+    },
+    {
+      "id": "P-OT-002",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-002 ࢛׳Ꮭॆᘩᒄ TRM ᒄۃ຾᜕ʱԮj˸ᒄۃ৅ᇖၾ৷ᏝॆᅼᏝ౤ʺ ᑗґঐɢ ю᎑ν",
+      "snippet": "P-OT-002 ࢛׳Ꮭॆᘩᒄ TRM ᒄۃ຾᜕ʱԮj˸ᒄۃ৅ᇖၾ৷ᏝॆᅼᏝ౤ʺ ᑗґঐɢ ю᎑ν"
+    },
+    {
+      "id": "P-OT-003",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-003 ᔟ͟ PDCA Ꮄʷ MRI Ꮸݴݟ೻ ᇹؒЬ",
+      "snippet": "P-OT-003 ᔟ͟ PDCA Ꮄʷ MRI Ꮸݴݟ೻ ᇹؒЬ"
+    },
+    {
+      "id": "P-OT-004",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI Ⴐ೯ʘɧɸग़຾ମЗ़೨jࣩԷజ ѓ ᆙڲኊ",
+      "snippet": "P-OT-004 ˫߅නှ׌ᓙ൓ኜ૛׵ 1.5T MRI Ⴐ೯ʘɧɸग़຾ମЗ़೨jࣩԷజ ѓ ᆙڲኊ"
+    },
+    {
+      "id": "P-OT-005",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ",
+      "snippet": "P-OT-005 ᔼᐕද׌ၾ͑ᚃ೯࢝j࢛׳ൢᓙ߅˴ኬʘԣ˦ਜྌ༨ఊЗᑌԣᅼ ۨ{{ESG ܸᅺʘඎʷྼᗇ ௓ኳቪ"
+    },
+    {
+      "id": "P-OT-006",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB ර་ശ",
+      "snippet": "P-OT-006 Correlation of Anthropometric Parameters with Bone Mineral Density: A Retrospective Analysis Using MATLAB ර་ശ"
+    },
+    {
+      "id": "P-OT-007",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 4,
+      "title": "P-OT-007 ༶ۜ͜၍ਸ਼˓ࠥجЭ CT ʿ MRI Ꮸۃݟ๟௪ࣛග ௓͑೘",
+      "snippet": "P-OT-007 ༶ۜ͜၍ਸ਼˓ࠥجЭ CT ʿ MRI Ꮸۃݟ๟௪ࣛග ௓͑೘"
+    },
+    {
+      "id": "P-OT-008",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 5,
+      "title": "P-OT-008 Ꮠ͜ Flexsim ᅼᏝҦஔ߅࢛׳׵Ꮸ܃ݟਗᇞᎴʷʘ޼Ӻj˸ࠥЭࢪ࢛׳ ʈЪࠋஃၾᔖุࠬᎈމኬΣ ಀ˰⒜",
+      "snippet": "P-OT-008 Ꮠ͜ Flexsim ᅼᏝҦஔ߅࢛׳׵Ꮸ܃ݟਗᇞᎴʷʘ޼Ӻj˸ࠥЭࢪ࢛׳ ʈЪࠋஃၾᔖุࠬᎈމኬΣ ಀ˰⒜"
+    },
+    {
+      "id": "P-OT-009",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 5,
+      "title": "P-OT-009 л͜ Power BI ൖᙂʷਗ࿒္છࠠ߅࢛׳๫ଟʱؓ ᔊСٹ",
+      "snippet": "P-OT-009 л͜ Power BI ൖᙂʷਗ࿒္છࠠ߅࢛׳๫ଟʱؓ ᔊСٹ"
+    },
+    {
+      "id": "P-OT-010",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 5,
+      "title": "P-OT-010 ჯኬࣸࠬᔷۨɨٙද׌၍ଣj࿁ࢪ࢛׳ూࡡɢၾʈЪတจٙܓᅂᚤ ڨ൮෥",
+      "snippet": "P-OT-010 ჯኬࣸࠬᔷۨɨٙද׌၍ଣj࿁ࢪ࢛׳ూࡡɢၾʈЪတจٙܓᅂᚤ ڨ൮෥"
+    },
+    {
+      "id": "P-OT-011",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 5,
+      "title": "P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ",
+      "snippet": "P-OT-011 ϵᅊ༆࿁৶Ђᆯ୚ٙߤ፧࢛ઽชЪ͜ ᇸ֝ႏ"
+    },
+    {
+      "id": "P-OT-012",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他放射專題 (Other Radiologic Tracks)",
+      "page": 5,
+      "title": "P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀",
+      "snippet": "P-OT-012 ᕿ̳੉ɾ঍໖௅ X ΈᙲᅂɨʘߣՅ፧࢛ኒඎ൙Пၾԣᚐࣖूʱؓ ɯ๰׀"
+    },
+    {
+      "id": "P-PA-001",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 5,
+      "title": "P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ",
+      "snippet": "P-PA-001 л͜ CBCT ᅂ྅ႾпІ᜗˫኉୅ಔʘࣩԷʱԮ մྗܫ"
+    },
+    {
+      "id": "P-PA-002",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 5,
+      "title": "P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻",
+      "snippet": "P-PA-002 Յഁ˫߅஗ਗόߒҼɹʫ࢛׳Ꮸݟʘᔼࢪ˓௅ኒඎ൙П ࢱ␏೻"
+    },
+    {
+      "id": "P-PA-003",
+      "type": "Poster (壁報)",
+      "category_code": "OT",
+      "category": "OT",
+      "category_name": "綜合與其他 (Other)",
+      "page": 5,
+      "title": "P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ",
+      "snippet": "P-PA-003 ɹഢཥ໘ᓙᄴ׵˫኉࣬၍طᐕʘࠅࠠႾп ර૮ྗ"
+    },
+    {
+      "id": "P-RO-001",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ",
+      "snippet": "P-RO-001 ๫௉ɽʃၾ৿᜗Ϟೌ࿁ EI ࠽ʘᅂᚤj˸൷ᕎމછՓᜊධʘɧΪɿʱ ؍ؓ Գኊ"
+    },
+    {
+      "id": "P-RO-002",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫",
+      "snippet": "P-RO-002 ҷഛ˓ഡᏨݟ( Wrist X-ray) ᅂ྅ۜሯॹ̰ଟʘ޼Ӻ ௓ڲ௫"
+    },
+    {
+      "id": "P-RO-003",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ",
+      "snippet": "P-RO-003 ઞীɓছ X Έዚ࿁ᅼᏝอ͛Յ৶ޯഢᙲᅂʘ௰Գਞᅰ ᘽݡശ"
+    },
+    {
+      "id": "P-RO-004",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇",
+      "snippet": "P-RO-004 ˸ 3D ΐΙᅼՈઞীᕐਉᇬႊᓖЗிϓʘҖᜊ ᇹဏ⬇"
+    },
+    {
+      "id": "P-RO-005",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ",
+      "snippet": "P-RO-005 ഐΥቋ୅ኪ୦ၾ Grad-CAM ҦஔආБं঍Ⴞпൢᓙක೯ʿՉषӦᆠ ਜൖᙂʷݴ೻ઞী เख़τ"
+    },
+    {
+      "id": "P-RO-006",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ",
+      "snippet": "P-RO-006 ਗ࿒ᅰЗᙲᅂʘᑗґᏐ͜ : ࣩԷʱԮ เ˂ᘒ"
+    },
+    {
+      "id": "P-RO-007",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣",
+      "snippet": "P-RO-007 ൴৷ᙧ࠮༸൓ˆٖंᅂ྅ࣩԷʱԮ ˮԕ䄣"
+    },
+    {
+      "id": "P-RO-008",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ",
+      "snippet": "P-RO-008 ༶̂͜ंόո֛Ⴞпଢ࢛׳׵ᇞᙲᅂʘᖢܓ֛ၾബቇ׌ઞী ௓Λঐ"
+    },
+    {
+      "id": "P-RO-009",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜",
+      "snippet": "P-RO-009 ༶ۜ͜ሯ၍Փਸ਼ (QCC) ࠥЭᔼ৫ X Έࠠ๫ଟʘඎʷϓ޼ࣖӺ ᄎԳ⒜"
+    },
+    {
+      "id": "P-RO-010",
+      "type": "Poster (壁報)",
+      "category_code": "RO",
+      "category": "RO",
+      "category_name": "常規X光檢查 (Routine Radiography)",
+      "page": 5,
+      "title": "P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖",
+      "snippet": "P-RO-010 ष܃ੂБ୅ਗό X Έᙲᅂ፧࢛ԣᚐတจܓ ᇸᘠ˖"
+    },
+    {
+      "id": "P-RT-001",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝",
+      "snippet": "P-RT-001 SWOT Analysis of Active Breathing Coordinator (ABC) in Radiation Therapy for Claustrophobic Patients ੰ༐᜝"
+    },
+    {
+      "id": "P-RT-002",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ͜ ؍ˁખ",
+      "snippet": "P-RT-002 ʔΝᅼՈί Halycon ዚኜطᐕ৶ޯഢᐖᑗґࣩԷٙᏐ͜ ؍ˁખ"
+    },
+    {
+      "id": "P-RT-003",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖषɛ׳ໄ Space OAR طٙᐕ˙ό ༗ૺν",
+      "snippet": "P-RT-003 ઞীͭ᜗ط࢛׳ᐕࣛᙲᚐ໗ᐖषɛ׳ໄ Space OAR طٙᐕ˙ό ༗ૺν"
+    },
+    {
+      "id": "P-RT-004",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-004 ৶ޯഢط࢛׳ᐕʔΝ࿁З˙ό๟ᆽܓʱؓ ҍӸ͗",
+      "snippet": "P-RT-004 ৶ޯഢط࢛׳ᐕʔΝ࿁З˙ό๟ᆽܓʱؓ ҍӸ͗"
+    },
+    {
+      "id": "P-RT-005",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌ীሞ ړͭ੻",
+      "snippet": "P-RT-005 Ԫᐖط࢛׳ᐕΥԻଉіௐंၾુሽЗҦஔ̙Б׌ীሞ ړͭ੻"
+    },
+    {
+      "id": "P-RT-006",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ",
+      "snippet": "P-RT-006 Ꮠ͜ط࢛׳ᐕΈɿҦஔ׵̔تГˤЂᆯʘኒඎ᜕ᗇ ቍࣛၪ"
+    },
+    {
+      "id": "P-RT-007",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 5,
+      "title": "P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ",
+      "snippet": "P-RT-007 ਼ᛌόଡ଼ᔌ෬̂ي౤ʺ˦ʆɹᅵᆖဴԪג໕ᆯڌ૵ኒඎʘࣩࡈజѓ ቎׋ശ"
+    },
+    {
+      "id": "P-RT-008",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "The role of medical radiation technologist in AI-assisted image SURFHVVLQJ\u0003DQG\u0003SURYLGLQJ\u0003VSHFL¿F\u0003VXJJHVWLRQV\u0003IRU\u0003LPSURYLQJ\u0003LPDJH\u0003 SURFHVVLQJ",
+      "snippet": "P-RT-008 The role of medical radiation technologist in AI-assisted image SURFHVVLQJ\u0003DQG\u0003SURYLGLQJ\u0003VSHFL¿F\u0003VXJJHVWLRQV\u0003IRU\u0003LPSURYLQJ\u0003LPDJH\u0003 SURFHVVLQJ\u0003TXDOLW\\\u0003DQG\u0003HI¿FLHQF\\\u0003\u0010\u0003WDNLQJ\u0003SHOYLF\u0003FDQFHU\u0003DV\u0003DQ"
+    },
+    {
+      "id": "P-RT-009",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-009 Ꮠ͜ၶআ൴ت္ࠪ಻ၾપПပ҇ࣛගj౤ʺ৶ޯഢط࢛׳ᐕᓖЗ๟ ᆽ׌ʘᑗґ൙П ᇹᯣ୮",
+      "snippet": "P-RT-009 Ꮠ͜ၶআ൴ت္ࠪ಻ၾપПပ҇ࣛගj౤ʺ৶ޯഢط࢛׳ᐕᓖЗ๟ ᆽ׌ʘᑗґ൙П ᇹᯣ୮"
+    },
+    {
+      "id": "P-RT-010",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-010 Ҟ஺ႆή̔ᖯኒඎ༶ၑˏᏗʘيଣᅼۨ፯኿ၾ༶ၑࣖଟʱؓ ҽڠዙ",
+      "snippet": "P-RT-010 Ҟ஺ႆή̔ᖯኒඎ༶ၑˏᏗʘيଣᅼۨ፯኿ၾ༶ၑࣖଟʱؓ ҽڠዙ"
+    },
+    {
+      "id": "P-RT-011",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-011 л͜܄Ⴁʷ᎘؆ᎴʷԪᐖΥԻᕁ৶ɪ၊૸ˋഐਜਹ࢛׳ᇞطᐕ ؍Գ∑",
+      "snippet": "P-RT-011 л͜܄Ⴁʷ᎘؆ᎴʷԪᐖΥԻᕁ৶ɪ၊૸ˋഐਜਹ࢛׳ᇞطᐕ ؍Գ∑"
+    },
+    {
+      "id": "P-RT-012",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ",
+      "snippet": "P-RT-012 ዆Υ 3D ͭ᜗ᅂ྅ʿڧڢɝ׌ːᛔͭ᜗֛З࢛׳ᇞ˓ஔආБཬո׌ ː׌܃ːรཀ஺ʘطᐕݴ೻ ̚ߕᚆ"
+    },
+    {
+      "id": "P-RT-013",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ",
+      "snippet": "P-RT-013 ኬɝೌॷʷӻ୕࢛׳׵໕ᆯ߅ Daily QA ݴ೻ʘҷഛϓࣖʱ؍ؓ ૺᘒ"
+    },
+    {
+      "id": "P-RT-014",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ",
+      "snippet": "P-RT-014 ᅼՈᓖ׳ЗໄၾኬঘᑮૅɠطᐕґɨӐʘᗫᑌ׌ʱؓ ௓ܠፄ"
+    },
+    {
+      "id": "P-RT-015",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ",
+      "snippet": "P-RT-015 ຾ҷԄ࣬ۨৰ׌Ԫגʲৰஔ (MRM) ܝੂБЭʱϣ๫࢛( PMRT) ͤᇮ ˀᏐ຾᜕ʱԮ ᇸוጫ"
+    },
+    {
+      "id": "P-RT-016",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω",
+      "snippet": "P-RT-016 ږ᙮৿ᅂऊৰிϓᅼᏝ֛Зᅂ྅ FOV ᐵಯ࿁طᐕࠇ೥ኒඎኪʘᅂᚤ ፠ݡω"
+    },
+    {
+      "id": "P-RT-017",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ",
+      "snippet": "P-RT-017 ່Ԫᅺাي࿁׵ MRgRT ٙᅂᚤʿᅂ྅ܝஈଣ˙ό ௓׋Ѿ"
+    },
+    {
+      "id": "P-RT-018",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉",
+      "snippet": "P-RT-018 ༶͜᜗ࠠ౽ᅆ೮፽ӻ୕൙П᎘᎕ᐖषɛط࢛׳ᐕಂගᐄቮʧɝၾҁ طଟ޴ᗫ׌ Ӂʠ౉"
+    },
+    {
+      "id": "P-RT-019",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍",
+      "snippet": "P-RT-019 л͜ᆠ෧ࠦ׌Ոʿ܄Ⴁʷ᎘؆ආБՅഁԑ௅ط࢛׳ᐕ๟ᆽܓʘࣩԷ ʱԮ ௓؍"
+    },
+    {
+      "id": "P-RT-020",
+      "type": "Poster (壁報)",
+      "category_code": "RT",
+      "category": "RT",
+      "category_name": "放射治療 (Radiation Therapy)",
+      "page": 6,
+      "title": "P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝",
+      "snippet": "P-RT-020 ཥ໘ᓙᄴᅼᏝ֛ЗܝՑطᐕක֐ഃܙ˂ᅰٙεྺ݊щึᅂᚤՉطᐕ Зໄၚ๟ܓʘࢨମ ҽࢬ֝"
+    },
+    {
+      "id": "P-ST-001",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-001 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼόʘኒඎᜊʷ ҽ૔ຄ",
+      "snippet": "P-ST-001 ઞীʔΝᅀ೐ཥ໘ᓙᄴ׵Эኒඎધ౜ᅼόʘኒඎᜊʷ ҽ૔ຄ"
+    },
+    {
+      "id": "P-ST-002",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-002 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ ಀڲ၂",
+      "snippet": "P-ST-002 ᭅंਈᏨᄃኜˢ࿁Ϊɿ᜕ᗇʱؓ ಀڲ၂"
+    },
+    {
+      "id": "P-ST-003",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-003 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥόൖᙂʷӻ୕ ᇹձጘ",
+      "snippet": "P-ST-003 ᅰЗʃཽ Micro-CT ᅂ྅ʱ௲ၾፄΥόൖᙂʷӻ୕ ᇹձጘ"
+    },
+    {
+      "id": "P-ST-004",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-004 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ྅ৃᕏˢٙᅂᚤ൙П юऔ⒠",
+      "snippet": "P-ST-004 ʔΝધ౜˙όၾܔࠠᅼό࿁͍ɿᓙᄴᅂ྅ৃᕏˢٙᅂᚤ൙П юऔ⒠"
+    },
+    {
+      "id": "P-ST-005",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-005 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ༩ʘຢඑਜʱࣖू൙П юݱڲ",
+      "snippet": "P-ST-005 ᔊʷൈᏝఊঐඎΈᗅतᅄ׵՜ጐग़຾ၣ༩ʘຢඑਜʱࣖू൙П юݱڲ"
+    },
+    {
+      "id": "P-ST-006",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-006 4XDQWLWDWLYH\u0003&KDUDFWHUL]DWLRQ\u0003RI\u0003+HDG\u0003DQG\u00031HFN\u00037XPRUV\u0003XVLQJ\u0003 Diffusional Kurtosis Imaging ቍᆇ౵",
+      "snippet": "P-ST-006 4XDQWLWDWLYH\u0003&KDUDFWHUL]DWLRQ\u0003RI\u0003+HDG\u0003DQG\u00031HFN\u00037XPRUV\u0003XVLQJ\u0003 Diffusional Kurtosis Imaging ቍᆇ౵"
+    },
+    {
+      "id": "P-ST-007",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-007 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients ڃ؍ᆦ",
+      "snippet": "P-ST-007 Transfer Learning–Enhanced U-Net++ for Masticatory Muscle Segmentation on MRI in Head and Neck Cancer Patients ڃ؍ᆦ"
+    },
+    {
+      "id": "P-ST-008",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-008 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ኒඎ ݳຄẘ",
+      "snippet": "P-ST-008 ઞীʔΝ BMI ʿϋᙧ᜗ʫʘ 40K ፧࢛ኒඎ ݳຄẘ"
+    },
+    {
+      "id": "P-ST-009",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 6,
+      "title": "P-ST-009 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ˢ༆ܓؓʘ൙П ᘽ◔ణ",
+      "snippet": "P-ST-009 ᅰЗ X ΈਈᏨኜ׵ʔΝᙲᅂૢ΁ɨ࿁ˢ༆ܓؓʘ൙П ᘽ◔ణ"
+    },
+    {
+      "id": "P-ST-010",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-010 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ ஢્ຸ",
+      "snippet": "P-ST-010 X ΈᖅΈܸᅰၾ፧࢛ኒඎʘࢨମ ஢્ຸ"
+    },
+    {
+      "id": "P-ST-011",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-011 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ ᇹؚҊ",
+      "snippet": "P-ST-011 ൙ПʔΝᙲᅂૢ΁࿁׵ཥ໘࢛׳ᙲᅂ IP ؐሜႡᔷ౬Ռᅰʘࢨମ ᇹؚҊ"
+    },
+    {
+      "id": "P-ST-012",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-012 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy ኇٺᡚ",
+      "snippet": "P-ST-012 Dose Enhancement and Relative Biological Effectiveness of Bismuth Nanoparticles in Radiotherapy ኇٺᡚ"
+    },
+    {
+      "id": "P-ST-013",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-013 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR ҽْᅆ",
+      "snippet": "P-ST-013 Assessment of Pedicle Diameter Measurement Consistency on CT Images for Rapid Spinal Reformatting Using Bone VCAR ҽْᅆ"
+    },
+    {
+      "id": "P-ST-014",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-014 ሯɿລࣉᐏၾʕɿࣉᐏᄣ੶୐ɿطᐕʘ̙Б׌ႆή̔ᖯ൙П ૑ʛ⑗",
+      "snippet": "P-ST-014 ሯɿລࣉᐏၾʕɿࣉᐏᄣ੶୐ɿطᐕʘ̙Б׌ႆή̔ᖯ൙П ૑ʛ⑗"
+    },
+    {
+      "id": "P-ST-015",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-015 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼Ӻ ҽࢸ׸",
+      "snippet": "P-ST-015 л͜ X ΈᙲᅂආБইٴˢԷ൙Пʘ޼Ӻ ҽࢸ׸"
+    },
+    {
+      "id": "P-ST-016",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-016 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰Գʷ޼Ӻ ˬ̋Ў",
+      "snippet": "P-ST-016 ໖௅ X Έᙲᅂᅂ྅ۜሯၾ፧࢛ኒඎ௰Գʷ޼Ӻ ˬ̋Ў"
+    },
+    {
+      "id": "P-ST-017",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-017 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙঐ { ৿᜗޼Ӻ ࢑㌢ᨯ",
+      "snippet": "P-ST-017 ᔊఊ AI ᅼۨί൴تࠪᅂ྅ۜሯ౤ʺࣖٙঐ { ৿᜗޼Ӻ ࢑㌢ᨯ"
+    },
+    {
+      "id": "P-ST-018",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-018 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT ஢ɻܗ",
+      "snippet": "P-ST-018 Lung Cancer Detection and Segmentation Using DNN Techniques on LDCT ஢ɻܗ"
+    },
+    {
+      "id": "P-ST-019",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-019 $XWRPDWHG\u0003&ODVVL¿FDWLRQ\u0003RI\u0003/LYHU\u0003&7\u0003,PDJHV\u0003YLD\u0003'HHS\u0003)HDWXUH\u0003 Extraction and Ensemble Machine Learning ර᪮➲",
+      "snippet": "P-ST-019 $XWRPDWHG\u0003&ODVVL¿FDWLRQ\u0003RI\u0003/LYHU\u0003&7\u0003,PDJHV\u0003YLD\u0003'HHS\u0003)HDWXUH\u0003 Extraction and Ensemble Machine Learning ර᪮➲"
+    },
+    {
+      "id": "P-ST-020",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-020 Ꮠ͜ཫ৅ᇖ CNN ׵Ԫג൴تࠪʱᗳj༨̨̻ਿ๟಻༊޼Ӻ ᘽ௱ፕ",
+      "snippet": "P-ST-020 Ꮠ͜ཫ৅ᇖ CNN ׵Ԫג൴تࠪʱᗳj༨̨̻ਿ๟಻༊޼Ӻ ᘽ௱ፕ"
+    },
+    {
+      "id": "P-ST-021",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-021 3UHWUDLQHG\u0003&11V\u0003IRU\u00030DPPRJUDSK\\\u0003&ODVVL¿FDWLRQ\u001d\u0003$\u0003&URVV\u00103ODWIRUP\u0003 Benchmark ර໋ࢸ",
+      "snippet": "P-ST-021 3UHWUDLQHG\u0003&11V\u0003IRU\u00030DPPRJUDSK\\\u0003&ODVVL¿FDWLRQ\u001d\u0003$\u0003&URVV\u00103ODWIRUP\u0003 Benchmark ර໋ࢸ"
+    },
+    {
+      "id": "P-ST-022",
+      "type": "Poster (壁報)",
+      "category_code": "ST",
+      "category": "ST",
+      "category_name": "放射學生論文 (Student Research)",
+      "page": 7,
+      "title": "P-ST-022 ΌԒ͍ɿཥɿਅϓ྅ӻ୕ʘᅼᏝʱؓ ҽוጫ",
+      "snippet": "P-ST-022 ΌԒ͍ɿཥɿਅϓ྅ӻ୕ʘᅼᏝʱؓ ҽוጫ"
     }
   ]
 }
