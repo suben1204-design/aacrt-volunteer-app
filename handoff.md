@@ -3,37 +3,32 @@
 > 任何 Agent、任何電腦接手前**必讀**；收工時**必更新**。本檔只放交接必需的精簡資訊，詳細脈絡放 Obsidian（若有 L3）。
 
 ## ⏯️ 目前做到哪
-完成「Excel 清晰測試檔提煉（217 篇論文）與前端檢索介面全功能升級」：
-1. **成功自 Excel 提煉 217 篇測試論文資料**：
-   - 來源檔案：`創作庫-內部原創層/1、論文集/第59次年會暨國際醫學影像學術研討會 excel-測試用/` 內的兩份 Excel（由 Google 試算表匯出）。
-   - 解析成果：口頭發表 74 篇（含會議室、精確時段、發表者、座長、論文題目）；壁報發表 143 篇（含論文編號、領域分類、發表者、論文題目）。
-   - 正規化專題領域：`MR` (21), `OT` (41), `RO` (12), `NM` (8), `RT` (23), `AI` (14), `US` (2), `CT` (16), `CA` (11), `ST` (55), `IR` (7), `MA` (7)。
-2. **生成結構化資料庫與快取**：
-   - 更新 `知識庫-AI 提煉層/test_abstracts_benchmark.json`（純文字結構化資料庫）。
-   - 更新 `docs/abstracts_index.json`（前端公開快取，共 217 篇完整結構）。
-3. **前端介面與「Show-to-Guest」四語展示升級**：
-   - 口頭與壁報以琥珀色/藍綠色清晰徽章區隔。
-   - 口頭論文完整顯示演講場地（如 `303a 會議室`）、時間（如 `13:00-13:10`）與報告者。
-   - 壁報論文統一顯示 `1F 海報展區` 與交流時段（`12:30-13:30`）。
-   - 「秀給外賓」全螢幕卡片支援演講地點、時間、講者與類別四語對照。
-   - 專題膠囊滾動列與多語系標籤字典（`zh-TW`/`en`/`ja`/`ko`）精確連動 217 篇計數。
-4. **線上正式發布**：
-   - PWA 快取版本推進至 `aacrt-guide-v2.11`。
-   - 已推送至 GitHub Pages（commit `29fdc2e`），線上環境（HTTP 200 OK）已實時生效。
-   - 再次確認：目前所有 2027 AACRT 正式論文與大會手冊皆尚未上傳，目前系統為乾淨測試狀態，未來正式 Excel 放入 `創作庫-內部原創層/1、論文集/2027 AACRT/` 後可一鍵替換。
+完成「論文檢索雙獨立專區重構、熱門提問精簡防呆、免括號論文查詢、第 14 題三日總日程與四語 UI 補齊」（`aacrt-guide-v2.16`）：
+1. **Excel 217 篇測試論文與雙獨立查詢區**：
+   - `docs/abstracts_index.json` 含第 59 次年會測試資料共 217 篇（口頭 74 篇、海報 143 篇）。
+   - 卡片 4「4、學術論文摘要即時檢索」已改為上下兩大獨立查詢區（`#oral-search-section` 與 `#poster-search-section`），各有獨立搜尋框與「查詢」按鈕：口頭顯示 **論文編號、發表時間、發表題目、會議室、報告者、座長**（6 項）；海報簡潔左右對齊顯示 **論文編號、報告者**（2 項），並已移除卡片上的「問 AI」與「秀給外賓」按鈕。
+2. **智慧對談「熱門提問」精簡與單引號/語系修復**：
+   - `QUICK_PROMPTS_DATA` 精簡為單排 2 欄（最多 2 個按鈕），`renderDynamicTopQueries()` 改為直接覆蓋前 2 名（不往上堆疊）。
+   - 改用 `activeQuickPrompts` + `sendQuickPromptByIndex()`，徹底修復英文單引號（如 `What's`）點擊崩潰 Bug；並隔離非繁中語系（`en`/`ja`/`ko`）不顯示雲端中文熱搜。
+3. **本地大腦與四語 UI 全面補齊**：
+   - 論文編號查詢放寬為免中括號（`/\[?([OP]-[A-Za-z]{2,5}-\d{1,4})\]?/i`），直接回傳報告者、時間、會議室與座長。
+   - 新增 **第 14 題**（三日總日程與每日 08:00/09:00 開放時間）。
+   - 補齊 `getFieldLabels()`、`即時線上檢閱`、`#show-guest-modal` 彈窗標籤四語切換，並統一 `shadow-xs`/`shadow-2xs` 為 Tailwind v3 `shadow-sm`。
 
 ## 🚦 目前狀態
-- **線上正式網址**：`https://suben1204-design.github.io/aacrt-volunteer-app/`（已發布 GitHub Pages）。
-- **當前大腦版本**：`大腦 v1.08`（PWA Cache: `aacrt-guide-v2.11`）
-- **論文測試基準庫**：`docs/abstracts_index.json`（共 217 篇論文完整索引）
+- **線上正式網址**：`https://suben1204-design.github.io/aacrt-volunteer-app/`（HTTP 200 OK，PWA Cache: `aacrt-guide-v2.16`）。
+- **論文測試基準庫**：`docs/abstracts_index.json`（217 篇測試資料；2027 AACRT 正式 Excel 尚未上傳，`創作庫-內部原創層/1、論文集/2027 AACRT/` 保持純淨待命）。
 - **Google 試算表後台**：`https://docs.google.com/spreadsheets/d/1IRhviHHTulLPx2ZXL25JD-8NgBCWGIU9HLyOO7CHjjc/edit`
 - **GAS 部署 ID**：`AKfycbwfbtyYhEHFLLLSlETnYbIdvsiFcXbRHDk-fG9NkUm_SbAvhscSGAd6-lWXcXjk5wLgBw`（版本 `@9`）
 
 ## ➡️ 下一步可做事項
-1. **實機手機 PWA 測試**：使用手機瀏覽器開啟線上網址，測試 217 篇論文之「分類標籤切換」、「口頭/壁報檢索」、「秀給外賓大字體」與四語朗讀。
-2. **正式 2027 資料無縫升級**：待大會籌備處提供 `Excel-口頭--2027 AACRT.xlsx` 與 `Excel-Poster--2027 AACRT.xlsx`，放入 `2027 AACRT/` 目錄後即可一鍵置換為正式資料。
+1. **實機手機 PWA 測試**：開啟線上網址測試「口頭／海報」雙獨立查詢區、四國語言切換、免括號論文編號問答與第 14 題三日總日程。
+2. **正式 2027 AACRT 資料置換**：待大會定稿 `Excel-口頭--2027 AACRT.xlsx` 與 `Excel-Poster--2027 AACRT.xlsx` 完成後，放入 `創作庫-內部原創層/1、論文集/2027 AACRT/` 並更新 `docs/abstracts_index.json`（取代測試資料）。
+
+## ⚠️ 注意事項
+- 目前 `docs/abstracts_index.json` 仍為第 59 次年會之測試資料，正式上線前務必置換為 2027 AACRT 正式資料。
 
 ## 🕐 最後更新
-- 時間：2026-11-13 08:56
+- 時間：2026-11-13 11:50
 - 更新者：Antigravity @ FENGYI
 - Git push：✅ 已推（main）
