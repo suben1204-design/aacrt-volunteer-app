@@ -191,7 +191,7 @@
           <div class="flex-1">
             <div class="flex items-center gap-2">
               <h3 id="doc2-title" class="text-sm font-extrabold text-slate-900">2、會場平面圖 (7F 各會議室與試片室)</h3>
-              <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">高清圖檔</span>
+              <span id="doc2-hd-badge" class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">高清圖檔</span>
             </div>
             <p id="doc2-desc" class="text-xs text-slate-600 mt-1 leading-relaxed">
               南港 2 館 7 樓全區平面分場圖，清楚標示大會堂、701~705 各廳、試片室、電梯手扶梯動線。
@@ -243,7 +243,7 @@
           <div class="flex-1">
             <div class="flex items-center gap-2">
               <h3 id="doc3-title" class="text-sm font-extrabold text-slate-900">3、大會手冊 (手冊指南與法規)</h3>
-              <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded-full">PDF 手冊</span>
+              <span id="doc3-pdf-badge" class="text-[10px] bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded-full">PDF 手冊</span>
             </div>
             <p id="doc3-desc" class="text-xs text-slate-600 mt-1 leading-relaxed">
               學分認證刷卡、午餐便當與晚宴接駁、吸菸與過敏領餐規範、在台交通生活與緊急聯絡電話。
@@ -530,7 +530,7 @@
     <!-- 頂部工具列 -->
     <div class="flex items-center justify-between p-3.5 bg-slate-900/90 border-b border-slate-800 text-white z-10">
       <div class="flex items-center space-x-2">
-        <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded">高清地圖</span>
+        <span id="lightbox-hd-badge" class="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded">高清地圖</span>
         <span id="lightbox-map-title" class="text-xs font-bold truncate">南港 2 館 7 樓分場動線圖</span>
       </div>
       <div class="flex items-center space-x-1.5">
@@ -561,9 +561,9 @@
 
     <!-- 底部操作提示 -->
     <div class="p-2.5 bg-slate-900/90 border-t border-slate-800 text-center text-[11px] text-slate-400 flex items-center justify-center space-x-3">
-      <span><i class="fa-solid fa-hand text-amber-400"></i> 支援雙指手勢縮放 (Pinch) 或單指拖曳</span>
+      <span id="lightbox-gesture-hint"><i class="fa-solid fa-hand text-amber-400"></i> 支援雙指手勢縮放 (Pinch) 或單指拖曳</span>
       <span>·</span>
-      <span class="text-amber-300">雙擊 (Double Tap) 可快速放大</span>
+      <span id="lightbox-doubletap-hint" class="text-amber-300">雙擊 (Double Tap) 可快速放大</span>
     </div>
   </div>
 
@@ -1930,6 +1930,22 @@
           oralHint: '完整 6 項資訊',
           posterHint: '1F 海報展區 12:30-13:30 交流',
           docLiveBadge: '即時線上檢閱',
+          doc2HdBadge: '高清圖檔',
+          doc3PdfBadge: 'PDF 手冊',
+          lightboxHdBadge: '高清地圖',
+          lightboxGestureHint: '支援雙指手勢縮放 (Pinch) 或單指拖曳',
+          lightboxDoubleTapHint: '雙擊 (Double Tap) 可快速放大',
+          footerBrainPrefix: '大腦',
+          simTimeLabels: {
+            '4/23|10:00': '4/23 10:00 全人教育/理監事',
+            '4/23|14:00': '4/23 14:00 CT工作坊/ISRRT',
+            '4/24|09:30': '4/24 09:30 開幕主題',
+            '4/24|10:45': '4/24 10:45 CT/MRI分廳',
+            '4/24|12:30': '4/24 12:30 海報交流',
+            '4/24|14:30': '4/24 14:30 AI/放療',
+            '4/25|10:30': '4/25 10:30 優秀論文',
+            '4/25|15:50': '4/25 15:50 閉幕頒獎'
+          },
           modalLargeMode: '大字體展示模式',
           modalTapClose: '點擊空白處關閉 (Tap to close)',
           modalVoiceLabel: '語音朗讀:'
@@ -1999,6 +2015,22 @@
           oralHint: 'Complete 6 fields listed',
           posterHint: '1F Poster Area 12:30-13:30',
           docLiveBadge: 'Online Preview',
+          doc2HdBadge: 'HD Image',
+          doc3PdfBadge: 'PDF Handbook',
+          lightboxHdBadge: 'HD Map',
+          lightboxGestureHint: 'Pinch to zoom or drag to pan',
+          lightboxDoubleTapHint: 'Double tap to zoom',
+          footerBrainPrefix: 'AI Brain',
+          simTimeLabels: {
+            '4/23|10:00': '4/23 10:00 Education/Board',
+            '4/23|14:00': '4/23 14:00 CT Workshop/ISRRT',
+            '4/24|09:30': '4/24 09:30 Opening Keynote',
+            '4/24|10:45': '4/24 10:45 CT/MRI Tracks',
+            '4/24|12:30': '4/24 12:30 Poster Session',
+            '4/24|14:30': '4/24 14:30 AI/Radiotherapy',
+            '4/25|10:30': '4/25 10:30 Young Investigator',
+            '4/25|15:50': '4/25 15:50 Closing & Awards'
+          },
           modalLargeMode: 'Large Font Display',
           modalTapClose: 'Tap anywhere to close',
           modalVoiceLabel: 'Read Aloud:'
@@ -2068,6 +2100,22 @@
           oralHint: '6項目を完全表示',
           posterHint: '1F ポスター会場 12:30-13:30 質疑',
           docLiveBadge: 'オンライン閲覧',
+          doc2HdBadge: '高画質画像',
+          doc3PdfBadge: 'PDF冊子',
+          lightboxHdBadge: '高画質地図',
+          lightboxGestureHint: 'ピンチ操作で拡大縮小・ドラッグで移動',
+          lightboxDoubleTapHint: 'ダブルタップで拡大',
+          footerBrainPrefix: 'AI頭脳',
+          simTimeLabels: {
+            '4/23|10:00': '4/23 10:00 全人教育/理事会',
+            '4/23|14:00': '4/23 14:00 CT講習/ISRRT',
+            '4/24|09:30': '4/24 09:30 開会・基調講演',
+            '4/24|10:45': '4/24 10:45 CT/MRI分科会',
+            '4/24|12:30': '4/24 12:30 ポスター交流',
+            '4/24|14:30': '4/24 14:30 AI/放射線治療',
+            '4/25|10:30': '4/25 10:30 優秀論文賞',
+            '4/25|15:50': '4/25 15:50 閉会式・表彰'
+          },
           modalLargeMode: '大文字表示モード',
           modalTapClose: '余白をタップして閉じる',
           modalVoiceLabel: '音声読上:'
@@ -2137,6 +2185,22 @@
           oralHint: '6개 항목 상세 표시',
           posterHint: '1F 포스터 발표장 12:30-13:30',
           docLiveBadge: '실시간 온라인 열람',
+          doc2HdBadge: '고화질 이미지',
+          doc3PdfBadge: 'PDF 핸드북',
+          lightboxHdBadge: '고화질 지도',
+          lightboxGestureHint: '두 손가락 확대/축소 및 드래그 이동',
+          lightboxDoubleTapHint: '더블 탭하여 빠른 확대',
+          footerBrainPrefix: 'AI 브레인',
+          simTimeLabels: {
+            '4/23|10:00': '4/23 10:00 교육포럼/이사회',
+            '4/23|14:00': '4/23 14:00 CT워크숍/ISRRT',
+            '4/24|09:30': '4/24 09:30 개회식·기조강연',
+            '4/24|10:45': '4/24 10:45 CT/MRI 세션',
+            '4/24|12:30': '4/24 12:30 포스터 교류',
+            '4/24|14:30': '4/24 14:30 AI/방사선치료',
+            '4/25|10:30': '4/25 10:30 우수논문 경연',
+            '4/25|15:50': '4/25 15:50 폐회식·시상'
+          },
           modalLargeMode: '큰 글씨 표시 모드',
           modalTapClose: '빈 공간을 탭하여 닫기',
           modalVoiceLabel: '음성 읽기:'
@@ -2200,10 +2264,16 @@
       const mapBtnTag = document.getElementById('map-preview-btn-tag');
       if (mapBtnTag) mapBtnTag.innerText = t.mapPreviewBtnTag;
 
-      // Default Ticker Announcement (update only if cloud hasn't overridden)
-      if (!window.isCloudTickerActive) {
-        const tickerElem = document.getElementById('ticker-text');
-        if (tickerElem) tickerElem.innerText = t.defaultTicker;
+      // Ticker Announcement (外語隔離保護：非繁中模式不顯示後台中文跑馬燈，改顯示對應母語公告)
+      const tickerElem = document.getElementById('ticker-text');
+      if (tickerElem) {
+        if (currentLang === 'zh-TW' && window.cloudTickerText) {
+          tickerElem.innerText = window.cloudTickerText;
+        } else if (window.cloudTickerData && window.cloudTickerData['ticker_' + currentLang]) {
+          tickerElem.innerText = window.cloudTickerData['ticker_' + currentLang];
+        } else {
+          tickerElem.innerText = t.defaultTicker;
+        }
       }
 
       // Schedule Section Labels
@@ -2262,15 +2332,39 @@
         demoHint.innerHTML = `<i class="fa-solid fa-clock-rotate-left text-amber-400"></i> <span>${t.demoTimeHint}</span>`;
       }
 
-      // Update Live Time Button Text
-      const liveTimeBtn = document.querySelector('button[data-time="live"]');
-      if (liveTimeBtn) {
-        liveTimeBtn.innerText = t.liveTimeBtn;
-      }
+      // Update Sim-Time Buttons Text
+      document.querySelectorAll('.sim-time-btn').forEach(btn => {
+        const tm = btn.getAttribute('data-time');
+        const dy = btn.getAttribute('data-day');
+        if (tm === 'live') {
+          btn.innerText = t.liveTimeBtn;
+        } else if (dy && t.simTimeLabels && t.simTimeLabels[`${dy}|${tm}`]) {
+          btn.innerText = t.simTimeLabels[`${dy}|${tm}`];
+        }
+      });
 
-      // Update Doc Live Badge & Show-to-Guest Modal Labels
+      // Update Doc Live Badge, File Badges, Footer Version & Lightbox/Modal Labels
       const docLiveBadge = document.getElementById('doc-live-badge');
       if (docLiveBadge) docLiveBadge.innerText = t.docLiveBadge;
+      const doc2HdBadge = document.getElementById('doc2-hd-badge');
+      if (doc2HdBadge) doc2HdBadge.innerText = t.doc2HdBadge;
+      const doc3PdfBadge = document.getElementById('doc3-pdf-badge');
+      if (doc3PdfBadge) doc3PdfBadge.innerText = t.doc3PdfBadge;
+      const lightboxHdBadge = document.getElementById('lightbox-hd-badge');
+      if (lightboxHdBadge) lightboxHdBadge.innerText = t.lightboxHdBadge;
+      const lightboxGestureHint = document.getElementById('lightbox-gesture-hint');
+      if (lightboxGestureHint) {
+        lightboxGestureHint.innerHTML = `<i class="fa-solid fa-hand text-amber-400"></i> ${t.lightboxGestureHint}`;
+      }
+      const lightboxDoubleTapHint = document.getElementById('lightbox-doubletap-hint');
+      if (lightboxDoubleTapHint) {
+        lightboxDoubleTapHint.innerText = t.lightboxDoubleTapHint;
+      }
+      const footerBrainElem = document.getElementById('footer-brain-version');
+      if (footerBrainElem) {
+        const verStr = window.cloudBrainVersion || 'v1.08';
+        footerBrainElem.innerText = `${t.footerBrainPrefix || '大腦'} ${verStr}`;
+      }
       const modalLargeModeLabel = document.getElementById('modal-large-mode-label');
       if (modalLargeModeLabel) modalLargeModeLabel.innerText = t.modalLargeMode;
       const modalTapCloseLabel = document.getElementById('modal-tap-close-label');
@@ -2502,6 +2596,23 @@
             'ja': `【学術論文抄録のご案内】\n論文番号：${matchedPaper.id}（区分：${pType} · 分野：${pCat}）\n演題名：${pTitle}\n発表者：${pSpeaker}\n発表時間：${pTime}\n会場：${pRoom}\n座長：${pChairs}`,
             'ko': `【학술대회 논문 안내】\n논문 번호: ${matchedPaper.id} (구분: ${pType} · 분과: ${pCat})\n발표 제목: ${pTitle}\n발표자: ${pSpeaker}\n발표 시간: ${pTime}\n장소: ${pRoom}\n좌장: ${pChairs}`
           };
+        } else {
+          const isOralId = targetId.startsWith('O-');
+          return {
+            matched: true,
+            'zh-TW': isOralId
+              ? `【論文編號指引：${targetId}】\n此編號屬於「口頭發表 (Oral Presentation)」，主要於 7 樓各分場會議室（701～703）進行。目前索引庫暫無該編號之詳細紀錄，請至第一頁「4、學術論文摘要即時檢索」之「1、口頭發表」專區確認，或洽 7 樓試片室／大會諮詢台查詢。`
+              : `【論文編號指引：${targetId}】\n此編號屬於「海報發表 (Poster Presentation)」，展示區位於 1 樓大廳（1F Poster Area）。目前索引庫暫無該編號之詳細紀錄，請至第一頁「4、學術論文摘要即時檢索」之「2、海報發表」專區確認，或洽 1 樓大會諮詢台查詢。`,
+            'en': isOralId
+              ? `【Paper ID Guide: ${targetId}】\nThis ID belongs to an Oral Presentation (held in 7F Session Rooms 701-703). Detailed record is not currently found in the loaded index; please verify in Tab 1 "4. Scientific Abstracts Search" -> "1. Oral Presentation", or inquire at the 7F Speaker Ready Room / Information Desk.`
+              : `【Paper ID Guide: ${targetId}】\nThis ID belongs to a Poster Presentation (located at the 1F Poster Area). Detailed record is not currently found in the loaded index; please verify in Tab 1 "4. Scientific Abstracts Search" -> "2. Poster Presentation", or inquire at the 1F Information Desk.`,
+            'ja': isOralId
+              ? `【論文番号のご案内：${targetId}】\nこの番号は「口頭発表（Oral）」に該当し、主に7階各会議室（701〜703室）にて行われます。現在の索引に詳細が見つからないため、1つ目のタブ「4. 学術論文抄録即時検索」の「1. 口頭発表」でご確認いただくか、7階試写室・総合案内所へお問い合わせください。`
+              : `【論文番号のご案内：${targetId}】\nこの番号は「ポスター発表（Poster）」に該当し、1階展示エリア（1F Poster Area）に掲示されます。現在の索引に詳細が見つからないため、1つ目のタブ「4. 学術論文抄録即時検索」の「2. ポスター発表」でご確認いただくか、1階総合案内所へお問い合わせください。`,
+            'ko': isOralId
+              ? `【논문 번호 안내: ${targetId}】\n해당 번호는 「구연 발표(Oral)」에 해당하며 주로 7층 각 회의실(701~703호)에서 진행됩니다. 현재 색인에서 상세 정보를 찾을 수 없으므로 첫 번째 탭 「4. 학술대회 논문 초록 즉시 검색」의 「1. 구연 발표」 구역에서 확인하시거나 7층 안내 데스크에 문의해 주세요.`
+              : `【논문 번호 안내: ${targetId}】\n해당 번호는 「포스터 발표(Poster)」에 해당하며 1층 포스터 전시장(1F Poster Area)에 전시됩니다. 현재 색인에서 상세 정보를 찾을 수 없으므로 첫 번째 탭 「4. 학술대회 논문 초록 즉시 검색」의 「2. 포스터 발표」 구역에서 확인하시거나 1층 안내 데스크에 문의해 주세요.`
+          };
         }
       }
 
@@ -2520,9 +2631,8 @@
       }
 
       // 1. 重要大會演講 (Keynote / Plenary)
-      // 排除：若句子同時詢問各演講廳/會議室動線（例如 session rooms, 怎麼走, 行き方, 各演講廳, 각 회의실 等），則不攔截，讓第 2 題處理！
-      const isAskingRoomsOrDirection = /\b(get to|how to|where|direction|directions|session\s*rooms?)\b/i.test(q) ||
-        q.includes('怎麼走') || q.includes('行き方') || q.includes('어떻게') ||
+      // 僅在同時詢問多個會議室動線（例如 session rooms, 各演講廳, 각 회의실）時才讓第 2 題處理
+      const isAskingRoomsOrDirection = /\bsession\s*rooms?\b/i.test(q) ||
         q.includes('各演講廳') || q.includes('各會議室') || q.includes('各会議室') || q.includes('각 회의실');
 
       if (!isAskingRoomsOrDirection && (
@@ -2568,7 +2678,10 @@
       }
 
       // 5. 便當午餐與特殊餐點 (Lunch Box & Special Dietary)
-      if (/\b(lunch|meal|meals|dietary|halal|vegetarian)\b/i.test(q) || q.includes('便當') || q.includes('午餐') || q.includes('餐券') || q.includes('弁当') || q.includes('도시락')) {
+      if (/\b(lunch|meal|meals|dietary|halal|vegetarian)\b/i.test(q) ||
+          q.includes('便當') || q.includes('午餐') || q.includes('餐券') ||
+          q.includes('弁当') || q.includes('昼食') || q.includes('ランチ') || q.includes('ベジタリアン') || q.includes('ハラール') ||
+          q.includes('도시락') || q.includes('점심') || q.includes('식권') || q.includes('할랄') || q.includes('채식')) {
         return {
           matched: true,
           'zh-TW': '午餐便當於每日 11:45 起憑名牌內的「午餐券」至 1 樓迎賓大廳或 7 樓發餐處領取。全素、清真友善、花生過敏與無麩質特餐，請至「大會諮詢台旁特殊膳食專用櫃台」出示標註領取。',
@@ -2581,7 +2694,8 @@
       // 6. 大會晚宴與接駁專車 (Gala Dinner, Welcome Banquet & Shuttle Bus)
       if (/\b(gala|dinner|banquet|shuttle|welcome\s*banquet|presidential\s*dinner)\b/i.test(q) ||
           q.includes('晚宴') || q.includes('接駁') || q.includes('歡迎晚宴') || q.includes('會長之夜') ||
-          q.includes('晩餐会') || q.includes('歓迎晩餐会') || q.includes('만찬') || q.includes('환영 만찬')) {
+          q.includes('晩餐会') || q.includes('歓迎晩餐会') || q.includes('懇親会') || q.includes('レセプション') || q.includes('シャトル') ||
+          q.includes('만찬') || q.includes('환영 만찬') || q.includes('갈라디너') || q.includes('리셉션') || q.includes('셔틀')) {
         return {
           matched: true,
           'zh-TW': '【2027 AACRT 晚宴與接駁專車資訊】：\n1. 歡迎晚宴暨會長之夜 (Welcome Banquet / Presidential Dinner)：4/23（五）18:30-20:30 舉行（邀請制與代表出席）。\n2. 大會晚宴 (Official Gala Dinner)：4/24（六）18:30-21:00 盛大舉行（憑票入場）。大會於南港 2 館 1 樓門口備有接駁專車，自 17:30 起每 10 分鐘一班直達會場。服裝建議為商務休閒 (Smart Casual)。',
@@ -2606,7 +2720,10 @@
       }
 
       // 8. 吸菸法規與電子煙重罰 (Smoking & Vape Laws)
-      if (/\b(smoke|smoking|vape|vapes|tobacco|cigarette)\b/i.test(q) || q.includes('吸菸') || q.includes('抽菸') || q.includes('電子煙') || q.includes('喫煙') || q.includes('금연')) {
+      if (/\b(smoke|smoking|vape|vapes|tobacco|cigarette)\b/i.test(q) ||
+          q.includes('吸菸') || q.includes('抽菸') || q.includes('電子煙') ||
+          q.includes('喫煙') || q.includes('タバコ') || q.includes('たばこ') || q.includes('vape') ||
+          q.includes('금연') || q.includes('흡연') || q.includes('담배') || q.includes('전자담배')) {
         return {
           matched: true,
           'zh-TW': '【重要救命級法規公告】：南港 2 館全館室內及騎樓全面禁菸（違者罰 NT$ 2,000~10,000）。依台灣《菸害防制法》，「電子煙 (Vapes)」與未核准之「加熱菸」在台灣全面違法，嚴禁攜帶入境與使用，違者重罰 NT$ 10,000 至 50,000 元！吸菸請至 1 樓戶外指定吸菸區。',
@@ -2667,7 +2784,63 @@
         };
       }
 
-      // 2. 7樓會議室位置與地圖 (精確四語關鍵字，熱門按鈕 #2 100% 命中)
+      // 14. 大會三日總日程與每日開放時間 (3-Day Schedule & Opening Hours - 置於第 2 題之前防 venue/会場 提前攔截)
+      if (/\b(schedule|program|agenda|timetable|dates|opening\s*hours|opening\s*ceremony|closing\s*ceremony|awards?\s*ceremony)\b/i.test(q) ||
+          q.includes('議程') || q.includes('時間表') || q.includes('日程') || q.includes('幾點開始') || q.includes('開幕') || q.includes('閉幕') || q.includes('頒獎') ||
+          q.includes('プログラム') || q.includes('スケジュール') || q.includes('開会式') || q.includes('閉会式') || q.includes('表彰式') ||
+          q.includes('일정') || q.includes('시간표') || q.includes('개회식') || q.includes('폐회식') || q.includes('시상식')) {
+        return {
+          matched: true,
+          'zh-TW': '【2027 AACRT 大會三日總日程與開放時間】：\n- 每日開放：08:00 開放報到入場、09:00 議程正式開始。\n- 4/23 (五) Day 1：全人教育論壇與工作坊、歡迎晚宴。\n- 4/24 (六) Day 2：開幕式、主題演講與各學術分廳（701-703）、大會晚宴。\n- 4/25 (日) Day 3：青年論文競賽、閉幕典禮。\n詳細時段可至第一頁「大會文件 / 地圖」下載總議程表 PDF，或點擊第三頁「我的行程」查看即時動態！',
+          'en': '【2027 AACRT 3-Day Schedule & Opening Hours】:\n- Daily Hours: Registration opens at 08:00; Scientific sessions start at 09:00.\n- Apr 23 (Fri) Day 1: Holistic Education Forum, Workshops & Welcome Banquet.\n- Apr 24 (Sat) Day 2: Opening Ceremony, Keynotes, Track Sessions (Rooms 701-703) & Gala Dinner.\n- Apr 25 (Sun) Day 3: Young Investigator Competition & Closing Ceremony.\nDownload the full Program PDF on the "Documents & Map" tab or check live updates in "My Schedule"!',
+          'ja': '【2027 AACRT 3日間プログラム・開場時間】:\n- 毎日 08:00 受付開始 ／ 09:00 セッション開始。\n- 4/23（金）Day 1：全人教育フォーラム、ワークショップ、歓迎晩餐会。\n- 4/24（土）Day 2：開会式、基調講演、各専門セッション（701〜703室）、大会晩餐会。\n- 4/25（日）Day 3：若手論文コンテスト、閉会式。\n詳細は「大会資料」タブのプログラムPDFをダウンロードするか、「マイ日程」タブをご確認ください！',
+          'ko': '【2027 AACRT 3일간 전체 일정 및 운영 시간】:\n- 매일 08:00 등록 시작 / 09:00 학술 세션 시작.\n- 4/23(금) Day 1: 전인교육 포럼, 워크숍 및 환영 만찬.\n- 4/24(토) Day 2: 개회식, 기조강연, 분과별 세션(701~703호) 및 대회 만찬.\n- 4/25(일) Day 3: 젊은 연구자 논문 경연 및 폐회식.\n자세한 시간표는 첫 페이지 「대회 자료 / 지도」에서 PDF를 다운로드하거나 「내 일정」 탭에서 실시간으로 확인하세요!'
+        };
+      }
+
+      // 15. 大型行李寄放處 (Luggage / Cloakroom)
+      if (/\b(luggage|baggage|suitcase|cloakroom|locker|lockers|storage)\b/i.test(q) ||
+          q.includes('行李') || q.includes('寄放') ||
+          q.includes('荷物') || q.includes('クローク') || q.includes('ロッカー') ||
+          q.includes('짐') || q.includes('보관') || q.includes('캐리어')) {
+        return {
+          matched: true,
+          'zh-TW': '【大型行李寄放服務 (Cloakroom)】：\n大會於 1 樓迎賓大廳與 7 樓大會諮詢台旁均設有免費大型行李寄放處（Cloakroom），服務時間為每日 08:00 至當日議程結束。寄放後請妥善保管領取號碼牌，並於每日議程結束前領回。',
+          'en': '【Luggage & Cloakroom Service】:\nComplimentary luggage storage (Cloakroom) is available next to the 1F Lobby and 7F Information Desks from 08:00 until the end of daily sessions. Please keep your claim tag safely and retrieve your items before the venue closes each day.',
+          'ja': '【お荷物お預かり・クロークのご案内】:\n1階ロビーおよび7階総合案内所横に無料の手荷物預かり所（クローク）がございます（毎日08:00〜セッション終了まで）。引換券を紛失されないようご注意の上、当日中にお引き取りください。',
+          'ko': '【수하물 보관소(Cloakroom) 안내】:\n1층 로비 및 7층 안내 데스크 옆에 무료 수하물 보관소(Cloakroom)가 마련되어 있습니다(매일 08:00~당일 세션 종료 시까지). 보관증 번호표를 잘 소지하시고 당일 행사 종료 전까지 찾아가시기 바랍니다.'
+        };
+      }
+
+      // 16. 茶歇點心、飲水機與充電服務 (Coffee Break / Water / Charging)
+      if (/\b(coffee|tea\s*break|snack|snacks|water|drinking|charge|charging|outlet|plug)\b/i.test(q) ||
+          q.includes('茶歇') || q.includes('點心') || q.includes('咖啡') || q.includes('飲水機') || q.includes('喝水') || q.includes('充電') ||
+          q.includes('コーヒー') || q.includes('休憩') || q.includes('給水') ||
+          q.includes('커피') || q.includes('다과') || q.includes('음수대') || q.includes('충전')) {
+        return {
+          matched: true,
+          'zh-TW': '【茶歇點心、飲水機與充電服務】：\n- 茶歇與咖啡：7 樓大廳走廊與 1 樓海報展區於中場休息時段提供免費咖啡與精緻茶點。\n- 飲水機：各樓層走廊洗手間旁均設有冷熱飲水機（為響應環保，歡迎多加使用隨行杯）。\n- 行動充電：7 樓休息區設有免費行動裝置充電座，亦可洽諮詢台協助。',
+          'en': '【Coffee Break, Water & Charging Stations】:\n- Coffee & Snacks: Complimentary coffee and refreshments are served during break times at the 7F Foyer and 1F Poster Area.\n- Drinking Water: Hot/cold water dispensers are available next to restrooms on every floor.\n- Device Charging: Free charging stations are provided at the 7F Lounge Area.',
+          'ja': '【コーヒーブレイク・給水・充電サービス】:\n- コーヒー・軽食：休憩時間中、7階ホワイエおよび1階ポスター会場にて無料でお楽しみいただけます。\n- 給水機：各階のお手洗い横に温冷対応のウォーターサーバーを設置しております。\n- 充電ステーション：7階休憩エリアに無料充電スポットがございます。',
+          'ko': '【다과, 음수대 및 충전 서비스 안내】:\n- 커피 및 다과: 휴식 시간 동안 7층 로비 및 1층 포스터 전시장에서 무료 커피와 다과가 제공됩니다.\n- 음수대: 각 층 화장실 옆에 냉온수기가 설치되어 있습니다.\n- 충전 스테이션: 7층 휴게 공간에 무료 모바일 기기 충전 부스가 마련되어 있습니다.'
+        };
+      }
+
+      // 17. 醫護站、緊急醫療與遺失物協尋 (First Aid / Lost & Found)
+      if (/\b(lost(?:\s*(?:and|&)?\s*found)?|missing|wallet|medical|first\s*aid|doctor|nurse|emergency|sick)\b/i.test(q) ||
+          q.includes('遺失') || q.includes('不見') || q.includes('掉了') || q.includes('醫護') || q.includes('急救') || q.includes('不舒服') ||
+          q.includes('落とし物') || q.includes('忘れ物') || q.includes('救護') || q.includes('気分が悪い') ||
+          q.includes('분실') || q.includes('잃어버') || q.includes('의무실') || q.includes('응급')) {
+        return {
+          matched: true,
+          'zh-TW': '【緊急醫療協助與遺失物協尋】：\n若有任何遺失物品（證件、手機、錢包等）協尋，或您／同行貴賓感到身體不適需緊急醫療支援，請立即聯繫 1 樓或 7 樓「大會諮詢台」，現場備有急救醫護站與專責人員即時處置支援！',
+          'en': '【First Aid, Medical Assistance & Lost & Found】:\nIf you have lost any belongings or require immediate medical / first-aid assistance, please contact the 1F or 7F "Official Information Desk" immediately. On-site medical personnel and support staff are on standby to assist you.',
+          'ja': '【救護室・緊急医療および落とし物のご案内】:\nお忘れ物・落とし物のお問い合わせや、体調不良・緊急の医療支援が必要な場合は、直ちに1階または7階の「大会総合案内所」までお申し出ください。会場内には救護スタッフ・医療支援体制が常駐しております。',
+          'ko': '【응급 의료 지원 및 분실물 센터 안내】:\n분실물(신분증, 휴대폰, 지갑 등) 문의나 신체 이상 및 응급 의료 지원이 필요하신 경우 즉시 1층 또는 7층 「대회 안내 데스크」로 연락해 주시기 바랍니다. 현장 의무실 및 전담 인력이 즉각 지원해 드립니다.'
+        };
+      }
+
+      // 2. 7樓會議室位置與地圖 (置於具體服務題庫之後，避免 room/venue/7f/会場 提前攔截行李、醫護等問題)
       if (/\b(7f|floor\s*map|venue|layout|session\s*rooms?)\b/i.test(q) || /\b(room|rooms|hall|halls)\b/i.test(q) ||
           q.includes('7樓') || q.includes('演講廳') || q.includes('大會堂') || q.includes('會議室') ||
           q.includes('7階') || q.includes('プレナリー') || q.includes('会場') || q.includes('会議室') ||
@@ -2679,20 +2852,6 @@
           'en': 'All main session halls are located on the 7th floor: Plenary Hall, Rooms 701-703, Speaker Ready Room 704, and VIP Room 705. Signage is posted outside elevators, and you can open the interactive Pinch-to-Zoom Map on the Documents tab!',
           'ja': '主要会場はすべて7階にございます（大會堂、701〜703会議室、704試写室、705VIP室）。エレベーター前に案内看板があり、また「大会資料」タブで拡大地図をご利用いただけます。',
           'ko': '주요 세션장은 모두 7층에 집중되어 있습니다 (플레너리 홀, 701~703호, 704호 준비실, 705호 귀빈실). 엘리베이터 앞 안내판 또는 첫 페이지의 「대회 자료 / 지도」에서 고해상도 지도를 확대해 보실 수 있습니다.'
-        };
-      }
-
-      // 14. 大會三日總日程與每日開放時間 (3-Day Schedule & Opening Hours)
-      if (/\b(schedule|program|agenda|timetable|dates|opening\s*hours)\b/i.test(q) ||
-          q.includes('議程') || q.includes('時間表') || q.includes('日程') || q.includes('幾點開始') ||
-          q.includes('プログラム') || q.includes('スケジュール') ||
-          q.includes('일정') || q.includes('시간표')) {
-        return {
-          matched: true,
-          'zh-TW': '【2027 AACRT 大會三日總日程與開放時間】：\n- 每日開放：08:00 開放報到入場、09:00 議程正式開始。\n- 4/23 (五) Day 1：全人教育論壇與工作坊、歡迎晚宴。\n- 4/24 (六) Day 2：開幕式、主題演講與各學術分廳（701-703）、大會晚宴。\n- 4/25 (日) Day 3：青年論文競賽、閉幕典禮。\n詳細時段可至第一頁「大會文件 / 地圖」下載總議程表 PDF，或點擊第三頁「我的行程」查看即時動態！',
-          'en': '【2027 AACRT 3-Day Schedule & Opening Hours】:\n- Daily Hours: Registration opens at 08:00; Scientific sessions start at 09:00.\n- Apr 23 (Fri) Day 1: Holistic Education Forum, Workshops & Welcome Banquet.\n- Apr 24 (Sat) Day 2: Opening Ceremony, Keynotes, Track Sessions (Rooms 701-703) & Gala Dinner.\n- Apr 25 (Sun) Day 3: Young Investigator Competition & Closing Ceremony.\nDownload the full Program PDF on the "Documents & Map" tab or check live updates in "My Schedule"!',
-          'ja': '【2027 AACRT 3日間プログラム・開場時間】:\n- 毎日 08:00 受付開始 ／ 09:00 セッション開始。\n- 4/23（金）Day 1：全人教育フォーラム、ワークショップ、歓迎晩餐会。\n- 4/24（土）Day 2：開会式、基調講演、各専門セッション（701〜703室）、大会晩餐会。\n- 4/25（日）Day 3：若手論文コンテスト、閉会式。\n詳細は「大会資料」タブのプログラムPDFをダウンロードするか、「マイ日程」タブをご確認ください！',
-          'ko': '【2027 AACRT 3일간 전체 일정 및 운영 시간】:\n- 매일 08:00 등록 시작 / 09:00 학술 세션 시작.\n- 4/23(금) Day 1: 전인교육 포럼, 워크숍 및 환영 만찬.\n- 4/24(토) Day 2: 개회식, 기조강연, 분과별 세션(701~703호) 및 대회 만찬.\n- 4/25(일) Day 3: 젊은 연구자 논문 경연 및 폐회식.\n자세한 시간표는 첫 페이지 「대회 자료 / 지도」에서 PDF를 다운로드하거나 「내 일정」 탭에서 실시간으로 확인하세요!'
         };
       }
 
@@ -2891,13 +3050,23 @@
           const data = await res.json();
           if (data && data.ticker) {
             window.isCloudTickerActive = true;
+            window.cloudTickerText = data.ticker;
+            window.cloudTickerData = data;
             const tickerElem = document.getElementById('ticker-text');
-            if (tickerElem) tickerElem.innerText = data.ticker;
+            if (tickerElem) {
+              if (currentLang === 'zh-TW') {
+                tickerElem.innerText = data.ticker;
+              } else if (data['ticker_' + currentLang]) {
+                tickerElem.innerText = data['ticker_' + currentLang];
+              }
+            }
           }
 
           if (data && data.version) {
+            window.cloudBrainVersion = data.version;
             const versionElem = document.getElementById('footer-brain-version');
-            if (versionElem) versionElem.innerText = `大腦 ${data.version}`;
+            const prefixMap = { 'zh-TW': '大腦', 'en': 'AI Brain', 'ja': 'AI頭脳', 'ko': 'AI 브레인' };
+            if (versionElem) versionElem.innerText = `${prefixMap[currentLang] || 'AI Brain'} ${data.version}`;
           }
 
           if (data && data.top_queries && data.top_queries.length > 0) {
