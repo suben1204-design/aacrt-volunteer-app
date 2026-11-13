@@ -267,10 +267,11 @@
         </div>
       </div>
 
-      <!-- 卡片 4：論文摘要快速檢索卡 (Scientific Abstracts Search) -->
+      <!-- 卡片 4：論文摘要即時檢索 (Abstract Search) - 雙分頁重構架構 -->
       <div id="abstract-search-card" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 hover:shadow-md transition-shadow">
+        <!-- 區塊標題與統計徽章 -->
         <div class="flex items-start space-x-3 mb-3">
-          <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-100">
+          <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-100 shadow-xs">
             <i class="fa-solid fa-microscope text-lg"></i>
           </div>
           <div class="flex-1">
@@ -279,48 +280,79 @@
                 <span>4、學術論文摘要即時檢索 (Abstract Search)</span>
               </h3>
               <span id="abstract-indexed-badge" class="text-[10px] bg-cyan-100 text-cyan-900 font-bold px-2 py-0.5 rounded-full border border-cyan-200">
-                195 篇論文已索引
+                217 篇論文已索引
               </span>
             </div>
             <p id="abstract-card-desc" class="text-xs text-slate-600 mt-1 leading-relaxed">
-              即時檢索口頭與壁報論文。支援專題領域（CT、MRI、AI、放療等）、論文編號（如 P-CT-008、O-AI-001）或關鍵字。
+              即時檢索口頭與海報發表論文。請切換下方分頁，輸入「論文編號」或「報告者姓名」進行精準篩選。
             </p>
           </div>
         </div>
 
-        <!-- 搜尋列 -->
-        <div class="relative flex items-center mb-2.5">
-          <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs"></i>
-          <input id="abstract-search-input" type="text" oninput="handleAbstractSearch(this.value)" placeholder="輸入論文編號、題目或關鍵字 (如 CT, AI, PSMA, 劑量)..." class="w-full pl-8 pr-8 py-2 bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:bg-white rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
-          <button id="abstract-clear-btn" onclick="clearAbstractSearch()" class="hidden absolute right-2.5 w-4 h-4 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[9px]">
-            <i class="fa-solid fa-xmark"></i>
+        <!-- 兩大獨立查詢區分頁切換列 (Oral vs Poster Tabs) -->
+        <div class="flex items-center p-1 bg-slate-100 rounded-xl mb-3 border border-slate-200/80">
+          <button id="abs-tab-oral" onclick="switchAbstractTab('oral')" class="flex-1 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-1.5 shadow-sm bg-white text-cyan-900 border border-slate-200">
+            <i class="fa-solid fa-chalkboard-user text-amber-600"></i>
+            <span id="abs-tab-oral-label">1、口頭發表 (Oral)</span>
+            <span id="abs-oral-badge" class="ml-1 text-[10px] bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded-full font-sans font-bold">74</span>
+          </button>
+          <button id="abs-tab-poster" onclick="switchAbstractTab('poster')" class="flex-1 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-1.5 text-slate-600 hover:text-slate-900">
+            <i class="fa-solid fa-image text-cyan-600"></i>
+            <span id="abs-tab-poster-label">2、海報發表 (Poster)</span>
+            <span id="abs-poster-badge" class="ml-1 text-[10px] bg-cyan-100 text-cyan-900 px-1.5 py-0.2 rounded-full font-sans font-bold">143</span>
           </button>
         </div>
 
-        <!-- 專題快速標籤列 (Horizontal Scroll Pills) -->
-        <div class="flex items-center space-x-1.5 overflow-x-auto no-scrollbar pb-1 mb-3 text-[11px]">
-          <button onclick="filterAbstractCategory('ALL')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-800 text-cyan-300 shrink-0 shadow-sm transition-all" data-cat="ALL">全部 (217)</button>
-          <button onclick="filterAbstractCategory('AI')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="AI">AI 人工智慧 (14)</button>
-          <button onclick="filterAbstractCategory('CT')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="CT">CT 電腦斷層 (16)</button>
-          <button onclick="filterAbstractCategory('MR')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="MR">MRI 磁振造影 (21)</button>
-          <button onclick="filterAbstractCategory('RT')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="RT">RT 放射治療 (23)</button>
-          <button onclick="filterAbstractCategory('NM')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="NM">NM 核子醫學 (8)</button>
-          <button onclick="filterAbstractCategory('CA')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="CA">CA 心導管 (11)</button>
-          <button onclick="filterAbstractCategory('IR')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="IR">IR 血管介入 (7)</button>
-          <button onclick="filterAbstractCategory('MA')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="MA">MA 乳房攝影 (7)</button>
-          <button onclick="filterAbstractCategory('RO')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="RO">RO 常規X光 (12)</button>
-          <button onclick="filterAbstractCategory('US')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="US">US 超音波 (2)</button>
-          <button onclick="filterAbstractCategory('ST')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="ST">ST 學生研究 (55)</button>
-          <button onclick="filterAbstractCategory('OT')" class="abs-cat-btn px-2.5 py-1 rounded-lg font-bold bg-slate-100 text-slate-600 hover:text-slate-900 shrink-0 transition-all" data-cat="OT">OT 綜合其他 (41)</button>
+        <!-- 1. 口頭發表查詢專區 (Oral Presentation Panel) -->
+        <div id="abs-oral-panel" class="space-y-2.5">
+          <!-- 搜尋列 -->
+          <div class="relative flex items-center">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs"></i>
+            <input id="abstract-oral-search-input" type="text" oninput="handleOralSearch(this.value)" placeholder="輸入論文編號或報告者姓名 (如 O-NMR-01, 陳大同)..." class="w-full pl-8 pr-8 py-2 bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:bg-white rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
+            <button id="abstract-oral-clear-btn" onclick="clearOralSearch()" class="hidden absolute right-2.5 w-4 h-4 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[9px]">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- 結果計數與提示 -->
+          <div class="flex items-center justify-between text-[11px] text-slate-500 px-0.5">
+            <span id="abstract-oral-count" class="font-bold text-slate-700">顯示 74 篇口頭發表</span>
+            <span class="text-[10px] text-slate-400 flex items-center gap-1">
+              <i class="fa-solid fa-circle-info text-amber-500"></i>
+              <span id="abstract-oral-hint">完整列出 6 項發表資訊</span>
+            </span>
+          </div>
+
+          <!-- 口頭發表清單容器 -->
+          <div id="abstract-oral-list" class="space-y-2.5 max-h-80 overflow-y-auto no-scrollbar pr-0.5">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
 
-        <!-- 檢索結果列表 (預設顯示焦點精選，搜尋時動態更新) -->
-        <div id="abstract-results-header" class="flex items-center justify-between text-[11px] text-slate-500 mb-1.5 px-0.5">
-          <span id="abstract-result-count">焦點論文推薦：</span>
-          <span id="abstract-hint-click" class="text-[10px] text-slate-400">點擊卡片查閱摘要詳情</span>
-        </div>
-        <div id="abstract-results-list" class="space-y-2 max-h-80 overflow-y-auto no-scrollbar pr-0.5">
-          <!-- Rendered dynamically by JavaScript -->
+        <!-- 2. 海報發表查詢專區 (Poster Presentation Panel) -->
+        <div id="abs-poster-panel" class="hidden space-y-2.5">
+          <!-- 搜尋列 -->
+          <div class="relative flex items-center">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs"></i>
+            <input id="abstract-poster-search-input" type="text" oninput="handlePosterSearch(this.value)" placeholder="輸入論文編號或報告者姓名 (如 P-AI-001, 吳怡萱)..." class="w-full pl-8 pr-8 py-2 bg-slate-50 border border-slate-200 focus:border-cyan-500 focus:bg-white rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
+            <button id="abstract-poster-clear-btn" onclick="clearPosterSearch()" class="hidden absolute right-2.5 w-4 h-4 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[9px]">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- 結果計數與提示 -->
+          <div class="flex items-center justify-between text-[11px] text-slate-500 px-0.5">
+            <span id="abstract-poster-count" class="font-bold text-slate-700">顯示 143 篇海報發表</span>
+            <span class="text-[10px] text-slate-400 flex items-center gap-1">
+              <i class="fa-solid fa-location-dot text-cyan-600"></i>
+              <span id="abstract-poster-hint">展區：1F 海報展區 (12:30-13:30 交流)</span>
+            </span>
+          </div>
+
+          <!-- 海報發表清單容器 -->
+          <div id="abstract-poster-list" class="space-y-2 max-h-80 overflow-y-auto no-scrollbar pr-0.5">
+            <!-- Rendered dynamically by JavaScript -->
+          </div>
         </div>
       </div>
 
@@ -1378,11 +1410,14 @@
     }
 
     // ==========================================
-    // 論文摘要即時檢索卡邏輯 (Abstracts Index & Search)
+    // 論文摘要即時檢索 (Abstracts Search: Oral vs Poster)
     // ==========================================
     let ABSTRACTS_DATA = [];
-    let currentAbstractCategory = 'ALL';
-    let currentAbstractSearchQuery = '';
+    let ORAL_PAPERS = [];
+    let POSTER_PAPERS = [];
+    let currentAbstractTab = 'oral'; // 'oral' | 'poster'
+    let oralSearchQuery = '';
+    let posterSearchQuery = '';
 
     async function loadAbstractsIndex() {
       try {
@@ -1390,16 +1425,23 @@
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const data = await resp.json();
         ABSTRACTS_DATA = Array.isArray(data) ? data : (data.papers || data.abstracts || []);
-        console.log('✅ Loaded abstracts index:', ABSTRACTS_DATA.length);
-        const countBadge = document.getElementById('abstract-indexed-badge');
-        if (countBadge) {
-          const badgeText = (currentLang === 'zh-TW') ? `${ABSTRACTS_DATA.length} 篇論文已索引` :
-                            (currentLang === 'ja') ? `${ABSTRACTS_DATA.length}件の論文索引完了` :
-                            (currentLang === 'ko') ? `${ABSTRACTS_DATA.length}편 논문 색인 완료` :
-                            `${ABSTRACTS_DATA.length} Papers Indexed`;
-          countBadge.innerText = badgeText;
-        }
-        renderAbstractResults();
+        
+        // 分流：口頭 vs 海報
+        ORAL_PAPERS = ABSTRACTS_DATA.filter(p => {
+          const t = (p.type || '').toLowerCase();
+          return t.includes('oral') || t.includes('口頭') || (p.id || '').toUpperCase().startsWith('O-');
+        });
+        POSTER_PAPERS = ABSTRACTS_DATA.filter(p => {
+          const t = (p.type || '').toLowerCase();
+          return t.includes('poster') || t.includes('海報') || t.includes('壁報') || (p.id || '').toUpperCase().startsWith('P-');
+        });
+
+        console.log(`✅ Loaded abstracts: Total ${ABSTRACTS_DATA.length} (Oral: ${ORAL_PAPERS.length}, Poster: ${POSTER_PAPERS.length})`);
+        
+        // 更新徽章數字與渲染清單
+        updateAbstractBadges();
+        renderOralResults();
+        renderPosterResults();
       } catch (err) {
         console.warn('Could not load abstracts_index.json:', err);
         const countBadge = document.getElementById('abstract-indexed-badge');
@@ -1409,89 +1451,122 @@
       }
     }
 
-    function filterAbstractCategory(category) {
-      currentAbstractCategory = category;
-      document.querySelectorAll('.abs-cat-btn').forEach(btn => {
-        if (btn.dataset.cat === category) {
-          btn.className = 'abs-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-cyan-700 text-white shrink-0 shadow-sm transition-all';
-        } else {
-          btn.className = 'abs-cat-btn px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 transition-all';
-        }
-      });
-      renderAbstractResults();
-    }
-
-    function handleAbstractSearch(query) {
-      currentAbstractSearchQuery = (query || '').trim();
-      const clearBtn = document.getElementById('abstract-clear-btn');
-      if (clearBtn) {
-        if (currentAbstractSearchQuery.length > 0) {
-          clearBtn.classList.remove('hidden');
-        } else {
-          clearBtn.classList.add('hidden');
-        }
+    function updateAbstractBadges() {
+      const countBadge = document.getElementById('abstract-indexed-badge');
+      if (countBadge) {
+        const badgeText = (currentLang === 'zh-TW') ? `${ABSTRACTS_DATA.length} 篇論文已索引` :
+                          (currentLang === 'ja') ? `${ABSTRACTS_DATA.length}件の論文索引完了` :
+                          (currentLang === 'ko') ? `${ABSTRACTS_DATA.length}편 논문 색인 완료` :
+                          `${ABSTRACTS_DATA.length} Papers Indexed`;
+        countBadge.innerText = badgeText;
       }
-      renderAbstractResults();
+      const oralBadge = document.getElementById('abs-oral-badge');
+      if (oralBadge) oralBadge.innerText = ORAL_PAPERS.length;
+      const posterBadge = document.getElementById('abs-poster-badge');
+      if (posterBadge) posterBadge.innerText = POSTER_PAPERS.length;
     }
 
-    function clearAbstractSearch() {
-      const input = document.getElementById('abstract-search-input');
+    function switchAbstractTab(tab) {
+      currentAbstractTab = tab;
+      const tabOral = document.getElementById('abs-tab-oral');
+      const tabPoster = document.getElementById('abs-tab-poster');
+      const panelOral = document.getElementById('abs-oral-panel');
+      const panelPoster = document.getElementById('abs-poster-panel');
+
+      if (tab === 'oral') {
+        tabOral.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-1.5 shadow-sm bg-white text-cyan-900 border border-slate-200';
+        tabPoster.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-1.5 text-slate-600 hover:text-slate-900';
+        panelOral.classList.remove('hidden');
+        panelPoster.classList.add('hidden');
+      } else {
+        tabPoster.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-1.5 shadow-sm bg-white text-cyan-900 border border-slate-200';
+        tabOral.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center space-x-1.5 text-slate-600 hover:text-slate-900';
+        panelPoster.classList.remove('hidden');
+        panelOral.classList.add('hidden');
+      }
+    }
+
+    // 口頭發表搜尋
+    function handleOralSearch(query) {
+      oralSearchQuery = (query || '').trim();
+      const clearBtn = document.getElementById('abstract-oral-clear-btn');
+      if (clearBtn) {
+        if (oralSearchQuery.length > 0) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+      renderOralResults();
+    }
+
+    function clearOralSearch() {
+      const input = document.getElementById('abstract-oral-search-input');
       if (input) input.value = '';
-      currentAbstractSearchQuery = '';
-      const clearBtn = document.getElementById('abstract-clear-btn');
+      oralSearchQuery = '';
+      const clearBtn = document.getElementById('abstract-oral-clear-btn');
       if (clearBtn) clearBtn.classList.add('hidden');
-      renderAbstractResults();
+      renderOralResults();
     }
 
-    function renderAbstractResults() {
-      const container = document.getElementById('abstract-results-list');
-      const counterEl = document.getElementById('abstract-result-count');
+    // 海報發表搜尋
+    function handlePosterSearch(query) {
+      posterSearchQuery = (query || '').trim();
+      const clearBtn = document.getElementById('abstract-poster-clear-btn');
+      if (clearBtn) {
+        if (posterSearchQuery.length > 0) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+      renderPosterResults();
+    }
+
+    function clearPosterSearch() {
+      const input = document.getElementById('abstract-poster-search-input');
+      if (input) input.value = '';
+      posterSearchQuery = '';
+      const clearBtn = document.getElementById('abstract-poster-clear-btn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      renderPosterResults();
+    }
+
+    // 渲染「1、口頭發表」清單 (呈現 6 項核心資訊)
+    function renderOralResults() {
+      const container = document.getElementById('abstract-oral-list');
+      const counterEl = document.getElementById('abstract-oral-count');
       if (!container) return;
 
-      if (!ABSTRACTS_DATA || ABSTRACTS_DATA.length === 0) {
+      if (!ORAL_PAPERS || ORAL_PAPERS.length === 0) {
         container.innerHTML = `
           <div class="py-8 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200">
-            <i class="fa-solid fa-file-excel text-2xl mb-1.5 text-emerald-600"></i>
-            <p class="text-xs font-bold text-slate-700">等待上傳最新整理論文資料 (Google Sheets)</p>
-            <p class="text-[11px] text-slate-400 mt-0.5">舊測試資料已清空，待上傳後即刻同步啟用檢索</p>
+            <i class="fa-solid fa-file-excel text-2xl mb-1.5 text-amber-500"></i>
+            <p class="text-xs font-bold text-slate-700">等待上傳口頭發表資料 (Google Sheets / Excel)</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">待資料上傳後即刻同步啟用檢索</p>
           </div>
         `;
-        if (counterEl) counterEl.innerText = '等待資料庫上傳 (0 篇)';
+        if (counterEl) counterEl.innerText = '等待資料上傳 (0 篇)';
         return;
       }
 
-      const q = currentAbstractSearchQuery.toLowerCase();
-      const filtered = ABSTRACTS_DATA.filter(item => {
-        // 分類過濾
-        if (currentAbstractCategory !== 'ALL' && item.category !== currentAbstractCategory) {
-          return false;
-        }
-        // 關鍵字搜尋 (支援編號、標題、頁碼、專題)
-        if (q) {
-          const idMatch = (item.id || '').toLowerCase().includes(q);
-          const titleMatch = (item.title || '').toLowerCase().includes(q);
-          const catMatch = (item.category || '').toLowerCase().includes(q);
-          const pageMatch = String(item.page || '').includes(q);
-          return idMatch || titleMatch || catMatch || pageMatch;
-        }
-        return true;
+      const q = oralSearchQuery.toLowerCase();
+      const filtered = ORAL_PAPERS.filter(item => {
+        if (!q) return true;
+        const idMatch = (item.id || '').toLowerCase().includes(q);
+        const speakerMatch = (item.speaker || '').toLowerCase().includes(q);
+        return idMatch || speakerMatch;
       });
 
       if (counterEl) {
-        const countText = (currentLang === 'zh-TW') ? `顯示 ${filtered.length} 篇論文 (共 ${ABSTRACTS_DATA.length} 篇)` :
-                          (currentLang === 'ja') ? `${filtered.length} 件表示 (全 ${ABSTRACTS_DATA.length} 件)` :
-                          (currentLang === 'ko') ? `${filtered.length} 편 표시 (총 ${ABSTRACTS_DATA.length} 편)` :
-                          `Showing ${filtered.length} of ${ABSTRACTS_DATA.length}`;
+        const countText = (currentLang === 'zh-TW') ? `顯示 ${filtered.length} 篇口頭發表 (共 ${ORAL_PAPERS.length} 篇)` :
+                          (currentLang === 'ja') ? `${filtered.length} 件の口頭発表を表示 (全 ${ORAL_PAPERS.length} 件)` :
+                          (currentLang === 'ko') ? `${filtered.length} 편 구연 발표 표시 (총 ${ORAL_PAPERS.length} 편)` :
+                          `Showing ${filtered.length} of ${ORAL_PAPERS.length} Oral Presentations`;
         counterEl.innerText = countText;
       }
 
       if (filtered.length === 0) {
-        const noResultMsg = (currentLang === 'zh-TW') ? '查無符合條件的學術論文，請嘗試其他關鍵字' :
-                            (currentLang === 'ja') ? '該当する論文が見つかりません。別のキーワードをお試しください' :
-                            (currentLang === 'ko') ? '일치하는 논문이 없습니다. 다른 검색어를 입력해 주세요' :
-                            'No matching papers found. Try different keywords.';
+        const noResultMsg = (currentLang === 'zh-TW') ? '查無符合條件的口頭發表論文，請嘗試其他編號或報告者姓名' :
+                            (currentLang === 'ja') ? '該当する口頭発表が見つかりません。別の論文番号または発表者氏名をお試しください' :
+                            (currentLang === 'ko') ? '일치하는 구연 발표가 없습니다. 다른 논문 번호 또는 발표자 이름을 입력해 주세요' :
+                            'No matching oral presentations found. Please try another paper ID or presenter name.';
         container.innerHTML = `
-          <div class="py-6 text-center text-slate-400">
+          <div class="py-6 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200">
             <i class="fa-solid fa-magnifying-glass text-xl mb-1 text-slate-300"></i>
             <p class="text-xs">${noResultMsg}</p>
           </div>
@@ -1499,68 +1574,206 @@
         return;
       }
 
-      // 最多渲染 60 筆，避免大量 DOM 影響平滑滾動
       const displayList = filtered.slice(0, 60);
+      const labels = getFieldLabels();
+
       container.innerHTML = displayList.map(item => {
-        const badgeColor = item.category === 'CT' ? 'bg-blue-100 text-blue-800 border-blue-200' :
-                           item.category === 'MR' ? 'bg-purple-100 text-purple-800 border-purple-200' :
-                           item.category === 'AI' ? 'bg-emerald-100 text-emerald-800 border-emerald-200' :
-                           item.category === 'RT' ? 'bg-rose-100 text-rose-800 border-rose-200' :
-                           item.category === 'NM' ? 'bg-amber-100 text-amber-900 border-amber-200' :
-                           item.category === 'ST' ? 'bg-indigo-100 text-indigo-900 border-indigo-200' :
-                           item.category === 'CA' ? 'bg-red-100 text-red-900 border-red-200' :
-                           'bg-slate-100 text-slate-700 border-slate-200';
-
-        const typeBadge = item.type && item.type.includes('Oral') ? 
-                          '<span class="text-[9px] font-bold bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.2 rounded font-sans">口頭</span>' :
-                          '<span class="text-[9px] font-bold bg-cyan-100 text-cyan-900 border border-cyan-300 px-1.5 py-0.2 rounded font-sans">壁報</span>';
-
-        const authorDisplay = item.speaker ? escapeHtml(item.speaker) : '';
-        const roomOrTime = item.room ? escapeHtml(item.room) : '';
-
-        const askAiLabel = (currentLang === 'zh-TW') ? '問 AI' :
-                           (currentLang === 'ja') ? 'AIで質問' :
-                           (currentLang === 'ko') ? 'AI 질문' :
-                           'Ask AI';
-
-        const showGuestLabel = (currentLang === 'zh-TW') ? '秀給外賓' :
-                               (currentLang === 'ja') ? '外賓提示' :
-                               (currentLang === 'ko') ? '게스트 보기' :
-                               'Show Guest';
-
         const cleanId = escapeHtml(item.id || '');
         const cleanTitle = escapeHtml(item.title || '');
-        const cleanCat = escapeHtml(item.category || '');
+        const cleanSpeaker = escapeHtml(item.speaker || '');
+        const cleanRoom = escapeHtml(item.room || '');
         const cleanTime = escapeHtml(item.time || '');
+        const cleanChairs = escapeHtml(item.chairs || '大會座長');
+        const cleanCat = escapeHtml(item.category || '');
 
         return `
-          <div class="p-2.5 bg-slate-50 hover:bg-cyan-50/50 rounded-xl border border-slate-200/80 transition-all flex flex-col justify-between">
+          <div class="p-3 bg-slate-50 hover:bg-amber-50/40 rounded-xl border border-slate-200 transition-all flex flex-col justify-between shadow-xs">
             <div>
-              <div class="flex items-center justify-between gap-1.5 mb-1">
-                <div class="flex items-center space-x-1">
-                  <span class="text-[10px] font-mono font-black text-cyan-800 bg-white px-2 py-0.5 rounded border border-cyan-200">${cleanId}</span>
-                  ${typeBadge}
+              <!-- 頂部：論文編號 + 琥珀色口頭標籤 + 發表時間 -->
+              <div class="flex items-center justify-between gap-1.5 mb-1.5">
+                <div class="flex items-center space-x-1.5">
+                  <span class="text-[10px] font-mono font-black text-amber-900 bg-amber-100/90 px-2 py-0.5 rounded border border-amber-300">
+                    <span class="text-[9px] text-amber-700 mr-0.5">${labels.paperId}:</span>${cleanId}
+                  </span>
+                  <span class="text-[9px] font-bold bg-amber-500 text-slate-950 px-1.5 py-0.5 rounded shadow-xs">口頭</span>
                 </div>
-                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeColor}">${cleanCat}</span>
+                <span class="text-[10px] font-mono font-bold text-slate-600 bg-white px-2 py-0.5 rounded border border-slate-200 flex items-center gap-1">
+                  <i class="fa-regular fa-clock text-amber-600 text-[10px]"></i>${cleanTime}
+                </span>
               </div>
-              <h4 class="text-xs font-bold text-slate-900 leading-snug line-clamp-2" title="${cleanTitle}">${cleanTitle}</h4>
+
+              <!-- 發表題目 -->
+              <h4 class="text-xs font-extrabold text-slate-900 leading-snug mb-2" title="${cleanTitle}">
+                ${cleanTitle}
+              </h4>
+
+              <!-- 6 大詳細資訊網格 (會議室、座長、報告者) -->
+              <div class="grid grid-cols-2 gap-1.5 text-[11px] bg-white p-2 rounded-lg border border-slate-200/80 mb-2">
+                <div class="flex items-center space-x-1.5 truncate">
+                  <i class="fa-solid fa-door-open text-amber-600 text-xs shrink-0"></i>
+                  <span class="text-slate-400 text-[10px] shrink-0">${labels.room}:</span>
+                  <span class="font-bold text-slate-800 truncate">${cleanRoom}</span>
+                </div>
+                <div class="flex items-center space-x-1.5 truncate">
+                  <i class="fa-solid fa-user text-amber-600 text-xs shrink-0"></i>
+                  <span class="text-slate-400 text-[10px] shrink-0">${labels.speaker}:</span>
+                  <span class="font-bold text-slate-800 truncate">${cleanSpeaker}</span>
+                </div>
+                <div class="col-span-2 flex items-center space-x-1.5 truncate pt-1 border-t border-slate-100">
+                  <i class="fa-solid fa-user-tie text-slate-400 text-xs shrink-0"></i>
+                  <span class="text-slate-400 text-[10px] shrink-0">${labels.chairs}:</span>
+                  <span class="text-slate-700 truncate font-medium">${cleanChairs}</span>
+                </div>
+              </div>
             </div>
-            <div class="mt-2 pt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-slate-500">
-              <span class="text-slate-500 font-medium text-[10px] truncate max-w-[150px]">
-                <i class="fa-solid fa-user-doctor text-slate-400 mr-1"></i>${authorDisplay} · ${roomOrTime}
-              </span>
-              <div class="flex items-center space-x-1 shrink-0">
-                <button onclick="askAiAboutPaper('${cleanId}', '${cleanTitle.replace(/'/g, "\\'")}')" class="px-2 py-0.5 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-semibold transition-all">
-                  <i class="fa-solid fa-sparkles text-amber-500 mr-0.5"></i>${askAiLabel}
-                </button>
-                <button onclick="showAbstractToGuest('${cleanId}', '${cleanTitle.replace(/'/g, "\\'")}', '${cleanCat}', '${escapeHtml(item.type || '')}', '${authorDisplay}', '${roomOrTime}', '${cleanTime}')" class="px-2 py-0.5 rounded bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white text-[10px] font-bold transition-all shadow-xs">
-                  <i class="fa-solid fa-mobile-screen mr-0.5"></i>${showGuestLabel}
-                </button>
-              </div>
+
+            <!-- 底部動作按鈕 (問 AI + 秀給外賓) -->
+            <div class="flex items-center justify-end space-x-1.5 pt-1 border-t border-slate-200/60">
+              <button onclick="askAiAboutPaper('${cleanId}', '${cleanTitle.replace(/'/g, "\'")}')" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-bold transition-all shadow-xs flex items-center space-x-1">
+                <i class="fa-solid fa-sparkles text-amber-500"></i>
+                <span>${labels.askAi}</span>
+              </button>
+              <button onclick="showAbstractToGuest('${cleanId}', '${cleanTitle.replace(/'/g, "\'")}', '${cleanCat}', 'Oral (口頭)', '${cleanSpeaker}', '${cleanRoom}', '${cleanTime}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 text-[10px] font-bold transition-all shadow-xs flex items-center space-x-1">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>${labels.showGuest}</span>
+              </button>
             </div>
           </div>
         `;
       }).join('');
+    }
+
+    // 渲染「2、海報發表」清單 (簡潔呈現 2 項規格資料：論文編號 + 報告者)
+    function renderPosterResults() {
+      const container = document.getElementById('abstract-poster-list');
+      const counterEl = document.getElementById('abstract-poster-count');
+      if (!container) return;
+
+      if (!POSTER_PAPERS || POSTER_PAPERS.length === 0) {
+        container.innerHTML = `
+          <div class="py-8 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+            <i class="fa-solid fa-file-excel text-2xl mb-1.5 text-cyan-600"></i>
+            <p class="text-xs font-bold text-slate-700">等待上傳海報發表資料 (Google Sheets / Excel)</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">待資料上傳後即刻同步啟用檢索</p>
+          </div>
+        `;
+        if (counterEl) counterEl.innerText = '等待資料上傳 (0 篇)';
+        return;
+      }
+
+      const q = posterSearchQuery.toLowerCase();
+      const filtered = POSTER_PAPERS.filter(item => {
+        if (!q) return true;
+        const idMatch = (item.id || '').toLowerCase().includes(q);
+        const speakerMatch = (item.speaker || '').toLowerCase().includes(q);
+        return idMatch || speakerMatch;
+      });
+
+      if (counterEl) {
+        const countText = (currentLang === 'zh-TW') ? `顯示 ${filtered.length} 篇海報發表 (共 ${POSTER_PAPERS.length} 篇)` :
+                          (currentLang === 'ja') ? `${filtered.length} 件のポスター発表を表示 (全 ${POSTER_PAPERS.length} 件)` :
+                          (currentLang === 'ko') ? `${filtered.length} 편 포스터 발표 표시 (총 ${POSTER_PAPERS.length} 편)` :
+                          `Showing ${filtered.length} of ${POSTER_PAPERS.length} Poster Presentations`;
+        counterEl.innerText = countText;
+      }
+
+      if (filtered.length === 0) {
+        const noResultMsg = (currentLang === 'zh-TW') ? '查無符合條件的海報發表論文，請嘗試其他編號或報告者姓名' :
+                            (currentLang === 'ja') ? '該当するポスター発表が見つかりません。別の論文番号または発表者氏名をお試しください' :
+                            (currentLang === 'ko') ? '일치하는 포스터 발표가 없습니다. 다른 논문 번호 또는 발표자 이름을 입력해 주세요' :
+                            'No matching poster presentations found. Please try another paper ID or presenter name.';
+        container.innerHTML = `
+          <div class="py-6 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+            <i class="fa-solid fa-magnifying-glass text-xl mb-1 text-slate-300"></i>
+            <p class="text-xs">${noResultMsg}</p>
+          </div>
+        `;
+        return;
+      }
+
+      const displayList = filtered.slice(0, 60);
+      const labels = getFieldLabels();
+
+      container.innerHTML = displayList.map(item => {
+        const cleanId = escapeHtml(item.id || '');
+        const cleanTitle = escapeHtml(item.title || '');
+        const cleanSpeaker = escapeHtml(item.speaker || '');
+        const cleanCat = escapeHtml(item.category || '');
+
+        return `
+          <div class="p-2.5 bg-slate-50 hover:bg-cyan-50/40 rounded-xl border border-slate-200 transition-all flex items-center justify-between shadow-xs">
+            <!-- 左側：簡潔呈現 2 項規格資料 (論文編號 + 報告者) -->
+            <div class="flex items-center space-x-2.5 min-w-0 pr-2">
+              <span class="text-[11px] font-mono font-black text-cyan-900 bg-cyan-100/90 px-2 py-0.5 rounded border border-cyan-300 shrink-0">
+                <span class="text-[9px] text-cyan-700 mr-0.5">${labels.paperId}:</span>${cleanId}
+              </span>
+              <div class="flex items-center space-x-1.5 truncate">
+                <i class="fa-solid fa-user text-cyan-700 text-xs shrink-0"></i>
+                <span class="text-slate-400 text-[10px] shrink-0">${labels.speaker}:</span>
+                <span class="font-extrabold text-slate-900 text-xs truncate">${cleanSpeaker}</span>
+              </div>
+            </div>
+
+            <!-- 右側：動作按鈕 (問 AI + 秀給外賓) -->
+            <div class="flex items-center space-x-1 shrink-0">
+              <button onclick="askAiAboutPaper('${cleanId}', '${cleanTitle.replace(/'/g, "\'")}')" class="px-2 py-1 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-bold transition-all shadow-xs">
+                <i class="fa-solid fa-sparkles text-amber-500 mr-0.5"></i>${labels.askAi}
+              </button>
+              <button onclick="showAbstractToGuest('${cleanId}', '${cleanTitle.replace(/'/g, "\'")}', '${cleanCat}', 'Poster (海報)', '${cleanSpeaker}', '1F 海報展區', '12:30-13:30')" class="px-2 py-1 rounded bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white text-[10px] font-bold transition-all shadow-xs">
+                <i class="fa-solid fa-mobile-screen mr-0.5"></i>${labels.showGuest}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function getFieldLabels() {
+      if (currentLang === 'ja') {
+        return {
+          room: '会場',
+          chairs: '座長',
+          paperId: '論文番号',
+          speaker: '発表者',
+          time: '発表時間',
+          title: '演題名',
+          askAi: 'AI質問',
+          showGuest: '外賓提示'
+        };
+      } else if (currentLang === 'ko') {
+        return {
+          room: '회의실',
+          chairs: '좌장',
+          paperId: '논문번호',
+          speaker: '발표자',
+          time: '발표시간',
+          title: '발표제목',
+          askAi: 'AI질문',
+          showGuest: '게스트보기'
+        };
+      } else if (currentLang === 'en') {
+        return {
+          room: 'Room',
+          chairs: 'Chairs',
+          paperId: 'Paper ID',
+          speaker: 'Presenter',
+          time: 'Time',
+          title: 'Title',
+          askAi: 'Ask AI',
+          showGuest: 'Show Guest'
+        };
+      } else {
+        return {
+          room: '會議室',
+          chairs: '座長',
+          paperId: '論文編號',
+          speaker: '報告者',
+          time: '發表時間',
+          title: '發表題目',
+          askAi: '問 AI',
+          showGuest: '秀給外賓'
+        };
+      }
     }
 
     function askAiAboutPaper(id, title) {
@@ -1589,12 +1802,6 @@
         'ko': `【학술대회 논문 발표 안내】\n논문 번호: ${id} (구분: ${type} · 분과: ${cat})\n발표 제목:\n${title}\n발표자: ${speaker}\n발표 시간: ${time}\n장소: ${room}\n\n구연 및 포스터 발표 관련 문의는 난강 2관 1층 포스터 발표장 또는 7층 슬라이드 준비실을 이용해 주시기 바랍니다.`
       };
       const msgIdx = messageStore.length;
-      messageStore.push({
-        query: `Paper [${id}]`,
-        bundle: bundle
-      });
-      showToGuestFromStore(msgIdx);
-    }
       messageStore.push({
         query: `Paper [${id}]`,
         bundle: bundle
@@ -1735,9 +1942,13 @@
           lightboxFallbackTitle: '南港 2 館 7 樓地圖檔案加載中',
           lightboxFallbackSub: '若尚未放入實體圖檔，請點擊下方 PDF 下載按鈕查閱。',
           abstractCardTitle: '4、學術論文摘要即時檢索 (Abstract Search)',
-          abstractCardDesc: '即時檢索口頭與壁報論文。支援專題領域（CT、MRI、AI、放療等）、論文編號（如 P-CT-008、O-AI-001）或關鍵字。',
-          abstractPlaceholder: '輸入論文編號、題目或關鍵字 (如 CT, AI, PSMA, 劑量)...',
-          abstractCatAll: '全部'
+          abstractCardDesc: '即時檢索口頭與海報發表論文。請切換下方分頁，輸入「論文編號」或「報告者姓名」進行精準篩選。',
+          absTabOral: '1、口頭發表 (Oral)',
+          absTabPoster: '2、海報發表 (Poster)',
+          absOralSearchPlaceholder: '輸入論文編號或報告者姓名 (如 O-NMR-01, 陳大同)...',
+          absPosterSearchPlaceholder: '輸入論文編號或報告者姓名 (如 P-AI-001, 吳怡萱)...',
+          absOralHint: '完整列出 6 項發表資訊',
+          absPosterHint: '展區：1F 海報展區 (12:30-13:30 交流)'
         },
         'en': {
           headerGuide: 'Official Guide',
@@ -1795,9 +2006,13 @@
           lightboxFallbackTitle: '7F Map Loading',
           lightboxFallbackSub: 'If map image is not yet placed, tap PDF download below.',
           abstractCardTitle: '4. Scientific Abstracts Search',
-          abstractCardDesc: 'Instant search across oral and poster abstracts by track (CT, MRI, AI, RT), paper ID (e.g. P-CT-008, O-AI-001) or keywords.',
-          abstractPlaceholder: 'Search by paper ID, title or keyword (e.g. CT, AI, dose)...',
-          abstractCatAll: 'ALL'
+          abstractCardDesc: 'Instant search for Oral and Poster presentations. Switch tabs below and filter by Paper ID or Presenter Name.',
+          absTabOral: '1. Oral Presentation',
+          absTabPoster: '2. Poster Presentation',
+          absOralSearchPlaceholder: 'Enter Paper ID or Presenter (e.g. O-NMR-01, John Doe)...',
+          absPosterSearchPlaceholder: 'Enter Paper ID or Presenter (e.g. P-AI-001, Jane Smith)...',
+          absOralHint: 'Complete 6 presentation fields listed',
+          absPosterHint: 'Exhibition: 1F Poster Area (12:30-13:30)'
         },
         'ja': {
           headerGuide: '公式ガイド',
@@ -1855,9 +2070,13 @@
           lightboxFallbackTitle: '7階会場図を読み込み中',
           lightboxFallbackSub: '画像が表示されない場合は下のPDF版をご覧ください。',
           abstractCardTitle: '4. 学術論文抄録即時検索 (Abstract Search)',
-          abstractCardDesc: '口頭発表・ポスター抄録を専門分野（CT、MRI、AI、放射線治療など）、論文番号（例：P-CT-008、O-AI-001）やキーワードで即時検索。',
-          abstractPlaceholder: '論文番号、タイトル、キーワードを入力 (例: CT, AI, 線量)...',
-          abstractCatAll: '全て'
+          abstractCardDesc: '口頭発表およびポスター発表の即時検索。タブを切り替え、「論文番号」または「発表者氏名」を入力して検索してください。',
+          absTabOral: '1. 口頭発表 (Oral)',
+          absTabPoster: '2. ポスター発表 (Poster)',
+          absOralSearchPlaceholder: '論文番号または発表者氏名を入力 (例: O-NMR-01, 田中)...',
+          absPosterSearchPlaceholder: '論文番号または発表者氏名を入力 (例: P-AI-001, 佐藤)...',
+          absOralHint: '発表に関する6項目を完全表示',
+          absPosterHint: '会場：1F ポスター会場 (12:30-13:30 質疑)'
         },
         'ko': {
           headerGuide: '공식 가이드',
@@ -1915,9 +2134,13 @@
           lightboxFallbackTitle: '7층 지도 로딩 중',
           lightboxFallbackSub: '이미지가 표시되지 않을 경우 아래 PDF 다운로드를 이용하세요.',
           abstractCardTitle: '4. 학술대회 논문 초록 즉시 검색 (Abstract Search)',
-          abstractCardDesc: '구연 및 포스터 초록을 전공 분야(CT, MRI, AI, 방사선치료 등), 논문 번호(예: P-CT-008, O-AI-001) 또는 키워드로 즉시 검색.',
-          abstractPlaceholder: '논문 번호, 제목, 키워드 입력 (예: CT, AI, 선량)...',
-          abstractCatAll: '전체'
+          abstractCardDesc: '구연 및 포스터 발표 논문 즉시 검색. 아래 탭을 전환한 후 「논문 번호」 또는 「발표자 이름」을 입력하여 검색하세요.',
+          absTabOral: '1. 구연 발표 (Oral)',
+          absTabPoster: '2. 포스터 발표 (Poster)',
+          absOralSearchPlaceholder: '논문 번호 또는 발표자 이름 입력 (예: O-NMR-01, 김철수)...',
+          absPosterSearchPlaceholder: '논문 번호 또는 발표자 이름 입력 (예: P-AI-001, 이영희)...',
+          absOralHint: '발표 관련 6개 항목 상세 표시',
+          absPosterHint: '전시장: 1F 포스터 발표장 (12:30-13:30)'
         }
       };
 
@@ -2002,23 +2225,26 @@
       if (abstractCardTitle) abstractCardTitle.innerText = t.abstractCardTitle;
       const abstractCardDesc = document.getElementById('abstract-card-desc');
       if (abstractCardDesc) abstractCardDesc.innerText = t.abstractCardDesc;
-      const abstractInput = document.getElementById('abstract-search-input');
-      if (abstractInput) abstractInput.placeholder = t.abstractPlaceholder;
-      
-      // Update Category Pills Language Labels
-      const catLabels = {
-        'zh-TW': { ALL: '全部 (217)', AI: 'AI 人工智慧 (14)', CT: 'CT 電腦斷層 (16)', MR: 'MRI 磁振造影 (21)', RT: 'RT 放射治療 (23)', NM: 'NM 核子醫學 (8)', CA: 'CA 心導管 (11)', IR: 'IR 血管介入 (7)', MA: 'MA 乳房攝影 (7)', RO: 'RO 常規X光 (12)', US: 'US 超音波 (2)', ST: 'ST 學生研究 (55)', OT: 'OT 綜合其他 (41)' },
-        'en':    { ALL: 'ALL (217)', AI: 'AI (14)', CT: 'CT (16)', MR: 'MRI (21)', RT: 'RT (23)', NM: 'NM (8)', CA: 'Cath Lab (11)', IR: 'Interventional (7)', MA: 'Mammography (7)', RO: 'Radiography (12)', US: 'Ultrasound (2)', ST: 'Student (55)', OT: 'Other (41)' },
-        'ja':    { ALL: '全て (217)', AI: 'AI (14)', CT: 'CT (16)', MR: 'MRI (21)', RT: '放射線治療 (23)', NM: '核医学 (8)', CA: '心カテ (11)', IR: '血管造影 (7)', MA: 'マンモ (7)', RO: '一般X線 (12)', US: '超音波 (2)', ST: '学生研究 (55)', OT: 'その他 (41)' },
-        'ko':    { ALL: '전체 (217)', AI: 'AI (14)', CT: 'CT (16)', MR: 'MRI (21)', RT: '방사선치료 (23)', NM: '핵의학 (8)', CA: '심도자 (11)', IR: '인터벤션 (7)', MA: '유방촬영 (7)', RO: '일반촬영 (12)', US: '초음파 (2)', ST: '학생연구 (55)', OT: '기타 (41)' }
-      };
-      const activeCatMap = catLabels[currentLang] || catLabels['en'];
-      document.querySelectorAll('.abs-cat-btn').forEach(btn => {
-        const cat = btn.dataset.cat;
-        if (cat && activeCatMap[cat]) {
-          btn.innerText = activeCatMap[cat];
-        }
-      });
+
+      const absTabOralLabel = document.getElementById('abs-tab-oral-label');
+      if (absTabOralLabel) absTabOralLabel.innerText = t.absTabOral;
+      const absTabPosterLabel = document.getElementById('abs-tab-poster-label');
+      if (absTabPosterLabel) absTabPosterLabel.innerText = t.absTabPoster;
+
+      const oralInput = document.getElementById('abstract-oral-search-input');
+      if (oralInput) oralInput.placeholder = t.absOralSearchPlaceholder;
+      const posterInput = document.getElementById('abstract-poster-search-input');
+      if (posterInput) posterInput.placeholder = t.absPosterSearchPlaceholder;
+
+      const oralHint = document.getElementById('abstract-oral-hint');
+      if (oralHint) oralHint.innerText = t.absOralHint;
+      const posterHint = document.getElementById('abstract-poster-hint');
+      if (posterHint) posterHint.innerText = t.absPosterHint;
+
+      // 重新渲染當前清單標籤文字
+      if (typeof renderOralResults === 'function') renderOralResults();
+      if (typeof renderPosterResults === 'function') renderPosterResults();
+      if (typeof updateAbstractBadges === 'function') updateAbstractBadges();
 
       // Update My Favorites Button Label (preserve star count)
       const myFavLabel = document.getElementById('my-favorites-label');
@@ -2679,7 +2905,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.10').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.12').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);
