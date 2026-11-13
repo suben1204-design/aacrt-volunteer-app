@@ -144,7 +144,7 @@
           <i class="fa-solid fa-folder-open text-amber-500"></i>
           大會核心文件與手冊專區 (Official Documents)
         </h2>
-        <span class="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-medium">即時線上檢閱</span>
+        <span id="doc-live-badge" class="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-medium">即時線上檢閱</span>
       </div>
 
       <!-- 卡片 1：總議程 (General Scientific Program) -->
@@ -271,7 +271,7 @@
       <div id="abstract-search-card" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 hover:shadow-md transition-shadow">
         <!-- 頂部總覽標題與總篇數徽章 -->
         <div class="flex items-start space-x-3 mb-3.5">
-          <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-100 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-100 shadow-sm">
             <i class="fa-solid fa-microscope text-lg"></i>
           </div>
           <div class="flex-1">
@@ -292,7 +292,7 @@
         <!-- ========================================== -->
         <!-- 第一區：「1、口頭發表」獨立查詢專區 (Oral) -->
         <!-- ========================================== -->
-        <div id="oral-search-section" class="p-3 bg-amber-50/40 rounded-2xl border border-amber-200/80 mb-4 shadow-2xs">
+        <div id="oral-search-section" class="p-3 bg-amber-50/40 rounded-2xl border border-amber-200/80 mb-4 shadow-sm">
           <!-- 區塊標題列 -->
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center space-x-1.5">
@@ -312,7 +312,7 @@
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
-            <button onclick="executeOralSearch()" id="oral-search-btn" class="px-3.5 py-2 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center space-x-1 shrink-0">
+            <button onclick="executeOralSearch()" id="oral-search-btn" class="px-3.5 py-2 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-600 hover:to-amber-500 text-slate-950 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center space-x-1 shrink-0">
               <i class="fa-solid fa-magnifying-glass text-[11px]"></i>
               <span id="oral-search-btn-text">查詢</span>
             </button>
@@ -332,7 +332,7 @@
         <!-- ========================================== -->
         <!-- 第二區：「2、海報發表」獨立查詢專區 (Poster) -->
         <!-- ========================================== -->
-        <div id="poster-search-section" class="p-3 bg-cyan-50/40 rounded-2xl border border-cyan-200/80 shadow-2xs">
+        <div id="poster-search-section" class="p-3 bg-cyan-50/40 rounded-2xl border border-cyan-200/80 shadow-sm">
           <!-- 區塊標題列 -->
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center space-x-1.5">
@@ -352,7 +352,7 @@
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
-            <button onclick="executePosterSearch()" id="poster-search-btn" class="px-3.5 py-2 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white rounded-xl text-xs font-bold transition-all shadow-xs flex items-center space-x-1 shrink-0">
+            <button onclick="executePosterSearch()" id="poster-search-btn" class="px-3.5 py-2 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white rounded-xl text-xs font-bold transition-all shadow-sm flex items-center space-x-1 shrink-0">
               <i class="fa-solid fa-magnifying-glass text-[11px]"></i>
               <span id="poster-search-btn-text">查詢</span>
             </button>
@@ -572,7 +572,7 @@
     <div class="flex items-center justify-between border-b border-slate-800 pb-3">
       <div class="flex items-center space-x-2">
         <span class="bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded uppercase tracking-wider">SHOW TO GUEST</span>
-        <span class="text-xs text-slate-400">大字體展示模式</span>
+        <span id="modal-large-mode-label" class="text-xs text-slate-400">大字體展示模式</span>
       </div>
       <button onclick="closeShowToGuest()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-slate-700">
         <i class="fa-solid fa-xmark text-sm"></i>
@@ -587,12 +587,12 @@
     <div class="border-t border-slate-800 pt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
       <div class="flex items-center space-x-1.5 text-slate-400 text-[11px]">
         <i class="fa-solid fa-hand-pointer text-amber-400"></i>
-        <span>點擊空白處關閉 (Tap to close)</span>
+        <span id="modal-tap-close-label">點擊空白處關閉 (Tap to close)</span>
       </div>
 
       <!-- 4-Language Speech & Text Toggle -->
       <div class="flex items-center space-x-1.5">
-        <span class="text-[11px] text-slate-400 mr-0.5"><i class="fa-solid fa-volume-high text-amber-400"></i> 語音朗讀:</span>
+        <span class="text-[11px] text-slate-400 mr-0.5"><i class="fa-solid fa-volume-high text-amber-400"></i> <span id="modal-voice-label">語音朗讀:</span></span>
         <button onclick="event.stopPropagation(); switchModalLang('en')" class="modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="en">🇬🇧 EN</button>
         <button onclick="event.stopPropagation(); switchModalLang('ja')" class="modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="ja">🇯🇵 日語</button>
         <button onclick="event.stopPropagation(); switchModalLang('ko')" class="modal-lang-btn px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 bg-slate-800 text-amber-300 hover:bg-amber-500 hover:text-slate-950 transition-all" data-lang="ko">🇰🇷 한국어</button>
@@ -1560,15 +1560,17 @@
       const counterEl = document.getElementById('oral-results-count');
       if (!container) return;
 
+      const labels = getFieldLabels();
+
       if (!ORAL_PAPERS || ORAL_PAPERS.length === 0) {
         container.innerHTML = `
           <div class="py-6 text-center text-slate-400 bg-white/80 rounded-xl border border-dashed border-amber-300">
             <i class="fa-solid fa-file-excel text-2xl mb-1 text-amber-500"></i>
-            <p class="text-xs font-bold text-slate-700">等待上傳口頭發表資料 (Google Sheets / Excel)</p>
-            <p class="text-[11px] text-slate-400 mt-0.5">待資料上傳後即刻同步啟用檢索</p>
+            <p class="text-xs font-bold text-slate-700">${labels.emptyOralTitle}</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">${labels.emptyOralSub}</p>
           </div>
         `;
-        if (counterEl) counterEl.innerText = '等待資料上傳 (0 篇)';
+        if (counterEl) counterEl.innerText = labels.waitingUploadCount;
         return;
       }
 
@@ -1603,7 +1605,6 @@
       }
 
       const displayList = filtered.slice(0, 60);
-      const labels = getFieldLabels();
 
       container.innerHTML = displayList.map(item => {
         const cleanId = escapeHtml(item.id || '');
@@ -1611,10 +1612,10 @@
         const cleanSpeaker = escapeHtml(item.speaker || '');
         const cleanRoom = escapeHtml(item.room || '');
         const cleanTime = escapeHtml(item.time || '');
-        const cleanChairs = escapeHtml(item.chairs || '大會座長');
+        const cleanChairs = escapeHtml(item.chairs || labels.defaultChair);
 
         return `
-          <div class="p-3 bg-white hover:bg-amber-50/50 rounded-xl border border-slate-200 transition-all flex flex-col justify-between shadow-xs">
+          <div class="p-3 bg-white hover:bg-amber-50/50 rounded-xl border border-slate-200 transition-all flex flex-col justify-between shadow-sm">
             <div>
               <!-- 頂部：論文編號 + 口頭標籤 + 發表時間 -->
               <div class="flex items-center justify-between gap-1.5 mb-1.5">
@@ -1622,7 +1623,7 @@
                   <span class="text-[10px] font-mono font-black text-amber-900 bg-amber-100/90 px-2 py-0.5 rounded border border-amber-300">
                     <span class="text-[9px] text-amber-700 mr-0.5">${labels.paperId}:</span>${cleanId}
                   </span>
-                  <span class="text-[9px] font-bold bg-amber-500 text-slate-950 px-1.5 py-0.5 rounded shadow-xs">口頭</span>
+                  <span class="text-[9px] font-bold bg-amber-500 text-slate-950 px-1.5 py-0.5 rounded shadow-sm">${labels.oralBadge}</span>
                 </div>
                 <span class="text-[10px] font-mono font-bold text-slate-600 bg-slate-50 px-2 py-0.5 rounded border border-slate-200 flex items-center gap-1">
                   <i class="fa-regular fa-clock text-amber-600 text-[10px]"></i>${cleanTime}
@@ -1664,15 +1665,17 @@
       const counterEl = document.getElementById('poster-results-count');
       if (!container) return;
 
+      const labels = getFieldLabels();
+
       if (!POSTER_PAPERS || POSTER_PAPERS.length === 0) {
         container.innerHTML = `
           <div class="py-6 text-center text-slate-400 bg-white/80 rounded-xl border border-dashed border-cyan-300">
             <i class="fa-solid fa-file-excel text-2xl mb-1 text-cyan-600"></i>
-            <p class="text-xs font-bold text-slate-700">等待上傳海報發表資料 (Google Sheets / Excel)</p>
-            <p class="text-[11px] text-slate-400 mt-0.5">待資料上傳後即刻同步啟用檢索</p>
+            <p class="text-xs font-bold text-slate-700">${labels.emptyPosterTitle}</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">${labels.emptyPosterSub}</p>
           </div>
         `;
-        if (counterEl) counterEl.innerText = '等待資料上傳 (0 篇)';
+        if (counterEl) counterEl.innerText = labels.waitingUploadCount;
         return;
       }
 
@@ -1707,14 +1710,13 @@
       }
 
       const displayList = filtered.slice(0, 60);
-      const labels = getFieldLabels();
 
       container.innerHTML = displayList.map(item => {
         const cleanId = escapeHtml(item.id || '');
         const cleanSpeaker = escapeHtml(item.speaker || '');
 
         return `
-          <div class="p-2.5 bg-white hover:bg-cyan-50/50 rounded-xl border border-slate-200 transition-all flex items-center justify-between w-full shadow-xs gap-3">
+          <div class="p-2.5 bg-white hover:bg-cyan-50/50 rounded-xl border border-slate-200 transition-all flex items-center justify-between w-full shadow-sm gap-3">
             <!-- 左側：論文編號 -->
             <span class="text-[11px] font-mono font-black text-cyan-900 bg-cyan-100/90 px-2.5 py-0.5 rounded border border-cyan-300 shrink-0">
               <span class="text-[9px] text-cyan-700 mr-0.5">${labels.paperId}:</span>${cleanId}
@@ -1738,7 +1740,14 @@
           paperId: '論文番号',
           speaker: '発表者',
           time: '発表時間',
-          title: '演題名'
+          title: '演題名',
+          oralBadge: '口頭',
+          defaultChair: '座長',
+          emptyOralTitle: '口頭発表データのアップロード待ち (Google Sheets / Excel)',
+          emptyOralSub: 'データ登録後、即時に検索が有効になります',
+          emptyPosterTitle: 'ポスター発表データのアップロード待ち (Google Sheets / Excel)',
+          emptyPosterSub: 'データ登録後、即時に検索が有効になります',
+          waitingUploadCount: 'データ登録待ち (0 件)'
         };
       } else if (currentLang === 'ko') {
         return {
@@ -1747,7 +1756,14 @@
           paperId: '논문번호',
           speaker: '발표자',
           time: '발표시간',
-          title: '발표제목'
+          title: '발표제목',
+          oralBadge: '구연',
+          defaultChair: '좌장',
+          emptyOralTitle: '구연 발표 데이터 업로드 대기 중 (Google Sheets / Excel)',
+          emptyOralSub: '데이터가 업로드되면 즉시 검색이 활성화됩니다',
+          emptyPosterTitle: '포스터 발표 데이터 업로드 대기 중 (Google Sheets / Excel)',
+          emptyPosterSub: '데이터가 업로드되면 즉시 검색이 활성화됩니다',
+          waitingUploadCount: '데이터 업로드 대기 중 (0편)'
         };
       } else if (currentLang === 'en') {
         return {
@@ -1756,7 +1772,14 @@
           paperId: 'Paper ID',
           speaker: 'Presenter',
           time: 'Time',
-          title: 'Title'
+          title: 'Title',
+          oralBadge: 'Oral',
+          defaultChair: 'Session Chair',
+          emptyOralTitle: 'Awaiting Oral Presentation Data (Google Sheets / Excel)',
+          emptyOralSub: 'Search will be enabled automatically once data is uploaded',
+          emptyPosterTitle: 'Awaiting Poster Presentation Data (Google Sheets / Excel)',
+          emptyPosterSub: 'Search will be enabled automatically once data is uploaded',
+          waitingUploadCount: 'Awaiting data upload (0)'
         };
       } else {
         return {
@@ -1765,7 +1788,14 @@
           paperId: '論文編號',
           speaker: '報告者',
           time: '發表時間',
-          title: '發表題目'
+          title: '發表題目',
+          oralBadge: '口頭',
+          defaultChair: '大會座長',
+          emptyOralTitle: '等待上傳口頭發表資料 (Google Sheets / Excel)',
+          emptyOralSub: '待資料上傳後即刻同步啟用檢索',
+          emptyPosterTitle: '等待上傳海報發表資料 (Google Sheets / Excel)',
+          emptyPosterSub: '待資料上傳後即刻同步啟用檢索',
+          waitingUploadCount: '等待資料上傳 (0 篇)'
         };
       }
     }
@@ -1800,22 +1830,32 @@
     ];
 
     let cachedCloudTopQueries = [];
+    let activeQuickPrompts = [];
+
+    function sendQuickPromptByIndex(idx) {
+      if (activeQuickPrompts[idx]) {
+        sendQuickPrompt(activeQuickPrompts[idx]);
+      }
+    }
 
     function renderQuickPromptsUI() {
       const container = document.getElementById('quick-prompts-container');
       if (!container) return;
 
-      // 若雲端熱搜已有資料，優先使用 2 欄雲端熱搜渲染
-      if (cachedCloudTopQueries && cachedCloudTopQueries.length > 0) {
+      // 僅在繁體中文模式且雲端熱搜已有資料時，優先顯示雲端中文熱搜
+      if (currentLang === 'zh-TW' && cachedCloudTopQueries && cachedCloudTopQueries.length > 0) {
         renderDynamicTopQueries(cachedCloudTopQueries);
         return;
       }
 
-      // 否則渲染預設的 2 項熱門提問 (單排 2 欄)
-      container.innerHTML = QUICK_PROMPTS_DATA.slice(0, 2).map(item => {
+      // 其他語系 (en/ja/ko) 或無雲端熱搜時，固定顯示對應母語之預設 2 項按鈕
+      const defaultItems = QUICK_PROMPTS_DATA.slice(0, 2);
+      activeQuickPrompts = defaultItems.map(item => (item[currentLang] || item['en']).prompt);
+
+      container.innerHTML = defaultItems.map((item, idx) => {
         const loc = item[currentLang] || item['en'];
         return `
-          <button onclick="sendQuickPrompt('${loc.prompt.replace(/'/g, "\'")}')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-xs font-semibold text-left flex items-center space-x-2 truncate">
+          <button onclick="sendQuickPromptByIndex(${idx})" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2 truncate">
             <span class="text-sm shrink-0">${item.icon}</span>
             <span class="truncate">${loc.label}</span>
           </button>
@@ -1888,7 +1928,11 @@
           posterSearchPlaceholder: '輸入海報論文編號或報告者...',
           searchBtnText: '查詢',
           oralHint: '完整 6 項資訊',
-          posterHint: '1F 海報展區 12:30-13:30 交流'
+          posterHint: '1F 海報展區 12:30-13:30 交流',
+          docLiveBadge: '即時線上檢閱',
+          modalLargeMode: '大字體展示模式',
+          modalTapClose: '點擊空白處關閉 (Tap to close)',
+          modalVoiceLabel: '語音朗讀:'
         },
         'en': {
           headerGuide: 'Official Guide',
@@ -1953,7 +1997,11 @@
           posterSearchPlaceholder: 'Search poster by paper ID or presenter...',
           searchBtnText: 'Search',
           oralHint: 'Complete 6 fields listed',
-          posterHint: '1F Poster Area 12:30-13:30'
+          posterHint: '1F Poster Area 12:30-13:30',
+          docLiveBadge: 'Online Preview',
+          modalLargeMode: 'Large Font Display',
+          modalTapClose: 'Tap anywhere to close',
+          modalVoiceLabel: 'Read Aloud:'
         },
         'ja': {
           headerGuide: '公式ガイド',
@@ -2018,7 +2066,11 @@
           posterSearchPlaceholder: 'ポスター論文番号または発表者を入力...',
           searchBtnText: '検索',
           oralHint: '6項目を完全表示',
-          posterHint: '1F ポスター会場 12:30-13:30 質疑'
+          posterHint: '1F ポスター会場 12:30-13:30 質疑',
+          docLiveBadge: 'オンライン閲覧',
+          modalLargeMode: '大文字表示モード',
+          modalTapClose: '余白をタップして閉じる',
+          modalVoiceLabel: '音声読上:'
         },
         'ko': {
           headerGuide: '공식 가이드',
@@ -2083,7 +2135,11 @@
           posterSearchPlaceholder: '포스터 논문 번호 또는 발표자 입력...',
           searchBtnText: '검색',
           oralHint: '6개 항목 상세 표시',
-          posterHint: '1F 포스터 발표장 12:30-13:30'
+          posterHint: '1F 포스터 발표장 12:30-13:30',
+          docLiveBadge: '실시간 온라인 열람',
+          modalLargeMode: '큰 글씨 표시 모드',
+          modalTapClose: '빈 공간을 탭하여 닫기',
+          modalVoiceLabel: '음성 읽기:'
         }
       };
 
@@ -2212,10 +2268,21 @@
         liveTimeBtn.innerText = t.liveTimeBtn;
       }
 
-      // Update Live Stat Badge if not active with dynamic hot queries
+      // Update Doc Live Badge & Show-to-Guest Modal Labels
+      const docLiveBadge = document.getElementById('doc-live-badge');
+      if (docLiveBadge) docLiveBadge.innerText = t.docLiveBadge;
+      const modalLargeModeLabel = document.getElementById('modal-large-mode-label');
+      if (modalLargeModeLabel) modalLargeModeLabel.innerText = t.modalLargeMode;
+      const modalTapCloseLabel = document.getElementById('modal-tap-close-label');
+      if (modalTapCloseLabel) modalTapCloseLabel.innerText = t.modalTapClose;
+      const modalVoiceLabel = document.getElementById('modal-voice-label');
+      if (modalVoiceLabel) modalVoiceLabel.innerText = t.modalVoiceLabel;
+
+      // Update Live Stat Badge (only show cloud hot-search badge in zh-TW)
       const liveBadge = document.getElementById('live-stat-badge');
-      if (liveBadge && !window.isCloudTopQueriesActive) {
+      if (liveBadge && (!window.isCloudTopQueriesActive || currentLang !== 'zh-TW')) {
         liveBadge.innerText = t.liveStatBadge;
+        liveBadge.className = 'text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-medium';
       }
 
       // Update Map Fallback & Lightbox Titles
@@ -2407,8 +2474,8 @@
         };
       }
 
-      // 0. 學術論文專屬格式快速攔截 (Paper Inquiry: [Paper-ID])
-      const paperIdMatch = query.match(/\[([A-Za-z]+-[A-Za-z]+-\d+|[A-Za-z0-9_-]+)\]/);
+      // 0. 學術論文專屬格式快速攔截 (免加中括號，支援 O-AI-001 / P-CT-008 / O-NMR-01 等格式)
+      const paperIdMatch = query.match(/\[?([OP]-[A-Za-z]{2,5}-\d{1,4})\]?/i);
       if (paperIdMatch) {
         const targetId = paperIdMatch[1].toUpperCase();
         let matchedPaper = (ABSTRACTS_DATA || []).find(p => (p.id || '').toUpperCase() === targetId);
@@ -2417,14 +2484,18 @@
         }
         if (matchedPaper) {
           const pCat = matchedPaper.category || matchedPaper.category_code || 'General';
-          const pPage = matchedPaper.page || 1;
           const pTitle = matchedPaper.title || '';
+          const pSpeaker = matchedPaper.speaker || 'N/A';
+          const pRoom = matchedPaper.room || '1F Poster Area / 7F Ready Room';
+          const pTime = matchedPaper.time || '12:30-13:30';
+          const pChairs = matchedPaper.chairs || 'Session Chair';
+          const pType = matchedPaper.type || (targetId.startsWith('O-') ? 'Oral (口頭)' : 'Poster (海報)');
           return {
             matched: true,
-            'zh-TW': `【學術論文檢索指引】\n論文編號：${matchedPaper.id}（專題領域：${pCat}）\n論文題目：${pTitle}\n收錄頁碼：大會論文集第 ${pPage} 頁\n口頭發表請洽 7 樓 704 試片室，壁報交流時段為每日 12:30-13:30 於 1 樓海報展區。`,
-            'en': `【Scientific Abstract Inquiry】\nPaper ID: ${matchedPaper.id} (Category: ${pCat})\nTitle: ${pTitle}\nProceedings: Page ${pPage}\nFor oral presentations, please visit 7F Room 704. Moderated poster session is daily 12:30-13:30 at 1F Poster Area.`,
-            'ja': `【学術論文抄録のご案内】\n論文番号：${matchedPaper.id}（分野：${pCat}）\n演題名：${pTitle}\n掲載ページ：論文集 P.${pPage}\n口頭発表は7階704試写室、ポスター発表は毎日12:30〜13:30に1階ポスター会場にて行われます。`,
-            'ko': `【학술대회 논문 안내】\n논문 번호: ${matchedPaper.id} (분과: ${pCat})\n발표 제목: ${pTitle}\n수록 페이지: 논문집 ${pPage} 페이지\n구연 발표는 7층 704호 준비실, 포스터 세션은 매일 12:30-13:30 1층 포스터 발표장에서 진행됩니다.`
+            'zh-TW': `【學術論文檢索指引】\n論文編號：${matchedPaper.id}（類別：${pType} · 專題：${pCat}）\n論文題目：${pTitle}\n報告者：${pSpeaker}\n發表時間：${pTime}\n會議室／地點：${pRoom}\n座長：${pChairs}`,
+            'en': `【Scientific Abstract Inquiry】\nPaper ID: ${matchedPaper.id} (Type: ${pType} · Track: ${pCat})\nTitle: ${pTitle}\nPresenter: ${pSpeaker}\nTime: ${pTime}\nRoom / Location: ${pRoom}\nChairs: ${pChairs}`,
+            'ja': `【学術論文抄録のご案内】\n論文番号：${matchedPaper.id}（区分：${pType} · 分野：${pCat}）\n演題名：${pTitle}\n発表者：${pSpeaker}\n発表時間：${pTime}\n会場：${pRoom}\n座長：${pChairs}`,
+            'ko': `【학술대회 논문 안내】\n논문 번호: ${matchedPaper.id} (구분: ${pType} · 분과: ${pCat})\n발표 제목: ${pTitle}\n발표자: ${pSpeaker}\n발표 시간: ${pTime}\n장소: ${pRoom}\n좌장: ${pChairs}`
           };
         }
       }
@@ -2603,6 +2674,20 @@
           'en': 'All main session halls are located on the 7th floor: Plenary Hall, Rooms 701-703, Speaker Ready Room 704, and VIP Room 705. Signage is posted outside elevators, and you can open the interactive Pinch-to-Zoom Map on the Documents tab!',
           'ja': '主要会場はすべて7階にございます（大會堂、701〜703会議室、704試写室、705VIP室）。エレベーター前に案内看板があり、また「大会資料」タブで拡大地図をご利用いただけます。',
           'ko': '주요 세션장은 모두 7층에 집중되어 있습니다 (플레너리 홀, 701~703호, 704호 준비실, 705호 귀빈실). 엘리베이터 앞 안내판 또는 첫 페이지의 「대회 자료 / 지도」에서 고해상도 지도를 확대해 보실 수 있습니다.'
+        };
+      }
+
+      // 14. 大會三日總日程與每日開放時間 (3-Day Schedule & Opening Hours)
+      if (/\b(schedule|program|agenda|timetable|dates|opening\s*hours)\b/i.test(q) ||
+          q.includes('議程') || q.includes('時間表') || q.includes('日程') || q.includes('幾點開始') ||
+          q.includes('プログラム') || q.includes('スケジュール') ||
+          q.includes('일정') || q.includes('시간표')) {
+        return {
+          matched: true,
+          'zh-TW': '【2027 AACRT 大會三日總日程與開放時間】：\n- 每日開放：08:00 開放報到入場、09:00 議程正式開始。\n- 4/23 (五) Day 1：全人教育論壇與工作坊、歡迎晚宴。\n- 4/24 (六) Day 2：開幕式、主題演講與各學術分廳（701-703）、大會晚宴。\n- 4/25 (日) Day 3：青年論文競賽、閉幕典禮。\n詳細時段可至第一頁「大會文件 / 地圖」下載總議程表 PDF，或點擊第三頁「我的行程」查看即時動態！',
+          'en': '【2027 AACRT 3-Day Schedule & Opening Hours】:\n- Daily Hours: Registration opens at 08:00; Scientific sessions start at 09:00.\n- Apr 23 (Fri) Day 1: Holistic Education Forum, Workshops & Welcome Banquet.\n- Apr 24 (Sat) Day 2: Opening Ceremony, Keynotes, Track Sessions (Rooms 701-703) & Gala Dinner.\n- Apr 25 (Sun) Day 3: Young Investigator Competition & Closing Ceremony.\nDownload the full Program PDF on the "Documents & Map" tab or check live updates in "My Schedule"!',
+          'ja': '【2027 AACRT 3日間プログラム・開場時間】:\n- 毎日 08:00 受付開始 ／ 09:00 セッション開始。\n- 4/23（金）Day 1：全人教育フォーラム、ワークショップ、歓迎晩餐会。\n- 4/24（土）Day 2：開会式、基調講演、各専門セッション（701〜703室）、大会晩餐会。\n- 4/25（日）Day 3：若手論文コンテスト、閉会式。\n詳細は「大会資料」タブのプログラムPDFをダウンロードするか、「マイ日程」タブをご確認ください！',
+          'ko': '【2027 AACRT 3일간 전체 일정 및 운영 시간】:\n- 매일 08:00 등록 시작 / 09:00 학술 세션 시작.\n- 4/23(금) Day 1: 전인교육 포럼, 워크숍 및 환영 만찬.\n- 4/24(토) Day 2: 개회식, 기조강연, 분과별 세션(701~703호) 및 대회 만찬.\n- 4/25(일) Day 3: 젊은 연구자 논문 경연 및 폐회식.\n자세한 시간표는 첫 페이지 「대회 자료 / 지도」에서 PDF를 다운로드하거나 「내 일정」 탭에서 실시간으로 확인하세요!'
         };
       }
 
@@ -2824,6 +2909,12 @@
       cachedCloudTopQueries = topQueries;
       window.isCloudTopQueriesActive = true;
 
+      // 語言隔離：非繁體中文介面不顯示雲端中文熱搜，改為顯示對應母語預設 2 項按鈕
+      if (currentLang !== 'zh-TW') {
+        renderQuickPromptsUI();
+        return;
+      }
+
       const container = document.getElementById('quick-prompts-container');
       const badge = document.getElementById('live-stat-badge');
       if (badge) {
@@ -2833,16 +2924,18 @@
 
       if (!container) return;
 
-      // 嚴格限制最多 2 項熱搜 (topQueries 前 2 名)
+      // 嚴格限制最多 2 項熱搜 (topQueries 前 2 名)，使用 activeQuickPrompts 安全傳遞
       const topTwo = topQueries.slice(0, 2);
+      activeQuickPrompts = [];
       let buttonsHtml = '';
 
       // 第 1 格：最高熱搜
       if (topTwo.length >= 1) {
         const q1 = topTwo[0];
+        activeQuickPrompts.push(q1);
         const cleanQ1 = escapeHtml(q1.length > 14 ? q1.substring(0, 14) + '...' : q1);
         buttonsHtml += `
-          <button onclick="sendQuickPrompt('${escapeHtml(q1).replace(/'/g, "\'")}')" class="text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 p-2.5 rounded-xl hover:bg-amber-100 transition-all shadow-xs font-bold text-left flex items-center space-x-1.5 truncate">
+          <button onclick="sendQuickPromptByIndex(0)" class="text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 p-2.5 rounded-xl hover:bg-amber-100 transition-all shadow-sm font-bold text-left flex items-center space-x-1.5 truncate">
             <span class="shrink-0">🔥</span>
             <span class="truncate">${cleanQ1}</span>
           </button>
@@ -2852,18 +2945,20 @@
       // 第 2 格：次高熱搜；若僅有 1 筆，則自動補上預設第 1 項問題
       if (topTwo.length >= 2) {
         const q2 = topTwo[1];
+        activeQuickPrompts.push(q2);
         const cleanQ2 = escapeHtml(q2.length > 14 ? q2.substring(0, 14) + '...' : q2);
         buttonsHtml += `
-          <button onclick="sendQuickPrompt('${escapeHtml(q2).replace(/'/g, "\'")}')" class="text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 p-2.5 rounded-xl hover:bg-amber-100 transition-all shadow-xs font-bold text-left flex items-center space-x-1.5 truncate">
+          <button onclick="sendQuickPromptByIndex(1)" class="text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 p-2.5 rounded-xl hover:bg-amber-100 transition-all shadow-sm font-bold text-left flex items-center space-x-1.5 truncate">
             <span class="shrink-0">🔥</span>
             <span class="truncate">${cleanQ2}</span>
           </button>
         `;
       } else {
         const fallback = QUICK_PROMPTS_DATA[0];
-        const loc = fallback[currentLang] || fallback['en'];
+        const loc = fallback['zh-TW'];
+        activeQuickPrompts.push(loc.prompt);
         buttonsHtml += `
-          <button onclick="sendQuickPrompt('${loc.prompt.replace(/'/g, "\'")}')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-xs font-semibold text-left flex items-center space-x-2 truncate">
+          <button onclick="sendQuickPromptByIndex(1)" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2 truncate">
             <span class="text-sm shrink-0">${fallback.icon}</span>
             <span class="truncate">${loc.label}</span>
           </button>
@@ -2886,7 +2981,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.15').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.16').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);
