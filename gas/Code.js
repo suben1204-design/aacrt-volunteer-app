@@ -70,6 +70,7 @@ function initSpreadsheet() {
 
 /**
  * 處理 GET 請求：前端抓取最新緊急跑馬燈、大會設定以及「即時熱門提問排行榜」
+ * 內建 60 秒 CacheService 快取，大幅降低高併發（如 500 人同時進站）時對 Google Sheets 的讀寫壓力
  */
 function doGet(e) {
   try {
@@ -82,6 +83,14 @@ function doGet(e) {
         allow_query: false,
         top_queries: []
       });
+    }
+
+    var cache = CacheService.getScriptCache();
+    var cacheKey = "AACRT_GET_CACHE_V1";
+    var cachedJson = cache.get(cacheKey);
+    if (cachedJson) {
+      return ContentService.createTextOutput(cachedJson)
+        .setMimeType(ContentService.MimeType.JSON);
     }
 
     var ss = getSpreadsheet();
@@ -110,7 +119,7 @@ function doGet(e) {
     // 動態統計試算表日誌中「最常被問的 TOP 問題」
     var topQueries = getTopFrequentQueries(ss);
 
-    return jsonResponse({
+    var responsePayload = JSON.stringify({
       status: "active",
       ticker: ticker,
       version: version,
@@ -118,6 +127,11 @@ function doGet(e) {
       top_queries: topQueries,
       server_time: new Date().toISOString()
     });
+
+    cache.put(cacheKey, responsePayload, 60);
+
+    return ContentService.createTextOutput(responsePayload)
+      .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
     return jsonResponse({
       status: "error",
@@ -229,12 +243,14 @@ function handleCloudAiQuery(query, lang) {
   var apiKey = PropertiesService.getScriptProperties().getProperty("GEMINI_API_KEY");
   if (apiKey && apiKey.trim() !== "") {
     try {
-      var prompt = "You are the official AI concierge for the 2027 AACRT (Asia-Australasia Conference of Radiographers and Radiological Technologists) & TWSRT 60th Annual Meeting at Taipei Nangang Exhibition Center Hall 2 (TaiNEX 2).\n" +
-        "Answer the attendee query clearly, diplomatically, and concisely. Output a strict JSON object with four keys: 'zh-TW', 'en', 'ja', 'ko'.\n" +
-        "If the query involves specific locations or procedures you do not know, advise visiting the 1F or 7F Conference Information Desk.\n\n" +
+      var prompt = "You are the official AI concierge for the 2027 AACRT (26th Asia-Australasia Conference of Radiographers and Radiological Technologists) & TWSRT 60th Annual Meeting at Taipei Nangang Exhibition Center Hall 2 (TaiNEX 2), Taipei, Taiwan (April 23-25, 2027).\n" +
+        "Answer the attendee query clearly, politely, and concisely in a diplomatic tone.\n" +
+        "Do NOT invent specific schedules, room numbers, or policies you were not given; if uncertain, advise visiting the Official Information Desk at 1F Lobby or 7F Foyer.\n" +
+        "Output ONLY a valid JSON object with exact four keys: \"zh-TW\", \"en\", \"ja\", \"ko\".\n\n" +
+        "Attendee preferred language: " + lang + "\n" +
         "Query: " + query;
 
-      var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey.trim();
+      var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + apiKey.trim();
       var reqPayload = {
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: { responseMimeType: "application/json" }
@@ -250,10 +266,18 @@ function handleCloudAiQuery(query, lang) {
       var res = UrlFetchApp.fetch(url, options);
       if (res.getResponseCode() === 200) {
         var resJson = JSON.parse(res.getContentText());
-        var rawText = resJson.candidates[0].content.parts[0].text;
-        var parsed = JSON.parse(rawText);
-        if (parsed["zh-TW"] && parsed["en"]) {
-          return parsed;
+        if (resJson.candidates && resJson.candidates[0] && resJson.candidates[0].content && resJson.candidates[0].content.parts) {
+          var rawText = resJson.candidates[0].content.parts[0].text || "";
+          rawText = rawText.replace(/^```json\s*/i, "").replace(/^```\s*/i, "").replace(/\s*```$/i, "").trim();
+          var parsed = JSON.parse(rawText);
+          if (parsed && parsed["zh-TW"] && parsed["en"]) {
+            return {
+              "zh-TW": parsed["zh-TW"],
+              "en": parsed["en"],
+              "ja": parsed["ja"] || parsed["en"],
+              "ko": parsed["ko"] || parsed["en"]
+            };
+          }
         }
       }
     } catch (e) {

@@ -2336,12 +2336,12 @@
 
     // ==========================================
     // 第二層：雲端 GAS + Gemini Flash 即時諮詢
-    // 具備 5000ms（5秒）超時保護與安全降級
+    // 具備 10000ms（10秒）超時保護與安全降級
     // ==========================================
     async function fetchCloudBrainAnswer(query, lang) {
       if (!GAS_ENDPOINT_URL || GAS_ENDPOINT_URL.includes('PASTE_')) return null;
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
       try {
         const res = await fetch(GAS_ENDPOINT_URL, {
           method: 'POST',
@@ -2353,15 +2353,16 @@
           }),
           signal: controller.signal
         });
-        clearTimeout(timeoutId);
         if (res.ok) {
           const data = await res.json();
-          if (data && data.success && data.bundle) {
+          if (data && (data.status === 'success' || data.success) && data.bundle) {
             return data.bundle;
           }
         }
       } catch (e) {
-        console.log('Cloud AI notice (fallback to Tier 3):', e.name === 'AbortError' ? 'Timeout 5s' : e);
+        console.log('Cloud AI notice (fallback to Tier 3):', e.name === 'AbortError' ? 'Timeout 10s' : e);
+      } finally {
+        clearTimeout(timeoutId);
       }
       return null;
     }
@@ -2406,23 +2407,25 @@
       if (localResult.matched) {
         replyBundle = localResult;
         setTimeout(() => {
-          deliverAiResponse(typingId, text, replyBundle);
+          deliverAiResponse(typingId, text, replyBundle, false);
         }, 400);
       } else {
-        // 第二層：未命中核心題庫，呼叫雲端 GAS + Gemini Flash (限時 5 秒)
+        // 第二層：未命中核心題庫，呼叫雲端 GAS + Gemini Flash (限時 10 秒)
         fetchCloudBrainAnswer(text, currentLang).then(cloudBundle => {
+          let skipLogSync = false;
           if (cloudBundle && cloudBundle['en']) {
             replyBundle = cloudBundle;
+            skipLogSync = true; // GAS ask_ai 端已記錄此次提問，避免重複寫入試算表
           } else {
             // 第三層：雲端未就緒、超時或未命中，自動平滑降級為外交禮賓導流
             replyBundle = localResult;
           }
-          deliverAiResponse(typingId, text, replyBundle);
+          deliverAiResponse(typingId, text, replyBundle, skipLogSync);
         });
       }
     }
 
-    function deliverAiResponse(typingId, text, replyBundle) {
+    function deliverAiResponse(typingId, text, replyBundle, skipLogSync = false) {
       removeTypingIndicator(typingId);
       const msgIdx = messageStore.length;
       messageStore.push({
@@ -2432,7 +2435,9 @@
 
       const replyText = replyBundle[currentLang] || replyBundle['en'] || replyBundle['zh-TW'];
       appendMessage('ai', replyText, msgIdx);
-      syncLogToBackend(text, replyText);
+      if (!skipLogSync) {
+        syncLogToBackend(text, replyText);
+      }
     }
 
     // Google Apps Script 後台日誌同步
