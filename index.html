@@ -1835,49 +1835,27 @@
         'en':    { label: '7F Session Halls', prompt: 'How to get to the 7F Plenary Hall and session rooms?' },
         'ja':    { label: '7階各会場案内', prompt: '7階のプレナリーホールと各会議室への行き方は？' },
         'ko':    { label: '7층 강연장 위치', prompt: '7층 플레너리 홀과 각 회의실은 어떻게 가나요?' }
-      },
-      {
-        icon: '🔬',
-        key: 'tracks',
-        'zh-TW': { label: '各專題分廳主題', prompt: 'CT、MRI、AI專題分廳在幾號會議室？' },
-        'en':    { label: 'Tracks by Room', prompt: 'Which rooms host the CT, MRI, and AI sessions?' },
-        'ja':    { label: 'CT・MRI・AI分科会', prompt: 'CT、MRI、AIのセッションはどの部屋ですか？' },
-        'ko':    { label: '분과별 세션 주제', prompt: 'CT, MRI, AI 세션은 몇 번 회의실에서 열리나요?' }
-      },
-      {
-        icon: '💾',
-        key: 'slides',
-        'zh-TW': { label: '簡報繳交期限 (2h前)', prompt: '演講開始前幾小時必須交出PPT隨身碟？' },
-        'en':    { label: 'Slide Upload (2h Prior)', prompt: 'How many hours before presentation must slides be submitted?' },
-        'ja':    { label: '発表スライド提出 (2時間前)', prompt: '発表スライドは何時間前までに提出が必要ですか？' },
-        'ko':    { label: '발표 슬라이드 제출 (2시간 전)', prompt: '발표 시작 몇 시간 전까지 슬라이드를 제출해야 하나요?' }
-      },
-      {
-        icon: '🍱',
-        key: 'lunch',
-        'zh-TW': { label: '午餐便當領取處', prompt: '中午午餐便當在幾點、哪裡憑券領取？' },
-        'en':    { label: 'Lunch Box Counters', prompt: 'Where and when to pick up lunch boxes with meal coupons?' },
-        'ja':    { label: 'お弁当引換場所', prompt: 'お弁当は何時からどこで引き換えできますか？' },
-        'ko':    { label: '도시락 수령 장소', prompt: '점심 도시락은 몇 시에 어디서 수령하나요?' }
-      },
-      {
-        icon: '🍷',
-        key: 'gala',
-        'zh-TW': { label: '晚宴時間與接駁車', prompt: '大會晚宴幾點開始？接駁車在哪搭？' },
-        'en':    { label: 'Gala Dinner Shuttle', prompt: 'When is the Gala Dinner and where is the shuttle bus?' },
-        'ja':    { label: '晩餐会と送迎バス', prompt: '大会晩餐会は何時からですか？送迎バスの乗車場所は？' },
-        'ko':    { label: '만찬 시간 및 셔틀', prompt: '대회 만찬 시간과 셔틀버스 탑승 위치는 어디인가요?' }
       }
     ];
+
+    let cachedCloudTopQueries = [];
 
     function renderQuickPromptsUI() {
       const container = document.getElementById('quick-prompts-container');
       if (!container) return;
-      container.innerHTML = QUICK_PROMPTS_DATA.map(item => {
+
+      // 若雲端熱搜已有資料，優先使用 2 欄雲端熱搜渲染
+      if (cachedCloudTopQueries && cachedCloudTopQueries.length > 0) {
+        renderDynamicTopQueries(cachedCloudTopQueries);
+        return;
+      }
+
+      // 否則渲染預設的 2 項熱門提問 (單排 2 欄)
+      container.innerHTML = QUICK_PROMPTS_DATA.slice(0, 2).map(item => {
         const loc = item[currentLang] || item['en'];
         return `
-          <button onclick="sendQuickPrompt('${loc.prompt.replace(/'/g, "\\'")}')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-sm font-semibold text-left flex items-center space-x-2">
-            <span class="text-sm">${item.icon}</span>
+          <button onclick="sendQuickPrompt('${loc.prompt.replace(/'/g, "\'")}')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-xs font-semibold text-left flex items-center space-x-2 truncate">
+            <span class="text-sm shrink-0">${item.icon}</span>
             <span class="truncate">${loc.label}</span>
           </button>
         `;
@@ -2872,7 +2850,10 @@
     }
 
     function renderDynamicTopQueries(topQueries) {
+      if (!topQueries || topQueries.length === 0) return;
+      cachedCloudTopQueries = topQueries;
       window.isCloudTopQueriesActive = true;
+
       const container = document.getElementById('quick-prompts-container');
       const badge = document.getElementById('live-stat-badge');
       if (badge) {
@@ -2880,17 +2861,47 @@
         badge.className = 'text-[10px] bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full font-bold border border-amber-300 animate-pulse';
       }
 
-      const currentButtons = Array.from(container.querySelectorAll('button')).map(b => b.innerText);
-      
-      topQueries.forEach(q => {
-        if (!currentButtons.some(bText => bText.includes(q.substring(0, 10)))) {
-          const btn = document.createElement('button');
-          btn.className = 'text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 px-2.5 py-1.5 rounded-xl hover:bg-amber-100 transition-all shadow-sm font-bold flex items-center space-x-1';
-          btn.innerHTML = `<span>🔥 ${escapeHtml(q.length > 16 ? q.substring(0, 16) + '...' : q)}</span>`;
-          btn.onclick = () => sendQuickPrompt(q);
-          container.insertBefore(btn, container.firstChild);
-        }
-      });
+      if (!container) return;
+
+      // 嚴格限制最多 2 項熱搜 (topQueries 前 2 名)
+      const topTwo = topQueries.slice(0, 2);
+      let buttonsHtml = '';
+
+      // 第 1 格：最高熱搜
+      if (topTwo.length >= 1) {
+        const q1 = topTwo[0];
+        const cleanQ1 = escapeHtml(q1.length > 14 ? q1.substring(0, 14) + '...' : q1);
+        buttonsHtml += `
+          <button onclick="sendQuickPrompt('${escapeHtml(q1).replace(/'/g, "\'")}')" class="text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 p-2.5 rounded-xl hover:bg-amber-100 transition-all shadow-xs font-bold text-left flex items-center space-x-1.5 truncate">
+            <span class="shrink-0">🔥</span>
+            <span class="truncate">${cleanQ1}</span>
+          </button>
+        `;
+      }
+
+      // 第 2 格：次高熱搜；若僅有 1 筆，則自動補上預設第 1 項問題
+      if (topTwo.length >= 2) {
+        const q2 = topTwo[1];
+        const cleanQ2 = escapeHtml(q2.length > 14 ? q2.substring(0, 14) + '...' : q2);
+        buttonsHtml += `
+          <button onclick="sendQuickPrompt('${escapeHtml(q2).replace(/'/g, "\'")}')" class="text-xs bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-amber-900 p-2.5 rounded-xl hover:bg-amber-100 transition-all shadow-xs font-bold text-left flex items-center space-x-1.5 truncate">
+            <span class="shrink-0">🔥</span>
+            <span class="truncate">${cleanQ2}</span>
+          </button>
+        `;
+      } else {
+        const fallback = QUICK_PROMPTS_DATA[0];
+        const loc = fallback[currentLang] || fallback['en'];
+        buttonsHtml += `
+          <button onclick="sendQuickPrompt('${loc.prompt.replace(/'/g, "\'")}')" class="text-xs bg-white border border-slate-200 hover:border-amber-400 text-slate-800 p-2.5 rounded-xl hover:text-amber-700 transition-all shadow-xs font-semibold text-left flex items-center space-x-2 truncate">
+            <span class="text-sm shrink-0">${fallback.icon}</span>
+            <span class="truncate">${loc.label}</span>
+          </button>
+        `;
+      }
+
+      // 直接覆蓋，保證固定 2 格且不往上堆疊
+      container.innerHTML = buttonsHtml;
     }
 
     // Initialization
@@ -2905,7 +2916,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.12').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.13').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);
