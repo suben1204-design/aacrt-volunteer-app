@@ -29,6 +29,7 @@
 - [x] 階段十三：四語題庫精準路由、跑馬燈外語隔離與現場服務擴充（修復第 1 題 Keynote 過度排除、調整第 14 題至第 2 題前並納入開閉幕關鍵字、將第 2 題移至第 17 題後防提前攔截、新增第 15～17 題行李／茶歇充電／醫護遺失物四語題庫與第 0 題無資料兜底、補齊跑馬燈外語隔離及地圖燈箱／時段按鈕／頁尾版本四語切換，PWA 快取推進為 `aacrt-guide-v2.19`）
 - [x] 階段十四：頂部公告列改為平滑跑馬燈並移除右上角 Taiwan 時鐘（移除 `#taiwan-clock` 與 `updateClock()` 騰出完整寬度、實裝 `.animate-ticker` 純 CSS 左右滾動跑馬燈與觸碰暫停閱讀，PWA 快取推進為 `aacrt-guide-v2.20`）
 - [x] 階段十五：跑馬燈四語自動翻譯同步與題庫／iOS 體驗微調（`gas/Code.js` `doGet()` 導入 `LanguageApp.translate` 自動輸出 `ticker_en`/`ticker_ja`/`ticker_ko` 並部署至 GAS `10 版`、前端跑馬燈改為雲端文字保底同步、修復第 9 題日韓出席證明關鍵字、調整第 10 題交通順序並排除第 4 題筆電充電誤攔截、優化 `#oral-search-input`/`#poster-search-input` 16px 防 iOS 放大，PWA 快取推進為 `aacrt-guide-v2.21`）
+- [x] 階段十六：優化問答分廳路由、新增第 18 題摘要檢索指引與秀給外賓長文防誤觸（將第 3 題移至第 14 題後防提前攔截試片室/海報、新增第 18 題四語論文摘要檢索指引、`#show-guest-modal` 改為 `max-h-[72dvh]` 可滾動且 `stopPropagation()` 防誤觸關閉、口頭發表搜尋納入題目與會議室、冷卻縮短至 `1500ms` 並四語化，PWA 快取推進為 `aacrt-guide-v2.22`）
 
 ## 資料夾結構
 ```text

@@ -591,7 +591,7 @@
     </div>
 
     <!-- Centered Huge Text -->
-    <div class="my-auto py-8">
+    <div class="my-auto py-4 max-h-[72dvh] overflow-y-auto no-scrollbar px-2" onclick="event.stopPropagation()">
       <p id="guest-modal-text" class="text-xl sm:text-2xl font-bold text-amber-300 leading-relaxed tracking-wide whitespace-pre-line"></p>
     </div>
 
@@ -1569,7 +1569,9 @@
         if (!q) return true;
         const idMatch = (item.id || '').toLowerCase().includes(q);
         const speakerMatch = (item.speaker || '').toLowerCase().includes(q);
-        return idMatch || speakerMatch;
+        const titleMatch = (item.title || '').toLowerCase().includes(q);
+        const roomMatch = (item.room || '').toLowerCase().includes(q);
+        return idMatch || speakerMatch || titleMatch || roomMatch;
       });
 
       if (counterEl) {
@@ -2458,8 +2460,14 @@
       if (checkConferenceSunset()) return;
 
       const now = Date.now();
-      if (now - lastSendTime < 2500) {
-        alert('請稍候幾秒再送出問題 (Please wait 2 seconds between questions).');
+      if (now - lastSendTime < 1500) {
+        const cooldownMsgs = {
+          'zh-TW': '請稍候片刻再送出問題。',
+          'en': 'Please wait a moment before sending another question.',
+          'ja': '少々お待ちいただいてから次の質問を送信してください。',
+          'ko': '잠시 후 다시 질문을 전송해 주세요.'
+        };
+        alert(cooldownMsgs[currentLang] || cooldownMsgs['en']);
         return;
       }
 
@@ -2641,17 +2649,6 @@
         };
       }
 
-      // 3. 專題分廳主題 (修正：單字邊界防止誤觸)
-      if (/\b(ct|mri|ai|ivr|pet|sbrt|igrt)\b/i.test(q) || q.includes('分廳') || q.includes('主題') || q.includes('專題') || q.includes('分科会') || q.includes('분과')) {
-        return {
-          matched: true,
-          'zh-TW': '【7 樓分廳專業主題】：\n- 701 室：CT 尖端技術、光子計數 CT 與血管攝影介入 (IVR)\n- 702 室：超高場 MRI 臨床神經影像與放射治療 (RT/SBRT) 品管\n- 703 室：生成式 AI 放射工作流與次世代 PET/CT 核子醫學\n各廳門口均有大螢幕顯示即時講者，亦可於「我的行程」加入收藏！',
-          'en': '【7F Track Allocation】:\n- Room 701: Advanced Photon-Counting CT & Interventional Radiology (IVR)\n- Room 702: Ultra-High Field 7T MRI & Precision Radiotherapy (RT/SBRT)\n- Room 703: Generative AI in Radiology & Next-Gen PET/CT Nuclear Medicine\nDigital screens outside each door show active speakers. Tap "My Schedule" to star sessions!',
-          'ja': '【7階 分科会テーマ】：\n- 701会議室：CT先端技術・フォトンカウンティングCT・血管内治療（IVR）\n- 702会議室：超高磁場7T MRI・放射線治療（RT/SBRT）品質管理\n- 703会議室：画像生成AI放射線ワークフロー・次世代PET/CT核医学\n各室前のモニターで進行状況をご確認いただけます。',
-          'ko': '【7층 분과별 세션 주제】:\n- 701호: 첨단 다중에너지 CT, 광자계수 CT 및 인터벤션(IVR)\n- 702호: 초고자장 7T MRI 임상 신경영상 및 방사선치료(RT/SBRT) 품질관리\n- 703호: 생성형 AI 보조 판독 및 차세대 PET/CT 핵의학 영상\n각 회의실 문 앞 모니터에서 현재 연자를 확인하실 수 있습니다.'
-        };
-      }
-
       // 4. 試片室簡報繳交期限 ＆ 口頭發表響鈴規定 (Ready Room & Oral Bell Rules - 排除充電相關問題)
       const isAskingCharging = /\b(charge|charging|plug|outlet|battery)\b/i.test(q) || q.includes('充電') || q.includes('충전');
       if (!isAskingCharging && (
@@ -2752,6 +2749,20 @@
         };
       }
 
+      // 18. 學術論文與摘要檢索指引 (Abstract & Paper Search)
+      if (/\b(abstract|abstracts|proceedings|paper|papers|author|presenter)\b/i.test(q) ||
+          q.includes('論文') || q.includes('摘要') || q.includes('報告者') ||
+          q.includes('抄録') || q.includes('アブストラクト') ||
+          q.includes('초록') || q.includes('논문')) {
+        return {
+          matched: true,
+          'zh-TW': '【學術論文與摘要即時檢索指引】：\n請點擊上方第一頁「大會文件 / 地圖」並往下滑至「4、學術論文摘要即時檢索 (Abstract Search)」，系統已分為「1、口頭發表」與「2、海報發表」兩大專區：\n- 輸入「論文編號」（如 O-AI-001、P-CT-008）或「報告者姓名」即可秒查發表時間、會議室與座長。\n- 您也可以直接在此對話框輸入論文編號（例如 O-AI-001），我會立刻為您調閱該篇資訊！',
+          'en': '【Scientific Abstract & Paper Search Guide】:\nPlease open Tab 1 "Documents & Map" and scroll down to "4. Scientific Abstracts Search", which is organized into "1. Oral Presentation" and "2. Poster Presentation":\n- Enter a Paper ID (e.g., O-AI-001, P-CT-008) or Presenter name to instantly view time, room, and session chairs.\n- You can also type the Paper ID directly in this chat to look up its details!',
+          'ja': '【学術論文・抄録の即時検索ガイド】：\n上部1つ目のタブ「大会資料 / 地図」を下へスクロールし、「4. 学術論文抄録即時検索」をご利用ください。「1. 口頭発表」と「2. ポスター発表」に分かれております。\n- 「論文番号（例：O-AI-001、P-CT-008）」または「発表者氏名」を入力すると、発表時間・会場・座長を即座に確認できます。\n- このチャット欄に論文番号を直接入力して検索することも可能です！',
+          'ko': '【학술대회 논문 및 초록 검색 안내】：\n상단 첫 번째 탭 「대회 자료 / 지도」에서 아래로 스크롤하여 「4. 학술대회 논문 초록 즉시 검색」 구역(1. 구연 발표 / 2. 포스터 발표)을 이용해 주세요.\n- 「논문 번호(예: O-AI-001, P-CT-008)」 또는 「발표자 이름」을 입력하면 발표 시간, 회의실, 좌장 정보를 바로 확인할 수 있습니다.\n- 이 대화창에 논문 번호를 직접 입력하셔도 즉시 조회해 드립니다!'
+        };
+      }
+
       // 13. 報到註冊與名牌領取 (Registration & Badge Pickup - 新增)
       if (/\b(register|registration|badge|check-in|checkin|reception)\b/i.test(q) ||
           q.includes('報到') || q.includes('註冊') || q.includes('名牌') || q.includes('識別證') ||
@@ -2777,6 +2788,17 @@
           'en': '【2027 AACRT 3-Day Schedule & Opening Hours】:\n- Daily Hours: Registration opens at 08:00; Scientific sessions start at 09:00.\n- Apr 23 (Fri) Day 1: Holistic Education Forum, Workshops & Welcome Banquet.\n- Apr 24 (Sat) Day 2: Opening Ceremony, Keynotes, Track Sessions (Rooms 701-703) & Gala Dinner.\n- Apr 25 (Sun) Day 3: Young Investigator Competition & Closing Ceremony.\nDownload the full Program PDF on the "Documents & Map" tab or check live updates in "My Schedule"!',
           'ja': '【2027 AACRT 3日間プログラム・開場時間】:\n- 毎日 08:00 受付開始 ／ 09:00 セッション開始。\n- 4/23（金）Day 1：全人教育フォーラム、ワークショップ、歓迎晩餐会。\n- 4/24（土）Day 2：開会式、基調講演、各専門セッション（701〜703室）、大会晩餐会。\n- 4/25（日）Day 3：若手論文コンテスト、閉会式。\n詳細は「大会資料」タブのプログラムPDFをダウンロードするか、「マイ日程」タブをご確認ください！',
           'ko': '【2027 AACRT 3일간 전체 일정 및 운영 시간】:\n- 매일 08:00 등록 시작 / 09:00 학술 세션 시작.\n- 4/23(금) Day 1: 전인교육 포럼, 워크숍 및 환영 만찬.\n- 4/24(토) Day 2: 개회식, 기조강연, 분과별 세션(701~703호) 및 대회 만찬.\n- 4/25(일) Day 3: 젊은 연구자 논문 경연 및 폐회식.\n자세한 시간표는 첫 페이지 「대회 자료 / 지도」에서 PDF를 다운로드하거나 「내 일정」 탭에서 실시간으로 확인하세요!'
+        };
+      }
+
+      // 3. 專題分廳主題 (置於試片室、海報、總日程之後，避免 ct/mri/ai 提前攔截具體提問)
+      if (/\b(ct|mri|ai|ivr|pet|sbrt|igrt)\b/i.test(q) || q.includes('分廳') || q.includes('主題') || q.includes('專題') || q.includes('分科会') || q.includes('분과')) {
+        return {
+          matched: true,
+          'zh-TW': '【7 樓分廳專業主題】：\n- 701 室：CT 尖端技術、光子計數 CT 與血管攝影介入 (IVR)\n- 702 室：超高場 MRI 臨床神經影像與放射治療 (RT/SBRT) 品管\n- 703 室：生成式 AI 放射工作流與次世代 PET/CT 核子醫學\n各廳門口均有大螢幕顯示即時講者，亦可於「我的行程」加入收藏！',
+          'en': '【7F Track Allocation】:\n- Room 701: Advanced Photon-Counting CT & Interventional Radiology (IVR)\n- Room 702: Ultra-High Field 7T MRI & Precision Radiotherapy (RT/SBRT)\n- Room 703: Generative AI in Radiology & Next-Gen PET/CT Nuclear Medicine\nDigital screens outside each door show active speakers. Tap "My Schedule" to star sessions!',
+          'ja': '【7階 分科会テーマ】：\n- 701会議室：CT先端技術・フォトンカウンティングCT・血管内治療（IVR）\n- 702会議室：超高磁場7T MRI・放射線治療（RT/SBRT）品質管理\n- 703会議室：画像生成AI放射線ワークフロー・次世代PET/CT核医学\n各室前のモニターで進行状況をご確認いただけます。',
+          'ko': '【7층 분과별 세션 주제】:\n- 701호: 첨단 다중에너지 CT, 광자계수 CT 및 인터벤션(IVR)\n- 702호: 초고자장 7T MRI 임상 신경영상 및 방사선치료(RT/SBRT) 품질관리\n- 703호: 생성형 AI 보조 판독 및 차세대 PET/CT 핵의학 영상\n각 회의실 문 앞 모니터에서 현재 연자를 확인하실 수 있습니다.'
         };
       }
 
@@ -3154,7 +3176,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.21').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.22').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aacrt-guide-v2.21';
+const CACHE_NAME = 'aacrt-guide-v2.22';
 const ASSETS_TO_CACHE = [
   './manifest.json',
   './docs/abstracts_index.json',
