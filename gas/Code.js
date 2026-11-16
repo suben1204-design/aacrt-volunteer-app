@@ -86,7 +86,7 @@ function doGet(e) {
     }
 
     var cache = CacheService.getScriptCache();
-    var cacheKey = "AACRT_GET_CACHE_V1";
+    var cacheKey = "AACRT_GET_CACHE_V2";
     var cachedJson = cache.get(cacheKey);
     if (cachedJson) {
       return ContentService.createTextOutput(cachedJson)
@@ -116,12 +116,27 @@ function doGet(e) {
       }
     }
 
+    // 自動翻譯跑馬燈為英、日、韓三語（含容錯保護，並隨同寫入 60 秒快取避免重複耗用配額）
+    var tickerEn = ticker;
+    var tickerJa = ticker;
+    var tickerKo = ticker;
+    try {
+      tickerEn = LanguageApp.translate(ticker, "zh-TW", "en");
+      tickerJa = LanguageApp.translate(ticker, "zh-TW", "ja");
+      tickerKo = LanguageApp.translate(ticker, "zh-TW", "ko");
+    } catch (transErr) {
+      Logger.log("LanguageApp translate warning: " + transErr.toString());
+    }
+
     // 動態統計試算表日誌中「最常被問的 TOP 問題」
     var topQueries = getTopFrequentQueries(ss);
 
     var responsePayload = JSON.stringify({
       status: "active",
       ticker: ticker,
+      ticker_en: tickerEn,
+      ticker_ja: tickerJa,
+      ticker_ko: tickerKo,
       version: version,
       allow_query: true,
       top_queries: topQueries,

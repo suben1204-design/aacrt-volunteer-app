@@ -171,7 +171,7 @@
                 <span class="text-[10px] bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded-full">PDF</span>
               </div>
               <p id="doc1-desc" class="text-xs text-slate-600 mt-1 leading-relaxed">
-                涵蓋兩日大會堂主題演講、各分題演講廳（701-703）時間配當表、口頭發表 10 分鐘響鈴規定。
+                涵蓋三日大會堂主題演講、各分題演講廳（701-703）時間配當表、口頭發表 10 分鐘響鈴規定。
               </p>
               <div class="text-[11px] text-slate-400 mt-1 flex items-center gap-2">
                 <span><i class="fa-regular fa-file-pdf text-red-500"></i> 1_agenda.pdf</span>
@@ -318,8 +318,8 @@
           <div class="flex items-center space-x-1.5 mb-2">
             <div class="relative flex-1 flex items-center">
               <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs"></i>
-              <input id="oral-search-input" type="text" oninput="handleOralSearchInput(this.value)" onkeydown="if(event.key==='Enter') executeOralSearch()" placeholder="輸入口頭論文編號或報告者..." class="w-full pl-8 pr-7 py-2 bg-white border border-slate-200 focus:border-amber-500 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
-              <button id="oral-clear-btn" onclick="clearOralSearch()" class="hidden absolute right-2.5 w-4 h-4 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[9px]">
+              <input id="oral-search-input" type="text" oninput="handleOralSearchInput(this.value)" onkeydown="if(event.key==='Enter') executeOralSearch()" placeholder="輸入口頭論文編號或報告者..." class="w-full pl-8 pr-8 py-2 bg-white border border-slate-200 focus:border-amber-500 rounded-xl text-base sm:text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
+              <button id="oral-clear-btn" onclick="clearOralSearch()" class="hidden absolute right-2 w-5 h-5 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[10px]">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -358,8 +358,8 @@
           <div class="flex items-center space-x-1.5 mb-2">
             <div class="relative flex-1 flex items-center">
               <i class="fa-solid fa-magnifying-glass absolute left-3 text-slate-400 text-xs"></i>
-              <input id="poster-search-input" type="text" oninput="handlePosterSearchInput(this.value)" onkeydown="if(event.key==='Enter') executePosterSearch()" placeholder="輸入海報論文編號或報告者..." class="w-full pl-8 pr-7 py-2 bg-white border border-slate-200 focus:border-cyan-500 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
-              <button id="poster-clear-btn" onclick="clearPosterSearch()" class="hidden absolute right-2.5 w-4 h-4 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[9px]">
+              <input id="poster-search-input" type="text" oninput="handlePosterSearchInput(this.value)" onkeydown="if(event.key==='Enter') executePosterSearch()" placeholder="輸入海報論文編號或報告者..." class="w-full pl-8 pr-8 py-2 bg-white border border-slate-200 focus:border-cyan-500 rounded-xl text-base sm:text-xs text-slate-800 placeholder-slate-400 focus:outline-none transition-all font-medium">
+              <button id="poster-clear-btn" onclick="clearPosterSearch()" class="hidden absolute right-2 w-5 h-5 rounded-full bg-slate-300 text-white hover:bg-slate-400 flex items-center justify-center text-[10px]">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -1863,7 +1863,7 @@
           promptLabel: '熱門提問 (Quick Questions)',
           docSectionTitle: '大會核心文件與手冊專區 (Official Documents)',
           doc1Title: '1、2027 AACRT 總議程表',
-          doc1Desc: '涵蓋兩日大會堂主題演講、各分題演講廳（701-703）時間配當表、口頭發表 10 分鐘響鈴規定。',
+          doc1Desc: '涵蓋三日大會堂主題演講、各分題演講廳（701-703）時間配當表、口頭發表 10 分鐘響鈴規定。',
           doc1BtnView: '線上預覽 (View)',
           doc1BtnDl: '下載檔案 (Download)',
           doc2Title: '2、會場平面圖 (7F 各會議室與試片室)',
@@ -2254,13 +2254,15 @@
       const mapBtnTag = document.getElementById('map-preview-btn-tag');
       if (mapBtnTag) mapBtnTag.innerText = t.mapPreviewBtnTag;
 
-      // Ticker Announcement (外語隔離保護：非繁中模式不顯示後台中文跑馬燈，改顯示對應母語公告)
+      // Ticker Announcement (優先顯示對應語系雲端跑馬燈；若後台尚未翻譯則保底顯示最新雲端文字，避免退回舊的預設公告)
       const tickerElem = document.getElementById('ticker-text');
       if (tickerElem) {
         if (currentLang === 'zh-TW' && window.cloudTickerText) {
           tickerElem.innerText = window.cloudTickerText;
         } else if (window.cloudTickerData && window.cloudTickerData['ticker_' + currentLang]) {
           tickerElem.innerText = window.cloudTickerData['ticker_' + currentLang];
+        } else if (window.cloudTickerText) {
+          tickerElem.innerText = window.cloudTickerText;
         } else {
           tickerElem.innerText = t.defaultTicker;
         }
@@ -2650,14 +2652,16 @@
         };
       }
 
-      // 4. 試片室簡報繳交期限 ＆ 口頭發表響鈴規定 (Ready Room & Oral Bell Rules)
-      if (/\b(ppt|slide|slides|upload|ready\s*room|preview\s*room|speaker\s*ready|laptop|usb|oral|bell|time\s*limit)\b/i.test(q) ||
+      // 4. 試片室簡報繳交期限 ＆ 口頭發表響鈴規定 (Ready Room & Oral Bell Rules - 排除充電相關問題)
+      const isAskingCharging = /\b(charge|charging|plug|outlet|battery)\b/i.test(q) || q.includes('充電') || q.includes('충전');
+      if (!isAskingCharging && (
+          /\b(ppt|slide|slides|upload|ready\s*room|preview\s*room|speaker\s*ready|laptop|usb|oral|bell|time\s*limit)\b/i.test(q) ||
           q.includes('隨身碟') || q.includes('試片室') || q.includes('幾小時') || q.includes('交出') ||
           q.includes('口頭發表') || q.includes('口頭報告') || q.includes('演講時間') || q.includes('響鈴') ||
           q.includes('スライド') || q.includes('試写室') || q.includes('プレビュー') || q.includes('発表データ') || q.includes('pc持ち込み') ||
           q.includes('口頭発表') || q.includes('持ち時間') || q.includes('ベル') ||
           q.includes('슬라이드') || q.includes('시사회실') || q.includes('준비실') || q.includes('발표자료') || q.includes('노트북') ||
-          q.includes('구연') || q.includes('발표 시간')) {
+          q.includes('구연') || q.includes('발표 시간'))) {
         return {
           matched: true,
           'zh-TW': '【口頭發表與試片室規範】：\n1. 簡報繳交：請務必於「演講開始前至少 2 小時」（早晨第一場請於前一日或當日 08:00 前）攜帶隨身碟至 7 樓 704 試片室完成影音測試與檔案拷貝。為確保議程順暢，大會不接受以個人筆電切換投影。\n2. 口頭發表每題限時 10 分鐘（8 分鐘響一聲提醒鈴，10 分鐘響兩聲結束鈴，請講者掌握時間）。',
@@ -2724,7 +2728,10 @@
       }
 
       // 9. 繼續教育學分認證 (CME Credits & Attendance)
-      if (/\b(cme|credit|credits|certificate|attendance)\b/i.test(q) || q.includes('學分') || q.includes('簽到') || q.includes('簽退') || q.includes('出席證明') || q.includes('単位') || q.includes('평점')) {
+      if (/\b(cme|credit|credits|certificate|attendance)\b/i.test(q) ||
+          q.includes('學分') || q.includes('簽到') || q.includes('簽退') || q.includes('出席證明') || q.includes('參加證明') ||
+          q.includes('単位') || q.includes('参加証明書') || q.includes('出席証明書') ||
+          q.includes('평점') || q.includes('참석증명서') || q.includes('참가증명서') || q.includes('수료증')) {
         return {
           matched: true,
           'zh-TW': '醫事放射師繼續教育學分認證：請持會員卡或大會名牌條碼，於每日「上午 08:30-10:00」完成上午刷卡簽到，並於「下午 16:00 後」完成刷卡簽退。各國海外學者之出席證明 (Certificate of Attendance) 將於 4/25 下午於 1 樓註冊櫃台統一領取或由官方系統下載。',
@@ -2756,21 +2763,6 @@
           'en': '【Conference Registration & Badge Pickup】:\nRegistration and badge pickup desks are located at the 1F Lobby and 7F Foyer of TaiNEX 2 (open daily from 08:00). Please present your confirmation letter or QR Code to collect your conference badge, meal coupons, and official handbook.',
           'ja': '【大会参加受付・ネームカード引換】:\n参加受付およびネームカード引換所は南港第2展示館「1階ロビー」および「7階ホワイエ」に設置されております（毎日08:00オープン）。登録確認書またはQRコードをご提示の上、ネームカード、昼食券、ハンドブックをお受け取りください。',
           'ko': '【학술대회 등록 및 명찰 수령】:\n학술대회 등록 및 명찰 수령 창구는 난강 2관 「1층 로비」 및 「7층 로비」에 마련되어 있습니다(매일 08:00 오픈). 등록 확인서 또는 QR 코드를 제시하시면 대회 명찰, 식권 및 공식 핸드북을 수령하실 수 있습니다.'
-        };
-      }
-
-      // 10. 捷運與高鐵交通指引、會場地址與計程車 (MRT, Transit, Venue Address & Taxi)
-      if (/\b(mrt|metro|subway|train|hsr|transit|station|transportation|access|taxi|airport|taoyuan|address)\b/i.test(q) ||
-          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') ||
-          q.includes('計程車') || q.includes('機場') || q.includes('桃園機場') || q.includes('搭車') || q.includes('地址') ||
-          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('タクシー') || q.includes('住所') ||
-          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시') || q.includes('주소')) {
-        return {
-          matched: true,
-          'zh-TW': '【會場地址與交通指引】：\n- 會場地址（可出示給計程車司機）：台北市南港區經貿二路2號（台北南港展覽館 2 館 / TaiNEX 2）。\n- 台北捷運：搭乘【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」1號或2號出口，步行3分鐘（或經B1地下連通道）直達南港2館。\n- 桃園機場 (TPE)：搭乘桃園機場捷運至「台北車站」，轉乘捷運板南線直達南港展覽館站。\n- 高鐵/台鐵：於「南港站」下車後轉乘捷運一站即可抵達。',
-          'en': '【Venue Address & Transportation Guide】:\n- Official Venue Address (Show to Taxi Driver):\nNo. 2, Jingmao 2nd Rd., Nangang Dist., Taipei (Taipei Nangang Exhibition Center Hall 2 / TaiNEX 2)\n- Taipei MRT: Take Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23/BR24), Exit 1 or 2, 3 min walk into TaiNEX Hall 2.\n- From Taoyuan Airport (TPE): Take Airport MRT to Taipei Main Station, then transfer to MRT Bannan Line directly to Nangang Exhibition Center Station.\n- High Speed Rail (THSR): Disembark at "Nangang Station" and take MRT 1 stop.',
-          'ja': '【会場住所および交通案内】:\n- 会場住所（タクシー運転手提示用）：\n台北市南港区経貿二路2号（台北南港第2展示館 / TaiNEX 2）\n- 台北MRT：板南線（ブルー）または文湖線（ブラウン）「南港展覧館駅（BL23/BR24）」1番または2番出口より徒歩3分、B1地下通路直結。\n- 桃園国際空港より：桃園空港MRTで台北駅へ、板南線に乗り換えて直通。\n- 新幹線（高鐵）：南港駅よりMRTで1駅です。',
-          'ko': '【학술대회장 주소 및 교통 안내】:\n- 대회장 공식 주소 (택시 기사 제시용):\n台北市南港區經貿二路2號 (Taipei Nangang Exhibition Center Hall 2 / 난강 2관)\n- 타이베이 MRT: 판난선(블루) 또는 원후선(브라운) 「난강전람관역(BL23/BR24)」 1번/2번 출구에서 도보 3분 (B1 지하통로 직결).\n- 타오위안 공항(TPE): 공항철도 탑승 후 타이베이역에서 MRT 판난선 환승.\n- 고속철도(THSR): 난강역 하차 후 지하철 1정거장 거리.'
         };
       }
 
@@ -2827,6 +2819,21 @@
           'en': '【First Aid, Medical Assistance & Lost & Found】:\nIf you have lost any belongings or require immediate medical / first-aid assistance, please contact the 1F or 7F "Official Information Desk" immediately. On-site medical personnel and support staff are on standby to assist you.',
           'ja': '【救護室・緊急医療および落とし物のご案内】:\nお忘れ物・落とし物のお問い合わせや、体調不良・緊急の医療支援が必要な場合は、直ちに1階または7階の「大会総合案内所」までお申し出ください。会場内には救護スタッフ・医療支援体制が常駐しております。',
           'ko': '【응급 의료 지원 및 분실물 센터 안내】:\n분실물(신분증, 휴대폰, 지갑 등) 문의나 신체 이상 및 응급 의료 지원이 필요하신 경우 즉시 1층 또는 7층 「대회 안내 데스크」로 연락해 주시기 바랍니다. 현장 의무실 및 전담 인력이 즉각 지원해 드립니다.'
+        };
+      }
+
+      // 10. 捷運與高鐵交通指引、會場地址與計程車 (置於第 17 題後、第 2 題前，並移除單獨 access 防誤觸充電站/醫護站/議程存取)
+      if (/\b(mrt|metro|subway|train|hsr|transit|station|transportation|taxi|airport|taoyuan|address)\b/i.test(q) ||
+          q.includes('捷運') || q.includes('高鐵') || q.includes('怎麼來') || q.includes('交通') || q.includes('出口') ||
+          q.includes('計程車') || q.includes('機場') || q.includes('桃園機場') || q.includes('搭車') || q.includes('地址') ||
+          q.includes('地下鉄') || q.includes('駅') || q.includes('新幹線') || q.includes('アクセス') || q.includes('タクシー') || q.includes('住所') ||
+          q.includes('지하철') || q.includes('교통') || q.includes('고속철도') || q.includes('역') || q.includes('오시는') || q.includes('택시') || q.includes('주소')) {
+        return {
+          matched: true,
+          'zh-TW': '【會場地址與交通指引】：\n- 會場地址（可出示給計程車司機）：台北市南港區經貿二路2號（台北南港展覽館 2 館 / TaiNEX 2）。\n- 台北捷運：搭乘【板南線（藍線）】或【文湖線（棕線）】至「南港展覽館站 (BL23 / BR24)」1號或2號出口，步行3分鐘（或經B1地下連通道）直達南港2館。\n- 桃園機場 (TPE)：搭乘桃園機場捷運至「台北車站」，轉乘捷運板南線直達南港展覽館站。\n- 高鐵/台鐵：於「南港站」下車後轉乘捷運一站即可抵達。',
+          'en': '【Venue Address & Transportation Guide】:\n- Official Venue Address (Show to Taxi Driver):\nNo. 2, Jingmao 2nd Rd., Nangang Dist., Taipei (Taipei Nangang Exhibition Center Hall 2 / TaiNEX 2)\n- Taipei MRT: Take Bannan Line (Blue) or Wenhu Line (Brown) to "Taipei Nangang Exhibition Center Station" (BL23/BR24), Exit 1 or 2, 3 min walk into TaiNEX Hall 2.\n- From Taoyuan Airport (TPE): Take Airport MRT to Taipei Main Station, then transfer to MRT Bannan Line directly to Nangang Exhibition Center Station.\n- High Speed Rail (THSR): Disembark at "Nangang Station" and take MRT 1 stop.',
+          'ja': '【会場住所および交通案内】:\n- 会場住所（タクシー運転手提示用）：\n台北市南港区経貿二路2号（台北南港第2展示館 / TaiNEX 2）\n- 台北MRT：板南線（ブルー）または文湖線（ブラウン）「南港展覧館駅（BL23/BR24）」1番または2番出口より徒歩3分、B1地下通路直結。\n- 桃園国際空港より：桃園空港MRTで台北駅へ、板南線に乗り換えて直通。\n- 新幹線（高鐵）：南港駅よりMRTで1駅です。',
+          'ko': '【학술대회장 주소 및 교통 안내】:\n- 대회장 공식 주소 (택시 기사 제시용):\n台北市南港區經貿二路2號 (Taipei Nangang Exhibition Center Hall 2 / 난강 2관)\n- 타이베이 MRT: 판난선(블루) 또는 원후선(브라운) 「난강전람관역(BL23/BR24)」 1번/2번 출구에서 도보 3분 (B1 지하통로 직결).\n- 타오위안 공항(TPE): 공항철도 탑승 후 타이베이역에서 MRT 판난선 환승.\n- 고속철도(THSR): 난강역 하차 후 지하철 1정거장 거리.'
         };
       }
 
@@ -3048,6 +3055,8 @@
                 tickerElem.innerText = data.ticker;
               } else if (data['ticker_' + currentLang]) {
                 tickerElem.innerText = data['ticker_' + currentLang];
+              } else {
+                tickerElem.innerText = data.ticker;
               }
             }
           }
@@ -3145,7 +3154,7 @@
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=2.16').then(reg => {
+        navigator.serviceWorker.register('./sw.js?v=2.21').then(reg => {
           reg.update();
         }).catch(err => {
           console.log('SW registration note: ', err);

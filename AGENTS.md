@@ -28,6 +28,7 @@
 - [x] 階段十二：高併發快取與雲端 Gemini 2.5 Flash 串接修復（修復 `index.html` 與 `gas/Code.js` 回傳欄位 `status === 'success'` 不一致導致雲端 AI 降級的 Bug、消除 `ask_ai` 重複寫入 Log、放寬超時至 10 秒、`gas/Code.js` 升級 `gemini-2.5-flash` 並加入 `CacheService` 60 秒高併發快取，PWA 快取推進為 `aacrt-guide-v2.17`）
 - [x] 階段十三：四語題庫精準路由、跑馬燈外語隔離與現場服務擴充（修復第 1 題 Keynote 過度排除、調整第 14 題至第 2 題前並納入開閉幕關鍵字、將第 2 題移至第 17 題後防提前攔截、新增第 15～17 題行李／茶歇充電／醫護遺失物四語題庫與第 0 題無資料兜底、補齊跑馬燈外語隔離及地圖燈箱／時段按鈕／頁尾版本四語切換，PWA 快取推進為 `aacrt-guide-v2.19`）
 - [x] 階段十四：頂部公告列改為平滑跑馬燈並移除右上角 Taiwan 時鐘（移除 `#taiwan-clock` 與 `updateClock()` 騰出完整寬度、實裝 `.animate-ticker` 純 CSS 左右滾動跑馬燈與觸碰暫停閱讀，PWA 快取推進為 `aacrt-guide-v2.20`）
+- [x] 階段十五：跑馬燈四語自動翻譯同步與題庫／iOS 體驗微調（`gas/Code.js` `doGet()` 導入 `LanguageApp.translate` 自動輸出 `ticker_en`/`ticker_ja`/`ticker_ko` 並部署至 GAS `10 版`、前端跑馬燈改為雲端文字保底同步、修復第 9 題日韓出席證明關鍵字、調整第 10 題交通順序並排除第 4 題筆電充電誤攔截、優化 `#oral-search-input`/`#poster-search-input` 16px 防 iOS 放大，PWA 快取推進為 `aacrt-guide-v2.21`）
 
 ## 資料夾結構
 ```text
