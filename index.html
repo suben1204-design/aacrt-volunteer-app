@@ -40,20 +40,31 @@
       user-select: none;
       -webkit-user-select: none;
     }
+    /* Smooth Marquee Ticker */
+    @keyframes tickerMarquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-ticker {
+      display: inline-block;
+      padding-left: 100%;
+      white-space: nowrap;
+      animation: tickerMarquee 16s linear infinite;
+      will-change: transform;
+    }
+    #emergency-banner:hover .animate-ticker,
+    #emergency-banner:active .animate-ticker {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col font-sans selection:bg-amber-200">
 
   <!-- Top Emergency Ticker Banner -->
-  <div id="emergency-banner" class="bg-amber-500 text-slate-950 px-3 py-1.5 text-xs font-semibold flex items-center justify-between shadow-sm">
-    <div class="flex items-center space-x-2 truncate">
-      <span class="bg-slate-950 text-amber-300 px-1.5 py-0.5 rounded text-[10px] uppercase font-black tracking-wider">LIVE</span>
-      <span id="ticker-text" class="truncate font-medium">大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。</span>
-    </div>
-    <!-- Live Taiwan Time Badge (with seconds) -->
-    <div class="flex items-center space-x-1 shrink-0 ml-2 bg-slate-950/20 px-2.5 py-0.5 rounded text-[10px] font-mono font-bold tracking-tight">
-      <i class="fa-regular fa-clock text-[9px] text-amber-950"></i>
-      <span id="taiwan-clock">Taiwan --:--:--</span>
+  <div id="emergency-banner" class="bg-amber-500 text-slate-950 px-3 py-1.5 text-xs font-semibold flex items-center space-x-2 shadow-sm">
+    <span class="bg-slate-950 text-amber-300 px-1.5 py-0.5 rounded text-[10px] uppercase font-black tracking-wider shrink-0">LIVE</span>
+    <div class="flex-1 overflow-hidden whitespace-nowrap">
+      <span id="ticker-text" class="animate-ticker font-medium">大會現場公告：7 樓大會堂開幕式預計於 09:00 正式開始，歡迎提早入場。</span>
     </div>
   </div>
 
@@ -1005,27 +1016,6 @@
       }
       return false;
     }
-
-    // Live Taiwan Time Clock with Seconds (Asia/Taipei GMT+8)
-    function updateClock() {
-      try {
-        const now = new Date();
-        const options = {
-          timeZone: 'Asia/Taipei',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        const clockElem = document.getElementById('taiwan-clock');
-        if (clockElem) clockElem.innerText = `Taiwan ${formatter.format(now)}`;
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
 
     // Tab Switcher (faq vs ai vs schedule)
     function switchTab(tab) {
